@@ -1,0 +1,2402 @@
+[
+  {
+    "id": 1205,
+    "file": "adapt.png"
+  },
+  {
+    "id": 1141,
+    "file": "allforyou.png"
+  },
+  {
+    "id": 1002,
+    "file": "apexinventor.png"
+  },
+  {
+    "id": 2087,
+    "file": "archmage.png"
+  },
+  {
+    "id": 1004,
+    "file": "backtobasics.png"
+  },
+  {
+    "id": 2103,
+    "file": "fromdowntown.png"
+  },
+  {
+    "id": 1180,
+    "file": "bigbrain.png"
+  },
+  {
+    "id": 1006,
+    "file": "bladewaltz.png"
+  },
+  {
+    "id": 1007,
+    "file": "bluntforce.png"
+  },
+  {
+    "id": 1103,
+    "file": "breadandbutter.png"
+  },
+  {
+    "id": 1151,
+    "file": "breadandcheese.png"
+  },
+  {
+    "id": 1150,
+    "file": "breadandjam.png"
+  },
+  {
+    "id": 1009,
+    "file": "buffbuddies.png"
+  },
+  {
+    "id": 1011,
+    "file": "canttouchthis.png"
+  },
+  {
+    "id": 1013,
+    "file": "celestialbody.png"
+  },
+  {
+    "id": 1397,
+    "file": "cerberus.png"
+  },
+  {
+    "id": 1015,
+    "file": "circleofdeath.png"
+  },
+  {
+    "id": 1310,
+    "file": "clowncollege.png"
+  },
+  {
+    "id": 1018,
+    "file": "courageofthecolossus.png"
+  },
+  {
+    "id": 1418,
+    "file": "crackopenthategg.png"
+  },
+  {
+    "id": 1118,
+    "file": "criticalhealing.png"
+  },
+  {
+    "id": 1323,
+    "file": "cruelty.png"
+  },
+  {
+    "id": 1019,
+    "file": "dashing.png"
+  },
+  {
+    "id": 1020,
+    "file": "dawnbringersresolve.png"
+  },
+  {
+    "id": 1022,
+    "file": "deft.png"
+  },
+  {
+    "id": 1023,
+    "file": "demonsdance.png"
+  },
+  {
+    "id": 1025,
+    "file": "divebomber.png"
+  },
+  {
+    "id": 2099,
+    "file": "riteofascension.png"
+  },
+  {
+    "id": 1301,
+    "file": "divineintervention.png"
+  },
+  {
+    "id": 1026,
+    "file": "dontblink.png"
+  },
+  {
+    "id": 2010,
+    "file": "doubletap.png"
+  },
+  {
+    "id": 1134,
+    "file": "drawyoursword.png"
+  },
+  {
+    "id": 2031,
+    "file": "dropbear.png"
+  },
+  {
+    "id": 2006,
+    "file": "dropkick.png"
+  },
+  {
+    "id": 1225,
+    "file": "dualwield.png"
+  },
+  {
+    "id": 1027,
+    "file": "earthwake.png"
+  },
+  {
+    "id": 2004,
+    "file": "empoweredbythefaithful.png"
+  },
+  {
+    "id": 2098,
+    "file": "enpassant.png"
+  },
+  {
+    "id": 1028,
+    "file": "erosion.png"
+  },
+  {
+    "id": 1029,
+    "file": "etherealweapon.png"
+  },
+  {
+    "id": 1030,
+    "file": "eureka.png"
+  },
+  {
+    "id": 1032,
+    "file": "executioner.png"
+  },
+  {
+    "id": 1220,
+    "file": "fanthehammer.png"
+  },
+  {
+    "id": 1035,
+    "file": "feeltheburn.png"
+  },
+  {
+    "id": 1194,
+    "file": "feymagic.png"
+  },
+  {
+    "id": 1036,
+    "file": "firebrand.png"
+  },
+  {
+    "id": 1308,
+    "file": "firefox.png"
+  },
+  {
+    "id": 1037,
+    "file": "firstaidkit.png"
+  },
+  {
+    "id": 1187,
+    "file": "flashbang.png"
+  },
+  {
+    "id": 1116,
+    "file": "flashy.png"
+  },
+  {
+    "id": 1038,
+    "file": "frombeginningtoend.png"
+  },
+  {
+    "id": 1039,
+    "file": "frostwraith.png"
+  },
+  {
+    "id": 1322,
+    "file": "getexcited.png"
+  },
+  {
+    "id": 1195,
+    "file": "giantslayer.png"
+  },
+  {
+    "id": 1041,
+    "file": "goliath.png"
+  },
+  {
+    "id": 1138,
+    "file": "goredrink.png"
+  },
+  {
+    "id": 1042,
+    "file": "guiltypleasure.png"
+  },
+  {
+    "id": 1181,
+    "file": "heavyhitter.png"
+  },
+  {
+    "id": 2107,
+    "file": "hellbent.png"
+  },
+  {
+    "id": 2095,
+    "file": "highroller.png"
+  },
+  {
+    "id": 1198,
+    "file": "holyfire.png"
+  },
+  {
+    "id": 1105,
+    "file": "homeguard.png"
+  },
+  {
+    "id": 1044,
+    "file": "icecold.png"
+  },
+  {
+    "id": 1001,
+    "file": "titansresolve.png"
+  },
+  {
+    "id": 1149,
+    "file": "impassable.png"
+  },
+  {
+    "id": 1045,
+    "file": "infernalconduit.png"
+  },
+  {
+    "id": 1046,
+    "file": "infernalsoul.png"
+  },
+  {
+    "id": 2005,
+    "file": "triggeredinferno.png"
+  },
+  {
+    "id": 1047,
+    "file": "itscritical.png"
+  },
+  {
+    "id": 1211,
+    "file": "itskillingtime.png"
+  },
+  {
+    "id": 1048,
+    "file": "jeweledgauntlet.png"
+  },
+  {
+    "id": 2016,
+    "file": "juiced.png"
+  },
+  {
+    "id": 1050,
+    "file": "keystoneconjurer.png"
+  },
+  {
+    "id": 1305,
+    "file": "legday.png"
+  },
+  {
+    "id": 1051,
+    "file": "lightemup.png"
+  },
+  {
+    "id": 1052,
+    "file": "lightningstrikes.png"
+  },
+  {
+    "id": 2007,
+    "file": "devilonyourshoulder.png"
+  },
+  {
+    "id": 1053,
+    "file": "madscientist.png"
+  },
+  {
+    "id": 1133,
+    "file": "magicmissile.png"
+  },
+  {
+    "id": 1129,
+    "file": "marksmage.png"
+  },
+  {
+    "id": 1054,
+    "file": "masterofduality.png"
+  },
+  {
+    "id": 1056,
+    "file": "mindtomatter.png"
+  },
+  {
+    "id": 1104,
+    "file": "minionmancer.png"
+  },
+  {
+    "id": 1424,
+    "file": "augment1424.png"
+  },
+  {
+    "id": 1057,
+    "file": "mountainsoul.png"
+  },
+  {
+    "id": 2055,
+    "file": "multishot.png"
+  },
+  {
+    "id": 1058,
+    "file": "mysticpunch.png"
+  },
+  {
+    "id": 1060,
+    "file": "oceansoul.png"
+  },
+  {
+    "id": 1061,
+    "file": "okboomerang.png"
+  },
+  {
+    "id": 1062,
+    "file": "omnisoul.png"
+  },
+  {
+    "id": 1208,
+    "file": "orbitallaser.png"
+  },
+  {
+    "id": 1063,
+    "file": "outlawsgrit.png"
+  },
+  {
+    "id": 1311,
+    "file": "overflow.png"
+  },
+  {
+    "id": 12317,
+    "file": "pandorasbox.png"
+  },
+  {
+    "id": 1064,
+    "file": "perseverance.png"
+  },
+  {
+    "id": 1390,
+    "file": "phenomenalevil.png"
+  },
+  {
+    "id": 2003,
+    "file": "bounceoftheporoking.png"
+  },
+  {
+    "id": 1409,
+    "file": "poroblaster.png"
+  },
+  {
+    "id": 1324,
+    "file": "proteinshake.png"
+  },
+  {
+    "id": 2018,
+    "file": "puristcaster.png"
+  },
+  {
+    "id": 1066,
+    "file": "quantumcomputing.png"
+  },
+  {
+    "id": 1152,
+    "file": "steelyourheart.png"
+  },
+  {
+    "id": 1154,
+    "file": "urfschampion.png"
+  },
+  {
+    "id": 1361,
+    "file": "icathiasfall.png"
+  },
+  {
+    "id": 1156,
+    "file": "woogletswitchcap.png"
+  },
+  {
+    "id": 2064,
+    "file": "quickstep.png"
+  },
+  {
+    "id": 1067,
+    "file": "rejuvenation.png"
+  },
+  {
+    "id": 1313,
+    "file": "cheating.png"
+  },
+  {
+    "id": 1068,
+    "file": "recursion.png"
+  },
+  {
+    "id": 1069,
+    "file": "repulsor.png"
+  },
+  {
+    "id": 1070,
+    "file": "restlessrestoration.png"
+  },
+  {
+    "id": 1170,
+    "file": "scopedweapons.png"
+  },
+  {
+    "id": 1071,
+    "file": "scopierweapons.png"
+  },
+  {
+    "id": 1115,
+    "file": "scopiestweapons.png"
+  },
+  {
+    "id": 1072,
+    "file": "searingdawn.png"
+  },
+  {
+    "id": 1108,
+    "file": "selfdestruct.png"
+  },
+  {
+    "id": 1073,
+    "file": "shadowrunner.png"
+  },
+  {
+    "id": 1074,
+    "file": "shrinkray.png"
+  },
+  {
+    "id": 1113,
+    "file": "skilledsniper.png"
+  },
+  {
+    "id": 1136,
+    "file": "slaparound.png"
+  },
+  {
+    "id": 3262,
+    "file": "slimetime.png"
+  },
+  {
+    "id": 1250,
+    "file": "slowandsteady.png"
+  },
+  {
+    "id": 1075,
+    "file": "slowcooker.png"
+  },
+  {
+    "id": 2088,
+    "file": "snowday.png"
+  },
+  {
+    "id": 1076,
+    "file": "sonicboom.png"
+  },
+  {
+    "id": 1077,
+    "file": "soulsiphon.png"
+  },
+  {
+    "id": 2100,
+    "file": "pursuitofhaste.png"
+  },
+  {
+    "id": 1405,
+    "file": "speeddemon.png"
+  },
+  {
+    "id": 1214,
+    "file": "spintowin.png"
+  },
+  {
+    "id": 2104,
+    "file": "spiritbomb.png"
+  },
+  {
+    "id": 1345,
+    "file": "spiritualpurification.png"
+  },
+  {
+    "id": 1204,
+    "file": "stackosaurusrex.png"
+  },
+  {
+    "id": 1404,
+    "file": "stats.png"
+  },
+  {
+    "id": 1403,
+    "file": "statsonstats.png"
+  },
+  {
+    "id": 1402,
+    "file": "statsonstatsonstats.png"
+  },
+  {
+    "id": 1413,
+    "file": "stuckinherewithme.png"
+  },
+  {
+    "id": 2073,
+    "file": "siphon.png"
+  },
+  {
+    "id": 1079,
+    "file": "symphonyofwar.png"
+  },
+  {
+    "id": 1353,
+    "file": "tankengine.png"
+  },
+  {
+    "id": 1080,
+    "file": "tankitorleaveit.png"
+  },
+  {
+    "id": 1081,
+    "file": "tapdancer.png"
+  },
+  {
+    "id": 2065,
+    "file": "terror.png"
+  },
+  {
+    "id": 1082,
+    "file": "thebrutalizer.png"
+  },
+  {
+    "id": 1084,
+    "file": "threadtheneedle.png"
+  },
+  {
+    "id": 1085,
+    "file": "tormentor.png"
+  },
+  {
+    "id": 1243,
+    "file": "transmutechaos.png"
+  },
+  {
+    "id": 1237,
+    "file": "transmutegold.png"
+  },
+  {
+    "id": 1238,
+    "file": "transmuteprismatic.png"
+  },
+  {
+    "id": 1086,
+    "file": "trueshotprodigy.png"
+  },
+  {
+    "id": 1107,
+    "file": "twicethrice.png"
+  },
+  {
+    "id": 1087,
+    "file": "typhoon.png"
+  },
+  {
+    "id": 1088,
+    "file": "ultimaterevolution.png"
+  },
+  {
+    "id": 1112,
+    "file": "ultimateunstoppable.png"
+  },
+  {
+    "id": 1320,
+    "file": "upgradecollector.png"
+  },
+  {
+    "id": 1317,
+    "file": "upgradecutlass.png"
+  },
+  {
+    "id": 1338,
+    "file": "upgradehubris.png"
+  },
+  {
+    "id": 1336,
+    "file": "upgradeinfinityedge.png"
+  },
+  {
+    "id": 1319,
+    "file": "upgradeimmolate.png"
+  },
+  {
+    "id": 1996,
+    "file": "upgradesheen.png"
+  },
+  {
+    "id": 1318,
+    "file": "upgradezhonyas.png"
+  },
+  {
+    "id": 2002,
+    "file": "voidrift.png"
+  },
+  {
+    "id": 1092,
+    "file": "vulnerability.png"
+  },
+  {
+    "id": 2001,
+    "file": "headsupcupcake.png"
+  },
+  {
+    "id": 1005,
+    "file": "weewooweewoo.png"
+  },
+  {
+    "id": 2008,
+    "file": "weightedpopoffs.png"
+  },
+  {
+    "id": 1095,
+    "file": "windspeakersblessing.png"
+  },
+  {
+    "id": 1097,
+    "file": "witchfulthinking.png"
+  },
+  {
+    "id": 1098,
+    "file": "withhaste.png"
+  },
+  {
+    "id": 2089,
+    "file": "yowchmycoins.png"
+  },
+  {
+    "id": 2009,
+    "file": "zealot.png"
+  },
+  {
+    "id": 1206,
+    "file": "escapade.png"
+  },
+  {
+    "id": 2062,
+    "file": "echocast.png"
+  },
+  {
+    "id": 1327,
+    "file": "adamant.png"
+  },
+  {
+    "id": 3118,
+    "file": "arcaneaxiom.png"
+  },
+  {
+    "id": 3049,
+    "file": "armoredimpact.png"
+  },
+  {
+    "id": 3086,
+    "file": "bees.png"
+  },
+  {
+    "id": 1372,
+    "file": "imababykittywhereismama.png"
+  },
+  {
+    "id": 387,
+    "file": "bigdragonenergy.png"
+  },
+  {
+    "id": 3018,
+    "file": "bigshot.png"
+  },
+  {
+    "id": 1329,
+    "file": "biggestsnowballever.png"
+  },
+  {
+    "id": 2128,
+    "file": "combustinginterest.png"
+  },
+  {
+    "id": 3051,
+    "file": "bluebarrier.png"
+  },
+  {
+    "id": 2111,
+    "file": "bonk.png"
+  },
+  {
+    "id": 3048,
+    "file": "bouncingbees.png"
+  },
+  {
+    "id": 3071,
+    "file": "brassblast.png"
+  },
+  {
+    "id": 2042,
+    "file": "hideonbush.png"
+  },
+  {
+    "id": 2083,
+    "file": "toothfairy.png"
+  },
+  {
+    "id": 2078,
+    "file": "chainreaction.png"
+  },
+  {
+    "id": 388,
+    "file": "chromaflux.png"
+  },
+  {
+    "id": 377,
+    "file": "combinationfriedrice.png"
+  },
+  {
+    "id": 3088,
+    "file": "crimsoncobalt.png"
+  },
+  {
+    "id": 2024,
+    "file": "critncast.png"
+  },
+  {
+    "id": 1356,
+    "file": "criticalmissile.png"
+  },
+  {
+    "id": 1328,
+    "file": "criticalrhythm.png"
+  },
+  {
+    "id": 2077,
+    "file": "ravenousbind.png"
+  },
+  {
+    "id": 396,
+    "file": "deathdealer.png"
+  },
+  {
+    "id": 383,
+    "file": "demonicclasp.png"
+  },
+  {
+    "id": 2063,
+    "file": "dimensionshift.png"
+  },
+  {
+    "id": 7014,
+    "file": "ragebait.png"
+  },
+  {
+    "id": 7003,
+    "file": "doordie.png"
+  },
+  {
+    "id": 1384,
+    "file": "donation.png"
+  },
+  {
+    "id": 2131,
+    "file": "dontchangethechannel.png"
+  },
+  {
+    "id": 7002,
+    "file": "dontstopcleavin.png"
+  },
+  {
+    "id": 7008,
+    "file": "doransbiggestfan.png"
+  },
+  {
+    "id": 2144,
+    "file": "bolstered.png"
+  },
+  {
+    "id": 2148,
+    "file": "doublestrike.png"
+  },
+  {
+    "id": 3036,
+    "file": "doubletime.png"
+  },
+  {
+    "id": 7004,
+    "file": "drinkup.png"
+  },
+  {
+    "id": 1414,
+    "file": "droppybara.png"
+  },
+  {
+    "id": 394,
+    "file": "dusttodiamonds.png"
+  },
+  {
+    "id": 1331,
+    "file": "empyreanpromise.png"
+  },
+  {
+    "id": 3163,
+    "file": "enchantingbutterflies.png"
+  },
+  {
+    "id": 2091,
+    "file": "endlessdecimation.png"
+  },
+  {
+    "id": 2082,
+    "file": "ourhealing.png"
+  },
+  {
+    "id": 1333,
+    "file": "escapeplan.png"
+  },
+  {
+    "id": 1344,
+    "file": "finalform.png"
+  },
+  {
+    "id": 2032,
+    "file": "sharkbait.png"
+  },
+  {
+    "id": 1348,
+    "file": "flash2.png"
+  },
+  {
+    "id": 3085,
+    "file": "flowofspirit.png"
+  },
+  {
+    "id": 2127,
+    "file": "forgedbythemaster.png"
+  },
+  {
+    "id": 3265,
+    "file": "fortified.png"
+  },
+  {
+    "id": 3121,
+    "file": "fruitify.png"
+  },
+  {
+    "id": 7010,
+    "file": "timewarpheartsteel.png"
+  },
+  {
+    "id": 1321,
+    "file": "gash.png"
+  },
+  {
+    "id": 3004,
+    "file": "getjinxed.png"
+  },
+  {
+    "id": 3063,
+    "file": "giftofthedrowned.png"
+  },
+  {
+    "id": 1325,
+    "file": "glasscannon.png"
+  },
+  {
+    "id": 1392,
+    "file": "holysnowball.png"
+  },
+  {
+    "id": 1335,
+    "file": "goldrend.png"
+  },
+  {
+    "id": 397,
+    "file": "gotthatdoginem.png"
+  },
+  {
+    "id": 1406,
+    "file": "grandmaschilioil.png"
+  },
+  {
+    "id": 3149,
+    "file": "grouphug.png"
+  },
+  {
+    "id": 1401,
+    "file": "growthspurt.png"
+  },
+  {
+    "id": 3172,
+    "file": "thrash.png"
+  },
+  {
+    "id": 3176,
+    "file": "augment3176.png"
+  },
+  {
+    "id": 3170,
+    "file": "heavy.png"
+  },
+  {
+    "id": 3173,
+    "file": "doom.png"
+  },
+  {
+    "id": 3171,
+    "file": "power.png"
+  },
+  {
+    "id": 1389,
+    "file": "handofbaron.png"
+  },
+  {
+    "id": 3052,
+    "file": "handsoffthetalent.png"
+  },
+  {
+    "id": 7005,
+    "file": "hastemakeswaste.png"
+  },
+  {
+    "id": 1341,
+    "file": "hatonahat.png"
+  },
+  {
+    "id": 3132,
+    "file": "heavyisthecrown.png"
+  },
+  {
+    "id": 7012,
+    "file": "thehexcore.png"
+  },
+  {
+    "id": 1416,
+    "file": "hextechsoul.png"
+  },
+  {
+    "id": 1388,
+    "file": "infiniterecursion.png"
+  },
+  {
+    "id": 2125,
+    "file": "itsgotime.png"
+  },
+  {
+    "id": 3123,
+    "file": "jeweledbracelet.png"
+  },
+  {
+    "id": 2126,
+    "file": "reload.png"
+  },
+  {
+    "id": 2026,
+    "file": "killsecured.png"
+  },
+  {
+    "id": 1337,
+    "file": "kingme.png"
+  },
+  {
+    "id": 1339,
+    "file": "laserheal.png"
+  },
+  {
+    "id": 3094,
+    "file": "lichbrain.png"
+  },
+  {
+    "id": 2096,
+    "file": "lilextrahelp.png"
+  },
+  {
+    "id": 3134,
+    "file": "lonelywarrior.png"
+  },
+  {
+    "id": 380,
+    "file": "mercy.png"
+  },
+  {
+    "id": 2133,
+    "file": "mercysstrike.png"
+  },
+  {
+    "id": 1314,
+    "file": "mightyshield.png"
+  },
+  {
+    "id": 2072,
+    "file": "spellsplit.png"
+  },
+  {
+    "id": 3053,
+    "file": "moshmonster.png"
+  },
+  {
+    "id": 3264,
+    "file": "mysticguard.png"
+  },
+  {
+    "id": 2043,
+    "file": "natureishealing.png"
+  },
+  {
+    "id": 1326,
+    "file": "nightstalking.png"
+  },
+  {
+    "id": 3059,
+    "file": "nomananoproblem.png"
+  },
+  {
+    "id": 1332,
+    "file": "ominouspact.png"
+  },
+  {
+    "id": 3060,
+    "file": "onehitwonder.png"
+  },
+  {
+    "id": 2119,
+    "file": "overextender.png"
+  },
+  {
+    "id": 2135,
+    "file": "pincushion.png"
+  },
+  {
+    "id": 2123,
+    "file": "overloaded.png"
+  },
+  {
+    "id": 2137,
+    "file": "patontheback.png"
+  },
+  {
+    "id": 2139,
+    "file": "porcupine.png"
+  },
+  {
+    "id": 1358,
+    "file": "pinball.png"
+  },
+  {
+    "id": 1347,
+    "file": "poltergeist.png"
+  },
+  {
+    "id": 2046,
+    "file": "porostampede.png"
+  },
+  {
+    "id": 2102,
+    "file": "pressurecooker.png"
+  },
+  {
+    "id": 1421,
+    "file": "promqueen.png"
+  },
+  {
+    "id": 1343,
+    "file": "sneakerhead.png"
+  },
+  {
+    "id": 2141,
+    "file": "ultrahydra.png"
+  },
+  {
+    "id": 393,
+    "file": "icathiasfall_393.png"
+  },
+  {
+    "id": 3159,
+    "file": "rise.png"
+  },
+  {
+    "id": 391,
+    "file": "ragstoriches.png"
+  },
+  {
+    "id": 1330,
+    "file": "reenergize.png"
+  },
+  {
+    "id": 3075,
+    "file": "recoil.png"
+  },
+  {
+    "id": 1391,
+    "file": "redenvelopes.png"
+  },
+  {
+    "id": 374,
+    "file": "riceandchicken.png"
+  },
+  {
+    "id": 375,
+    "file": "riceandfish.png"
+  },
+  {
+    "id": 376,
+    "file": "riceandpork.png"
+  },
+  {
+    "id": 3039,
+    "file": "salvation.png"
+  },
+  {
+    "id": 3129,
+    "file": "sapmagic.png"
+  },
+  {
+    "id": 381,
+    "file": "scavenger.png"
+  },
+  {
+    "id": 2034,
+    "file": "sharktempest.png"
+  },
+  {
+    "id": 1373,
+    "file": "shrinkengine.png"
+  },
+  {
+    "id": 2118,
+    "file": "ultbot.png"
+  },
+  {
+    "id": 2109,
+    "file": "snapback.png"
+  },
+  {
+    "id": 1342,
+    "file": "snowballroulette.png"
+  },
+  {
+    "id": 1334,
+    "file": "snowballupgrade.png"
+  },
+  {
+    "id": 2080,
+    "file": "snowblast.png"
+  },
+  {
+    "id": 1420,
+    "file": "sonata.png"
+  },
+  {
+    "id": 1375,
+    "file": "souleater.png"
+  },
+  {
+    "id": 3025,
+    "file": "soundbarrier.png"
+  },
+  {
+    "id": 2116,
+    "file": "pursuitofpower.png"
+  },
+  {
+    "id": 2054,
+    "file": "tripleshot.png"
+  },
+  {
+    "id": 384,
+    "file": "spellcraft.png"
+  },
+  {
+    "id": 7013,
+    "file": "spiritofthejunglemain.png"
+  },
+  {
+    "id": 2115,
+    "file": "squishyslappygrab.png"
+  },
+  {
+    "id": 7006,
+    "file": "stabbystabby.png"
+  },
+  {
+    "id": 3263,
+    "file": "steadfasterpresence.png"
+  },
+  {
+    "id": 3131,
+    "file": "stillhere.png"
+  },
+  {
+    "id": 7015,
+    "file": "summonerssafari.png"
+  },
+  {
+    "id": 2108,
+    "file": "supportmain.png"
+  },
+  {
+    "id": 2134,
+    "file": "surgefield.png"
+  },
+  {
+    "id": 1315,
+    "file": "swiftandsafe.png"
+  },
+  {
+    "id": 3116,
+    "file": "takeemdowndowndown.png"
+  },
+  {
+    "id": 2129,
+    "file": "terraind.png"
+  },
+  {
+    "id": 3078,
+    "file": "theboomandthebass.png"
+  },
+  {
+    "id": 3016,
+    "file": "thirdtimestheharm.png"
+  },
+  {
+    "id": 3058,
+    "file": "ticklemonster.png"
+  },
+  {
+    "id": 2076,
+    "file": "stayresolute.png"
+  },
+  {
+    "id": 3079,
+    "file": "totentanz.png"
+  },
+  {
+    "id": 1400,
+    "file": "finalcitytransit.png"
+  },
+  {
+    "id": 378,
+    "file": "transmutesilver.png"
+  },
+  {
+    "id": 389,
+    "file": "trashtotreasure.png"
+  },
+  {
+    "id": 7011,
+    "file": "trueeternity.png"
+  },
+  {
+    "id": 2136,
+    "file": "trustyweapon.png"
+  },
+  {
+    "id": 1415,
+    "file": "twinfire.png"
+  },
+  {
+    "id": 1349,
+    "file": "ultimateawakening.png"
+  },
+  {
+    "id": 3055,
+    "file": "ultimaterecursion.png"
+  },
+  {
+    "id": 390,
+    "file": "unstabletransmutation.png"
+  },
+  {
+    "id": 2157,
+    "file": "upgradedeathsdance.png"
+  },
+  {
+    "id": 7007,
+    "file": "upgradedeathfiregrasp.png"
+  },
+  {
+    "id": 7009,
+    "file": "upgradeinnervatinglocket.png"
+  },
+  {
+    "id": 1340,
+    "file": "upgrademikaelsblessing.png"
+  },
+  {
+    "id": 2140,
+    "file": "upgraderavenoushydra.png"
+  },
+  {
+    "id": 3150,
+    "file": "upgradestormsurge.png"
+  },
+  {
+    "id": 2143,
+    "file": "upgradesunderedsky.png"
+  },
+  {
+    "id": 1379,
+    "file": "upgradeswordofblossomingdawn.png"
+  },
+  {
+    "id": 1411,
+    "file": "upgradethornmail.png"
+  },
+  {
+    "id": 7001,
+    "file": "upgradezzrotportal.png"
+  },
+  {
+    "id": 1346,
+    "file": "vampirism.png"
+  },
+  {
+    "id": 1034,
+    "file": "veilofwarding.png"
+  },
+  {
+    "id": 2097,
+    "file": "voiddash.png"
+  },
+  {
+    "id": 2138,
+    "file": "adaptiveward.png"
+  },
+  {
+    "id": 2132,
+    "file": "warlockjuicebox.png"
+  },
+  {
+    "id": 3081,
+    "file": "weaponofdestiny.png"
+  },
+  {
+    "id": 379,
+    "file": "wildfire.png"
+  },
+  {
+    "id": 1316,
+    "file": "windbeneathblade.png"
+  },
+  {
+    "id": 1386,
+    "file": "spinmerightround.png"
+  },
+  {
+    "id": 205,
+    "file": "adapt_205.png"
+  },
+  {
+    "id": 1,
+    "file": "acceleratingsorcery.png"
+  },
+  {
+    "id": 336,
+    "file": "aimforthehead.png"
+  },
+  {
+    "id": 141,
+    "file": "allforyou_141.png"
+  },
+  {
+    "id": 309,
+    "file": "andmyaxe.png"
+  },
+  {
+    "id": 2,
+    "file": "apexinventor_2.png"
+  },
+  {
+    "id": 404,
+    "file": "404augmentnotfound.png"
+  },
+  {
+    "id": 405,
+    "file": "augment405.png"
+  },
+  {
+    "id": 322,
+    "file": "augmentedpower.png"
+  },
+  {
+    "id": 4,
+    "file": "backtobasics_4.png"
+  },
+  {
+    "id": 5,
+    "file": "bannerofcommand.png"
+  },
+  {
+    "id": 180,
+    "file": "bigbrain_180.png"
+  },
+  {
+    "id": 6,
+    "file": "bladewaltz_6.png"
+  },
+  {
+    "id": 200,
+    "file": "bloodbrother.png"
+  },
+  {
+    "id": 332,
+    "file": "bloodmage.png"
+  },
+  {
+    "id": 7,
+    "file": "bluntforce_7.png"
+  },
+  {
+    "id": 321,
+    "file": "bodyguard.png"
+  },
+  {
+    "id": 324,
+    "file": "bravestofthebrave.png"
+  },
+  {
+    "id": 103,
+    "file": "breadandbutter_103.png"
+  },
+  {
+    "id": 151,
+    "file": "breadandcheese_151.png"
+  },
+  {
+    "id": 150,
+    "file": "breadandjam_150.png"
+  },
+  {
+    "id": 346,
+    "file": "breadsandwich.png"
+  },
+  {
+    "id": 8,
+    "file": "buckleup.png"
+  },
+  {
+    "id": 9,
+    "file": "buffbuddies_9.png"
+  },
+  {
+    "id": 230,
+    "file": "bulletheaven.png"
+  },
+  {
+    "id": 320,
+    "file": "calculatedrisk.png"
+  },
+  {
+    "id": 10,
+    "file": "cannonfodder.png"
+  },
+  {
+    "id": 11,
+    "file": "canttouchthis_11.png"
+  },
+  {
+    "id": 12,
+    "file": "castle.png"
+  },
+  {
+    "id": 13,
+    "file": "celestialbody_13.png"
+  },
+  {
+    "id": 193,
+    "file": "centeroftheuniverse.png"
+  },
+  {
+    "id": 323,
+    "file": "cerberus_323.png"
+  },
+  {
+    "id": 166,
+    "file": "chainlightning.png"
+  },
+  {
+    "id": 14,
+    "file": "chauffeur.png"
+  },
+  {
+    "id": 15,
+    "file": "circleofdeath_15.png"
+  },
+  {
+    "id": 110,
+    "file": "clothesline.png"
+  },
+  {
+    "id": 310,
+    "file": "clowncollege_310.png"
+  },
+  {
+    "id": 16,
+    "file": "combomaster.png"
+  },
+  {
+    "id": 17,
+    "file": "contractkiller.png"
+  },
+  {
+    "id": 18,
+    "file": "courageofthecolossus_18.png"
+  },
+  {
+    "id": 341,
+    "file": "gainanaugmentslot.png"
+  },
+  {
+    "id": 340,
+    "file": "gainaprismaticstatanvil.png"
+  },
+  {
+    "id": 342,
+    "file": "levelaugments.png"
+  },
+  {
+    "id": 118,
+    "file": "criticalhealing_118.png"
+  },
+  {
+    "id": 215,
+    "file": "darkblessing.png"
+  },
+  {
+    "id": 19,
+    "file": "dashing_19.png"
+  },
+  {
+    "id": 20,
+    "file": "dawnbringersresolve_20.png"
+  },
+  {
+    "id": 217,
+    "file": "deathtouch.png"
+  },
+  {
+    "id": 21,
+    "file": "defensivemaneuvers.png"
+  },
+  {
+    "id": 22,
+    "file": "deft_22.png"
+  },
+  {
+    "id": 171,
+    "file": "dematerialize.png"
+  },
+  {
+    "id": 23,
+    "file": "demonsdance_23.png"
+  },
+  {
+    "id": 218,
+    "file": "desecrator.png"
+  },
+  {
+    "id": 330,
+    "file": "despoil.png"
+  },
+  {
+    "id": 24,
+    "file": "dieanotherday.png"
+  },
+  {
+    "id": 25,
+    "file": "divebomber_25.png"
+  },
+  {
+    "id": 301,
+    "file": "divineintervention_301.png"
+  },
+  {
+    "id": 26,
+    "file": "dontblink_26.png"
+  },
+  {
+    "id": 102,
+    "file": "dontchase.png"
+  },
+  {
+    "id": 219,
+    "file": "doomsayer.png"
+  },
+  {
+    "id": 134,
+    "file": "drawyoursword_134.png"
+  },
+  {
+    "id": 216,
+    "file": "dreadbringer.png"
+  },
+  {
+    "id": 225,
+    "file": "dualwield_225.png"
+  },
+  {
+    "id": 27,
+    "file": "earthwake_27.png"
+  },
+  {
+    "id": 344,
+    "file": "energetic.png"
+  },
+  {
+    "id": 315,
+    "file": "energeticcaster.png"
+  },
+  {
+    "id": 28,
+    "file": "erosion_28.png"
+  },
+  {
+    "id": 328,
+    "file": "infernalchains.png"
+  },
+  {
+    "id": 29,
+    "file": "etherealweapon_29.png"
+  },
+  {
+    "id": 30,
+    "file": "eureka_30.png"
+  },
+  {
+    "id": 31,
+    "file": "evocation.png"
+  },
+  {
+    "id": 32,
+    "file": "executioner_32.png"
+  },
+  {
+    "id": 33,
+    "file": "extendoarm.png"
+  },
+  {
+    "id": 34,
+    "file": "fallenaegis.png"
+  },
+  {
+    "id": 220,
+    "file": "fanthehammer_220.png"
+  },
+  {
+    "id": 35,
+    "file": "feeltheburn_35.png"
+  },
+  {
+    "id": 194,
+    "file": "feymagic_194.png"
+  },
+  {
+    "id": 229,
+    "file": "firesale.png"
+  },
+  {
+    "id": 36,
+    "file": "firebrand_36.png"
+  },
+  {
+    "id": 308,
+    "file": "firefox_308.png"
+  },
+  {
+    "id": 37,
+    "file": "firstaidkit_37.png"
+  },
+  {
+    "id": 187,
+    "file": "flashbang_187.png"
+  },
+  {
+    "id": 116,
+    "file": "flashy_116.png"
+  },
+  {
+    "id": 38,
+    "file": "frombeginningtoend_38.png"
+  },
+  {
+    "id": 39,
+    "file": "frostwraith_39.png"
+  },
+  {
+    "id": 40,
+    "file": "frozenfoundations.png"
+  },
+  {
+    "id": 222,
+    "file": "fruitsofyourlabor.png"
+  },
+  {
+    "id": 213,
+    "file": "fullyautomated.png"
+  },
+  {
+    "id": 355,
+    "file": "gainstatanvil.png"
+  },
+  {
+    "id": 234,
+    "file": "gambaanvil.png"
+  },
+  {
+    "id": 195,
+    "file": "giantslayer_195.png"
+  },
+  {
+    "id": 366,
+    "file": "abstainfrompower.png"
+  },
+  {
+    "id": 367,
+    "file": "abstainfromrisk.png"
+  },
+  {
+    "id": 365,
+    "file": "abstainfromwealth.png"
+  },
+  {
+    "id": 348,
+    "file": "bloodrazor.png"
+  },
+  {
+    "id": 347,
+    "file": "chemtechputrifier.png"
+  },
+  {
+    "id": 372,
+    "file": "compulsionforpower.png"
+  },
+  {
+    "id": 373,
+    "file": "compulsionforrisk.png"
+  },
+  {
+    "id": 371,
+    "file": "compulsionforwealth.png"
+  },
+  {
+    "id": 369,
+    "file": "cravingforpower.png"
+  },
+  {
+    "id": 370,
+    "file": "cravingforrisk.png"
+  },
+  {
+    "id": 368,
+    "file": "cravingforwealth.png"
+  },
+  {
+    "id": 349,
+    "file": "dematerializer.png"
+  },
+  {
+    "id": 350,
+    "file": "enchantedflask.png"
+  },
+  {
+    "id": 351,
+    "file": "frozenmallet.png"
+  },
+  {
+    "id": 359,
+    "file": "lambsrespite.png"
+  },
+  {
+    "id": 354,
+    "file": "remnantofthewatchers.png"
+  },
+  {
+    "id": 303,
+    "file": "sacrificeforgold.png"
+  },
+  {
+    "id": 304,
+    "file": "sacrificeforprismatic.png"
+  },
+  {
+    "id": 302,
+    "file": "sacrificeforsilver.png"
+  },
+  {
+    "id": 392,
+    "file": "swindlersorb.png"
+  },
+  {
+    "id": 361,
+    "file": "allydemon.png"
+  },
+  {
+    "id": 362,
+    "file": "allyhunter.png"
+  },
+  {
+    "id": 358,
+    "file": "wolfsfrenzy.png"
+  },
+  {
+    "id": 41,
+    "file": "goliath_41.png"
+  },
+  {
+    "id": 138,
+    "file": "goredrink_138.png"
+  },
+  {
+    "id": 316,
+    "file": "grievousvenom.png"
+  },
+  {
+    "id": 42,
+    "file": "guiltypleasure_42.png"
+  },
+  {
+    "id": 334,
+    "file": "hallucinate.png"
+  },
+  {
+    "id": 241,
+    "file": "hattrick.png"
+  },
+  {
+    "id": 181,
+    "file": "heavyhitter_181.png"
+  },
+  {
+    "id": 338,
+    "file": "hivemind.png"
+  },
+  {
+    "id": 207,
+    "file": "holdverystill.png"
+  },
+  {
+    "id": 198,
+    "file": "holyfire_198.png"
+  },
+  {
+    "id": 105,
+    "file": "homeguard_105.png"
+  },
+  {
+    "id": 357,
+    "file": "hybrid.png"
+  },
+  {
+    "id": 44,
+    "file": "icecold_44.png"
+  },
+  {
+    "id": 149,
+    "file": "impassable_149.png"
+  },
+  {
+    "id": 45,
+    "file": "infernalconduit_45.png"
+  },
+  {
+    "id": 46,
+    "file": "infernalsoul_46.png"
+  },
+  {
+    "id": 47,
+    "file": "itscritical_47.png"
+  },
+  {
+    "id": 211,
+    "file": "itskillingtime_211.png"
+  },
+  {
+    "id": 48,
+    "file": "jeweledgauntlet_48.png"
+  },
+  {
+    "id": 49,
+    "file": "juicebox.png"
+  },
+  {
+    "id": 242,
+    "file": "juicepress.png"
+  },
+  {
+    "id": 50,
+    "file": "keystoneconjurer_50.png"
+  },
+  {
+    "id": 174,
+    "file": "lasereyes.png"
+  },
+  {
+    "id": 305,
+    "file": "legday_305.png"
+  },
+  {
+    "id": 231,
+    "file": "lightwarden.png"
+  },
+  {
+    "id": 51,
+    "file": "lightemup_51.png"
+  },
+  {
+    "id": 52,
+    "file": "lightningstrikes_52.png"
+  },
+  {
+    "id": 53,
+    "file": "madscientist_53.png"
+  },
+  {
+    "id": 133,
+    "file": "magicmissile_133.png"
+  },
+  {
+    "id": 345,
+    "file": "magicalgirl.png"
+  },
+  {
+    "id": 129,
+    "file": "marksmage_129.png"
+  },
+  {
+    "id": 54,
+    "file": "masterofduality_54.png"
+  },
+  {
+    "id": 55,
+    "file": "midnightexpress.png"
+  },
+  {
+    "id": 56,
+    "file": "mindtomatter_56.png"
+  },
+  {
+    "id": 104,
+    "file": "minionmancer_104.png"
+  },
+  {
+    "id": 172,
+    "file": "mirrorimage.png"
+  },
+  {
+    "id": 57,
+    "file": "mountainsoul_57.png"
+  },
+  {
+    "id": 331,
+    "file": "multitool.png"
+  },
+  {
+    "id": 58,
+    "file": "mysticpunch_58.png"
+  },
+  {
+    "id": 59,
+    "file": "mythical.png"
+  },
+  {
+    "id": 329,
+    "file": "necromancer.png"
+  },
+  {
+    "id": 177,
+    "file": "nestingdoll.png"
+  },
+  {
+    "id": 43,
+    "file": "nowyouseeme.png"
+  },
+  {
+    "id": 3,
+    "file": "nullaugment.png"
+  },
+  {
+    "id": 251,
+    "file": "numbtopain.png"
+  },
+  {
+    "id": 109,
+    "file": "oathsworn.png"
+  },
+  {
+    "id": 60,
+    "file": "oceansoul_60.png"
+  },
+  {
+    "id": 61,
+    "file": "okboomerang_61.png"
+  },
+  {
+    "id": 62,
+    "file": "omnisoul_62.png"
+  },
+  {
+    "id": 208,
+    "file": "orbitallaser_208.png"
+  },
+  {
+    "id": 63,
+    "file": "outlawsgrit_63.png"
+  },
+  {
+    "id": 311,
+    "file": "overflow_311.png"
+  },
+  {
+    "id": 317,
+    "file": "pandorasbox_317.png"
+  },
+  {
+    "id": 335,
+    "file": "panicroom.png"
+  },
+  {
+    "id": 240,
+    "file": "parasiticmutation.png"
+  },
+  {
+    "id": 175,
+    "file": "parasiticrelationship.png"
+  },
+  {
+    "id": 306,
+    "file": "parry.png"
+  },
+  {
+    "id": 64,
+    "file": "perseverance_64.png"
+  },
+  {
+    "id": 65,
+    "file": "phenomenalevil_65.png"
+  },
+  {
+    "id": 224,
+    "file": "prismaticegg.png"
+  },
+  {
+    "id": 66,
+    "file": "quantumcomputing_66.png"
+  },
+  {
+    "id": 192,
+    "file": "questangelofretribution.png"
+  },
+  {
+    "id": 318,
+    "file": "questmadhatter.png"
+  },
+  {
+    "id": 333,
+    "file": "questriteoftheforgegod.png"
+  },
+  {
+    "id": 152,
+    "file": "queststeelyourheart.png"
+  },
+  {
+    "id": 319,
+    "file": "questthreesacredtreasures.png"
+  },
+  {
+    "id": 154,
+    "file": "questurfschampion.png"
+  },
+  {
+    "id": 156,
+    "file": "questwoogletswitchcap.png"
+  },
+  {
+    "id": 67,
+    "file": "rabblerousing.png"
+  },
+  {
+    "id": 125,
+    "file": "raidboss.png"
+  },
+  {
+    "id": 68,
+    "file": "recursion_68.png"
+  },
+  {
+    "id": 364,
+    "file": "replaceaugment.png"
+  },
+  {
+    "id": 69,
+    "file": "repulsor_69.png"
+  },
+  {
+    "id": 165,
+    "file": "restart.png"
+  },
+  {
+    "id": 70,
+    "file": "restlessrestoration_70.png"
+  },
+  {
+    "id": 343,
+    "file": "righteousfury.png"
+  },
+  {
+    "id": 170,
+    "file": "scopedweapons_170.png"
+  },
+  {
+    "id": 71,
+    "file": "scopierweapons_71.png"
+  },
+  {
+    "id": 115,
+    "file": "scopiestweapons_115.png"
+  },
+  {
+    "id": 72,
+    "file": "searingdawn_72.png"
+  },
+  {
+    "id": 108,
+    "file": "selfdestruct_108.png"
+  },
+  {
+    "id": 120,
+    "file": "servebeyonddeath.png"
+  },
+  {
+    "id": 73,
+    "file": "shadowrunner_73.png"
+  },
+  {
+    "id": 74,
+    "file": "shrinkray_74.png"
+  },
+  {
+    "id": 356,
+    "file": "silverspoon.png"
+  },
+  {
+    "id": 113,
+    "file": "skilledsniper_113.png"
+  },
+  {
+    "id": 136,
+    "file": "slaparound_136.png"
+  },
+  {
+    "id": 307,
+    "file": "sleepdart.png"
+  },
+  {
+    "id": 232,
+    "file": "slimetime_232.png"
+  },
+  {
+    "id": 250,
+    "file": "slowandsteady_250.png"
+  },
+  {
+    "id": 75,
+    "file": "slowcooker_75.png"
+  },
+  {
+    "id": 176,
+    "file": "snowballfight.png"
+  },
+  {
+    "id": 76,
+    "file": "sonicboom_76.png"
+  },
+  {
+    "id": 77,
+    "file": "soulsiphon_77.png"
+  },
+  {
+    "id": 135,
+    "file": "spellwake.png"
+  },
+  {
+    "id": 214,
+    "file": "spintowin_214.png"
+  },
+  {
+    "id": 326,
+    "file": "spiritinfusion.png"
+  },
+  {
+    "id": 78,
+    "file": "spiritlink.png"
+  },
+  {
+    "id": 204,
+    "file": "stackosaurusrex_204.png"
+  },
+  {
+    "id": 226,
+    "file": "stats_226.png"
+  },
+  {
+    "id": 227,
+    "file": "statsonstats_227.png"
+  },
+  {
+    "id": 228,
+    "file": "statsonstatsonstats_228.png"
+  },
+  {
+    "id": 223,
+    "file": "summonerrevolution.png"
+  },
+  {
+    "id": 123,
+    "file": "summonersroulette.png"
+  },
+  {
+    "id": 239,
+    "file": "symbioticmutation.png"
+  },
+  {
+    "id": 79,
+    "file": "symphonyofwar_79.png"
+  },
+  {
+    "id": 313,
+    "file": "tankengine_313.png"
+  },
+  {
+    "id": 80,
+    "file": "tankitorleaveit_80.png"
+  },
+  {
+    "id": 81,
+    "file": "tapdancer_81.png"
+  },
+  {
+    "id": 82,
+    "file": "thebrutalizer_82.png"
+  },
+  {
+    "id": 83,
+    "file": "thiefsgloves.png"
+  },
+  {
+    "id": 84,
+    "file": "threadtheneedle_84.png"
+  },
+  {
+    "id": 85,
+    "file": "tormentor_85.png"
+  },
+  {
+    "id": 221,
+    "file": "trailblazer.png"
+  },
+  {
+    "id": 243,
+    "file": "transmutechaos_243.png"
+  },
+  {
+    "id": 237,
+    "file": "transmutegold_237.png"
+  },
+  {
+    "id": 238,
+    "file": "transmuteprismatic_238.png"
+  },
+  {
+    "id": 236,
+    "file": "tricksterdemon.png"
+  },
+  {
+    "id": 86,
+    "file": "trueshotprodigy_86.png"
+  },
+  {
+    "id": 107,
+    "file": "twicethrice_107.png"
+  },
+  {
+    "id": 87,
+    "file": "typhoon_87.png"
+  },
+  {
+    "id": 88,
+    "file": "ultimaterevolution_88.png"
+  },
+  {
+    "id": 233,
+    "file": "ultimateroulette.png"
+  },
+  {
+    "id": 112,
+    "file": "ultimateunstoppable_112.png"
+  },
+  {
+    "id": 327,
+    "file": "undyingguard.png"
+  },
+  {
+    "id": 314,
+    "file": "unshackled.png"
+  },
+  {
+    "id": 89,
+    "file": "vanish.png"
+  },
+  {
+    "id": 90,
+    "file": "vengeance.png"
+  },
+  {
+    "id": 91,
+    "file": "virtuouscycle.png"
+  },
+  {
+    "id": 92,
+    "file": "vulnerability_92.png"
+  },
+  {
+    "id": 93,
+    "file": "warmuproutine.png"
+  },
+  {
+    "id": 312,
+    "file": "wellberightback.png"
+  },
+  {
+    "id": 94,
+    "file": "willingsacrifice.png"
+  },
+  {
+    "id": 95,
+    "file": "windspeakersblessing_95.png"
+  },
+  {
+    "id": 96,
+    "file": "wisdomofages.png"
+  },
+  {
+    "id": 97,
+    "file": "witchfulthinking_97.png"
+  },
+  {
+    "id": 98,
+    "file": "withhaste_98.png"
+  },
+  {
+    "id": 99,
+    "file": "zhonyasepiphany.png"
+  },
+  {
+    "id": 206,
+    "file": "escapade_206.png"
+  }
+]
