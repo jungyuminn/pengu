@@ -25,9 +25,9 @@ import type {
   StatsCache,
 } from "./ports";
 
-const OCR_HUNT_MS = 900;
-const WATCH_OCR_MS = 900;
-const MISS_HIDE = 8;
+const OCR_HUNT_MS = 400;
+const WATCH_OCR_MS = 280;
+const MISS_HIDE = 3;
 const PLAYING = new Set(["GameStart", "InProgress"]);
 
 export class OverlayCycle {
@@ -155,11 +155,12 @@ export class OverlayCycle {
       return this.lastOcrView;
     }
     this.huntBusy = true;
-    this.lastOcrAt = now;
     try {
       const page = await this.screen.read();
+      this.lastOcrAt = Date.now();
       return this.viewFromPage(snapshot, champion, championAugments, page, scheduled);
     } catch (error) {
+      this.lastOcrAt = Date.now();
       this.say(`화면 읽기 실패: ${error instanceof Error ? error.message : "unknown"}`);
       return this.lastOcrView ?? idleView();
     } finally {
