@@ -1,6 +1,7 @@
 import { BrowserWindow } from "electron";
 import path from "path";
 import { appIcon } from "./app-icon";
+import { fadeInWindow, fadeOutWindow } from "./window-fade";
 
 const MIN_MS = 1400;
 
@@ -59,20 +60,15 @@ export async function revealMainWindow(
   if (wait) await delay(wait);
   if (!main.isDestroyed()) {
     main.setIcon(appIcon());
+    main.setOpacity(0);
     main.show();
     main.focus();
   }
-  if (splash.isDestroyed()) return;
-  await fadeOut(splash);
+  await Promise.all([
+    main.isDestroyed() ? Promise.resolve() : fadeInWindow(main, 320),
+    splash.isDestroyed() ? Promise.resolve() : fadeOutWindow(splash, 220),
+  ]);
   if (!splash.isDestroyed()) splash.close();
-}
-
-async function fadeOut(window: BrowserWindow): Promise<void> {
-  for (let step = 10; step >= 0; step -= 1) {
-    if (window.isDestroyed()) return;
-    window.setOpacity(step / 10);
-    await delay(16);
-  }
 }
 
 function delay(ms: number): Promise<void> {
