@@ -15,15 +15,15 @@ function champ(partial: Partial<ChampionStat> & Pick<ChampionStat, "id" | "grade
 }
 
 describe("championTiers", () => {
-  it("groups by grade and sorts by pick rate", () => {
+  it("groups by grade and keeps aramgg order inside each grade", () => {
     const groups = championTiers([
+      champ({ id: 223, grade: "S", pickRate: 15.58 }),
+      champ({ id: 17, grade: "S", pickRate: 15.71 }),
       champ({ id: 1, grade: "A", pickRate: 10 }),
-      champ({ id: 2, grade: "S", pickRate: 8 }),
-      champ({ id: 3, grade: "S", pickRate: 20 }),
     ]);
 
     expect(groups.map((group) => group.grade)).toEqual(["S", "A"]);
-    expect(groups[0]?.champions.map((item) => item.id)).toEqual([3, 2]);
+    expect(groups[0]?.champions.map((item) => item.id)).toEqual([223, 17]);
   });
 });
 

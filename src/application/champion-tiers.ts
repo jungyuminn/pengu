@@ -20,8 +20,6 @@ export function championTiers(champions: ChampionStat[]): ChampionTierGroup[] {
     grade,
     champions: champions
       .filter((item) => item.grade === grade)
-      .slice()
-      .sort((left, right) => (right.pickRate ?? 0) - (left.pickRate ?? 0))
       .map((item) => ({ ...item, searchText: championSearchText(item) })),
   })).filter((group) => group.champions.length > 0);
 }
