@@ -225,6 +225,28 @@ describe("OverlayCycle", () => {
     expect(reroll.view.cards.map((card) => card.augment?.id)).toEqual(["bees", "eureka"]);
   });
 
+  it("drops stale grades after a short miss so a reroll is not stuck", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 12, level: 3, isDead: false }),
+    );
+
+    const first = await cycle.tick();
+    expect(first.view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
+    screen.titles = [];
+    const held: string[][] = [];
+    for (let i = 0; i < 3; i += 1) {
+      cycle["lastOcrAt"] = 0;
+      held.push((await cycle.tick()).view.cards.map((card) => card.augment?.id));
+    }
+    expect(held[0]).toEqual(["eureka", "bees"]);
+    expect(held[held.length - 1]).toEqual([]);
+  });
+
   it("does not turn card descriptions into extra grade slots", async () => {
     const screen = new RecordingScreen();
     screen.cardCount = 3;
