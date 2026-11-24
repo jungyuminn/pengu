@@ -37,7 +37,7 @@ function meKey(state) {
 }
 
 function paintMe(state) {
-  const pane = document.querySelector("#mePane");
+  const pane = document.querySelector("#mePaneBody") ?? document.querySelector("#mePane");
   if (!pane) return;
   const home = state?.home ?? {};
   const connected = Boolean(state?.leagueConnected);
@@ -47,7 +47,7 @@ function paintMe(state) {
 }
 
 function highlightMatch(scrollTo = false) {
-  const pane = document.querySelector("#mePane");
+  const pane = document.querySelector("#mePaneBody") ?? document.querySelector("#mePane");
   if (!pane) return;
   let active = null;
   for (const row of pane.querySelectorAll(".match-row")) {
@@ -214,3 +214,31 @@ function matchIcons(home) {
     ]),
   ];
 }
+
+function mePaneOpen() {
+  return !document.documentElement.classList.contains("me-closed");
+}
+
+function setMePaneOpen(open) {
+  document.documentElement.classList.toggle("me-closed", !open);
+  const btn = document.querySelector("#meToggle");
+  const body = document.querySelector("#mePaneBody");
+  const label = open ? "내 정보 접기" : "내 정보 펼치기";
+  if (btn) {
+    btn.setAttribute("aria-expanded", String(open));
+    btn.setAttribute("aria-label", label);
+    btn.title = label;
+  }
+  if (body) body.setAttribute("aria-hidden", String(!open));
+  try {
+    localStorage.setItem("pengu-me-open", open ? "1" : "0");
+  } catch {
+    // storage may be blocked
+  }
+}
+
+document.querySelector("#meToggle")?.addEventListener("click", (event) => {
+  event.stopPropagation();
+  setMePaneOpen(!mePaneOpen());
+});
+setMePaneOpen(mePaneOpen());

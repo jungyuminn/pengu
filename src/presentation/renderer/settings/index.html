@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="./home.css" />
     <link rel="stylesheet" href="./match-detail.css" />
     <link rel="stylesheet" href="../mvp.css" />
+    <script>
+      try {
+        if (localStorage.getItem("pengu-me-open") === "0") {
+          document.documentElement.classList.add("me-closed");
+        }
+      } catch (error) {}
+    </script>
   </head>
   <body>
     <header class="titlebar">
@@ -57,20 +64,27 @@
       <span id="message" class="message"></span>
     </div>
 
-    <div class="board">
-      <aside class="tier-pane">
-        <input id="championSearch" type="search" placeholder="챔피언 검색" />
-        <div class="list-wrap">
-          <div class="list-head">
-            <span class="rank">#</span>
-            <span class="champ-col">챔피언</span>
-            <span class="tier-col">티어</span>
+    <div class="board-wrap">
+      <div class="board">
+        <aside class="tier-pane">
+          <input id="championSearch" type="search" placeholder="챔피언 검색" />
+          <div class="list-wrap">
+            <div class="list-head">
+              <span class="rank">#</span>
+              <span class="champ-col">챔피언</span>
+              <span class="tier-col">티어</span>
+            </div>
+            <div id="tierList"></div>
           </div>
-          <div id="tierList"></div>
-        </div>
-      </aside>
-      <section class="detail-pane" id="championDetail"></section>
-      <aside class="me-pane" id="mePane"></aside>
+        </aside>
+        <section class="detail-pane" id="championDetail"></section>
+        <aside class="me-pane" id="mePane">
+          <div class="me-pane-body" id="mePaneBody"></div>
+        </aside>
+      </div>
+      <button type="button" id="meToggle" class="me-toggle" aria-expanded="true" aria-controls="mePaneBody" title="내 정보 접기" aria-label="내 정보 접기">
+        <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M4.5 2.5L8 6l-3.5 3.5" /></svg>
+      </button>
     </div>
 
     <script src="../grade-mark.js"></script>

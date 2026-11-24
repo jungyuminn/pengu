@@ -5,7 +5,7 @@ button:not(.chrome-btn),
   isolation: isolate;
 }
 
-button:not(.chrome-btn):not(.streak-mark):not(.match-row):not(.score-row),
+button:not(.chrome-btn):not(.me-toggle):not(.streak-mark):not(.match-row):not(.score-row),
 .toolbar .check {
   transform-origin: center;
   transition:
@@ -29,7 +29,7 @@ button:not(.chrome-btn):not(.streak-mark)::before,
   transition: background-color 80ms ease;
 }
 
-button:not(.chrome-btn):not(.streak-mark):not(.match-row):not(.score-row).is-pressed,
+button:not(.chrome-btn):not(.me-toggle):not(.streak-mark):not(.match-row):not(.score-row).is-pressed,
 .toolbar .check.is-pressed {
   transform: scale(0.96);
   transition-duration: 80ms;

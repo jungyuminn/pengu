@@ -7,11 +7,94 @@
 .me-pane {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   min-width: 0;
   min-height: 0;
   overflow: hidden;
   border-left: 1px solid var(--line);
   padding: 20px 16px;
+  transition:
+    padding 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 280ms ease;
+}
+
+html.me-closed .me-pane {
+  padding-left: 0;
+  padding-right: 0;
+  border-left-color: transparent;
+  pointer-events: none;
+}
+
+.me-pane-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 268px;
+  min-height: 0;
+  width: 100%;
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 240ms ease 40ms,
+    transform 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.me-closed .me-pane-body {
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    opacity 160ms ease,
+    transform 300ms cubic-bezier(0.4, 0, 1, 1);
+}
+
+button.me-toggle {
+  position: absolute;
+  top: 16px;
+  right: 289px;
+  z-index: 6;
+  width: 22px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    right 380ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 160ms ease,
+    color 160ms ease,
+    border-color 160ms ease;
+}
+
+html.me-closed button.me-toggle {
+  right: 0;
+  border-radius: 8px 0 0 8px;
+  border-right: 0;
+}
+
+button.me-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+button.me-toggle svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.me-closed button.me-toggle svg {
+  transform: rotate(180deg);
 }
 
 .me {
