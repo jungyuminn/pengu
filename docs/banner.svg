@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="420" viewBox="0 0 1280 420" role="img" aria-label="Pengu">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070b14"/>
+      <stop offset="45%" stop-color="#10182a"/>
+      <stop offset="100%" stop-color="#0c1422"/>
+    </linearGradient>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1d5cff" stop-opacity="0"/>
+      <stop offset="35%" stop-color="#3d7eff" stop-opacity=".55"/>
+      <stop offset="62%" stop-color="#8ec5ff" stop-opacity=".28"/>
+      <stop offset="100%" stop-color="#2bb673" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="orb" cx="18%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#3d7eff" stop-opacity=".38"/>
+      <stop offset="100%" stop-color="#3d7eff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orb2" cx="88%" cy="80%" r="40%">
+      <stop offset="0%" stop-color="#2bb673" stop-opacity=".22"/>
+      <stop offset="100%" stop-color="#2bb673" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="title" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f7fbff"/>
+      <stop offset="100%" stop-color="#b7c7e6"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1280" height="420" rx="28" fill="url(#bg)"/>
+  <rect width="1280" height="420" rx="28" fill="url(#orb)"/>
+  <rect width="1280" height="420" rx="28" fill="url(#orb2)"/>
+  <rect x="0" y="168" width="1280" height="84" fill="url(#aurora)"/>
+
+  <g opacity=".18" fill="none" stroke="#8ec5ff" stroke-width="1">
+    <path d="M-20 310 C 180 250, 320 370, 520 300 S 860 220, 1320 280"/>
+    <path d="M-20 340 C 220 290, 380 390, 600 320 S 940 250, 1320 330"/>
+  </g>
+
+  <text x="640" y="168" text-anchor="middle" font-family="Segoe UI, Trebuchet MS, Arial, sans-serif" font-size="92" font-weight="800" letter-spacing="8" fill="url(#title)">PENGU</text>
+  <text x="640" y="216" text-anchor="middle" font-family="Malgun Gothic, Apple SD Gothic Neo, Segoe UI, sans-serif" font-size="22" fill="#9aa6b8">ù |å $Ñt</text>
+
+  <g font-family="Segoe UI, Trebuchet MS, Arial, sans-serif" font-size="22" font-weight="800" text-anchor="middle">
+    <rect x="436" y="262" width="52" height="52" rx="14" fill="#3d7eff"/>
+    <text x="462" y="297" fill="#fff">S</text>
+    <rect x="500" y="262" width="52" height="52" rx="14" fill="#2bb673"/>
+    <text x="526" y="297" fill="#fff">A</text>
+    <rect x="564" y="262" width="52" height="52" rx="14" fill="#f0a020"/>
+    <text x="590" y="297" fill="#fff">B</text>
+    <rect x="628" y="262" width="52" height="52" rx="14" fill="#6b7280"/>
+    <text x="654" y="297" fill="#fff">C</text>
+    <rect x="720" y="262" width="52" height="52" rx="14" fill="#3d7eff"/>
+    <text x="746" y="297" fill="#fff">1</text>
+    <rect x="784" y="262" width="52" height="52" rx="14" fill="#2bb673"/>
+    <text x="810" y="297" fill="#fff">2</text>
+    <rect x="848" y="262" width="52" height="52" rx="14" fill="#f0a020"/>
+    <text x="874" y="297" fill="#fff">3</text>
+    <rect x="912" y="262" width="52" height="52" rx="14" fill="#6b7280"/>
+    <text x="938" y="297" fill="#fff">4</text>
+  </g>
+
+  <text x="462" y="342" text-anchor="middle" font-family="Malgun Gothic, Apple SD Gothic Neo, Segoe UI, sans-serif" font-size="12" fill="#9aa6b8">ù Ò	</text>
+  <text x="830" y="342" text-anchor="middle" font-family="Malgun Gothic, Apple SD Gothic Neo, Segoe UI, sans-serif" font-size="12" fill="#9aa6b8">T<∏ ¥</text>
+</svg>
