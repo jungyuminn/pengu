@@ -1,0 +1,71 @@
+button:not(.chrome-btn),
+.toolbar .check {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  transform-origin: center;
+  transition:
+    transform 180ms cubic-bezier(0.34, 1.45, 0.64, 1),
+    background-color 120ms ease;
+}
+
+.toolbar .check {
+  border-radius: 8px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+button:not(.chrome-btn)::before,
+.toolbar .check::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: transparent;
+  pointer-events: none;
+  transition: background-color 80ms ease;
+}
+
+button:not(.chrome-btn).is-pressed,
+.toolbar .check.is-pressed {
+  transform: scale(0.96);
+  transition-duration: 80ms;
+  transition-timing-function: ease-out;
+}
+
+button:not(.chrome-btn).is-pressed::before,
+.toolbar .check.is-pressed::before {
+  background: var(--press);
+}
+
+.press-ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: var(--ripple);
+  pointer-events: none;
+  transform: scale(0);
+  animation: press-ripple 420ms ease-out forwards;
+}
+
+@keyframes press-ripple {
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button:not(.chrome-btn),
+  .toolbar .check {
+    transition: none;
+  }
+
+  button:not(.chrome-btn).is-pressed,
+  .toolbar .check.is-pressed {
+    transform: none;
+  }
+
+  .press-ripple {
+    animation: none;
+    display: none;
+  }
+}
