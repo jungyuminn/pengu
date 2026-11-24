@@ -14,6 +14,7 @@ export async function fetchChampionDetailsBulk(
   version: string,
   ids: number[],
   lookup?: ClientLookup,
+  onProgress?: (done: number, total: number) => void,
 ): Promise<ChampionDetail[]> {
   if (ids.length === 0) return [];
   const wanted = new Set(ids);
@@ -21,8 +22,15 @@ export async function fetchChampionDetailsBulk(
   const shards = (index.shards ?? []).filter((shard) =>
     (shard.championIds ?? []).some((id) => wanted.has(id)),
   );
-  const payloads = await mapPool(shards, CONCURRENCY, (shard) => fetchShard(version, shard.path, lookup));
-  return payloads.flat().filter((detail) => wanted.has(detail.id));
+  let done = 0;
+  const payloads = await mapPool(shards, CONCURRENCY, async (shard) => {
+    const rows = await fetchShard(version, shard.path, lookup);
+    const hit = rows.filter((detail) => wanted.has(detail.id));
+    done += hit.length;
+    onProgress?.(Math.min(done, ids.length), ids.length);
+    return hit;
+  });
+  return payloads.flat();
 }
 
 async function fetchShard(

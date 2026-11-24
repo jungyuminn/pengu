@@ -10,6 +10,7 @@ import { mergeDetailNames } from "./merge-detail-names";
 import type {
   AugmentDescriptions,
   AugmentIcons,
+  BulkProgress,
   ChampionDetailCache,
   ChampionDetailCatalog,
   ChampionSkills,
@@ -32,19 +33,25 @@ export class HydrateChampionDetails {
     private readonly augmentDescriptions: AugmentDescriptions = { fetch: async () => emptyAugmentDescriptions() },
   ) {}
 
-  async execute(): Promise<void> {
+  async execute(onProgress?: BulkProgress, force = false): Promise<void> {
     const snapshot = await this.stats.read();
     const ids = snapshot?.champions.map((item) => item.id).filter((id) => id > 0) ?? [];
     const missing: number[] = [];
     for (const id of ids) {
       const cached = await this.cache.read(id);
-      if (cached && isSyncedToday(cached.syncedAt) && isFreshChampionDetail(cached, snapshot?.patch)) {
+      if (
+        !force &&
+        cached &&
+        isSyncedToday(cached.syncedAt) &&
+        isFreshChampionDetail(cached, snapshot?.patch)
+      ) {
         continue;
       }
       missing.push(id);
     }
     if (missing.length === 0) return;
 
+    onProgress?.(0, missing.length);
     const [names, icons, texts, spells, items] = await Promise.all([
       this.gear.fetch(),
       this.augmentIcons.fetch(),
@@ -52,7 +59,7 @@ export class HydrateChampionDetails {
       this.spellIcons.fetch(),
       this.itemIcons.fetch(),
     ]);
-    const details = await this.catalog.fetchBulk(missing);
+    const details = await this.catalog.fetchBulk(missing, onProgress);
     for (const detail of details) {
       await this.cache.write(
         detail.id,

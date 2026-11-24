@@ -106,9 +106,11 @@ export interface ChampionDetailCache {
   write(championId: number, detail: ChampionDetail): Promise<void>;
 }
 
+export type BulkProgress = (done: number, total: number) => void;
+
 export interface ChampionDetailCatalog {
   fetch(championId: number): Promise<ChampionDetail>;
-  fetchBulk(ids: number[]): Promise<ChampionDetail[]>;
+  fetchBulk(ids: number[], onProgress?: BulkProgress): Promise<ChampionDetail[]>;
 }
 
 export interface GearNameIndex {

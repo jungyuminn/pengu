@@ -26,9 +26,11 @@ describe("HydrateChampionDetails", () => {
       { read: async () => snapshot([1, 2, 3]), write: async () => undefined },
     );
 
-    await hydrate.execute();
+    const progress: Array<[number, number]> = [];
+    await hydrate.execute((done, total) => progress.push([done, total]));
     expect(requested).toEqual([[2, 3]]);
     expect(written).toEqual([2, 3]);
+    expect(progress[0]).toEqual([0, 2]);
   });
 
   it("skips the network when every champion is already cached today", async () => {
@@ -54,6 +56,31 @@ describe("HydrateChampionDetails", () => {
 
     await hydrate.execute();
     expect(bulkCalls).toBe(0);
+  });
+
+  it("re-downloads cached champions when forced", async () => {
+    const requested: number[][] = [];
+    const hydrate = new HydrateChampionDetails(
+      {
+        fetch: async () => detail(1),
+        fetchBulk: async (ids) => {
+          requested.push(ids);
+          return ids.map(detail);
+        },
+      },
+      {
+        read: async (id) => ({
+          syncedAt: new Date().toISOString(),
+          schema: CHAMPION_DETAIL_SCHEMA,
+          detail: detail(id),
+        }),
+        write: async () => undefined,
+      },
+      { read: async () => snapshot([1, 2]), write: async () => undefined },
+    );
+
+    await hydrate.execute(undefined, true);
+    expect(requested).toEqual([[1, 2]]);
   });
 });
 

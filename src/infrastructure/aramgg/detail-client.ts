@@ -1,5 +1,5 @@
 import type { ChampionDetail } from "../../domain/champion-detail";
-import type { ChampionDetailCatalog } from "../../application/ports";
+import type { BulkProgress, ChampionDetailCatalog } from "../../application/ports";
 import { getJson } from "../http";
 import { fetchClientLookup, type ClientLookup } from "./client-lookup";
 import { mapChampionDetail } from "./detail-mapper";
@@ -29,9 +29,9 @@ export class AramggChampionDetails implements ChampionDetailCatalog {
     return mapChampionDetail(payload, lookup);
   }
 
-  async fetchBulk(ids: number[]): Promise<ChampionDetail[]> {
+  async fetchBulk(ids: number[], onProgress?: BulkProgress): Promise<ChampionDetail[]> {
     const version = await this.version();
-    return fetchChampionDetailsBulk(version, ids, await this.ensureLookup());
+    return fetchChampionDetailsBulk(version, ids, await this.ensureLookup(), onProgress);
   }
 
   private async version(): Promise<string> {

@@ -5,6 +5,7 @@ contextBridge.exposeInMainWorld("pengu", {
   saveApiKey: (apiKey: string) => ipcRenderer.invoke("pengu:save-api-key", apiKey),
   toggleOverlay: (enabled: boolean) => ipcRenderer.invoke("pengu:toggle-overlay", enabled),
   setTheme: (theme: string) => ipcRenderer.invoke("pengu:set-theme", theme),
+  sync: () => ipcRenderer.invoke("pengu:sync"),
   preview: () => ipcRenderer.invoke("pengu:preview"),
   championDetail: (championId: number) => ipcRenderer.invoke("pengu:champion-detail", championId),
   matchFits: (players: unknown) => ipcRenderer.invoke("pengu:match-fits", players),
@@ -19,5 +20,10 @@ contextBridge.exposeInMainWorld("pengu", {
     const wrapped = (_event: unknown, championId: number | null) => listener(championId);
     ipcRenderer.on("pengu:playing", wrapped);
     return () => ipcRenderer.removeListener("pengu:playing", wrapped);
+  },
+  onMessage: (listener: (message: string) => void) => {
+    const wrapped = (_event: unknown, message: string) => listener(message);
+    ipcRenderer.on("pengu:message", wrapped);
+    return () => ipcRenderer.removeListener("pengu:message", wrapped);
   },
 });
