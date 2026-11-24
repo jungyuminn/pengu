@@ -1,0 +1,9 @@
+node_modules/
+dist/
+coverage/
+*.log
+.DS_Store
+.env
+api_key.txt
+secrets/aramgg-key.txt
+.cursor/
