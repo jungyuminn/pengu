@@ -33,7 +33,7 @@
         <button type="button" id="minimize" class="chrome-btn" aria-label="최소화" title="최소화">
           <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8" /></svg>
         </button>
-        <button type="button" id="closeWindow" class="chrome-btn close" aria-label="닫기" title="닫기">
+        <button type="button" id="closeWindow" class="chrome-btn close" aria-label="트레이로 숨기기" title="트레이로 숨기기">
           <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2.5 2.5l7 7M9.5 2.5l-7 7" /></svg>
         </button>
       </div>
@@ -52,15 +52,15 @@
     </div>
 
     <div class="toolbar">
-      <button id="preview" type="button">테스트</button>
-      <span class="meta">
-        <span id="patch">-</span>
-        ·
+      <button id="sync" type="button" hidden>새로고침</button>
+      <button id="preview" type="button" hidden>테스트</button>
+      <span class="meta" hidden>
         <span id="league">-</span>
-        ·
-        <span id="keyState">-</span>
       </span>
-      <span id="message" class="message"></span>
+      <span id="syncStatus" class="status">
+        <span class="spin" aria-hidden="true"></span>
+        <span id="message" class="message"></span>
+      </span>
     </div>
 
     <div class="board-wrap">

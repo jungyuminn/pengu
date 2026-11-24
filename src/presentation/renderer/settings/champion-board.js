@@ -31,6 +31,8 @@ function paintBoard(state) {
   else if (selectedId == null) paintHomeIfChanged(state);
 }
 
+let listSwapSeq = 0;
+
 function renderList(fromSearch) {
   const query = normalize(search.value);
   const existing = tierList.querySelectorAll(".champ-row");
@@ -38,11 +40,29 @@ function renderList(fromSearch) {
     filterRows(query);
     return;
   }
-  const rows = latestTiers
+  const html = latestTiers
     .flatMap((group) => group.champions)
-    .map((item, index) => ({ item, rank: index + 1 }));
-  tierList.innerHTML = rows.map(({ item, rank }) => championRow(item, rank)).join("");
-  filterRows(query);
+    .map((item, index) => championRow(item, index + 1))
+    .join("");
+  const listWrap = document.querySelector(".list-wrap");
+  const scroll = listWrap?.scrollTop ?? 0;
+  const hadRows = existing.length > 0;
+  const seq = ++listSwapSeq;
+  const paint = () => {
+    if (seq !== listSwapSeq) return;
+    tierList.classList.remove("list-out", "list-in");
+    tierList.innerHTML = html;
+    filterRows(query);
+    if (listWrap) listWrap.scrollTop = scroll;
+    if (prefersReducedMotion()) return;
+    restartAnim(tierList, "list-in");
+  };
+  if (!hadRows || prefersReducedMotion()) {
+    paint();
+    return;
+  }
+  restartAnim(tierList, "list-out");
+  window.setTimeout(paint, 180);
 }
 
 function filterRows(query) {
@@ -192,9 +212,13 @@ function paintDetail(detail, loading, error) {
 
 function restartAnim(node, className) {
   if (!node) return;
-  node.classList.remove("detail-enter", "hero-switch", "body-in", "row-in");
+  node.classList.remove("detail-enter", "hero-switch", "body-in", "row-in", "list-in", "list-out");
   void node.offsetWidth;
   node.classList.add(className);
+}
+
+function prefersReducedMotion() {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 }
 
 function ensureDetailShell() {
@@ -221,11 +245,16 @@ function setHeroIcon(image, url, name) {
   if (!url) {
     image.removeAttribute("src");
     image.hidden = true;
+    image.classList.remove("icon-wait", "icon-pop");
     return;
   }
   image.hidden = false;
-  preloadIcon(url);
-  if (image.getAttribute("src") !== url) image.src = url;
+  const cached = preloadIcon(url);
+  if (image.getAttribute("src") === url) return;
+  image.classList.remove("icon-pop");
+  if (cached.complete && cached.naturalWidth) image.classList.remove("icon-wait");
+  else image.classList.add("icon-wait");
+  image.src = url;
 }
 
 function preferListIcon(detail, preview) {
@@ -350,7 +379,7 @@ function augmentRow(row) {
   return `<div class="aug-row"${tipAttr(row.description)}>
     ${icon(row.iconUrl, row.name)}
     <span class="name">${escapeHtml(row.name)}</span>
-    <span class="rates">픽 ${pct(row.pickRate)} · 승 ${pct(row.winRate)}</span>
+    <span class="rates"><span>승률 ${pct(row.winRate)}</span><span>픽률 ${pct(row.pickRate)}</span></span>
     ${gradeLetter(row.grade)}
   </div>`;
 }
@@ -366,8 +395,9 @@ function stat(label, value) {
 
 function icon(url, name) {
   if (!url) return "";
-  preloadIcon(url);
-  return `<img src="${escapeHtml(url)}" alt="${escapeHtml(name)}" decoding="sync" />`;
+  const cached = preloadIcon(url);
+  const wait = cached.complete && cached.naturalWidth ? "" : ' class="icon-wait"';
+  return `<img${wait} src="${escapeHtml(url)}" alt="${escapeHtml(name)}" decoding="async" />`;
 }
 
 function pct(value) {

@@ -126,6 +126,14 @@ html.me-closed .board {
   background: var(--surface-hover);
 }
 
+.board img.icon-wait {
+  opacity: 0 !important;
+}
+
+.board img.icon-pop {
+  animation: icon-pop 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
 .champ-row .name {
   flex: 1;
   font-size: 13px;
@@ -148,6 +156,14 @@ html.me-closed .board {
 .body-in,
 .row-in {
   animation: body-in 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#tierList.list-out {
+  animation: list-out 180ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#tierList.list-in {
+  animation: list-in 280ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @keyframes detail-enter {
@@ -183,6 +199,33 @@ html.me-closed .board {
   }
 }
 
+@keyframes list-out {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes list-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes icon-pop {
+  from {
+    transform: scale(0.82);
+  }
+  58% {
+    transform: scale(1.08);
+  }
+  to {
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .board,
   .me-toggle,
@@ -195,8 +238,15 @@ html.me-closed .board {
   .detail-enter,
   .hero-switch,
   .body-in,
-  .row-in {
+  .row-in,
+  #tierList.list-out,
+  #tierList.list-in,
+  .board img.icon-pop {
     animation: none;
+  }
+
+  .board img.icon-wait {
+    opacity: 1 !important;
   }
 
   .tier-pane input {
@@ -453,6 +503,24 @@ html.me-closed .board {
   line-height: 1.45;
   white-space: pre-wrap;
   pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.94);
+  transform-origin: top left;
+  transition:
+    opacity 140ms ease,
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s 180ms;
+}
+
+.aug-tip.open {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition:
+    opacity 140ms ease,
+    transform 180ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
 }
 
 .aug-row {
@@ -489,9 +557,14 @@ html.me-closed .board {
 }
 
 .aug-row .rates {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
   flex-shrink: 0;
   color: var(--muted);
   font-size: 11px;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
@@ -532,4 +605,12 @@ html.me-closed .board {
   color: var(--muted);
   font-size: 11px;
   white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aug-tip,
+  .aug-tip.open {
+    transition: none;
+    transform: none;
+  }
 }

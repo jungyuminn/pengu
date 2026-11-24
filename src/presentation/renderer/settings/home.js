@@ -93,7 +93,7 @@ function homeAugmentRow(row) {
   return `<div class="home-aug-row">
     ${icon(row.iconUrl, row.name)}
     <span class="name">${escapeHtml(row.name)}</span>
-    <span class="rates">픽 ${pct(row.pickRate)}</span>
+    <span class="rates"><span>승률 ${pct(row.winRate)}</span><span>픽률 ${pct(row.pickRate)}</span></span>
     ${gradeLetter(row.grade)}
   </div>`;
 }
@@ -189,8 +189,9 @@ function matchAugment(item) {
 
 function profileMark(url, name) {
   if (!url) return "";
-  preloadIcon(url);
-  return `<img class="me-icon" src="${escapeHtml(url)}" alt="${escapeHtml(name)}" decoding="sync" onerror="this.remove()" />`;
+  const cached = preloadIcon(url);
+  const wait = cached.complete && cached.naturalWidth ? "" : " icon-wait";
+  return `<img class="me-icon${wait}" src="${escapeHtml(url)}" alt="${escapeHtml(name)}" decoding="async" onerror="this.remove()" />`;
 }
 
 function riotId(account) {

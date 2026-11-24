@@ -18,6 +18,22 @@ function preloadIcons(urls) {
 }
 
 document.addEventListener(
+  "load",
+  (event) => {
+    const image = event.target;
+    if (!(image instanceof HTMLImageElement)) return;
+    if (warmRoot.contains(image)) return;
+    if (!image.classList.contains("icon-wait")) return;
+    image.classList.remove("icon-wait");
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    image.classList.remove("icon-pop");
+    void image.offsetWidth;
+    image.classList.add("icon-pop");
+  },
+  true,
+);
+
+document.addEventListener(
   "error",
   (event) => {
     const image = event.target;
