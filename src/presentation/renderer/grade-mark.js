@@ -7,15 +7,11 @@ function tierNumber(grade) {
 }
 
 function gradeMark(grade, extraClass) {
-  return gradeBadge(grade, flowClass(grade, extraClass), true);
+  return gradeBadge(grade, extraClass, true);
 }
 
 function gradeLetter(grade, extraClass) {
-  return gradeBadge(grade, flowClass(grade, extraClass), false);
-}
-
-function flowClass(grade, extraClass) {
-  return [grade === "S" ? "flow" : "", extraClass].filter(Boolean).join(" ");
+  return gradeBadge(grade, extraClass, false);
 }
 
 function gradeBadge(grade, extraClass, asNumber) {
