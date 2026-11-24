@@ -7,7 +7,7 @@ import type { PercentRect } from "../../domain/layout";
 import { pageFromOcrPayload } from "./ocr-payload";
 
 const START_MS = 20000;
-const SCAN_MS = 12000;
+const SCAN_MS = 5000;
 
 export class OcrWorker {
   private child: ChildProcess | null = null;
