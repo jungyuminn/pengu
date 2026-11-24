@@ -66,7 +66,7 @@ async function fillMatchFits(match, gameId) {
 
 function matchDetailHtml(match, fits = {}) {
   const teams = teamsOf(match.players ?? []);
-  const result = match.win ? "W" : "L";
+  const result = match.win ? "승리" : "패배";
   return `<div class="match-detail" data-match-root>
     <header class="match-hero">
       <span class="match-hero-result ${match.win ? "win" : "loss"}">${result}</span>

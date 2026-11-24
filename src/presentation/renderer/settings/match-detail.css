@@ -9,13 +9,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  height: 28px;
+  padding: 0 8px;
   border-radius: 6px;
-  font-size: 16px;
+  font-size: 13px;
   font-weight: 800;
   line-height: 1;
   color: #fff;
+  white-space: nowrap;
 }
 
 .match-hero-result.win {

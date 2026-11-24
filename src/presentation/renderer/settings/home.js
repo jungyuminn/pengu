@@ -152,7 +152,7 @@ function streakHtml(matches) {
 
 function streakMark(row, index) {
   const win = Boolean(row.win);
-  return `<button type="button" class="streak-mark ${win ? "win" : "loss"}" style="--i:${index}" data-game-id="${row.gameId}" title="${win ? "승" : "패"}"><span>${win ? "W" : "L"}</span></button>`;
+  return `<button type="button" class="streak-mark ${win ? "win" : "loss"}" style="--i:${index}" data-game-id="${row.gameId}" title="${win ? "승리" : "패배"}"><span>${win ? "승" : "패"}</span></button>`;
 }
 
 function matchRow(row, index) {
@@ -171,7 +171,7 @@ function matchRow(row, index) {
         <span class="name"><span class="name-text">${name}</span>${row.mvp ? `<em class="mvp-tag">MVP</em>` : ""}</span>
         <span class="kda">${row.kills}/${row.deaths}/${row.assists}${kdaRatioHtml(row.kda)}</span>
       </span>
-      <span class="result" title="${win ? "승" : "패"}">${win ? "W" : "L"}</span>
+      <span class="result">${win ? "승리" : "패배"}</span>
       ${augs ? `<span class="match-augs">${augs}</span>` : ""}
     </span>
   </button>`;
