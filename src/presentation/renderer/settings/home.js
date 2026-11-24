@@ -127,7 +127,10 @@ function meStatsHtml(home) {
   const rate = home.winRate == null ? "—" : `${Number(home.winRate).toFixed(0)}%`;
   const wins = Number(home.wins) || 0;
   const losses = Math.max(0, Number(home.games) - wins);
-  return `<p class="me-meta">${home.games}전 ${wins}승 ${losses}패 · 승률 ${rate} · KDA ${kdaRatioHtml(home.kda)}</p>`;
+  return `<div class="me-stats">
+    <p class="me-meta">${home.games}전 ${wins}승 ${losses}패</p>
+    <p class="me-meta">승률 ${rate} · KDA ${kdaRatioHtml(home.kda)}</p>
+  </div>`;
 }
 
 function kdaToneClass(value) {
