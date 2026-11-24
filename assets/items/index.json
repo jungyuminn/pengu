@@ -1,0 +1,7753 @@
+[
+  {
+    "id": 1001,
+    "file": "boots.png",
+    "names": [
+      "Boots",
+      "장화",
+      "鞋子"
+    ]
+  },
+  {
+    "id": 1004,
+    "file": "faeriecharm.png",
+    "names": [
+      "Faerie Charm",
+      "요정의 부적",
+      "仙女护符"
+    ]
+  },
+  {
+    "id": 1006,
+    "file": "rejuvenationbead.png",
+    "names": [
+      "Rejuvenation Bead",
+      "원기 회복의 구슬",
+      "治疗宝珠"
+    ]
+  },
+  {
+    "id": 1011,
+    "file": "giantsbelt.png",
+    "names": [
+      "Giant's Belt",
+      "거인의 허리띠",
+      "巨人腰带"
+    ]
+  },
+  {
+    "id": 1018,
+    "file": "cloakofagility.png",
+    "names": [
+      "Cloak of Agility",
+      "민첩성의 망토",
+      "灵巧披风"
+    ]
+  },
+  {
+    "id": 1026,
+    "file": "blastingwand.png",
+    "names": [
+      "Blasting Wand",
+      "방출의 마법봉",
+      "爆裂魔杖"
+    ]
+  },
+  {
+    "id": 1027,
+    "file": "sapphirecrystal.png",
+    "names": [
+      "Sapphire Crystal",
+      "사파이어 수정",
+      "蓝水晶"
+    ]
+  },
+  {
+    "id": 1028,
+    "file": "rubycrystal.png",
+    "names": [
+      "Ruby Crystal",
+      "루비 수정",
+      "红水晶"
+    ]
+  },
+  {
+    "id": 1029,
+    "file": "clotharmor.png",
+    "names": [
+      "Cloth Armor",
+      "천 갑옷",
+      "布甲"
+    ]
+  },
+  {
+    "id": 1031,
+    "file": "chainvest.png",
+    "names": [
+      "Chain Vest",
+      "쇠사슬 조끼",
+      "锁子甲"
+    ]
+  },
+  {
+    "id": 1033,
+    "file": "nullmagicmantle.png",
+    "names": [
+      "Null-Magic Mantle",
+      "마법무효화의 망토",
+      "抗魔斗篷"
+    ]
+  },
+  {
+    "id": 1035,
+    "file": "emberknife.png",
+    "names": [
+      "Emberknife",
+      "잉걸불 칼",
+      "灰烬小刀"
+    ]
+  },
+  {
+    "id": 1036,
+    "file": "longsword.png",
+    "names": [
+      "Long Sword",
+      "롱소드",
+      "长剑"
+    ]
+  },
+  {
+    "id": 1037,
+    "file": "pickaxe.png",
+    "names": [
+      "Pickaxe",
+      "곡괭이",
+      "十字镐"
+    ]
+  },
+  {
+    "id": 1038,
+    "file": "bfsword.png",
+    "names": [
+      "B. F. Sword",
+      "B.F. 대검",
+      "暴风之剑"
+    ]
+  },
+  {
+    "id": 1039,
+    "file": "hailblade.png",
+    "names": [
+      "Hailblade",
+      "빗발칼날",
+      "冰雹刀刃"
+    ]
+  },
+  {
+    "id": 1040,
+    "file": "obsidianedge.png",
+    "names": [
+      "Obsidian Edge",
+      "흑요석 검",
+      "黑曜石锋刃"
+    ]
+  },
+  {
+    "id": 1042,
+    "file": "dagger.png",
+    "names": [
+      "Dagger",
+      "단검",
+      "短剑"
+    ]
+  },
+  {
+    "id": 1043,
+    "file": "recurvebow.png",
+    "names": [
+      "Recurve Bow",
+      "곡궁",
+      "反曲之弓"
+    ]
+  },
+  {
+    "id": 1052,
+    "file": "amplifyingtome.png",
+    "names": [
+      "Amplifying Tome",
+      "증폭의 고서",
+      "增幅典籍"
+    ]
+  },
+  {
+    "id": 1053,
+    "file": "vampiricscepter.png",
+    "names": [
+      "Vampiric Scepter",
+      "흡혈의 낫",
+      "吸血鬼节杖"
+    ]
+  },
+  {
+    "id": 1054,
+    "file": "doransshield.png",
+    "names": [
+      "Doran's Shield",
+      "도란의 방패",
+      "多兰之盾"
+    ]
+  },
+  {
+    "id": 1055,
+    "file": "doransblade.png",
+    "names": [
+      "Doran's Blade",
+      "도란의 검",
+      "多兰之刃"
+    ]
+  },
+  {
+    "id": 1056,
+    "file": "doransring.png",
+    "names": [
+      "Doran's Ring",
+      "도란의 반지",
+      "多兰之戒"
+    ]
+  },
+  {
+    "id": 1057,
+    "file": "negatroncloak.png",
+    "names": [
+      "Negatron Cloak",
+      "음전자 망토",
+      "负极斗篷"
+    ]
+  },
+  {
+    "id": 1058,
+    "file": "needlesslylargerod.png",
+    "names": [
+      "Needlessly Large Rod",
+      "쓸데없이 큰 지팡이",
+      "无用大棒"
+    ]
+  },
+  {
+    "id": 1082,
+    "file": "darkseal.png",
+    "names": [
+      "Dark Seal",
+      "암흑의 인장",
+      "黑暗封印"
+    ]
+  },
+  {
+    "id": 1083,
+    "file": "cull.png",
+    "names": [
+      "Cull",
+      "수확의 낫",
+      "萃取"
+    ]
+  },
+  {
+    "id": 1086,
+    "file": "doransbow.png",
+    "names": [
+      "Doran's Bow",
+      "도란의 활",
+      "多兰之弓"
+    ]
+  },
+  {
+    "id": 1090,
+    "file": "questtop.png",
+    "names": [
+      "Quest: Top",
+      "퀘스트: 상단",
+      "任务：上路"
+    ]
+  },
+  {
+    "id": 1091,
+    "file": "questmid.png",
+    "names": [
+      "Quest: Mid",
+      "퀘스트: 중단",
+      "任务：中路"
+    ]
+  },
+  {
+    "id": 1092,
+    "file": "questbot.png",
+    "names": [
+      "Quest: Bot",
+      "퀘스트: 하단",
+      "任务：下路"
+    ]
+  },
+  {
+    "id": 1093,
+    "file": "questsupport.png",
+    "names": [
+      "Quest: Support",
+      "퀘스트: 서포터",
+      "任务：辅助"
+    ]
+  },
+  {
+    "id": 1094,
+    "file": "questjungle.png",
+    "names": [
+      "Quest: Jungle",
+      "퀘스트: 정글",
+      "任务：打野"
+    ]
+  },
+  {
+    "id": 1101,
+    "file": "scorchclawpup.png",
+    "names": [
+      "Scorchclaw Pup",
+      "새끼 화염발톱",
+      "焰爪猫幼崽"
+    ]
+  },
+  {
+    "id": 1102,
+    "file": "gustwalkerhatchling.png",
+    "names": [
+      "Gustwalker Hatchling",
+      "새끼 바람돌이",
+      "风行狐幼体"
+    ]
+  },
+  {
+    "id": 1103,
+    "file": "mosstomperseedling.png",
+    "names": [
+      "Mosstomper Seedling",
+      "새끼 이끼쿵쿵이",
+      "踏苔蜥幼苗"
+    ]
+  },
+  {
+    "id": 1104,
+    "file": "eyeoftheherald.png",
+    "names": [
+      "Eye of the Herald",
+      "전령의 눈",
+      "先锋之眼"
+    ]
+  },
+  {
+    "id": 1105,
+    "file": "mosstomperseedling_1105.png",
+    "names": [
+      "Mosstomper Seedling",
+      "새끼 이끼쿵쿵이",
+      "踏苔蜥幼苗"
+    ]
+  },
+  {
+    "id": 1106,
+    "file": "gustwalkerhatchling_1106.png",
+    "names": [
+      "Gustwalker Hatchling",
+      "새끼 바람돌이",
+      "风行狐幼体"
+    ]
+  },
+  {
+    "id": 1107,
+    "file": "scorchclawpup_1107.png",
+    "names": [
+      "Scorchclaw Pup",
+      "새끼 화염발톱",
+      "焰爪猫幼崽"
+    ]
+  },
+  {
+    "id": 1111,
+    "file": "jarvanis.png",
+    "names": [
+      "Jarvan I's",
+      "자르반 1세의",
+      "嘉文一世之靴"
+    ]
+  },
+  {
+    "id": 1120,
+    "file": "doranshelm.png",
+    "names": [
+      "Doran's Helm",
+      "도란의 투구",
+      "多兰之盔"
+    ]
+  },
+  {
+    "id": 1200,
+    "file": "toplanequest.png",
+    "names": [
+      "Top Lane Quest",
+      "상단 공격로 퀘스트",
+      "上路任务"
+    ]
+  },
+  {
+    "id": 1201,
+    "file": "midlanequest.png",
+    "names": [
+      "Mid Lane Quest",
+      "중단 공격로 퀘스트",
+      "中路任务"
+    ]
+  },
+  {
+    "id": 1202,
+    "file": "botlanequest.png",
+    "names": [
+      "Bot Lane Quest",
+      "하단 공격로 퀘스트",
+      "下路任务"
+    ]
+  },
+  {
+    "id": 1203,
+    "file": "supportquest.png",
+    "names": [
+      "Support Quest",
+      "서포터 퀘스트",
+      "辅助任务"
+    ]
+  },
+  {
+    "id": 1204,
+    "file": "junglequest.png",
+    "names": [
+      "Jungle Quest",
+      "정글 퀘스트",
+      "打野任务"
+    ]
+  },
+  {
+    "id": 1205,
+    "file": "junglequestreward.png",
+    "names": [
+      "Jungle Quest Reward",
+      "정글 퀘스트 보상",
+      "打野任务奖励"
+    ]
+  },
+  {
+    "id": 1206,
+    "file": "midlanequestreward.png",
+    "names": [
+      "Mid Lane Quest Reward",
+      "중단 공격로 퀘스트 보상",
+      "中路任务奖励"
+    ]
+  },
+  {
+    "id": 1207,
+    "file": "botlanequestreward.png",
+    "names": [
+      "Bot Lane Quest Reward",
+      "하단 공격로 퀘스트 보상",
+      "下路任务奖励"
+    ]
+  },
+  {
+    "id": 1208,
+    "file": "supportquestreward.png",
+    "names": [
+      "Support Quest Reward",
+      "서포터 퀘스트 보상",
+      "辅助任务奖励"
+    ]
+  },
+  {
+    "id": 1209,
+    "file": "junglequestreward_1209.png",
+    "names": [
+      "Jungle Quest Reward",
+      "정글 퀘스트 보상",
+      "打野任务奖励"
+    ]
+  },
+  {
+    "id": 1210,
+    "file": "junglequestreward_1210.png",
+    "names": [
+      "Jungle Quest Reward",
+      "정글 퀘스트 보상",
+      "打野任务奖励"
+    ]
+  },
+  {
+    "id": 1211,
+    "file": "junglequestreward_1211.png",
+    "names": [
+      "Jungle Quest Reward",
+      "정글 퀘스트 보상",
+      "打野任务奖励"
+    ]
+  },
+  {
+    "id": 1220,
+    "file": "unleashedteleporttoplanequestreward.png",
+    "names": [
+      "Unleashed Teleport (Top Lane Quest Reward)",
+      "강력 순간이동 (상단 공격로 퀘스트 보상)",
+      "解封的传送 (上路任务奖励)"
+    ]
+  },
+  {
+    "id": 1221,
+    "file": "toplanequestreward.png",
+    "names": [
+      "Top Lane Quest Reward",
+      "상단 공격로 퀘스트 보상",
+      "上路任务奖励"
+    ]
+  },
+  {
+    "id": 1222,
+    "file": "toplanequest_1222.png",
+    "names": [
+      "Top Lane Quest",
+      "상단 공격로 퀘스트",
+      "上路任务"
+    ]
+  },
+  {
+    "id": 1500,
+    "file": "penetratingbullets.png",
+    "names": [
+      "Penetrating Bullets",
+      "관통 탄환",
+      "穿透型子弹"
+    ]
+  },
+  {
+    "id": 1501,
+    "file": "fortification.png",
+    "names": [
+      "Fortification",
+      "요새화",
+      "防御工事"
+    ]
+  },
+  {
+    "id": 1502,
+    "file": "reinforcedarmor.png",
+    "names": [
+      "Reinforced Armor",
+      "이중 갑옷",
+      "加固城防"
+    ]
+  },
+  {
+    "id": 1503,
+    "file": "wardenseye.png",
+    "names": [
+      "Warden's Eye",
+      "파수꾼의 눈",
+      "典狱官之眼"
+    ]
+  },
+  {
+    "id": 1504,
+    "file": "vanguard.png",
+    "names": [
+      "Vanguard",
+      "수호자",
+      "前卫"
+    ]
+  },
+  {
+    "id": 1505,
+    "file": "reinforcedarmor_1505.png",
+    "names": [
+      "Reinforced Armor",
+      "이중 갑옷",
+      "加固城防"
+    ]
+  },
+  {
+    "id": 1506,
+    "file": "reinforcedarmor_1506.png",
+    "names": [
+      "Reinforced Armor",
+      "이중 갑옷",
+      "加固城防"
+    ]
+  },
+  {
+    "id": 1507,
+    "file": "overcharged.png",
+    "names": [
+      "Overcharged",
+      "과충전",
+      "过载"
+    ]
+  },
+  {
+    "id": 1508,
+    "file": "antitowersocks.png",
+    "names": [
+      "Anti-tower Socks",
+      "방탄 양말",
+      "反防御塔袜子"
+    ]
+  },
+  {
+    "id": 1509,
+    "file": "gusto.png",
+    "names": [
+      "Gusto",
+      "체질",
+      "嗜好"
+    ]
+  },
+  {
+    "id": 1510,
+    "file": "phreakishgusto.png",
+    "names": [
+      "Phreakish Gusto",
+      "특이 체질",
+      "弗瑞克风格的嗜好"
+    ]
+  },
+  {
+    "id": 1511,
+    "file": "supermecharmor.png",
+    "names": [
+      "Super Mech Armor",
+      "슈퍼 메크 방어구",
+      "超级士兵 装甲"
+    ]
+  },
+  {
+    "id": 1512,
+    "file": "supermechpowerfield.png",
+    "names": [
+      "Super Mech Power Field",
+      "슈퍼 메크 전력장",
+      "超级士兵 能量场"
+    ]
+  },
+  {
+    "id": 1515,
+    "file": "turretplating.png",
+    "names": [
+      "Turret Plating",
+      "포탑 방패",
+      "防御塔镀层"
+    ]
+  },
+  {
+    "id": 1516,
+    "file": "structurebounty.png",
+    "names": [
+      "Structure Bounty",
+      "구조물 현상금",
+      "建筑物赏金"
+    ]
+  },
+  {
+    "id": 1517,
+    "file": "structurebounty_1517.png",
+    "names": [
+      "Structure Bounty",
+      "구조물 현상금",
+      "建筑物赏金"
+    ]
+  },
+  {
+    "id": 1518,
+    "file": "structurebounty_1518.png",
+    "names": [
+      "Structure Bounty",
+      "구조물 현상금",
+      "建筑物赏金"
+    ]
+  },
+  {
+    "id": 1519,
+    "file": "structurebounty_1519.png",
+    "names": [
+      "Structure Bounty",
+      "구조물 현상금",
+      "建筑物赏金"
+    ]
+  },
+  {
+    "id": 1520,
+    "file": "overerchargedha.png",
+    "names": [
+      "OvererchargedHA",
+      "과충전HA",
+      "过载 - 嚎哭深渊 "
+    ]
+  },
+  {
+    "id": 1521,
+    "file": "fortification_1521.png",
+    "names": [
+      "Fortification",
+      "요새화",
+      "钢铁防线"
+    ]
+  },
+  {
+    "id": 1522,
+    "file": "towerpowerup.png",
+    "names": [
+      "Tower Power-Up",
+      "포탑 강화",
+      "防御塔威力升温"
+    ]
+  },
+  {
+    "id": 1523,
+    "file": "overcharged_1523.png",
+    "names": [
+      "Overcharged",
+      "과충전",
+      "过载充能"
+    ]
+  },
+  {
+    "id": 1524,
+    "file": "overgrowth.png",
+    "names": [
+      "Overgrowth",
+      "과잉성장",
+      "增生"
+    ]
+  },
+  {
+    "id": 2001,
+    "file": "recall.png",
+    "names": [
+      "Recall",
+      "귀환",
+      "回城"
+    ]
+  },
+  {
+    "id": 2002,
+    "file": "enhancedrecall.png",
+    "names": [
+      "Enhanced Recall",
+      "상급 귀환",
+      "强化回城"
+    ]
+  },
+  {
+    "id": 2003,
+    "file": "healthpotion.png",
+    "names": [
+      "Health Potion",
+      "체력 물약",
+      "生命药水"
+    ]
+  },
+  {
+    "id": 2007,
+    "file": "disabledrecall.png",
+    "names": [
+      "Disabled Recall",
+      "귀환 비활성화",
+      "禁用回城"
+    ]
+  },
+  {
+    "id": 2008,
+    "file": "item2008.png",
+    "names": []
+  },
+  {
+    "id": 2010,
+    "file": "totalbiscuitofeverlastingwill.png",
+    "names": [
+      "Total Biscuit of Everlasting Will",
+      "굳건한 의지의 완전한 비스킷",
+      "永续意志夹心饼干"
+    ]
+  },
+  {
+    "id": 2015,
+    "file": "kircheisshard.png",
+    "names": [
+      "Kircheis Shard",
+      "키르히아이스의 파편",
+      "吉尔菲艾斯碎片"
+    ]
+  },
+  {
+    "id": 2019,
+    "file": "steelsigil.png",
+    "names": [
+      "Steel Sigil",
+      "강철 인장",
+      "钢铁印章"
+    ]
+  },
+  {
+    "id": 2020,
+    "file": "thebrutalizer.png",
+    "names": [
+      "The Brutalizer",
+      "야수화",
+      "残暴之力"
+    ]
+  },
+  {
+    "id": 2021,
+    "file": "tunneler.png",
+    "names": [
+      "Tunneler",
+      "땅굴 채굴기",
+      "掘道钻头"
+    ]
+  },
+  {
+    "id": 2022,
+    "file": "glowingmote.png",
+    "names": [
+      "Glowing Mote",
+      "빛나는 티끌",
+      "荧尘"
+    ]
+  },
+  {
+    "id": 2031,
+    "file": "refillablepotion.png",
+    "names": [
+      "Refillable Potion",
+      "충전형 물약",
+      "复用型药水"
+    ]
+  },
+  {
+    "id": 2033,
+    "file": "corruptingpotion.png",
+    "names": [
+      "Corrupting Potion",
+      "부패 물약",
+      "腐败药水"
+    ]
+  },
+  {
+    "id": 2049,
+    "file": "guardiansamulet.png",
+    "names": [
+      "Guardian's Amulet",
+      "수호자의 부적",
+      "守护者护符"
+    ]
+  },
+  {
+    "id": 2050,
+    "file": "guardiansshroud.png",
+    "names": [
+      "Guardian's Shroud",
+      "수호자의 장막",
+      "守护者法衣"
+    ]
+  },
+  {
+    "id": 2051,
+    "file": "guardianshorn.png",
+    "names": [
+      "Guardian's Horn",
+      "수호자의 뿔피리",
+      "守护者号角"
+    ]
+  },
+  {
+    "id": 2052,
+    "file": "porosnax.png",
+    "names": [
+      "Poro-Snax",
+      "포로 간식",
+      "魄罗佳肴"
+    ]
+  },
+  {
+    "id": 2055,
+    "file": "controlward.png",
+    "names": [
+      "Control Ward",
+      "제어 와드",
+      "控制守卫"
+    ]
+  },
+  {
+    "id": 2056,
+    "file": "stealthward.png",
+    "names": [
+      "Stealth Ward",
+      "투명 와드",
+      "侦察守卫"
+    ]
+  },
+  {
+    "id": 2065,
+    "file": "shurelyasbattlesong.png",
+    "names": [
+      "Shurelya's Battlesong",
+      "슈렐리아의 군가",
+      "舒瑞娅的战歌"
+    ]
+  },
+  {
+    "id": 2138,
+    "file": "elixirofiron.png",
+    "names": [
+      "Elixir of Iron",
+      "강철의 영약",
+      "钢铁合剂"
+    ]
+  },
+  {
+    "id": 2139,
+    "file": "elixirofsorcery.png",
+    "names": [
+      "Elixir of Sorcery",
+      "마법의 영약",
+      "巫术合剂"
+    ]
+  },
+  {
+    "id": 2140,
+    "file": "elixirofwrath.png",
+    "names": [
+      "Elixir of Wrath",
+      "분노의 영약",
+      "愤怒合剂"
+    ]
+  },
+  {
+    "id": 2141,
+    "file": "cappajuice.png",
+    "names": [
+      "Cappa Juice",
+      "카파 주스",
+      "帽子饮品"
+    ]
+  },
+  {
+    "id": 2142,
+    "file": "juiceofpower.png",
+    "names": [
+      "Juice of Power",
+      "힘의 주스",
+      "威能饮品"
+    ]
+  },
+  {
+    "id": 2143,
+    "file": "juiceofvitality.png",
+    "names": [
+      "Juice of Vitality",
+      "활력의 주스",
+      "活力饮品"
+    ]
+  },
+  {
+    "id": 2144,
+    "file": "juiceofhaste.png",
+    "names": [
+      "Juice of Haste",
+      "가속의 주스",
+      "急速饮品"
+    ]
+  },
+  {
+    "id": 2145,
+    "file": "luckydice.png",
+    "names": [
+      "Lucky Dice",
+      "행운의 주사위",
+      "幸运骰子"
+    ]
+  },
+  {
+    "id": 2146,
+    "file": "enhancedluckydice.png",
+    "names": [
+      "Enhanced Lucky Dice",
+      "향상된 행운의 주사위",
+      "增强版幸运骰子"
+    ]
+  },
+  {
+    "id": 2147,
+    "file": "augmentlevel.png",
+    "names": [
+      "Augment Level",
+      "증강 레벨",
+      "强化符文等级"
+    ]
+  },
+  {
+    "id": 2150,
+    "file": "elixirofskill.png",
+    "names": [
+      "Elixir of Skill",
+      "숙련의 영약",
+      "技能合剂"
+    ]
+  },
+  {
+    "id": 2151,
+    "file": "elixirofavarice.png",
+    "names": [
+      "Elixir of Avarice",
+      "탐욕의 영약",
+      "贪财合剂"
+    ]
+  },
+  {
+    "id": 2152,
+    "file": "elixirofforce.png",
+    "names": [
+      "Elixir of Force",
+      "힘의 영약",
+      "原力合剂"
+    ]
+  },
+  {
+    "id": 2161,
+    "file": "bandlejuiceofpower.png",
+    "names": [
+      "Bandle Juice of Power",
+      "힘의 밴들 주스",
+      "班德尔威能饮品"
+    ]
+  },
+  {
+    "id": 2162,
+    "file": "bandlejuiceofvitality.png",
+    "names": [
+      "Bandle Juice of Vitality",
+      "활력의 밴들 주스",
+      "班德尔活力饮品"
+    ]
+  },
+  {
+    "id": 2163,
+    "file": "bandlejuiceofhaste.png",
+    "names": [
+      "Bandle Juice of Haste",
+      "가속의 밴들 주스",
+      "班德尔急速饮品"
+    ]
+  },
+  {
+    "id": 2403,
+    "file": "miniondematerializer.png",
+    "names": [
+      "Minion Dematerializer",
+      "미니언 해체분석기",
+      "小兵去质器"
+    ]
+  },
+  {
+    "id": 2420,
+    "file": "seekersarmguard.png",
+    "names": [
+      "Seeker's Armguard",
+      "추적자의 팔목 보호대",
+      "探索者的护臂"
+    ]
+  },
+  {
+    "id": 2421,
+    "file": "shatteredarmguard.png",
+    "names": [
+      "Shattered Armguard",
+      "부서진 팔목 보호대",
+      "碎裂的护臂"
+    ]
+  },
+  {
+    "id": 2422,
+    "file": "slightlymagicalfootwear.png",
+    "names": [
+      "Slightly Magical Footwear",
+      "약간 신비한 신발",
+      "有点神奇之鞋"
+    ]
+  },
+  {
+    "id": 2501,
+    "file": "overlordsbloodmail.png",
+    "names": [
+      "Overlord's Bloodmail",
+      "지배자의 피갑옷",
+      "霸王血铠"
+    ]
+  },
+  {
+    "id": 2502,
+    "file": "unendingdespair.png",
+    "names": [
+      "Unending Despair",
+      "끝없는 절망",
+      "无终恨意"
+    ]
+  },
+  {
+    "id": 2503,
+    "file": "blackfiretorch.png",
+    "names": [
+      "Blackfire Torch",
+      "어둠불꽃 횃불",
+      "黯炎火炬"
+    ]
+  },
+  {
+    "id": 2504,
+    "file": "kaenicrookern.png",
+    "names": [
+      "Kaenic Rookern",
+      "케이닉 루컨",
+      "败魔"
+    ]
+  },
+  {
+    "id": 2508,
+    "file": "fatedashes.png",
+    "names": [
+      "Fated Ashes",
+      "운명의 재",
+      "命定灰烬"
+    ]
+  },
+  {
+    "id": 2510,
+    "file": "duskanddawn.png",
+    "names": [
+      "Dusk and Dawn",
+      "황혼과 새벽",
+      "黄昏与黎明"
+    ]
+  },
+  {
+    "id": 2512,
+    "file": "fiendhunterbolts.png",
+    "names": [
+      "Fiendhunter Bolts",
+      "악마사냥꾼의 화살",
+      "猎魔人弩箭"
+    ]
+  },
+  {
+    "id": 2517,
+    "file": "endlesshunger.png",
+    "names": [
+      "Endless Hunger",
+      "끝없는 갈망",
+      "无穷饥渴"
+    ]
+  },
+  {
+    "id": 2520,
+    "file": "bastionbreaker.png",
+    "names": [
+      "Bastionbreaker",
+      "요새파괴자",
+      "破垒者"
+    ]
+  },
+  {
+    "id": 2522,
+    "file": "actualizer.png",
+    "names": [
+      "Actualizer",
+      "실체화 장비",
+      "实现器"
+    ]
+  },
+  {
+    "id": 2523,
+    "file": "hexopticsc44.png",
+    "names": [
+      "Hexoptics C44",
+      "마법광학 장치 C44",
+      "海克斯镜片 C44"
+    ]
+  },
+  {
+    "id": 2524,
+    "file": "bandlepipes.png",
+    "names": [
+      "Bandlepipes",
+      "밴들파이프",
+      "班德尔音管"
+    ]
+  },
+  {
+    "id": 2525,
+    "file": "protoplasmharness.png",
+    "names": [
+      "Protoplasm Harness",
+      "원형질 안전벨트",
+      "原生质护带"
+    ]
+  },
+  {
+    "id": 2526,
+    "file": "whisperingcirclet.png",
+    "names": [
+      "Whispering Circlet",
+      "속삭이는 머리띠",
+      "耳语头环"
+    ]
+  },
+  {
+    "id": 2530,
+    "file": "diademofsongs.png",
+    "names": [
+      "Diadem of Songs",
+      "악곡의 왕관",
+      "歌之权冠"
+    ]
+  },
+  {
+    "id": 3001,
+    "file": "evenshroud.png",
+    "names": [
+      "Evenshroud",
+      "저녁갑주",
+      "薄暮法袍"
+    ]
+  },
+  {
+    "id": 3002,
+    "file": "trailblazer.png",
+    "names": [
+      "Trailblazer",
+      "개척자",
+      "引路者"
+    ]
+  },
+  {
+    "id": 3003,
+    "file": "archangelsstaff.png",
+    "names": [
+      "Archangel's Staff",
+      "대천사의 지팡이",
+      "大天使之杖"
+    ]
+  },
+  {
+    "id": 3004,
+    "file": "manamune.png",
+    "names": [
+      "Manamune",
+      "마나무네",
+      "魔宗"
+    ]
+  },
+  {
+    "id": 3005,
+    "file": "ghostcrawlers.png",
+    "names": [
+      "Ghostcrawlers",
+      "유령 배회자",
+      "鬼蟹"
+    ]
+  },
+  {
+    "id": 3006,
+    "file": "berserkersgreaves.png",
+    "names": [
+      "Berserker's Greaves",
+      "광전사의 군화",
+      "狂战士胫甲"
+    ]
+  },
+  {
+    "id": 3008,
+    "file": "gluttonousgreaves.png",
+    "names": [
+      "Gluttonous Greaves",
+      "탐욕의 군화",
+      "暴食胫甲"
+    ]
+  },
+  {
+    "id": 3009,
+    "file": "bootsofswiftness.png",
+    "names": [
+      "Boots of Swiftness",
+      "신속의 장화",
+      "轻灵之靴"
+    ]
+  },
+  {
+    "id": 3010,
+    "file": "symbioticsoles.png",
+    "names": [
+      "Symbiotic Soles",
+      "공생형 밑창",
+      "共生鞋鱼"
+    ]
+  },
+  {
+    "id": 3011,
+    "file": "chemtechputrifier.png",
+    "names": [
+      "Chemtech Putrifier",
+      "화학공학 부패기",
+      "炼金科技纯化器"
+    ]
+  },
+  {
+    "id": 3012,
+    "file": "chaliceofblessing.png",
+    "names": [
+      "Chalice of Blessing",
+      "축복의 성배",
+      "祝福圣杯"
+    ]
+  },
+  {
+    "id": 3013,
+    "file": "synchronizedsouls.png",
+    "names": [
+      "Synchronized Souls",
+      "하나 된 영혼",
+      "灵犀众魂"
+    ]
+  },
+  {
+    "id": 3020,
+    "file": "sorcerersshoes.png",
+    "names": [
+      "Sorcerer's Shoes",
+      "마법사의 신발",
+      "法师之靴"
+    ]
+  },
+  {
+    "id": 3023,
+    "file": "lifewellpendant.png",
+    "names": [
+      "Lifewell Pendant",
+      "생명의 샘 펜던트",
+      "生命水井坠饰"
+    ]
+  },
+  {
+    "id": 3024,
+    "file": "glacialbuckler.png",
+    "names": [
+      "Glacial Buckler",
+      "얼음 방패",
+      "冰川圆盾"
+    ]
+  },
+  {
+    "id": 3026,
+    "file": "guardianangel.png",
+    "names": [
+      "Guardian Angel",
+      "수호 천사",
+      "守护天使"
+    ]
+  },
+  {
+    "id": 3031,
+    "file": "infinityedge.png",
+    "names": [
+      "Infinity Edge",
+      "무한의 대검",
+      "无尽之刃"
+    ]
+  },
+  {
+    "id": 3032,
+    "file": "yuntalwildarrows.png",
+    "names": [
+      "Yun Tal Wildarrows",
+      "윤 탈 야생화살",
+      "育恩塔尔荒野箭"
+    ]
+  },
+  {
+    "id": 3033,
+    "file": "mortalreminder.png",
+    "names": [
+      "Mortal Reminder",
+      "필멸자의 운명",
+      "凡性的提醒"
+    ]
+  },
+  {
+    "id": 3035,
+    "file": "lastwhisper.png",
+    "names": [
+      "Last Whisper",
+      "최후의 속삭임",
+      "最后的轻语"
+    ]
+  },
+  {
+    "id": 3036,
+    "file": "lorddominiksregards.png",
+    "names": [
+      "Lord Dominik's Regards",
+      "도미닉 경의 인사",
+      "多米尼克领主的致意"
+    ]
+  },
+  {
+    "id": 3039,
+    "file": "atmasreckoning.png",
+    "names": [
+      "Atma's Reckoning",
+      "아트마의 심판",
+      "阿塔玛的清算"
+    ]
+  },
+  {
+    "id": 3040,
+    "file": "seraphsembrace.png",
+    "names": [
+      "Seraph's Embrace",
+      "대천사의 포옹",
+      "炽天使之拥"
+    ]
+  },
+  {
+    "id": 3041,
+    "file": "mejaissoulstealer.png",
+    "names": [
+      "Mejai's Soulstealer",
+      "메자이의 영혼약탈자",
+      "梅贾的窃魂卷"
+    ]
+  },
+  {
+    "id": 3042,
+    "file": "muramana.png",
+    "names": [
+      "Muramana",
+      "무라마나",
+      "魔切"
+    ]
+  },
+  {
+    "id": 3044,
+    "file": "phage.png",
+    "names": [
+      "Phage",
+      "탐식의 망치",
+      "净蚀"
+    ]
+  },
+  {
+    "id": 3046,
+    "file": "phantomdancer.png",
+    "names": [
+      "Phantom Dancer",
+      "유령 무희",
+      "幻影之舞"
+    ]
+  },
+  {
+    "id": 3047,
+    "file": "platedsteelcaps.png",
+    "names": [
+      "Plated Steelcaps",
+      "판금 장화",
+      "铁板靴"
+    ]
+  },
+  {
+    "id": 3050,
+    "file": "zekesconvergence.png",
+    "names": [
+      "Zeke's Convergence",
+      "지크의 융합",
+      "基克的聚合"
+    ]
+  },
+  {
+    "id": 3051,
+    "file": "hearthboundaxe.png",
+    "names": [
+      "Hearthbound Axe",
+      "온기가 필요한 자의 도끼",
+      "缚炉之斧"
+    ]
+  },
+  {
+    "id": 3053,
+    "file": "steraksgage.png",
+    "names": [
+      "Sterak's Gage",
+      "스테락의 도전",
+      "斯特拉克的挑战护手"
+    ]
+  },
+  {
+    "id": 3057,
+    "file": "sheen.png",
+    "names": [
+      "Sheen",
+      "광휘의 검",
+      "耀光"
+    ]
+  },
+  {
+    "id": 3065,
+    "file": "spiritvisage.png",
+    "names": [
+      "Spirit Visage",
+      "정령의 형상",
+      "振奋盔甲"
+    ]
+  },
+  {
+    "id": 3066,
+    "file": "wingedmoonplate.png",
+    "names": [
+      "Winged Moonplate",
+      "비상의 월갑",
+      "带翼的月板甲"
+    ]
+  },
+  {
+    "id": 3067,
+    "file": "kindlegem.png",
+    "names": [
+      "Kindlegem",
+      "점화석",
+      "燃烧宝石"
+    ]
+  },
+  {
+    "id": 3068,
+    "file": "sunfireaegis.png",
+    "names": [
+      "Sunfire Aegis",
+      "태양불꽃 방패",
+      "日炎圣盾"
+    ]
+  },
+  {
+    "id": 3070,
+    "file": "tearofthegoddess.png",
+    "names": [
+      "Tear of the Goddess",
+      "여신의 눈물",
+      "女神之泪"
+    ]
+  },
+  {
+    "id": 3071,
+    "file": "blackcleaver.png",
+    "names": [
+      "Black Cleaver",
+      "칠흑의 양날 도끼",
+      "黑色切割者"
+    ]
+  },
+  {
+    "id": 3072,
+    "file": "bloodthirster.png",
+    "names": [
+      "Bloodthirster",
+      "피바라기",
+      "饮血剑"
+    ]
+  },
+  {
+    "id": 3073,
+    "file": "experimentalhexplate.png",
+    "names": [
+      "Experimental Hexplate",
+      "실험적 마공학판",
+      "海克斯注力刚壁"
+    ]
+  },
+  {
+    "id": 3074,
+    "file": "ravenoushydra.png",
+    "names": [
+      "Ravenous Hydra",
+      "굶주린 히드라",
+      "贪欲九头蛇"
+    ]
+  },
+  {
+    "id": 3075,
+    "file": "thornmail.png",
+    "names": [
+      "Thornmail",
+      "가시 갑옷",
+      "荆棘之甲"
+    ]
+  },
+  {
+    "id": 3076,
+    "file": "bramblevest.png",
+    "names": [
+      "Bramble Vest",
+      "덤불 조끼",
+      "棘刺背心"
+    ]
+  },
+  {
+    "id": 3077,
+    "file": "tiamat.png",
+    "names": [
+      "Tiamat",
+      "티아맷",
+      "提亚马特"
+    ]
+  },
+  {
+    "id": 3078,
+    "file": "trinityforce.png",
+    "names": [
+      "Trinity Force",
+      "삼위일체",
+      "三相之力"
+    ]
+  },
+  {
+    "id": 3082,
+    "file": "wardensmail.png",
+    "names": [
+      "Warden's Mail",
+      "파수꾼의 갑옷",
+      "守望者铠甲"
+    ]
+  },
+  {
+    "id": 3083,
+    "file": "warmogsarmor.png",
+    "names": [
+      "Warmog's Armor",
+      "워모그의 갑옷",
+      "狂徒铠甲"
+    ]
+  },
+  {
+    "id": 3084,
+    "file": "heartsteel.png",
+    "names": [
+      "Heartsteel",
+      "강철심장",
+      "心之钢"
+    ]
+  },
+  {
+    "id": 3085,
+    "file": "runaanshurricane.png",
+    "names": [
+      "Runaan's Hurricane",
+      "루난의 허리케인",
+      "卢安娜的飓风"
+    ]
+  },
+  {
+    "id": 3086,
+    "file": "zeal.png",
+    "names": [
+      "Zeal",
+      "열정의 검",
+      "狂热"
+    ]
+  },
+  {
+    "id": 3087,
+    "file": "statikkshiv.png",
+    "names": [
+      "Statikk Shiv",
+      "스태틱의 단검",
+      "斯塔缇克电刃"
+    ]
+  },
+  {
+    "id": 3089,
+    "file": "rabadonsdeathcap.png",
+    "names": [
+      "Rabadon's Deathcap",
+      "라바돈의 죽음모자",
+      "灭世者的死亡之帽"
+    ]
+  },
+  {
+    "id": 3091,
+    "file": "witsend.png",
+    "names": [
+      "Wit's End",
+      "마법사의 최후",
+      "智慧末刃"
+    ]
+  },
+  {
+    "id": 3094,
+    "file": "rapidfirecannon.png",
+    "names": [
+      "Rapid Firecannon",
+      "고속 연사포",
+      "疾射火炮"
+    ]
+  },
+  {
+    "id": 3095,
+    "file": "stormrazor.png",
+    "names": [
+      "Stormrazor",
+      "폭풍갈퀴",
+      "岚切"
+    ]
+  },
+  {
+    "id": 3100,
+    "file": "lichbane.png",
+    "names": [
+      "Lich Bane",
+      "리치베인",
+      "巫妖之祸"
+    ]
+  },
+  {
+    "id": 3102,
+    "file": "bansheesveil.png",
+    "names": [
+      "Banshee's Veil",
+      "밴시의 장막",
+      "女妖面纱"
+    ]
+  },
+  {
+    "id": 3105,
+    "file": "aegisofthelegion.png",
+    "names": [
+      "Aegis of the Legion",
+      "군단의 방패",
+      "军团圣盾"
+    ]
+  },
+  {
+    "id": 3107,
+    "file": "redemption.png",
+    "names": [
+      "Redemption",
+      "구원",
+      "救赎"
+    ]
+  },
+  {
+    "id": 3108,
+    "file": "fiendishcodex.png",
+    "names": [
+      "Fiendish Codex",
+      "악마의 마법서",
+      "恶魔法典"
+    ]
+  },
+  {
+    "id": 3109,
+    "file": "knightsvow.png",
+    "names": [
+      "Knight's Vow",
+      "기사의 맹세",
+      "骑士之誓"
+    ]
+  },
+  {
+    "id": 3110,
+    "file": "frozenheart.png",
+    "names": [
+      "Frozen Heart",
+      "얼어붙은 심장",
+      "冰霜之心"
+    ]
+  },
+  {
+    "id": 3111,
+    "file": "mercurystreads.png",
+    "names": [
+      "Mercury's Treads",
+      "헤르메스의 발걸음",
+      "水银之靴"
+    ]
+  },
+  {
+    "id": 3112,
+    "file": "guardiansorb.png",
+    "names": [
+      "Guardian's Orb",
+      "수호자의 보주",
+      "守护者法球"
+    ]
+  },
+  {
+    "id": 3113,
+    "file": "aetherwisp.png",
+    "names": [
+      "Aether Wisp",
+      "에테르 환영",
+      "以太精魂"
+    ]
+  },
+  {
+    "id": 3114,
+    "file": "forbiddenidol.png",
+    "names": [
+      "Forbidden Idol",
+      "금지된 우상",
+      "禁忌雕像"
+    ]
+  },
+  {
+    "id": 3115,
+    "file": "nashorstooth.png",
+    "names": [
+      "Nashor's Tooth",
+      "내셔의 이빨",
+      "纳什之牙"
+    ]
+  },
+  {
+    "id": 3116,
+    "file": "rylaiscrystalscepter.png",
+    "names": [
+      "Rylai's Crystal Scepter",
+      "라일라이의 수정홀",
+      "瑞莱的冰晶节杖"
+    ]
+  },
+  {
+    "id": 3117,
+    "file": "mobilityboots.png",
+    "names": [
+      "Mobility Boots",
+      "기동력의 장화",
+      "疾行之靴"
+    ]
+  },
+  {
+    "id": 3118,
+    "file": "malignance.png",
+    "names": [
+      "Malignance",
+      "악의",
+      "残疫"
+    ]
+  },
+  {
+    "id": 3119,
+    "file": "wintersapproach.png",
+    "names": [
+      "Winter's Approach",
+      "혹한의 손길",
+      "凛冬之临"
+    ]
+  },
+  {
+    "id": 3121,
+    "file": "fimbulwinter.png",
+    "names": [
+      "Fimbulwinter",
+      "종말의 겨울",
+      "末日寒冬"
+    ]
+  },
+  {
+    "id": 3123,
+    "file": "executionerscalling.png",
+    "names": [
+      "Executioner's Calling",
+      "처형인의 대검",
+      "死刑宣告"
+    ]
+  },
+  {
+    "id": 3124,
+    "file": "guinsoosrageblade.png",
+    "names": [
+      "Guinsoo's Rageblade",
+      "구인수의 격노검",
+      "鬼索的狂暴之刃"
+    ]
+  },
+  {
+    "id": 3128,
+    "file": "deathfiregrasp.png",
+    "names": [
+      "Deathfire Grasp",
+      "죽음불꽃 손아귀",
+      "冥火之拥"
+    ]
+  },
+  {
+    "id": 3131,
+    "file": "swordofthedivine.png",
+    "names": [
+      "Sword of the Divine",
+      "신성의 검",
+      "神圣之剑"
+    ]
+  },
+  {
+    "id": 3133,
+    "file": "caulfieldswarhammer.png",
+    "names": [
+      "Caulfield's Warhammer",
+      "콜필드의 전투 망치",
+      "考尔菲德的战锤"
+    ]
+  },
+  {
+    "id": 3134,
+    "file": "serrateddirk.png",
+    "names": [
+      "Serrated Dirk",
+      "톱날 단검",
+      "锯齿短匕"
+    ]
+  },
+  {
+    "id": 3135,
+    "file": "voidstaff.png",
+    "names": [
+      "Void Staff",
+      "공허의 지팡이",
+      "虚空之杖"
+    ]
+  },
+  {
+    "id": 3137,
+    "file": "cryptbloom.png",
+    "names": [
+      "Cryptbloom",
+      "무덤꽃",
+      "蜕生"
+    ]
+  },
+  {
+    "id": 3139,
+    "file": "mercurialscimitar.png",
+    "names": [
+      "Mercurial Scimitar",
+      "헤르메스의 시미터",
+      "水银弯刀"
+    ]
+  },
+  {
+    "id": 3140,
+    "file": "quicksilversash.png",
+    "names": [
+      "Quicksilver Sash",
+      "수은 장식띠",
+      "水银饰带"
+    ]
+  },
+  {
+    "id": 3142,
+    "file": "youmuusghostblade.png",
+    "names": [
+      "Youmuu's Ghostblade",
+      "요우무의 유령검",
+      "幽梦之灵"
+    ]
+  },
+  {
+    "id": 3143,
+    "file": "randuinsomen.png",
+    "names": [
+      "Randuin's Omen",
+      "란두인의 예언",
+      "兰顿之兆"
+    ]
+  },
+  {
+    "id": 3144,
+    "file": "scoutsslingshot.png",
+    "names": [
+      "Scout's Slingshot",
+      "정찰병의 새총",
+      "斥候弹弓"
+    ]
+  },
+  {
+    "id": 3145,
+    "file": "hextechalternator.png",
+    "names": [
+      "Hextech Alternator",
+      "마법공학 교류 발전기",
+      "海克斯科技发电机"
+    ]
+  },
+  {
+    "id": 3146,
+    "file": "hextechgunblade.png",
+    "names": [
+      "Hextech Gunblade",
+      "마법공학 총검",
+      "海克斯科技枪刃"
+    ]
+  },
+  {
+    "id": 3147,
+    "file": "hauntingguise.png",
+    "names": [
+      "Haunting Guise",
+      "기괴한 가면",
+      "幽魂面具"
+    ]
+  },
+  {
+    "id": 3152,
+    "file": "hextechrocketbelt.png",
+    "names": [
+      "Hextech Rocketbelt",
+      "마법공학 로켓 벨트",
+      "海克斯科技火箭腰带"
+    ]
+  },
+  {
+    "id": 3153,
+    "file": "bladeoftheruinedking.png",
+    "names": [
+      "Blade of The Ruined King",
+      "몰락한 왕의 검",
+      "破败王者之刃"
+    ]
+  },
+  {
+    "id": 3155,
+    "file": "hexdrinker.png",
+    "names": [
+      "Hexdrinker",
+      "주문포식자",
+      "海克斯饮魔刀"
+    ]
+  },
+  {
+    "id": 3156,
+    "file": "mawofmalmortius.png",
+    "names": [
+      "Maw of Malmortius",
+      "맬모셔스의 아귀",
+      "玛莫提乌斯之噬"
+    ]
+  },
+  {
+    "id": 3157,
+    "file": "zhonyashourglass.png",
+    "names": [
+      "Zhonya's Hourglass",
+      "존야의 모래시계",
+      "中娅沙漏"
+    ]
+  },
+  {
+    "id": 3158,
+    "file": "ionianbootsoflucidity.png",
+    "names": [
+      "Ionian Boots of Lucidity",
+      "명석함의 아이오니아 장화",
+      "明朗之靴"
+    ]
+  },
+  {
+    "id": 3161,
+    "file": "spearofshojin.png",
+    "names": [
+      "Spear of Shojin",
+      "쇼진의 창",
+      "朔极之矛"
+    ]
+  },
+  {
+    "id": 3165,
+    "file": "morellonomicon.png",
+    "names": [
+      "Morellonomicon",
+      "모렐로노미콘",
+      "莫雷洛秘典"
+    ]
+  },
+  {
+    "id": 3168,
+    "file": "immortalpath.png",
+    "names": [
+      "Immortal Path",
+      "불멸의 길",
+      "不朽之路"
+    ]
+  },
+  {
+    "id": 3170,
+    "file": "swiftmarch.png",
+    "names": [
+      "Swiftmarch",
+      "신속행진",
+      "迅速进军"
+    ]
+  },
+  {
+    "id": 3171,
+    "file": "crimsonlucidity.png",
+    "names": [
+      "Crimson Lucidity",
+      "핏빛 명석함",
+      "猩红明朗"
+    ]
+  },
+  {
+    "id": 3172,
+    "file": "gunmetalgreaves.png",
+    "names": [
+      "Gunmetal Greaves",
+      "건메탈 군화",
+      "炮铜胫甲"
+    ]
+  },
+  {
+    "id": 3173,
+    "file": "chainlacedcrushers.png",
+    "names": [
+      "Chainlaced Crushers",
+      "사슬끈 분쇄자",
+      "带链碾碎者"
+    ]
+  },
+  {
+    "id": 3174,
+    "file": "armoredadvance.png",
+    "names": [
+      "Armored Advance",
+      "무장 진격",
+      "装甲战靴"
+    ]
+  },
+  {
+    "id": 3175,
+    "file": "spellslingersshoes.png",
+    "names": [
+      "Spellslinger's Shoes",
+      "주문투척자의 신발",
+      "灵能使之靴"
+    ]
+  },
+  {
+    "id": 3176,
+    "file": "foreverforward.png",
+    "names": [
+      "Forever Forward",
+      "영원한 전진",
+      "永远前进"
+    ]
+  },
+  {
+    "id": 3177,
+    "file": "guardiansblade.png",
+    "names": [
+      "Guardian's Blade",
+      "수호자의 검",
+      "守护者之刃"
+    ]
+  },
+  {
+    "id": 3179,
+    "file": "umbralglaive.png",
+    "names": [
+      "Umbral Glaive",
+      "그림자 검",
+      "黯影阔剑"
+    ]
+  },
+  {
+    "id": 3181,
+    "file": "hullbreaker.png",
+    "names": [
+      "Hullbreaker",
+      "선체파괴자",
+      "破舰者"
+    ]
+  },
+  {
+    "id": 3184,
+    "file": "guardianshammer.png",
+    "names": [
+      "Guardian's Hammer",
+      "수호자의 망치",
+      "守护者战锤"
+    ]
+  },
+  {
+    "id": 3190,
+    "file": "locketoftheironsolari.png",
+    "names": [
+      "Locket of the Iron Solari",
+      "강철의 솔라리 펜던트",
+      "钢铁烈阳之匣"
+    ]
+  },
+  {
+    "id": 3193,
+    "file": "gargoylestoneplate.png",
+    "names": [
+      "Gargoyle Stoneplate",
+      "가고일 돌갑옷",
+      "石像鬼石板甲"
+    ]
+  },
+  {
+    "id": 3211,
+    "file": "spectrescowl.png",
+    "names": [
+      "Spectre's Cowl",
+      "망령의 두건",
+      "幽魂斗篷"
+    ]
+  },
+  {
+    "id": 3222,
+    "file": "mikaelsblessing.png",
+    "names": [
+      "Mikael's Blessing",
+      "미카엘의 축복",
+      "米凯尔的祝福"
+    ]
+  },
+  {
+    "id": 3302,
+    "file": "terminus.png",
+    "names": [
+      "Terminus",
+      "경계",
+      "界弓"
+    ]
+  },
+  {
+    "id": 3330,
+    "file": "scarecroweffigy.png",
+    "names": [
+      "Scarecrow Effigy",
+      "허수아비",
+      "草间人"
+    ]
+  },
+  {
+    "id": 3340,
+    "file": "stealthward_3340.png",
+    "names": [
+      "Stealth Ward",
+      "투명 와드",
+      "侦察守卫"
+    ]
+  },
+  {
+    "id": 3348,
+    "file": "arcanesweeper.png",
+    "names": [
+      "Arcane Sweeper",
+      "비전 탐지기",
+      "奥术探测器"
+    ]
+  },
+  {
+    "id": 3349,
+    "file": "lucentsingularity.png",
+    "names": [
+      "Lucent Singularity",
+      "광휘의 특이점",
+      "透光奇点"
+    ]
+  },
+  {
+    "id": 3363,
+    "file": "farsightalteration.png",
+    "names": [
+      "Farsight Alteration",
+      "망원형 개조",
+      "远见改造"
+    ]
+  },
+  {
+    "id": 3364,
+    "file": "oraclelens.png",
+    "names": [
+      "Oracle Lens",
+      "예언자의 렌즈",
+      "神谕透镜"
+    ]
+  },
+  {
+    "id": 3398,
+    "file": "smallpartyfavor.png",
+    "names": [
+      "Small Party Favor",
+      "작은 파티 선물",
+      "小型派对礼品"
+    ]
+  },
+  {
+    "id": 3399,
+    "file": "partyfavor.png",
+    "names": [
+      "Party Favor",
+      "파티 선물",
+      "派对礼品"
+    ]
+  },
+  {
+    "id": 3400,
+    "file": "yourcut.png",
+    "names": [
+      "Your Cut",
+      "수당",
+      "你也有份"
+    ]
+  },
+  {
+    "id": 3430,
+    "file": "riteofruin.png",
+    "names": [
+      "Rite Of Ruin",
+      "파멸의식 고서",
+      "毁坏仪式"
+    ]
+  },
+  {
+    "id": 3504,
+    "file": "ardentcenser.png",
+    "names": [
+      "Ardent Censer",
+      "불타는 향로",
+      "炽热香炉"
+    ]
+  },
+  {
+    "id": 3508,
+    "file": "essencereaver.png",
+    "names": [
+      "Essence Reaver",
+      "정수 약탈자",
+      "夺萃之镰"
+    ]
+  },
+  {
+    "id": 3513,
+    "file": "eyeoftheherald_3513.png",
+    "names": [
+      "Eye of the Herald",
+      "전령의 눈",
+      "先锋之眼"
+    ]
+  },
+  {
+    "id": 3599,
+    "file": "kalistasblackspear.png",
+    "names": [
+      "Kalista's Black Spear",
+      "칼리스타의 칠흑의 창",
+      "卡莉丝塔的黑色长矛"
+    ]
+  },
+  {
+    "id": 3600,
+    "file": "kalistasblackspear_3600.png",
+    "names": [
+      "Kalista's Black Spear",
+      "칼리스타의 칠흑의 창",
+      "卡莉丝塔的黑色长矛"
+    ]
+  },
+  {
+    "id": 3742,
+    "file": "deadmansplate.png",
+    "names": [
+      "Dead Man's Plate",
+      "망자의 갑옷",
+      "亡者的板甲"
+    ]
+  },
+  {
+    "id": 3748,
+    "file": "titanichydra.png",
+    "names": [
+      "Titanic Hydra",
+      "거대한 히드라",
+      "巨型九头蛇"
+    ]
+  },
+  {
+    "id": 3801,
+    "file": "crystallinebracer.png",
+    "names": [
+      "Crystalline Bracer",
+      "수정 팔 보호구",
+      "晶体护腕"
+    ]
+  },
+  {
+    "id": 3802,
+    "file": "lostchapter.png",
+    "names": [
+      "Lost Chapter",
+      "사라진 양피지",
+      "遗失的章节"
+    ]
+  },
+  {
+    "id": 3803,
+    "file": "catalystofaeons.png",
+    "names": [
+      "Catalyst of Aeons",
+      "억겁의 카탈리스트",
+      "万世催化石"
+    ]
+  },
+  {
+    "id": 3814,
+    "file": "edgeofnight.png",
+    "names": [
+      "Edge of Night",
+      "밤의 끝자락",
+      "夜之锋刃"
+    ]
+  },
+  {
+    "id": 3850,
+    "file": "spellthiefsedge.png",
+    "names": [
+      "Spellthief's Edge",
+      "주문도둑의 검",
+      "窃法之刃"
+    ]
+  },
+  {
+    "id": 3851,
+    "file": "frostfang.png",
+    "names": [
+      "Frostfang",
+      "얼음 송곳니",
+      "冰霜之牙"
+    ]
+  },
+  {
+    "id": 3853,
+    "file": "shardoftrueice.png",
+    "names": [
+      "Shard of True Ice",
+      "얼음 정수의 파편",
+      "极冰碎片"
+    ]
+  },
+  {
+    "id": 3854,
+    "file": "steelshoulderguards.png",
+    "names": [
+      "Steel Shoulderguards",
+      "강철 어깨 보호대",
+      "钢铁护肩"
+    ]
+  },
+  {
+    "id": 3855,
+    "file": "runesteelspaulders.png",
+    "names": [
+      "Runesteel Spaulders",
+      "룬 강철 어깨 갑옷",
+      "符钢肩甲"
+    ]
+  },
+  {
+    "id": 3857,
+    "file": "pauldronsofwhiterock.png",
+    "names": [
+      "Pauldrons of Whiterock",
+      "화이트록의 갑옷",
+      "白岩肩铠"
+    ]
+  },
+  {
+    "id": 3858,
+    "file": "relicshield.png",
+    "names": [
+      "Relic Shield",
+      "고대유물 방패",
+      "圣物之盾"
+    ]
+  },
+  {
+    "id": 3859,
+    "file": "targonsbuckler.png",
+    "names": [
+      "Targon's Buckler",
+      "타곤 산의 방패",
+      "巨神峰圆盾"
+    ]
+  },
+  {
+    "id": 3860,
+    "file": "bulwarkofthemountain.png",
+    "names": [
+      "Bulwark of the Mountain",
+      "타곤 산의 방벽",
+      "山脉壁垒"
+    ]
+  },
+  {
+    "id": 3862,
+    "file": "spectralsickle.png",
+    "names": [
+      "Spectral Sickle",
+      "영혼의 낫",
+      "幽魂镰刀"
+    ]
+  },
+  {
+    "id": 3863,
+    "file": "harrowingcrescent.png",
+    "names": [
+      "Harrowing Crescent",
+      "해로윙 초승달낫",
+      "鬼影新月"
+    ]
+  },
+  {
+    "id": 3864,
+    "file": "blackmistscythe.png",
+    "names": [
+      "Black Mist Scythe",
+      "검은 안개 낫",
+      "黑雾巨镰"
+    ]
+  },
+  {
+    "id": 3865,
+    "file": "worldatlas.png",
+    "names": [
+      "World Atlas",
+      "세계 지도집",
+      "云游图鉴"
+    ]
+  },
+  {
+    "id": 3866,
+    "file": "runiccompass.png",
+    "names": [
+      "Runic Compass",
+      "룬 나침반",
+      "符文罗盘"
+    ]
+  },
+  {
+    "id": 3867,
+    "file": "bountyofworlds.png",
+    "names": [
+      "Bounty of Worlds",
+      "세계의 결실",
+      "异世珍藏"
+    ]
+  },
+  {
+    "id": 3869,
+    "file": "celestialopposition.png",
+    "names": [
+      "Celestial Opposition",
+      "천상의 이의",
+      "星界据守"
+    ]
+  },
+  {
+    "id": 3870,
+    "file": "dreammaker.png",
+    "names": [
+      "Dream Maker",
+      "꿈 생성기",
+      "圆梦使者"
+    ]
+  },
+  {
+    "id": 3871,
+    "file": "zazzaksrealmspike.png",
+    "names": [
+      "Zaz'Zak's Realmspike",
+      "자자크의 세계가시",
+      "扎兹沙克的溃口"
+    ]
+  },
+  {
+    "id": 3876,
+    "file": "solsticesleigh.png",
+    "names": [
+      "Solstice Sleigh",
+      "태양의 썰매",
+      "摩天雪橇"
+    ]
+  },
+  {
+    "id": 3877,
+    "file": "bloodsong.png",
+    "names": [
+      "Bloodsong",
+      "피의 노래",
+      "血鸣"
+    ]
+  },
+  {
+    "id": 3901,
+    "file": "raritylegendaryfireatwillraritylegendarybrsubtitleleftsilver500silverserpentssilversubtitleleft.png",
+    "names": [
+      "<rarityLegendary>Fire at Will</rarityLegendary><br><subtitleLeft><silver>500 Silver Serpents</silver></subtitleLeft>",
+      "<rarityLegendary>가차없는 포격</rarityLegendary><br><subtitleLeft><silver>바다뱀 은화 500닢</silver></subtitleLeft>",
+      "<rarityLegendary>随意开火</rarityLegendary><br><subtitleLeft><silver>500银蛇币</silver></subtitleLeft>"
+    ]
+  },
+  {
+    "id": 3902,
+    "file": "raritylegendarydeathsdaughterraritylegendarybrsubtitleleftsilver500silverserpentssilversubtitleleft.png",
+    "names": [
+      "<rarityLegendary>Death's Daughter</rarityLegendary><br><subtitleLeft><silver>500 Silver Serpents</silver></subtitleLeft>",
+      "<rarityLegendary>죽음의 여신</rarityLegendary><br><subtitleLeft><silver>바다뱀 은화 500닢</silver></subtitleLeft>",
+      "<rarityLegendary>死亡之女</rarityLegendary><br><subtitleLeft><silver>500银蛇币</silver></subtitleLeft>"
+    ]
+  },
+  {
+    "id": 3903,
+    "file": "raritylegendaryraisemoraleraritylegendarybrsubtitleleftsilver500silverserpentssilversubtitleleft.png",
+    "names": [
+      "<rarityLegendary>Raise Morale</rarityLegendary><br><subtitleLeft><silver>500 Silver Serpents</silver></subtitleLeft>",
+      "<rarityLegendary>사기진작</rarityLegendary><br><subtitleLeft><silver>바다뱀 은화 500닢</silver></subtitleLeft>",
+      "<rarityLegendary>鼓舞士气</rarityLegendary><br><subtitleLeft><silver>500银蛇币</silver></subtitleLeft>"
+    ]
+  },
+  {
+    "id": 3916,
+    "file": "oblivionorb.png",
+    "names": [
+      "Oblivion Orb",
+      "망각의 구",
+      "湮灭宝珠"
+    ]
+  },
+  {
+    "id": 4003,
+    "file": "lifeline.png",
+    "names": [
+      "Lifeline",
+      "생명선",
+      "救生索"
+    ]
+  },
+  {
+    "id": 4004,
+    "file": "spectralcutlass.png",
+    "names": [
+      "Spectral Cutlass",
+      "망령 해적검",
+      "幽魂弯刀"
+    ]
+  },
+  {
+    "id": 4005,
+    "file": "imperialmandate.png",
+    "names": [
+      "Imperial Mandate",
+      "제국의 명령",
+      "帝国指令"
+    ]
+  },
+  {
+    "id": 4010,
+    "file": "bloodletterscurse.png",
+    "names": [
+      "Bloodletter's Curse",
+      "핏빛 저주",
+      "放血者的诅咒"
+    ]
+  },
+  {
+    "id": 4011,
+    "file": "swordofblossomingdawn.png",
+    "names": [
+      "Sword of Blossoming Dawn",
+      "꽃피는 새벽의 검",
+      "花晓之剑"
+    ]
+  },
+  {
+    "id": 4012,
+    "file": "sineater.png",
+    "names": [
+      "Sin Eater",
+      "죄악 포식자",
+      "食罪者"
+    ]
+  },
+  {
+    "id": 4013,
+    "file": "lightningbraid.png",
+    "names": [
+      "Lightning Braid",
+      "번개 끈",
+      "闪电穗带"
+    ]
+  },
+  {
+    "id": 4014,
+    "file": "frozenmallet.png",
+    "names": [
+      "Frozen Mallet",
+      "얼어붙은 망치",
+      "冰霜之锤"
+    ]
+  },
+  {
+    "id": 4015,
+    "file": "perplexity.png",
+    "names": [
+      "Perplexity",
+      "당혹",
+      "困惑"
+    ]
+  },
+  {
+    "id": 4016,
+    "file": "wordlesspromise.png",
+    "names": [
+      "Wordless Promise",
+      "무언의 서약",
+      "无言承诺"
+    ]
+  },
+  {
+    "id": 4017,
+    "file": "hellfirehatchet.png",
+    "names": [
+      "Hellfire Hatchet",
+      "지옥불 손도끼",
+      "恶火小斧"
+    ]
+  },
+  {
+    "id": 4401,
+    "file": "forceofnature.png",
+    "names": [
+      "Force of Nature",
+      "대자연의 힘",
+      "自然之力"
+    ]
+  },
+  {
+    "id": 4402,
+    "file": "innervatinglocket.png",
+    "names": [
+      "Innervating Locket",
+      "활력증진의 펜던트",
+      "激发之匣"
+    ]
+  },
+  {
+    "id": 4403,
+    "file": "thegoldenspatula.png",
+    "names": [
+      "The Golden Spatula",
+      "황금 뒤집개",
+      "金铲铲"
+    ]
+  },
+  {
+    "id": 4628,
+    "file": "horizonfocus.png",
+    "names": [
+      "Horizon Focus",
+      "지평선의 초점",
+      "视界专注"
+    ]
+  },
+  {
+    "id": 4629,
+    "file": "cosmicdrive.png",
+    "names": [
+      "Cosmic Drive",
+      "우주의 추진력",
+      "星界驱驰"
+    ]
+  },
+  {
+    "id": 4630,
+    "file": "blightingjewel.png",
+    "names": [
+      "Blighting Jewel",
+      "역병의 보석",
+      "枯萎珠宝"
+    ]
+  },
+  {
+    "id": 4632,
+    "file": "verdantbarrier.png",
+    "names": [
+      "Verdant Barrier",
+      "신록의 장벽",
+      "翠绿屏障"
+    ]
+  },
+  {
+    "id": 4633,
+    "file": "riftmaker.png",
+    "names": [
+      "Riftmaker",
+      "균열 생성기",
+      "裂隙制造者"
+    ]
+  },
+  {
+    "id": 4635,
+    "file": "leechingleer.png",
+    "names": [
+      "Leeching Leer",
+      "흡수의 시선",
+      "榨血睥睨"
+    ]
+  },
+  {
+    "id": 4636,
+    "file": "nightharvester.png",
+    "names": [
+      "Night Harvester",
+      "밤의 수확자",
+      "暗夜收割者"
+    ]
+  },
+  {
+    "id": 4637,
+    "file": "demonicembrace.png",
+    "names": [
+      "Demonic Embrace",
+      "악마의 포옹",
+      "恶魔之拥"
+    ]
+  },
+  {
+    "id": 4638,
+    "file": "watchfulwardstone.png",
+    "names": [
+      "Watchful Wardstone",
+      "감시하는 와드석",
+      "戒备眼石"
+    ]
+  },
+  {
+    "id": 4641,
+    "file": "stirringwardstone.png",
+    "names": [
+      "Stirring Wardstone",
+      "고무의 와드석",
+      "萌动眼石"
+    ]
+  },
+  {
+    "id": 4642,
+    "file": "bandleglassmirror.png",
+    "names": [
+      "Bandleglass Mirror",
+      "밴들유리 거울",
+      "班德尔玻璃镜"
+    ]
+  },
+  {
+    "id": 4643,
+    "file": "vigilantwardstone.png",
+    "names": [
+      "Vigilant Wardstone",
+      "경계의 와드석",
+      "警觉眼石"
+    ]
+  },
+  {
+    "id": 4644,
+    "file": "crownoftheshatteredqueen.png",
+    "names": [
+      "Crown of the Shattered Queen",
+      "부서진 여왕의 왕관",
+      "破碎王后之冕"
+    ]
+  },
+  {
+    "id": 4645,
+    "file": "shadowflame.png",
+    "names": [
+      "Shadowflame",
+      "그림자불꽃",
+      "影焰"
+    ]
+  },
+  {
+    "id": 4646,
+    "file": "stormsurge.png",
+    "names": [
+      "Stormsurge",
+      "폭풍 쇄도",
+      "风暴狂涌"
+    ]
+  },
+  {
+    "id": 6029,
+    "file": "ironspikewhip.png",
+    "names": [
+      "Ironspike Whip",
+      "강철가시 채찍",
+      "铁刺鞭"
+    ]
+  },
+  {
+    "id": 6032,
+    "file": "statbonus.png",
+    "names": [
+      "Stat Bonus",
+      "추가 능력치",
+      "属性加成"
+    ]
+  },
+  {
+    "id": 6035,
+    "file": "silvermeredawn.png",
+    "names": [
+      "Silvermere Dawn",
+      "은빛 여명",
+      "密银黎明"
+    ]
+  },
+  {
+    "id": 6333,
+    "file": "deathsdance.png",
+    "names": [
+      "Death's Dance",
+      "죽음의 무도",
+      "死亡之舞"
+    ]
+  },
+  {
+    "id": 6609,
+    "file": "chempunkchainsword.png",
+    "names": [
+      "Chempunk Chainsword",
+      "화공 펑크 사슬검",
+      "炼金朋克链锯剑"
+    ]
+  },
+  {
+    "id": 6610,
+    "file": "sunderedsky.png",
+    "names": [
+      "Sundered Sky",
+      "갈라진 하늘",
+      "焚天"
+    ]
+  },
+  {
+    "id": 6616,
+    "file": "staffofflowingwater.png",
+    "names": [
+      "Staff of Flowing Water",
+      "흐르는 물의 지팡이",
+      "流水法杖"
+    ]
+  },
+  {
+    "id": 6617,
+    "file": "moonstonerenewer.png",
+    "names": [
+      "Moonstone Renewer",
+      "월석 재생기",
+      "月石再生器"
+    ]
+  },
+  {
+    "id": 6620,
+    "file": "echoesofhelia.png",
+    "names": [
+      "Echoes of Helia",
+      "헬리아의 메아리",
+      "海力亚的回响"
+    ]
+  },
+  {
+    "id": 6621,
+    "file": "dawncore.png",
+    "names": [
+      "Dawncore",
+      "새벽심장",
+      "黎明核心"
+    ]
+  },
+  {
+    "id": 6630,
+    "file": "goredrinker.png",
+    "names": [
+      "Goredrinker",
+      "선혈포식자",
+      "渴血战斧"
+    ]
+  },
+  {
+    "id": 6631,
+    "file": "stridebreaker.png",
+    "names": [
+      "Stridebreaker",
+      "발걸음 분쇄기",
+      "挺进破坏者"
+    ]
+  },
+  {
+    "id": 6632,
+    "file": "divinesunderer.png",
+    "names": [
+      "Divine Sunderer",
+      "신성한 파괴자",
+      "神圣分离者"
+    ]
+  },
+  {
+    "id": 6653,
+    "file": "liandrystorment.png",
+    "names": [
+      "Liandry's Torment",
+      "리안드리의 고통",
+      "兰德里的折磨"
+    ]
+  },
+  {
+    "id": 6655,
+    "file": "ludensecho.png",
+    "names": [
+      "Luden's Echo",
+      "루덴의 메아리",
+      "卢登的回声"
+    ]
+  },
+  {
+    "id": 6656,
+    "file": "everfrost.png",
+    "names": [
+      "Everfrost",
+      "만년서리",
+      "永霜"
+    ]
+  },
+  {
+    "id": 6657,
+    "file": "rodofages.png",
+    "names": [
+      "Rod of Ages",
+      "영겁의 지팡이",
+      "时光之杖"
+    ]
+  },
+  {
+    "id": 6660,
+    "file": "bamiscinder.png",
+    "names": [
+      "Bami's Cinder",
+      "바미의 불씨",
+      "斑比的熔渣"
+    ]
+  },
+  {
+    "id": 6662,
+    "file": "iceborngauntlet.png",
+    "names": [
+      "Iceborn Gauntlet",
+      "얼어붙은 건틀릿",
+      "冰脉护手"
+    ]
+  },
+  {
+    "id": 6664,
+    "file": "hollowradiance.png",
+    "names": [
+      "Hollow Radiance",
+      "공허한 광휘",
+      "璀璨回响"
+    ]
+  },
+  {
+    "id": 6665,
+    "file": "jakshotheprotean.png",
+    "names": [
+      "Jak'Sho, The Protean",
+      "해신 작쇼",
+      "千变者贾修"
+    ]
+  },
+  {
+    "id": 6667,
+    "file": "radiantvirtue.png",
+    "names": [
+      "Radiant Virtue",
+      "광휘의 미덕",
+      "辉耀美德"
+    ]
+  },
+  {
+    "id": 6670,
+    "file": "noonquiver.png",
+    "names": [
+      "Noonquiver",
+      "절정의 화살",
+      "正午箭袋"
+    ]
+  },
+  {
+    "id": 6671,
+    "file": "galeforce.png",
+    "names": [
+      "Galeforce",
+      "돌풍",
+      "狂风之力"
+    ]
+  },
+  {
+    "id": 6672,
+    "file": "krakenslayer.png",
+    "names": [
+      "Kraken Slayer",
+      "크라켄 학살자",
+      "海妖杀手"
+    ]
+  },
+  {
+    "id": 6673,
+    "file": "immortalshieldbow.png",
+    "names": [
+      "Immortal Shieldbow",
+      "불멸의 철갑궁",
+      "不朽盾弓"
+    ]
+  },
+  {
+    "id": 6675,
+    "file": "navoriflickerblade.png",
+    "names": [
+      "Navori Flickerblade",
+      "나보리 명멸검",
+      "纳沃利烁刃"
+    ]
+  },
+  {
+    "id": 6676,
+    "file": "thecollector.png",
+    "names": [
+      "The Collector",
+      "징수의 총",
+      "收集者"
+    ]
+  },
+  {
+    "id": 6677,
+    "file": "rageknife.png",
+    "names": [
+      "Rageknife",
+      "분노의 칼",
+      "狂怒小刀"
+    ]
+  },
+  {
+    "id": 6690,
+    "file": "rectrix.png",
+    "names": [
+      "Rectrix",
+      "꽁지깃",
+      "剑翎"
+    ]
+  },
+  {
+    "id": 6691,
+    "file": "duskbladeofdraktharr.png",
+    "names": [
+      "Duskblade of Draktharr",
+      "드락사르의 황혼검",
+      "德拉克萨的暮刃"
+    ]
+  },
+  {
+    "id": 6692,
+    "file": "eclipse.png",
+    "names": [
+      "Eclipse",
+      "월식",
+      "星蚀"
+    ]
+  },
+  {
+    "id": 6693,
+    "file": "prowlersclaw.png",
+    "names": [
+      "Prowler's Claw",
+      "자객의 발톱",
+      "暗行者之爪"
+    ]
+  },
+  {
+    "id": 6694,
+    "file": "seryldasgrudge.png",
+    "names": [
+      "Serylda's Grudge",
+      "세릴다의 원한",
+      "赛瑞尔达的怨恨"
+    ]
+  },
+  {
+    "id": 6695,
+    "file": "serpentsfang.png",
+    "names": [
+      "Serpent's Fang",
+      "독사의 송곳니",
+      "巨蛇之牙"
+    ]
+  },
+  {
+    "id": 6696,
+    "file": "axiomarc.png",
+    "names": [
+      "Axiom Arc",
+      "원칙의 원형낫",
+      "公理圆弧"
+    ]
+  },
+  {
+    "id": 6697,
+    "file": "hubris.png",
+    "names": [
+      "Hubris",
+      "오만",
+      "狂妄"
+    ]
+  },
+  {
+    "id": 6698,
+    "file": "profanehydra.png",
+    "names": [
+      "Profane Hydra",
+      "불경한 히드라",
+      "亵渎九头蛇"
+    ]
+  },
+  {
+    "id": 6699,
+    "file": "voltaiccyclosword.png",
+    "names": [
+      "Voltaic Cyclosword",
+      "벼락폭풍검",
+      "电震涡流剑"
+    ]
+  },
+  {
+    "id": 6700,
+    "file": "shieldoftherakkor.png",
+    "names": [
+      "Shield of the Rakkor",
+      "라코어의 방패",
+      "拉阔尔之盾"
+    ]
+  },
+  {
+    "id": 6701,
+    "file": "opportunity.png",
+    "names": [
+      "Opportunity",
+      "기회",
+      "禁忌时机"
+    ]
+  },
+  {
+    "id": 6702,
+    "file": "scoutingahead.png",
+    "names": [
+      "Scouting Ahead",
+      "전방 정찰",
+      "侦察前方"
+    ]
+  },
+  {
+    "id": 7050,
+    "file": "gangplankplaceholder.png",
+    "names": [
+      "Gangplank Placeholder",
+      "갱플랭크 Placeholder",
+      "普朗克 占位"
+    ]
+  },
+  {
+    "id": 8001,
+    "file": "anathemaschains.png",
+    "names": [
+      "Anathema's Chains",
+      "증오의 사슬",
+      "厌恨锁链"
+    ]
+  },
+  {
+    "id": 8010,
+    "file": "bloodletterscurse_8010.png",
+    "names": [
+      "Bloodletter's Curse",
+      "핏빛 저주",
+      "放血者的诅咒"
+    ]
+  },
+  {
+    "id": 8020,
+    "file": "abyssalmask.png",
+    "names": [
+      "Abyssal Mask",
+      "심연의 가면",
+      "深渊面具"
+    ]
+  },
+  {
+    "id": 9168,
+    "file": "lockedweaponslot.png",
+    "names": [
+      "Locked Weapon Slot",
+      "잠긴 무기 슬롯",
+      "锁定的武器栏位"
+    ]
+  },
+  {
+    "id": 9171,
+    "file": "cyclonicslicers.png",
+    "names": [
+      "Cyclonic Slicers",
+      "회오리 칼날",
+      "旋风切割器"
+    ]
+  },
+  {
+    "id": 9172,
+    "file": "yuumibot.png",
+    "names": [
+      "YuumiBot",
+      "유미봇",
+      "悠米无人机"
+    ]
+  },
+  {
+    "id": 9173,
+    "file": "radiantfield.png",
+    "names": [
+      "Radiant Field",
+      "광휘 역장",
+      "耀光力场"
+    ]
+  },
+  {
+    "id": 9174,
+    "file": "statikksword.png",
+    "names": [
+      "Statikk Sword",
+      "스태틱의 검",
+      "斯塔缇克之剑"
+    ]
+  },
+  {
+    "id": 9175,
+    "file": "lionessslament.png",
+    "names": [
+      "Lioness's Lament",
+      "사자의 비가",
+      "雌狮之怨"
+    ]
+  },
+  {
+    "id": 9176,
+    "file": "gatlingbunnyguns.png",
+    "names": [
+      "Gatling Bunny-Guns",
+      "개틀링 토끼 건",
+      "机关兔兔枪"
+    ]
+  },
+  {
+    "id": 9177,
+    "file": "searingshortbow.png",
+    "names": [
+      "Searing Shortbow",
+      "타오르는 단궁",
+      "炽烈短弓"
+    ]
+  },
+  {
+    "id": 9178,
+    "file": "theannihilator.png",
+    "names": [
+      "The Annihilator",
+      "절멸자",
+      "歼灭者"
+    ]
+  },
+  {
+    "id": 9179,
+    "file": "battlebunnycrossbow.png",
+    "names": [
+      "Battle Bunny Crossbow",
+      "전투 토끼 석궁",
+      "战兔十字弩"
+    ]
+  },
+  {
+    "id": 9180,
+    "file": "uwublaster.png",
+    "names": [
+      "UwU Blaster",
+      "귀여운 발사기",
+      "UwU魔爆炮"
+    ]
+  },
+  {
+    "id": 9181,
+    "file": "vortexglove.png",
+    "names": [
+      "Vortex Glove",
+      "소용돌이 장갑",
+      "漩涡手套"
+    ]
+  },
+  {
+    "id": 9183,
+    "file": "bladeorang.png",
+    "names": [
+      "Blade-o-rang",
+      "칼날 부메랑",
+      "回旋刃"
+    ]
+  },
+  {
+    "id": 9184,
+    "file": "bunnymegablast.png",
+    "names": [
+      "Bunny Mega-Blast",
+      "토끼 초강력 폭발",
+      "战兔巨爆"
+    ]
+  },
+  {
+    "id": 9185,
+    "file": "antisharkseamine.png",
+    "names": [
+      "Anti-Shark Sea Mine",
+      "상어잡이 해양 기뢰",
+      "反鲨海弹"
+    ]
+  },
+  {
+    "id": 9187,
+    "file": "tibbers.png",
+    "names": [
+      "T.I.B.B.E.R.S",
+      "티.버",
+      "提伯斯标准版"
+    ]
+  },
+  {
+    "id": 9188,
+    "file": "animines.png",
+    "names": [
+      "Ani-Mines",
+      "동물 지뢰",
+      "幻灵地雷"
+    ]
+  },
+  {
+    "id": 9189,
+    "file": "finalcitytransit.png",
+    "names": [
+      "Final City Transit",
+      "최후의 도시 대중교통",
+      "最终都市列车"
+    ]
+  },
+  {
+    "id": 9190,
+    "file": "echoingbatblades.png",
+    "names": [
+      "Echoing Batblades",
+      "메아리치는 박쥐칼날",
+      "回响蝠刃"
+    ]
+  },
+  {
+    "id": 9192,
+    "file": "pawprintpoisoner.png",
+    "names": [
+      "Paw Print Poisoner",
+      "발자국 중독 장치",
+      "爪爪投毒器"
+    ]
+  },
+  {
+    "id": 9193,
+    "file": "iceblastarmor.png",
+    "names": [
+      "Iceblast Armor",
+      "얼음작렬 갑옷",
+      "冰爆护甲"
+    ]
+  },
+  {
+    "id": 9271,
+    "file": "unceasingcyclone.png",
+    "names": [
+      "Unceasing Cyclone",
+      "그치지 않는 폭풍",
+      "不息气旋"
+    ]
+  },
+  {
+    "id": 9272,
+    "file": "yuumibotfinalfinal.png",
+    "names": [
+      "YuumiBot_Final_FINAL",
+      "유미봇_최종_최종",
+      "悠米无人机_最终版_最终最终版"
+    ]
+  },
+  {
+    "id": 9273,
+    "file": "explosiveembrace.png",
+    "names": [
+      "Explosive Embrace",
+      "폭발의 포옹",
+      "爆破之拥"
+    ]
+  },
+  {
+    "id": 9274,
+    "file": "prumbisselectrocarver.png",
+    "names": [
+      "Prumbis's Electrocarver",
+      "프룸비스의 전기도축칼",
+      "普朗比斯电雕机"
+    ]
+  },
+  {
+    "id": 9275,
+    "file": "envelopinglight.png",
+    "names": [
+      "Enveloping Light",
+      "휘감는 빛",
+      "包覆之光"
+    ]
+  },
+  {
+    "id": 9276,
+    "file": "doublebunbunbarrage.png",
+    "names": [
+      "Double Bun-Bun Barrage",
+      "이중 깡충깡충 포화",
+      "双重兔兔弹幕"
+    ]
+  },
+  {
+    "id": 9277,
+    "file": "evolvedembershot.png",
+    "names": [
+      "Evolved Embershot",
+      "진화한 불꽃 사격",
+      "进化余烬射击"
+    ]
+  },
+  {
+    "id": 9278,
+    "file": "animapocalypse.png",
+    "names": [
+      "Animapocalypse",
+      "동물의 종말",
+      "幻灵启示录"
+    ]
+  },
+  {
+    "id": 9279,
+    "file": "bunnyprimeballista.png",
+    "names": [
+      "Bunny Prime Ballista",
+      "토끼 프라임 거대 석궁",
+      "战兔至尊弩炮"
+    ]
+  },
+  {
+    "id": 9280,
+    "file": "owoblaster.png",
+    "names": [
+      "OwO Blaster",
+      "왕 귀여운 발사기",
+      "OwO魔爆炮"
+    ]
+  },
+  {
+    "id": 9281,
+    "file": "tempestsgauntlet.png",
+    "names": [
+      "Tempest's Gauntlet",
+      "폭풍의 건틀릿",
+      "风暴护手"
+    ]
+  },
+  {
+    "id": 9283,
+    "file": "quadorang.png",
+    "names": [
+      "Quad-o-rang",
+      "사중 부메랑",
+      "四重回旋刃"
+    ]
+  },
+  {
+    "id": 9284,
+    "file": "rapidrabbitraindown.png",
+    "names": [
+      "Rapid Rabbit Raindown",
+      "고속 토끼 속사포",
+      "疾速兔降"
+    ]
+  },
+  {
+    "id": 9285,
+    "file": "neverendingmobstomper.png",
+    "names": [
+      "Neverending Mobstomper",
+      "무한의 괴물 퇴치기",
+      "不休踩弹"
+    ]
+  },
+  {
+    "id": 9287,
+    "file": "tibbersbeegedition.png",
+    "names": [
+      "T.I.B.B.E.R.S (B.E.E.G Edition)",
+      "티.버 (특.대.형 에디션)",
+      "提伯斯（顶配版）"
+    ]
+  },
+  {
+    "id": 9288,
+    "file": "jinxstrinamite.png",
+    "names": [
+      "Jinx's Tri-Namite",
+      "징크스의 삼중 다이너마이트",
+      "金克丝三连炸"
+    ]
+  },
+  {
+    "id": 9289,
+    "file": "fclimitedexpress.png",
+    "names": [
+      "FC Limited Express",
+      "FC 급행열차",
+      "最终都市特快"
+    ]
+  },
+  {
+    "id": 9290,
+    "file": "vayneschromablades.png",
+    "names": [
+      "Vayne's Chromablades",
+      "베인의 크로마칼날",
+      "薇恩的炫彩刃"
+    ]
+  },
+  {
+    "id": 9292,
+    "file": "bearfootchemdispenser.png",
+    "names": [
+      "Bearfoot Chem-Dispenser",
+      "맨발 화학 물질 분사기",
+      "熊掌化学喷雾器"
+    ]
+  },
+  {
+    "id": 9293,
+    "file": "deepfreeze.png",
+    "names": [
+      "Deep Freeze",
+      "완전 빙결",
+      "深度冻结"
+    ]
+  },
+  {
+    "id": 9300,
+    "file": "meowmeow.png",
+    "names": [
+      "Meow Meow",
+      "야옹 야옹",
+      "喵喵枪"
+    ]
+  },
+  {
+    "id": 9301,
+    "file": "shieldslam.png",
+    "names": [
+      "Shield Slam",
+      "방패 타격",
+      "盾牌猛击"
+    ]
+  },
+  {
+    "id": 9302,
+    "file": "soundwave.png",
+    "names": [
+      "Sound Wave",
+      "음향의 물결",
+      "声波"
+    ]
+  },
+  {
+    "id": 9303,
+    "file": "pilloryswipe.png",
+    "names": [
+      "Pillory Swipe",
+      "족쇄 할퀴기",
+      "木枷挥击"
+    ]
+  },
+  {
+    "id": 9304,
+    "file": "steeltempest.png",
+    "names": [
+      "Steel Tempest",
+      "강철 폭풍",
+      "斩钢闪"
+    ]
+  },
+  {
+    "id": 9305,
+    "file": "tentacleslam.png",
+    "names": [
+      "Tentacle Slam",
+      "촉수 후려치기",
+      "触手重击"
+    ]
+  },
+  {
+    "id": 9306,
+    "file": "wingeddagger.png",
+    "names": [
+      "Winged Dagger",
+      "날개 달린 단검",
+      "带翼羽刃"
+    ]
+  },
+  {
+    "id": 9307,
+    "file": "guidinghex.png",
+    "names": [
+      "Guiding Hex",
+      "인도의 저주",
+      "附灵飞弹"
+    ]
+  },
+  {
+    "id": 9308,
+    "file": "bunnyhop.png",
+    "names": [
+      "Bunny Hop",
+      "토끼뜀",
+      "兔子跳"
+    ]
+  },
+  {
+    "id": 9400,
+    "file": "battlecatbarrage.png",
+    "names": [
+      "Battle Cat Barrage",
+      "전투 고양이 총알 세례",
+      "战猫弹幕"
+    ]
+  },
+  {
+    "id": 9401,
+    "file": "lightofthelion.png",
+    "names": [
+      "Light of the Lion",
+      "사자의 광명",
+      "雄狮之光"
+    ]
+  },
+  {
+    "id": 9402,
+    "file": "animaecho.png",
+    "names": [
+      "Anima Echo",
+      "동물 메아리",
+      "幻灵回响"
+    ]
+  },
+  {
+    "id": 9403,
+    "file": "savageslice.png",
+    "names": [
+      "Savage Slice",
+      "포악한 베기",
+      "无情砍削"
+    ]
+  },
+  {
+    "id": 9404,
+    "file": "wanderingstorms.png",
+    "names": [
+      "Wandering Storms",
+      "떠도는 폭풍",
+      "漂泊风暴"
+    ]
+  },
+  {
+    "id": 9405,
+    "file": "grizzlysmash.png",
+    "names": [
+      "Grizzly Smash",
+      "곰의 강타",
+      "巨熊重击"
+    ]
+  },
+  {
+    "id": 9406,
+    "file": "loversricochet.png",
+    "names": [
+      "Lover's Ricochet",
+      "연인의 도탄",
+      "爱意飞射"
+    ]
+  },
+  {
+    "id": 9407,
+    "file": "hoppeduphex.png",
+    "names": [
+      "Hopped-Up Hex",
+      "고양된 저주",
+      "跳跃灵体"
+    ]
+  },
+  {
+    "id": 9408,
+    "file": "carrotcrash.png",
+    "names": [
+      "Carrot Crash",
+      "당근 격돌",
+      "胡萝卜撞击"
+    ]
+  },
+  {
+    "id": 123430,
+    "file": "riteofruin_123430.png",
+    "names": [
+      "Rite of Ruin",
+      "파멸의식 고서",
+      "毁坏仪式"
+    ]
+  },
+  {
+    "id": 124011,
+    "file": "swordofblossomingdawn_124011.png",
+    "names": [
+      "Sword of Blossoming Dawn",
+      "꽃피는 새벽의 검",
+      "花晓之剑"
+    ]
+  },
+  {
+    "id": 126697,
+    "file": "hubris_126697.png",
+    "names": [
+      "Hubris",
+      "오만",
+      "狂妄"
+    ]
+  },
+  {
+    "id": 220000,
+    "file": "statbonus_220000.png",
+    "names": [
+      "Stat Bonus",
+      "추가 능력치",
+      "属性加成"
+    ]
+  },
+  {
+    "id": 220001,
+    "file": "legendaryfighteritem.png",
+    "names": [
+      "Legendary Fighter Item",
+      "전설 전사 아이템",
+      "传说级战士装备"
+    ]
+  },
+  {
+    "id": 220002,
+    "file": "legendarymarksmanitem.png",
+    "names": [
+      "Legendary Marksman Item",
+      "전설 원거리 딜러 아이템",
+      "传说级射手装备"
+    ]
+  },
+  {
+    "id": 220003,
+    "file": "legendaryassassinitem.png",
+    "names": [
+      "Legendary Assassin Item",
+      "전설 암살자 아이템",
+      "传说级刺客装备"
+    ]
+  },
+  {
+    "id": 220004,
+    "file": "legendarymageitem.png",
+    "names": [
+      "Legendary Mage Item",
+      "전설 마법사 아이템",
+      "传说级法师装备"
+    ]
+  },
+  {
+    "id": 220005,
+    "file": "legendarytankitem.png",
+    "names": [
+      "Legendary Tank Item",
+      "전설 탱커 아이템",
+      "传说级坦克装备"
+    ]
+  },
+  {
+    "id": 220006,
+    "file": "legendarysupportitem.png",
+    "names": [
+      "Legendary Support Item",
+      "전설 서포터 아이템",
+      "传说级辅助装备"
+    ]
+  },
+  {
+    "id": 220007,
+    "file": "prismaticitem.png",
+    "names": [
+      "Prismatic Item",
+      "프리즘 아이템",
+      "棱彩装备"
+    ]
+  },
+  {
+    "id": 220008,
+    "file": "anvilvoucher.png",
+    "names": [
+      "Anvil Voucher",
+      "모루 교환권",
+      "锻造器兑换券"
+    ]
+  },
+  {
+    "id": 220009,
+    "file": "goldstatanvilvoucher.png",
+    "names": [
+      "Gold Stat Anvil Voucher",
+      "골드 능력치 모루 교환권",
+      "黄金阶属性锻造器兑换券"
+    ]
+  },
+  {
+    "id": 220010,
+    "file": "prismaticstatvoucher.png",
+    "names": [
+      "Prismatic Stat Voucher",
+      "프리즘 능력치 모루 교환권",
+      "棱彩阶属性锻造器兑换券"
+    ]
+  },
+  {
+    "id": 220011,
+    "file": "braveryvoucher.png",
+    "names": [
+      "Bravery Voucher",
+      "용기 교환권",
+      "勇敢举动兑换券"
+    ]
+  },
+  {
+    "id": 220012,
+    "file": "shardblade.png",
+    "names": [
+      "Shardblade",
+      "파편검",
+      "碎片之刃"
+    ]
+  },
+  {
+    "id": 220013,
+    "file": "porosnax_220013.png",
+    "names": [
+      "Poro-Snax",
+      "포로 간식",
+      "魄罗佳肴"
+    ]
+  },
+  {
+    "id": 221011,
+    "file": "giantsbelt_221011.png",
+    "names": [
+      "Giant's Belt",
+      "거인의 허리띠",
+      "巨人腰带"
+    ]
+  },
+  {
+    "id": 221026,
+    "file": "blastingwand_221026.png",
+    "names": [
+      "Blasting Wand",
+      "방출의 마법봉",
+      "爆裂魔杖"
+    ]
+  },
+  {
+    "id": 221031,
+    "file": "chainvest_221031.png",
+    "names": [
+      "Chain Vest",
+      "쇠사슬 조끼",
+      "锁子甲"
+    ]
+  },
+  {
+    "id": 221038,
+    "file": "bfsword_221038.png",
+    "names": [
+      "B. F. Sword",
+      "B.F. 대검",
+      "暴风之剑"
+    ]
+  },
+  {
+    "id": 221043,
+    "file": "recurvebow_221043.png",
+    "names": [
+      "Recurve Bow",
+      "곡궁",
+      "反曲之弓"
+    ]
+  },
+  {
+    "id": 221053,
+    "file": "vampiricscepter_221053.png",
+    "names": [
+      "Vampiric Scepter",
+      "흡혈의 낫",
+      "吸血鬼节杖"
+    ]
+  },
+  {
+    "id": 221057,
+    "file": "negatroncloak_221057.png",
+    "names": [
+      "Negatron Cloak",
+      "음전자 망토",
+      "负极斗篷"
+    ]
+  },
+  {
+    "id": 221058,
+    "file": "needlesslylargerod_221058.png",
+    "names": [
+      "Needlessly Large Rod",
+      "쓸데없이 큰 지팡이",
+      "无用大棒"
+    ]
+  },
+  {
+    "id": 222022,
+    "file": "glowingmote_222022.png",
+    "names": [
+      "Glowing Mote",
+      "빛나는 티끌",
+      "荧尘"
+    ]
+  },
+  {
+    "id": 222051,
+    "file": "guardianshorn_222051.png",
+    "names": [
+      "Guardian's Horn",
+      "수호자의 뿔피리",
+      "守护者号角"
+    ]
+  },
+  {
+    "id": 222065,
+    "file": "shurelyasbattlesong_222065.png",
+    "names": [
+      "Shurelya's Battlesong",
+      "슈렐리아의 군가",
+      "舒瑞娅的战歌"
+    ]
+  },
+  {
+    "id": 222141,
+    "file": "cappajuice_222141.png",
+    "names": [
+      "Cappa Juice",
+      "카파 주스",
+      "帽子饮品"
+    ]
+  },
+  {
+    "id": 222502,
+    "file": "unendingdespair_222502.png",
+    "names": [
+      "Unending Despair",
+      "끝없는 절망",
+      "无终恨意"
+    ]
+  },
+  {
+    "id": 222503,
+    "file": "blackfiretorch_222503.png",
+    "names": [
+      "Blackfire Torch",
+      "어둠불꽃 횃불",
+      "黯炎火炬"
+    ]
+  },
+  {
+    "id": 222504,
+    "file": "kaenicrookern_222504.png",
+    "names": [
+      "Kaenic Rookern",
+      "케이닉 루컨",
+      "败魔"
+    ]
+  },
+  {
+    "id": 222510,
+    "file": "duskanddawn_222510.png",
+    "names": [
+      "Dusk and Dawn",
+      "황혼과 새벽",
+      "黄昏与黎明"
+    ]
+  },
+  {
+    "id": 222512,
+    "file": "fiendhunterbolts_222512.png",
+    "names": [
+      "Fiendhunter Bolts",
+      "악마사냥꾼의 화살",
+      "猎魔人弩箭"
+    ]
+  },
+  {
+    "id": 222517,
+    "file": "endlesshunger_222517.png",
+    "names": [
+      "Endless Hunger",
+      "끝없는 갈망",
+      "无穷饥渴"
+    ]
+  },
+  {
+    "id": 222522,
+    "file": "actualizer_222522.png",
+    "names": [
+      "Actualizer",
+      "실체화 장비",
+      "实现器"
+    ]
+  },
+  {
+    "id": 222523,
+    "file": "hexopticsc44_222523.png",
+    "names": [
+      "Hexoptics C44",
+      "마법광학 장치 C44",
+      "海克斯镜片 C44"
+    ]
+  },
+  {
+    "id": 222524,
+    "file": "bandlepipes_222524.png",
+    "names": [
+      "Bandlepipes",
+      "밴들파이프",
+      "班德尔音管"
+    ]
+  },
+  {
+    "id": 222525,
+    "file": "protoplasmharness_222525.png",
+    "names": [
+      "Protoplasm Harness",
+      "원형질 안전벨트",
+      "原生质护带"
+    ]
+  },
+  {
+    "id": 222526,
+    "file": "whisperingcirclet_222526.png",
+    "names": [
+      "Whispering Circlet",
+      "속삭이는 머리띠",
+      "耳语头环"
+    ]
+  },
+  {
+    "id": 222530,
+    "file": "diademofsongs_222530.png",
+    "names": [
+      "Diadem of Songs",
+      "악곡의 왕관",
+      "歌之权冠"
+    ]
+  },
+  {
+    "id": 223001,
+    "file": "evenshroud_223001.png",
+    "names": [
+      "Evenshroud",
+      "저녁갑주",
+      "薄暮法袍"
+    ]
+  },
+  {
+    "id": 223002,
+    "file": "trailblazer_223002.png",
+    "names": [
+      "Trailblazer",
+      "개척자",
+      "引路者"
+    ]
+  },
+  {
+    "id": 223003,
+    "file": "archangelsstaff_223003.png",
+    "names": [
+      "Archangel's Staff",
+      "대천사의 지팡이",
+      "大天使之杖"
+    ]
+  },
+  {
+    "id": 223004,
+    "file": "manamune_223004.png",
+    "names": [
+      "Manamune",
+      "마나무네",
+      "魔宗"
+    ]
+  },
+  {
+    "id": 223005,
+    "file": "ghostcrawlers_223005.png",
+    "names": [
+      "Ghostcrawlers",
+      "유령 배회자",
+      "鬼蟹"
+    ]
+  },
+  {
+    "id": 223006,
+    "file": "berserkersgreaves_223006.png",
+    "names": [
+      "Berserker's Greaves",
+      "광전사의 군화",
+      "狂战士胫甲"
+    ]
+  },
+  {
+    "id": 223008,
+    "file": "gluttonousgreaves_223008.png",
+    "names": [
+      "Gluttonous Greaves",
+      "탐욕의 군화",
+      "暴食胫甲"
+    ]
+  },
+  {
+    "id": 223009,
+    "file": "bootsofswiftness_223009.png",
+    "names": [
+      "Boots of Swiftness",
+      "신속의 장화",
+      "轻灵之靴"
+    ]
+  },
+  {
+    "id": 223011,
+    "file": "chemtechputrifier_223011.png",
+    "names": [
+      "Chemtech Putrifier",
+      "화학공학 부패기",
+      "炼金科技纯化器"
+    ]
+  },
+  {
+    "id": 223020,
+    "file": "sorcerersshoes_223020.png",
+    "names": [
+      "Sorcerer's Shoes",
+      "마법사의 신발",
+      "法师之靴"
+    ]
+  },
+  {
+    "id": 223026,
+    "file": "guardianangel_223026.png",
+    "names": [
+      "Guardian Angel",
+      "수호 천사",
+      "守护天使"
+    ]
+  },
+  {
+    "id": 223031,
+    "file": "infinityedge_223031.png",
+    "names": [
+      "Infinity Edge",
+      "무한의 대검",
+      "无尽之刃"
+    ]
+  },
+  {
+    "id": 223032,
+    "file": "yuntalwildarrows_223032.png",
+    "names": [
+      "Yun Tal Wildarrows",
+      "윤 탈 야생화살",
+      "育恩塔尔荒野箭"
+    ]
+  },
+  {
+    "id": 223033,
+    "file": "mortalreminder_223033.png",
+    "names": [
+      "Mortal Reminder",
+      "필멸자의 운명",
+      "凡性的提醒"
+    ]
+  },
+  {
+    "id": 223036,
+    "file": "lorddominiksregards_223036.png",
+    "names": [
+      "Lord Dominik's Regards",
+      "도미닉 경의 인사",
+      "多米尼克领主的致意"
+    ]
+  },
+  {
+    "id": 223039,
+    "file": "atmasreckoning_223039.png",
+    "names": [
+      "Atma's Reckoning",
+      "아트마의 심판",
+      "阿塔玛的清算"
+    ]
+  },
+  {
+    "id": 223040,
+    "file": "seraphsembrace_223040.png",
+    "names": [
+      "Seraph's Embrace",
+      "대천사의 포옹",
+      "炽天使之拥"
+    ]
+  },
+  {
+    "id": 223042,
+    "file": "muramana_223042.png",
+    "names": [
+      "Muramana",
+      "무라마나",
+      "魔切"
+    ]
+  },
+  {
+    "id": 223046,
+    "file": "phantomdancer_223046.png",
+    "names": [
+      "Phantom Dancer",
+      "유령 무희",
+      "幻影之舞"
+    ]
+  },
+  {
+    "id": 223047,
+    "file": "platedsteelcaps_223047.png",
+    "names": [
+      "Plated Steelcaps",
+      "판금 장화",
+      "铁板靴"
+    ]
+  },
+  {
+    "id": 223050,
+    "file": "zekesconvergence_223050.png",
+    "names": [
+      "Zeke's Convergence",
+      "지크의 융합",
+      "基克的聚合"
+    ]
+  },
+  {
+    "id": 223053,
+    "file": "steraksgage_223053.png",
+    "names": [
+      "Sterak's Gage",
+      "스테락의 도전",
+      "斯特拉克的挑战护手"
+    ]
+  },
+  {
+    "id": 223057,
+    "file": "sheen_223057.png",
+    "names": [
+      "Sheen",
+      "광휘의 검",
+      "耀光"
+    ]
+  },
+  {
+    "id": 223065,
+    "file": "spiritvisage_223065.png",
+    "names": [
+      "Spirit Visage",
+      "정령의 형상",
+      "振奋盔甲"
+    ]
+  },
+  {
+    "id": 223067,
+    "file": "kindlegem_223067.png",
+    "names": [
+      "Kindlegem",
+      "점화석",
+      "燃烧宝石"
+    ]
+  },
+  {
+    "id": 223068,
+    "file": "sunfireaegis_223068.png",
+    "names": [
+      "Sunfire Aegis",
+      "태양불꽃 방패",
+      "日炎圣盾"
+    ]
+  },
+  {
+    "id": 223069,
+    "file": "voidimmolation.png",
+    "names": [
+      "Void Immolation",
+      "공허의 불길",
+      "虚空献祭"
+    ]
+  },
+  {
+    "id": 223071,
+    "file": "blackcleaver_223071.png",
+    "names": [
+      "Black Cleaver",
+      "칠흑의 양날 도끼",
+      "黑色切割者"
+    ]
+  },
+  {
+    "id": 223072,
+    "file": "bloodthirster_223072.png",
+    "names": [
+      "Bloodthirster",
+      "피바라기",
+      "饮血剑"
+    ]
+  },
+  {
+    "id": 223073,
+    "file": "experimentalhexplate_223073.png",
+    "names": [
+      "Experimental Hexplate",
+      "실험적 마공학판",
+      "海克斯注力刚壁"
+    ]
+  },
+  {
+    "id": 223074,
+    "file": "ravenoushydra_223074.png",
+    "names": [
+      "Ravenous Hydra",
+      "굶주린 히드라",
+      "贪欲九头蛇"
+    ]
+  },
+  {
+    "id": 223075,
+    "file": "thornmail_223075.png",
+    "names": [
+      "Thornmail",
+      "가시 갑옷",
+      "荆棘之甲"
+    ]
+  },
+  {
+    "id": 223078,
+    "file": "trinityforce_223078.png",
+    "names": [
+      "Trinity Force",
+      "삼위일체",
+      "三相之力"
+    ]
+  },
+  {
+    "id": 223084,
+    "file": "heartsteel_223084.png",
+    "names": [
+      "Heartsteel",
+      "강철심장",
+      "心之钢"
+    ]
+  },
+  {
+    "id": 223085,
+    "file": "runaanshurricane_223085.png",
+    "names": [
+      "Runaan's Hurricane",
+      "루난의 허리케인",
+      "卢安娜的飓风"
+    ]
+  },
+  {
+    "id": 223087,
+    "file": "statikkshiv_223087.png",
+    "names": [
+      "Statikk Shiv",
+      "스태틱의 단검",
+      "斯塔缇克电刃"
+    ]
+  },
+  {
+    "id": 223089,
+    "file": "rabadonsdeathcap_223089.png",
+    "names": [
+      "Rabadon's Deathcap",
+      "라바돈의 죽음모자",
+      "灭世者的死亡之帽"
+    ]
+  },
+  {
+    "id": 223091,
+    "file": "witsend_223091.png",
+    "names": [
+      "Wit's End",
+      "마법사의 최후",
+      "智慧末刃"
+    ]
+  },
+  {
+    "id": 223094,
+    "file": "rapidfirecannon_223094.png",
+    "names": [
+      "Rapid Firecannon",
+      "고속 연사포",
+      "疾射火炮"
+    ]
+  },
+  {
+    "id": 223095,
+    "file": "stormrazor_223095.png",
+    "names": [
+      "Stormrazor",
+      "폭풍갈퀴",
+      "岚切"
+    ]
+  },
+  {
+    "id": 223100,
+    "file": "lichbane_223100.png",
+    "names": [
+      "Lich Bane",
+      "리치베인",
+      "巫妖之祸"
+    ]
+  },
+  {
+    "id": 223102,
+    "file": "bansheesveil_223102.png",
+    "names": [
+      "Banshee's Veil",
+      "밴시의 장막",
+      "女妖面纱"
+    ]
+  },
+  {
+    "id": 223105,
+    "file": "aegisofthelegion_223105.png",
+    "names": [
+      "Aegis of the Legion",
+      "군단의 방패",
+      "军团圣盾"
+    ]
+  },
+  {
+    "id": 223107,
+    "file": "redemption_223107.png",
+    "names": [
+      "Redemption",
+      "구원",
+      "救赎"
+    ]
+  },
+  {
+    "id": 223109,
+    "file": "knightsvow_223109.png",
+    "names": [
+      "Knight's Vow",
+      "기사의 맹세",
+      "骑士之誓"
+    ]
+  },
+  {
+    "id": 223110,
+    "file": "frozenheart_223110.png",
+    "names": [
+      "Frozen Heart",
+      "얼어붙은 심장",
+      "冰霜之心"
+    ]
+  },
+  {
+    "id": 223111,
+    "file": "mercurystreads_223111.png",
+    "names": [
+      "Mercury's Treads",
+      "헤르메스의 발걸음",
+      "水银之靴"
+    ]
+  },
+  {
+    "id": 223112,
+    "file": "guardiansorb_223112.png",
+    "names": [
+      "Guardian's Orb",
+      "수호자의 보주",
+      "守护者法球"
+    ]
+  },
+  {
+    "id": 223115,
+    "file": "nashorstooth_223115.png",
+    "names": [
+      "Nashor's Tooth",
+      "내셔의 이빨",
+      "纳什之牙"
+    ]
+  },
+  {
+    "id": 223116,
+    "file": "rylaiscrystalscepter_223116.png",
+    "names": [
+      "Rylai's Crystal Scepter",
+      "라일라이의 수정홀",
+      "瑞莱的冰晶节杖"
+    ]
+  },
+  {
+    "id": 223118,
+    "file": "malignance_223118.png",
+    "names": [
+      "Malignance",
+      "악의",
+      "残疫"
+    ]
+  },
+  {
+    "id": 223119,
+    "file": "wintersapproach_223119.png",
+    "names": [
+      "Winter's Approach",
+      "혹한의 손길",
+      "凛冬之临"
+    ]
+  },
+  {
+    "id": 223121,
+    "file": "fimbulwinter_223121.png",
+    "names": [
+      "Fimbulwinter",
+      "종말의 겨울",
+      "末日寒冬"
+    ]
+  },
+  {
+    "id": 223124,
+    "file": "guinsoosrageblade_223124.png",
+    "names": [
+      "Guinsoo's Rageblade",
+      "구인수의 격노검",
+      "鬼索的狂暴之刃"
+    ]
+  },
+  {
+    "id": 223135,
+    "file": "voidstaff_223135.png",
+    "names": [
+      "Void Staff",
+      "공허의 지팡이",
+      "虚空之杖"
+    ]
+  },
+  {
+    "id": 223137,
+    "file": "cryptbloom_223137.png",
+    "names": [
+      "Cryptbloom",
+      "무덤꽃",
+      "蜕生"
+    ]
+  },
+  {
+    "id": 223139,
+    "file": "mercurialscimitar_223139.png",
+    "names": [
+      "Mercurial Scimitar",
+      "헤르메스의 시미터",
+      "水银弯刀"
+    ]
+  },
+  {
+    "id": 223142,
+    "file": "youmuusghostblade_223142.png",
+    "names": [
+      "Youmuu's Ghostblade",
+      "요우무의 유령검",
+      "幽梦之灵"
+    ]
+  },
+  {
+    "id": 223143,
+    "file": "randuinsomen_223143.png",
+    "names": [
+      "Randuin's Omen",
+      "란두인의 예언",
+      "兰顿之兆"
+    ]
+  },
+  {
+    "id": 223146,
+    "file": "hextechgunblade_223146.png",
+    "names": [
+      "Hextech Gunblade",
+      "마법공학 총검",
+      "海克斯科技枪刃"
+    ]
+  },
+  {
+    "id": 223152,
+    "file": "hextechrocketbelt_223152.png",
+    "names": [
+      "Hextech Rocketbelt",
+      "마법공학 로켓 벨트",
+      "海克斯科技火箭腰带"
+    ]
+  },
+  {
+    "id": 223153,
+    "file": "bladeoftheruinedking_223153.png",
+    "names": [
+      "Blade of The Ruined King",
+      "몰락한 왕의 검",
+      "破败王者之刃"
+    ]
+  },
+  {
+    "id": 223156,
+    "file": "mawofmalmortius_223156.png",
+    "names": [
+      "Maw of Malmortius",
+      "맬모셔스의 아귀",
+      "玛莫提乌斯之噬"
+    ]
+  },
+  {
+    "id": 223157,
+    "file": "zhonyashourglass_223157.png",
+    "names": [
+      "Zhonya's Hourglass",
+      "존야의 모래시계",
+      "中娅沙漏"
+    ]
+  },
+  {
+    "id": 223158,
+    "file": "ionianbootsoflucidity_223158.png",
+    "names": [
+      "Ionian Boots of Lucidity",
+      "명석함의 아이오니아 장화",
+      "明朗之靴"
+    ]
+  },
+  {
+    "id": 223161,
+    "file": "spearofshojin_223161.png",
+    "names": [
+      "Spear of Shojin",
+      "쇼진의 창",
+      "朔极之矛"
+    ]
+  },
+  {
+    "id": 223165,
+    "file": "morellonomicon_223165.png",
+    "names": [
+      "Morellonomicon",
+      "모렐로노미콘",
+      "莫雷洛秘典"
+    ]
+  },
+  {
+    "id": 223172,
+    "file": "zephyr.png",
+    "names": [
+      "Zephyr",
+      "서풍",
+      "灵风"
+    ]
+  },
+  {
+    "id": 223177,
+    "file": "guardiansblade_223177.png",
+    "names": [
+      "Guardian's Blade",
+      "수호자의 검",
+      "守护者之刃"
+    ]
+  },
+  {
+    "id": 223181,
+    "file": "hullbreaker_223181.png",
+    "names": [
+      "Hullbreaker",
+      "선체파괴자",
+      "破舰者"
+    ]
+  },
+  {
+    "id": 223184,
+    "file": "guardianshammer_223184.png",
+    "names": [
+      "Guardian's Hammer",
+      "수호자의 망치",
+      "守护者战锤"
+    ]
+  },
+  {
+    "id": 223185,
+    "file": "guardiansdirk.png",
+    "names": [
+      "Guardian's Dirk",
+      "수호자의 단검",
+      "守护者短匕"
+    ]
+  },
+  {
+    "id": 223190,
+    "file": "locketoftheironsolari_223190.png",
+    "names": [
+      "Locket of the Iron Solari",
+      "강철의 솔라리 펜던트",
+      "钢铁烈阳之匣"
+    ]
+  },
+  {
+    "id": 223193,
+    "file": "gargoylestoneplate_223193.png",
+    "names": [
+      "Gargoyle Stoneplate",
+      "가고일 돌갑옷",
+      "石像鬼石板甲"
+    ]
+  },
+  {
+    "id": 223222,
+    "file": "mikaelsblessing_223222.png",
+    "names": [
+      "Mikael's Blessing",
+      "미카엘의 축복",
+      "米凯尔的祝福"
+    ]
+  },
+  {
+    "id": 223302,
+    "file": "terminus_223302.png",
+    "names": [
+      "Terminus",
+      "경계",
+      "界弓"
+    ]
+  },
+  {
+    "id": 223504,
+    "file": "ardentcenser_223504.png",
+    "names": [
+      "Ardent Censer",
+      "불타는 향로",
+      "炽热香炉"
+    ]
+  },
+  {
+    "id": 223508,
+    "file": "essencereaver_223508.png",
+    "names": [
+      "Essence Reaver",
+      "정수 약탈자",
+      "夺萃之镰"
+    ]
+  },
+  {
+    "id": 223742,
+    "file": "deadmansplate_223742.png",
+    "names": [
+      "Dead Man's Plate",
+      "망자의 갑옷",
+      "亡者的板甲"
+    ]
+  },
+  {
+    "id": 223748,
+    "file": "titanichydra_223748.png",
+    "names": [
+      "Titanic Hydra",
+      "거대한 히드라",
+      "巨型九头蛇"
+    ]
+  },
+  {
+    "id": 223814,
+    "file": "edgeofnight_223814.png",
+    "names": [
+      "Edge of Night",
+      "밤의 끝자락",
+      "夜之锋刃"
+    ]
+  },
+  {
+    "id": 224004,
+    "file": "spectralcutlass_224004.png",
+    "names": [
+      "Spectral Cutlass",
+      "망령 해적검",
+      "幽魂弯刀"
+    ]
+  },
+  {
+    "id": 224005,
+    "file": "imperialmandate_224005.png",
+    "names": [
+      "Imperial Mandate",
+      "제국의 명령",
+      "帝国指令"
+    ]
+  },
+  {
+    "id": 224401,
+    "file": "forceofnature_224401.png",
+    "names": [
+      "Force of Nature",
+      "대자연의 힘",
+      "自然之力"
+    ]
+  },
+  {
+    "id": 224403,
+    "file": "thegoldenspatula_224403.png",
+    "names": [
+      "The Golden Spatula",
+      "황금 뒤집개",
+      "金铲铲"
+    ]
+  },
+  {
+    "id": 224628,
+    "file": "horizonfocus_224628.png",
+    "names": [
+      "Horizon Focus",
+      "지평선의 초점",
+      "视界专注"
+    ]
+  },
+  {
+    "id": 224629,
+    "file": "cosmicdrive_224629.png",
+    "names": [
+      "Cosmic Drive",
+      "우주의 추진력",
+      "星界驱驰"
+    ]
+  },
+  {
+    "id": 224633,
+    "file": "riftmaker_224633.png",
+    "names": [
+      "Riftmaker",
+      "균열 생성기",
+      "裂隙制造者"
+    ]
+  },
+  {
+    "id": 224636,
+    "file": "nightharvester_224636.png",
+    "names": [
+      "Night Harvester",
+      "밤의 수확자",
+      "暗夜收割者"
+    ]
+  },
+  {
+    "id": 224637,
+    "file": "demonicembrace_224637.png",
+    "names": [
+      "Demonic Embrace",
+      "악마의 포옹",
+      "恶魔之拥"
+    ]
+  },
+  {
+    "id": 224644,
+    "file": "crownoftheshatteredqueen_224644.png",
+    "names": [
+      "Crown of the Shattered Queen",
+      "부서진 여왕의 왕관",
+      "破碎王后之冕"
+    ]
+  },
+  {
+    "id": 224645,
+    "file": "shadowflame_224645.png",
+    "names": [
+      "Shadowflame",
+      "그림자불꽃",
+      "影焰"
+    ]
+  },
+  {
+    "id": 224646,
+    "file": "stormsurge_224646.png",
+    "names": [
+      "Stormsurge",
+      "폭풍 쇄도",
+      "风暴狂涌"
+    ]
+  },
+  {
+    "id": 226035,
+    "file": "silvermeredawn_226035.png",
+    "names": [
+      "Silvermere Dawn",
+      "은빛 여명",
+      "密银黎明"
+    ]
+  },
+  {
+    "id": 226333,
+    "file": "deathsdance_226333.png",
+    "names": [
+      "Death's Dance",
+      "죽음의 무도",
+      "死亡之舞"
+    ]
+  },
+  {
+    "id": 226609,
+    "file": "chempunkchainsword_226609.png",
+    "names": [
+      "Chempunk Chainsword",
+      "화공 펑크 사슬검",
+      "炼金朋克链锯剑"
+    ]
+  },
+  {
+    "id": 226610,
+    "file": "sunderedsky_226610.png",
+    "names": [
+      "Sundered Sky",
+      "갈라진 하늘",
+      "焚天"
+    ]
+  },
+  {
+    "id": 226616,
+    "file": "staffofflowingwater_226616.png",
+    "names": [
+      "Staff of Flowing Water",
+      "흐르는 물의 지팡이",
+      "流水法杖"
+    ]
+  },
+  {
+    "id": 226617,
+    "file": "moonstonerenewer_226617.png",
+    "names": [
+      "Moonstone Renewer",
+      "월석 재생기",
+      "月石再生器"
+    ]
+  },
+  {
+    "id": 226620,
+    "file": "echoesofhelia_226620.png",
+    "names": [
+      "Echoes of Helia",
+      "헬리아의 메아리",
+      "海力亚的回响"
+    ]
+  },
+  {
+    "id": 226621,
+    "file": "dawncore_226621.png",
+    "names": [
+      "Dawncore",
+      "새벽심장",
+      "黎明核心"
+    ]
+  },
+  {
+    "id": 226630,
+    "file": "goredrinker_226630.png",
+    "names": [
+      "Goredrinker",
+      "선혈포식자",
+      "渴血战斧"
+    ]
+  },
+  {
+    "id": 226631,
+    "file": "stridebreaker_226631.png",
+    "names": [
+      "Stridebreaker",
+      "발걸음 분쇄기",
+      "挺进破坏者"
+    ]
+  },
+  {
+    "id": 226632,
+    "file": "divinesunderer_226632.png",
+    "names": [
+      "Divine Sunderer",
+      "신성한 파괴자",
+      "神圣分离者"
+    ]
+  },
+  {
+    "id": 226653,
+    "file": "liandrysanguish.png",
+    "names": [
+      "Liandry's Anguish",
+      "리안드리의 고뇌",
+      "兰德里的苦楚"
+    ]
+  },
+  {
+    "id": 226655,
+    "file": "ludensecho_226655.png",
+    "names": [
+      "Luden's Echo",
+      "루덴의 메아리",
+      "卢登的回声"
+    ]
+  },
+  {
+    "id": 226656,
+    "file": "everfrost_226656.png",
+    "names": [
+      "Everfrost",
+      "만년서리",
+      "永霜"
+    ]
+  },
+  {
+    "id": 226657,
+    "file": "rodofages_226657.png",
+    "names": [
+      "Rod of Ages",
+      "영겁의 지팡이",
+      "时光之杖"
+    ]
+  },
+  {
+    "id": 226660,
+    "file": "item226660.png",
+    "names": []
+  },
+  {
+    "id": 226662,
+    "file": "iceborngauntlet_226662.png",
+    "names": [
+      "Iceborn Gauntlet",
+      "얼어붙은 건틀릿",
+      "冰脉护手"
+    ]
+  },
+  {
+    "id": 226664,
+    "file": "hollowradiance_226664.png",
+    "names": [
+      "Hollow Radiance",
+      "공허한 광휘",
+      "璀璨回响"
+    ]
+  },
+  {
+    "id": 226665,
+    "file": "jakshotheprotean_226665.png",
+    "names": [
+      "Jak'Sho, The Protean",
+      "해신 작쇼",
+      "千变者贾修"
+    ]
+  },
+  {
+    "id": 226667,
+    "file": "radiantvirtue_226667.png",
+    "names": [
+      "Radiant Virtue",
+      "광휘의 미덕",
+      "辉耀美德"
+    ]
+  },
+  {
+    "id": 226668,
+    "file": "ultrahydra.png",
+    "names": [
+      "Ultra Hydra",
+      "궁극의 히드라",
+      "终极九头蛇"
+    ]
+  },
+  {
+    "id": 226671,
+    "file": "galeforce_226671.png",
+    "names": [
+      "Galeforce",
+      "돌풍",
+      "狂风之力"
+    ]
+  },
+  {
+    "id": 226672,
+    "file": "krakenslayer_226672.png",
+    "names": [
+      "Kraken Slayer",
+      "크라켄 학살자",
+      "海妖杀手"
+    ]
+  },
+  {
+    "id": 226673,
+    "file": "immortalshieldbow_226673.png",
+    "names": [
+      "Immortal Shieldbow",
+      "불멸의 철갑궁",
+      "不朽盾弓"
+    ]
+  },
+  {
+    "id": 226675,
+    "file": "navoriflickerblades.png",
+    "names": [
+      "Navori Flickerblades",
+      "나보리 명멸검",
+      "纳沃利烁刃"
+    ]
+  },
+  {
+    "id": 226676,
+    "file": "thecollector_226676.png",
+    "names": [
+      "The Collector",
+      "징수의 총",
+      "收集者"
+    ]
+  },
+  {
+    "id": 226691,
+    "file": "duskbladeofdraktharr_226691.png",
+    "names": [
+      "Duskblade of Draktharr",
+      "드락사르의 황혼검",
+      "德拉克萨的暮刃"
+    ]
+  },
+  {
+    "id": 226692,
+    "file": "eclipse_226692.png",
+    "names": [
+      "Eclipse",
+      "월식",
+      "星蚀"
+    ]
+  },
+  {
+    "id": 226693,
+    "file": "prowlersclaw_226693.png",
+    "names": [
+      "Prowler's Claw",
+      "자객의 발톱",
+      "暗行者之爪"
+    ]
+  },
+  {
+    "id": 226694,
+    "file": "seryldasgrudge_226694.png",
+    "names": [
+      "Serylda's Grudge",
+      "세릴다의 원한",
+      "赛瑞尔达的怨恨"
+    ]
+  },
+  {
+    "id": 226695,
+    "file": "serpentsfang_226695.png",
+    "names": [
+      "Serpent's Fang",
+      "독사의 송곳니",
+      "巨蛇之牙"
+    ]
+  },
+  {
+    "id": 226696,
+    "file": "axiomarc_226696.png",
+    "names": [
+      "Axiom Arc",
+      "원칙의 원형낫",
+      "公理圆弧"
+    ]
+  },
+  {
+    "id": 226697,
+    "file": "hubris_226697.png",
+    "names": [
+      "Hubris",
+      "오만",
+      "狂妄"
+    ]
+  },
+  {
+    "id": 226698,
+    "file": "profanehydra_226698.png",
+    "names": [
+      "Profane Hydra",
+      "불경한 히드라",
+      "亵渎九头蛇"
+    ]
+  },
+  {
+    "id": 226699,
+    "file": "voltaiccyclosword_226699.png",
+    "names": [
+      "Voltaic Cyclosword",
+      "벼락폭풍검",
+      "电震涡流剑"
+    ]
+  },
+  {
+    "id": 226701,
+    "file": "opportunity_226701.png",
+    "names": [
+      "Opportunity",
+      "기회",
+      "禁忌时机"
+    ]
+  },
+  {
+    "id": 228001,
+    "file": "anathemaschains_228001.png",
+    "names": [
+      "Anathema's Chains",
+      "증오의 사슬",
+      "厌恨锁链"
+    ]
+  },
+  {
+    "id": 228002,
+    "file": "woogletswitchcap.png",
+    "names": [
+      "Wooglet's Witchcap",
+      "우글렛의 마녀 모자",
+      "沃格勒特的巫师帽"
+    ]
+  },
+  {
+    "id": 228003,
+    "file": "deathblade.png",
+    "names": [
+      "Deathblade",
+      "죽음의 검",
+      "死亡之刃"
+    ]
+  },
+  {
+    "id": 228004,
+    "file": "adaptivehelm.png",
+    "names": [
+      "Adaptive Helm",
+      "적응형 투구",
+      "适应性头盔"
+    ]
+  },
+  {
+    "id": 228005,
+    "file": "obsidiancleaver.png",
+    "names": [
+      "Obsidian Cleaver",
+      "흑요석 양날 도끼",
+      "黑曜切割者"
+    ]
+  },
+  {
+    "id": 228006,
+    "file": "sanguineblade.png",
+    "names": [
+      "Sanguine Blade",
+      "핏빛 칼날",
+      "血色之刃"
+    ]
+  },
+  {
+    "id": 228008,
+    "file": "runeglaive.png",
+    "names": [
+      "Runeglaive",
+      "룬 글레이브",
+      "符文阔剑"
+    ]
+  },
+  {
+    "id": 228009,
+    "file": "multitool.png",
+    "names": [
+      "Multitool",
+      "다용도 도구",
+      "多功能工具"
+    ]
+  },
+  {
+    "id": 228020,
+    "file": "abyssalmask_228020.png",
+    "names": [
+      "Abyssal Mask",
+      "심연의 가면",
+      "深渊面具"
+    ]
+  },
+  {
+    "id": 322065,
+    "file": "shurelyasbattlesong_322065.png",
+    "names": [
+      "Shurelya's Battlesong",
+      "슈렐리아의 군가",
+      "舒瑞娅的战歌"
+    ]
+  },
+  {
+    "id": 322526,
+    "file": "whisperingcirclet_322526.png",
+    "names": [
+      "Whispering Circlet",
+      "속삭이는 머리띠",
+      "耳语头环"
+    ]
+  },
+  {
+    "id": 322530,
+    "file": "diademofsongs_322530.png",
+    "names": [
+      "Diadem of Songs",
+      "악곡의 왕관",
+      "歌之权冠"
+    ]
+  },
+  {
+    "id": 323002,
+    "file": "trailblazer_323002.png",
+    "names": [
+      "Trailblazer",
+      "개척자",
+      "引路者"
+    ]
+  },
+  {
+    "id": 323003,
+    "file": "archangelsstaff_323003.png",
+    "names": [
+      "Archangel's Staff",
+      "대천사의 지팡이",
+      "大天使之杖"
+    ]
+  },
+  {
+    "id": 323004,
+    "file": "manamune_323004.png",
+    "names": [
+      "Manamune",
+      "마나무네",
+      "魔宗"
+    ]
+  },
+  {
+    "id": 323040,
+    "file": "seraphsembrace_323040.png",
+    "names": [
+      "Seraph's Embrace",
+      "대천사의 포옹",
+      "炽天使之拥"
+    ]
+  },
+  {
+    "id": 323042,
+    "file": "muramana_323042.png",
+    "names": [
+      "Muramana",
+      "무라마나",
+      "魔切"
+    ]
+  },
+  {
+    "id": 323050,
+    "file": "zekesconvergence_323050.png",
+    "names": [
+      "Zeke's Convergence",
+      "지크의 융합",
+      "基克的聚合"
+    ]
+  },
+  {
+    "id": 323070,
+    "file": "tearofthegoddess_323070.png",
+    "names": [
+      "Tear of the Goddess",
+      "여신의 눈물",
+      "女神之泪"
+    ]
+  },
+  {
+    "id": 323075,
+    "file": "thornmail_323075.png",
+    "names": [
+      "Thornmail",
+      "가시 갑옷",
+      "荆棘之甲"
+    ]
+  },
+  {
+    "id": 323107,
+    "file": "redemption_323107.png",
+    "names": [
+      "Redemption",
+      "구원",
+      "救赎"
+    ]
+  },
+  {
+    "id": 323109,
+    "file": "knightsvow_323109.png",
+    "names": [
+      "Knight's Vow",
+      "기사의 맹세",
+      "骑士之誓"
+    ]
+  },
+  {
+    "id": 323110,
+    "file": "frozenheart_323110.png",
+    "names": [
+      "Frozen Heart",
+      "얼어붙은 심장",
+      "冰霜之心"
+    ]
+  },
+  {
+    "id": 323119,
+    "file": "wintersapproach_323119.png",
+    "names": [
+      "Winter's Approach",
+      "혹한의 손길",
+      "凛冬之临"
+    ]
+  },
+  {
+    "id": 323121,
+    "file": "fimbulwinter_323121.png",
+    "names": [
+      "Fimbulwinter",
+      "종말의 겨울",
+      "末日寒冬"
+    ]
+  },
+  {
+    "id": 323190,
+    "file": "locketoftheironsolari_323190.png",
+    "names": [
+      "Locket of the Iron Solari",
+      "강철의 솔라리 펜던트",
+      "钢铁烈阳之匣"
+    ]
+  },
+  {
+    "id": 323222,
+    "file": "mikaelsblessing_323222.png",
+    "names": [
+      "Mikael's Blessing",
+      "미카엘의 축복",
+      "米凯尔的祝福"
+    ]
+  },
+  {
+    "id": 323504,
+    "file": "ardentcenser_323504.png",
+    "names": [
+      "Ardent Censer",
+      "불타는 향로",
+      "炽热香炉"
+    ]
+  },
+  {
+    "id": 324005,
+    "file": "imperialmandate_324005.png",
+    "names": [
+      "Imperial Mandate",
+      "제국의 명령",
+      "帝国指令"
+    ]
+  },
+  {
+    "id": 326616,
+    "file": "staffofflowingwater_326616.png",
+    "names": [
+      "Staff of Flowing Water",
+      "흐르는 물의 지팡이",
+      "流水法杖"
+    ]
+  },
+  {
+    "id": 326617,
+    "file": "moonstonerenewer_326617.png",
+    "names": [
+      "Moonstone Renewer",
+      "월석 재생기",
+      "月石再生器"
+    ]
+  },
+  {
+    "id": 326620,
+    "file": "echoesofhelia_326620.png",
+    "names": [
+      "Echoes of Helia",
+      "헬리아의 메아리",
+      "海力亚的回响"
+    ]
+  },
+  {
+    "id": 326621,
+    "file": "dawncore_326621.png",
+    "names": [
+      "Dawncore",
+      "새벽심장",
+      "黎明核心"
+    ]
+  },
+  {
+    "id": 326657,
+    "file": "rodofages_326657.png",
+    "names": [
+      "Rod of Ages",
+      "영겁의 지팡이",
+      "时光之杖"
+    ]
+  },
+  {
+    "id": 328020,
+    "file": "abyssalmask_328020.png",
+    "names": [
+      "Abyssal Mask",
+      "심연의 가면",
+      "深渊面具"
+    ]
+  },
+  {
+    "id": 443054,
+    "file": "darksteeltalons.png",
+    "names": [
+      "Darksteel Talons",
+      "흑강철 발톱",
+      "暗钢利爪"
+    ]
+  },
+  {
+    "id": 443055,
+    "file": "fulmination.png",
+    "names": [
+      "Fulmination",
+      "질책",
+      "爆鸣"
+    ]
+  },
+  {
+    "id": 443056,
+    "file": "demonkingscrown.png",
+    "names": [
+      "Demon King's Crown",
+      "불사대마왕의 왕관",
+      "魔王之冕"
+    ]
+  },
+  {
+    "id": 443058,
+    "file": "shieldofmoltenstone.png",
+    "names": [
+      "Shield of Molten Stone",
+      "용암의 방패",
+      "熔石之盾"
+    ]
+  },
+  {
+    "id": 443059,
+    "file": "cloakofstarrynight.png",
+    "names": [
+      "Cloak of Starry Night",
+      "별빛밤 망토",
+      "星夜斗篷"
+    ]
+  },
+  {
+    "id": 443060,
+    "file": "swordofthedivine_443060.png",
+    "names": [
+      "Sword of the Divine",
+      "신성의 검",
+      "神圣之剑"
+    ]
+  },
+  {
+    "id": 443061,
+    "file": "forceofentropy.png",
+    "names": [
+      "Force Of Entropy",
+      "엔트로피의 힘",
+      "熵之力"
+    ]
+  },
+  {
+    "id": 443062,
+    "file": "sanguinegift.png",
+    "names": [
+      "Sanguine Gift",
+      "핏빛 선물",
+      "血色赠礼"
+    ]
+  },
+  {
+    "id": 443063,
+    "file": "eleisasmiracle.png",
+    "names": [
+      "Eleisa's Miracle",
+      "일라이자의 기적",
+      "艾莉莎的奇迹"
+    ]
+  },
+  {
+    "id": 443064,
+    "file": "talismanofascension.png",
+    "names": [
+      "Talisman Of Ascension",
+      "승천의 부적",
+      "飞升护符"
+    ]
+  },
+  {
+    "id": 443069,
+    "file": "hamstringer.png",
+    "names": [
+      "Hamstringer",
+      "불귀신",
+      "断筋者"
+    ]
+  },
+  {
+    "id": 443079,
+    "file": "turbochemtank.png",
+    "names": [
+      "Turbo Chemtank",
+      "터보 화공 탱크",
+      "涡轮炼金罐"
+    ]
+  },
+  {
+    "id": 443080,
+    "file": "twinmask.png",
+    "names": [
+      "Twin Mask",
+      "쌍둥이 가면",
+      "双生面具"
+    ]
+  },
+  {
+    "id": 443081,
+    "file": "hexboltcompanion.png",
+    "names": [
+      "Hexbolt Companion",
+      "마공화살 동료",
+      "海克斯弹丸配枪"
+    ]
+  },
+  {
+    "id": 443083,
+    "file": "warmogsarmor_443083.png",
+    "names": [
+      "Warmog's Armor",
+      "워모그의 갑옷",
+      "狂徒铠甲"
+    ]
+  },
+  {
+    "id": 443090,
+    "file": "reaperstoll.png",
+    "names": [
+      "Reaper's Toll",
+      "사신의 대가",
+      "收割者的过路费"
+    ]
+  },
+  {
+    "id": 443193,
+    "file": "gargoylestoneplate_443193.png",
+    "names": [
+      "Gargoyle Stoneplate",
+      "가고일 돌갑옷",
+      "石像鬼石板甲"
+    ]
+  },
+  {
+    "id": 444636,
+    "file": "nightharvester_444636.png",
+    "names": [
+      "Night Harvester",
+      "밤의 수확자",
+      "暗夜收割者"
+    ]
+  },
+  {
+    "id": 444637,
+    "file": "demonicembrace_444637.png",
+    "names": [
+      "Demonic Embrace",
+      "악마의 포옹",
+      "恶魔之拥"
+    ]
+  },
+  {
+    "id": 444644,
+    "file": "crownoftheshatteredqueen_444644.png",
+    "names": [
+      "Crown of the Shattered Queen",
+      "부서진 여왕의 왕관",
+      "破碎王后之冕"
+    ]
+  },
+  {
+    "id": 446632,
+    "file": "divinesunderer_446632.png",
+    "names": [
+      "Divine Sunderer",
+      "신성한 파괴자",
+      "神圣分离者"
+    ]
+  },
+  {
+    "id": 446656,
+    "file": "everfrost_446656.png",
+    "names": [
+      "Everfrost",
+      "만년서리",
+      "永霜"
+    ]
+  },
+  {
+    "id": 446667,
+    "file": "radiantvirtue_446667.png",
+    "names": [
+      "Radiant Virtue",
+      "광휘의 미덕",
+      "辉耀美德"
+    ]
+  },
+  {
+    "id": 446671,
+    "file": "galeforce_446671.png",
+    "names": [
+      "Galeforce",
+      "돌풍",
+      "狂风之力"
+    ]
+  },
+  {
+    "id": 446691,
+    "file": "duskbladeofdraktharr_446691.png",
+    "names": [
+      "Duskblade of Draktharr",
+      "드락사르의 황혼검",
+      "德拉克萨的暮刃"
+    ]
+  },
+  {
+    "id": 446693,
+    "file": "prowlersclaw_446693.png",
+    "names": [
+      "Prowler's Claw",
+      "자객의 발톱",
+      "暗行者之爪"
+    ]
+  },
+  {
+    "id": 447100,
+    "file": "mirageblade.png",
+    "names": [
+      "Mirage Blade",
+      "신기루 검",
+      "幻境之刃"
+    ]
+  },
+  {
+    "id": 447101,
+    "file": "gamblersblade.png",
+    "names": [
+      "Gambler's Blade",
+      "도박꾼의 칼날",
+      "投机者之刃"
+    ]
+  },
+  {
+    "id": 447102,
+    "file": "realityfracture.png",
+    "names": [
+      "Reality Fracture",
+      "현실 균열",
+      "实界裂缝"
+    ]
+  },
+  {
+    "id": 447103,
+    "file": "hemomancershelm.png",
+    "names": [
+      "Hemomancer's Helm",
+      "혈마법사의 투구",
+      "血术师之盔"
+    ]
+  },
+  {
+    "id": 447104,
+    "file": "innervatinglocket_447104.png",
+    "names": [
+      "Innervating Locket",
+      "활력증진의 펜던트",
+      "激发之匣"
+    ]
+  },
+  {
+    "id": 447105,
+    "file": "empyreanpromise.png",
+    "names": [
+      "Empyrean Promise",
+      "창공의 서약",
+      "至高天诺言"
+    ]
+  },
+  {
+    "id": 447106,
+    "file": "dragonheart.png",
+    "names": [
+      "Dragonheart",
+      "용의 심장",
+      "龙心"
+    ]
+  },
+  {
+    "id": 447107,
+    "file": "decapitator.png",
+    "names": [
+      "Decapitator",
+      "참수자",
+      "斩首者"
+    ]
+  },
+  {
+    "id": 447108,
+    "file": "runecarver.png",
+    "names": [
+      "Runecarver",
+      "룬 조각기",
+      "符文雕刻者"
+    ]
+  },
+  {
+    "id": 447109,
+    "file": "cruelty.png",
+    "names": [
+      "Cruelty",
+      "잔혹 행위",
+      "残忍"
+    ]
+  },
+  {
+    "id": 447110,
+    "file": "moonflairspellblade.png",
+    "names": [
+      "Moonflair Spellblade",
+      "달빛 마법검",
+      "月华咒刃"
+    ]
+  },
+  {
+    "id": 447111,
+    "file": "overlordsbloodmail_447111.png",
+    "names": [
+      "Overlord's Bloodmail",
+      "지배자의 피갑옷",
+      "霸王血铠"
+    ]
+  },
+  {
+    "id": 447112,
+    "file": "flesheater.png",
+    "names": [
+      "Flesheater",
+      "살점포식자",
+      "食肉斧剑"
+    ]
+  },
+  {
+    "id": 447113,
+    "file": "detonationorb.png",
+    "names": [
+      "Detonation Orb",
+      "폭발의 구",
+      "爆炸之球"
+    ]
+  },
+  {
+    "id": 447114,
+    "file": "reverberation.png",
+    "names": [
+      "Reverberation",
+      "반향",
+      "混响之刃"
+    ]
+  },
+  {
+    "id": 447115,
+    "file": "regicide.png",
+    "names": [
+      "Regicide",
+      "섭정 시해",
+      "弑王"
+    ]
+  },
+  {
+    "id": 447116,
+    "file": "kinkoujitte.png",
+    "names": [
+      "Kinkou Jitte",
+      "킨코우 십수",
+      "均衡十手"
+    ]
+  },
+  {
+    "id": 447118,
+    "file": "pyromancerscloak.png",
+    "names": [
+      "Pyromancer's Cloak",
+      "화염술사의 망토",
+      "炎术师的披风"
+    ]
+  },
+  {
+    "id": 447119,
+    "file": "lightningrod.png",
+    "names": [
+      "Lightning Rod",
+      "번개 막대",
+      "闪电杖"
+    ]
+  },
+  {
+    "id": 447120,
+    "file": "diamondtippedspear.png",
+    "names": [
+      "Diamond-Tipped Spear",
+      "다이아몬드 창",
+      "钻头长矛"
+    ]
+  },
+  {
+    "id": 447121,
+    "file": "twilightsedge.png",
+    "names": [
+      "Twilight's Edge",
+      "황혼의 끝자락",
+      "暮色之锋"
+    ]
+  },
+  {
+    "id": 447122,
+    "file": "blackholegauntlet.png",
+    "names": [
+      "Black Hole Gauntlet",
+      "블랙홀 건틀릿",
+      "黑洞护手"
+    ]
+  },
+  {
+    "id": 447123,
+    "file": "puppeteer.png",
+    "names": [
+      "Puppeteer",
+      "조종의 손아귀",
+      "傀儡操纵器"
+    ]
+  },
+  {
+    "id": 663039,
+    "file": "atmasreckoning_663039.png",
+    "names": [
+      "Atma's Reckoning",
+      "아트마의 심판",
+      "阿塔玛的清算"
+    ]
+  },
+  {
+    "id": 663056,
+    "file": "demonkingscrown_663056.png",
+    "names": [
+      "Demon King's Crown",
+      "불사대마왕의 왕관",
+      "魔王之冕"
+    ]
+  },
+  {
+    "id": 663058,
+    "file": "shieldofmoltenstone_663058.png",
+    "names": [
+      "Shield of Molten Stone",
+      "용암의 방패",
+      "熔石之盾"
+    ]
+  },
+  {
+    "id": 663059,
+    "file": "cloakofstarrynight_663059.png",
+    "names": [
+      "Cloak of Starry Night",
+      "별빛밤 망토",
+      "星夜斗篷"
+    ]
+  },
+  {
+    "id": 663060,
+    "file": "swordofthedivine_663060.png",
+    "names": [
+      "Sword of the Divine",
+      "신성의 검",
+      "神圣之剑"
+    ]
+  },
+  {
+    "id": 663064,
+    "file": "veigarstalismanofascension.png",
+    "names": [
+      "Veigar's Talisman of Ascension",
+      "베이가의 승천의 부적",
+      "维迦的飞升护符"
+    ]
+  },
+  {
+    "id": 663146,
+    "file": "hextechgunblade_663146.png",
+    "names": [
+      "Hextech Gunblade",
+      "마법공학 총검",
+      "海克斯科技枪刃"
+    ]
+  },
+  {
+    "id": 663172,
+    "file": "zephyr_663172.png",
+    "names": [
+      "Zephyr",
+      "서풍",
+      "灵风"
+    ]
+  },
+  {
+    "id": 663193,
+    "file": "gargoylestoneplate_663193.png",
+    "names": [
+      "Gargoyle Stoneplate",
+      "가고일 돌갑옷",
+      "石像鬼石板甲"
+    ]
+  },
+  {
+    "id": 664011,
+    "file": "swordofblossomingdawn_664011.png",
+    "names": [
+      "Sword of Blossoming Dawn",
+      "꽃피는 새벽의 검",
+      "花晓之剑"
+    ]
+  },
+  {
+    "id": 664403,
+    "file": "thegoldenspatula_664403.png",
+    "names": [
+      "The Golden Spatula",
+      "황금 뒤집개",
+      "金铲铲"
+    ]
+  },
+  {
+    "id": 664644,
+    "file": "crownoftheshatteredqueen_664644.png",
+    "names": [
+      "Crown of the Shattered Queen",
+      "부서진 여왕의 왕관",
+      "破碎王后之冕"
+    ]
+  },
+  {
+    "id": 667101,
+    "file": "gamblersblade_667101.png",
+    "names": [
+      "Gambler's Blade",
+      "도박꾼의 칼날",
+      "投机者之刃"
+    ]
+  },
+  {
+    "id": 667109,
+    "file": "cruelty_667109.png",
+    "names": [
+      "Cruelty",
+      "잔혹 행위",
+      "残忍"
+    ]
+  },
+  {
+    "id": 667112,
+    "file": "flesheater_667112.png",
+    "names": [
+      "Flesheater",
+      "살점포식자",
+      "食肉斧剑"
+    ]
+  },
+  {
+    "id": 667666,
+    "file": "thecollector_667666.png",
+    "names": [
+      "The Collector",
+      "징수의 총",
+      "收集者"
+    ]
+  },
+  {
+    "id": 771001,
+    "file": "bootsofspeed.png",
+    "names": [
+      "Boots of Speed",
+      "속도의 장화",
+      "速度之靴"
+    ]
+  },
+  {
+    "id": 771004,
+    "file": "faeriecharm_771004.png",
+    "names": [
+      "Faerie Charm",
+      "요정의 부적",
+      "仙女护符"
+    ]
+  },
+  {
+    "id": 771006,
+    "file": "rejuvenationbead_771006.png",
+    "names": [
+      "Rejuvenation Bead",
+      "원기 회복의 구슬",
+      "治疗宝珠"
+    ]
+  },
+  {
+    "id": 771011,
+    "file": "giantsbelt_771011.png",
+    "names": [
+      "Giant's Belt",
+      "거인의 허리띠",
+      "巨人腰带"
+    ]
+  },
+  {
+    "id": 771018,
+    "file": "cloakofagility_771018.png",
+    "names": [
+      "Cloak of Agility",
+      "민첩성의 망토",
+      "灵巧披风"
+    ]
+  },
+  {
+    "id": 771026,
+    "file": "blastingwand_771026.png",
+    "names": [
+      "Blasting Wand",
+      "방출의 마법봉",
+      "爆裂魔杖"
+    ]
+  },
+  {
+    "id": 771027,
+    "file": "sapphirecrystal_771027.png",
+    "names": [
+      "Sapphire Crystal",
+      "사파이어 수정",
+      "蓝水晶"
+    ]
+  },
+  {
+    "id": 771028,
+    "file": "rubycrystal_771028.png",
+    "names": [
+      "Ruby Crystal",
+      "루비 수정",
+      "红水晶"
+    ]
+  },
+  {
+    "id": 771029,
+    "file": "clotharmor_771029.png",
+    "names": [
+      "Cloth Armor",
+      "천 갑옷",
+      "布甲"
+    ]
+  },
+  {
+    "id": 771031,
+    "file": "chainvest_771031.png",
+    "names": [
+      "Chain Vest",
+      "쇠사슬 조끼",
+      "锁子甲"
+    ]
+  },
+  {
+    "id": 771033,
+    "file": "nullmagicmantle_771033.png",
+    "names": [
+      "Null-Magic Mantle",
+      "마법무효화의 망토",
+      "抗魔斗篷"
+    ]
+  },
+  {
+    "id": 771036,
+    "file": "longsword_771036.png",
+    "names": [
+      "Long Sword",
+      "롱소드",
+      "长剑"
+    ]
+  },
+  {
+    "id": 771037,
+    "file": "pickaxe_771037.png",
+    "names": [
+      "Pickaxe",
+      "곡괭이",
+      "十字镐"
+    ]
+  },
+  {
+    "id": 771038,
+    "file": "bfsword_771038.png",
+    "names": [
+      "B. F. Sword",
+      "B.F. 대검",
+      "暴风之剑"
+    ]
+  },
+  {
+    "id": 771039,
+    "file": "huntersmachete.png",
+    "names": [
+      "Hunter's Machete",
+      "사냥꾼의 마체테",
+      "猎人的宽刃刀"
+    ]
+  },
+  {
+    "id": 771042,
+    "file": "dagger_771042.png",
+    "names": [
+      "Dagger",
+      "단검",
+      "短剑"
+    ]
+  },
+  {
+    "id": 771043,
+    "file": "recurvebow_771043.png",
+    "names": [
+      "Recurve Bow",
+      "곡궁",
+      "反曲之弓"
+    ]
+  },
+  {
+    "id": 771051,
+    "file": "brawlersgloves.png",
+    "names": [
+      "Brawler's Gloves",
+      "싸움꾼의 장갑",
+      "格斗手套"
+    ]
+  },
+  {
+    "id": 771052,
+    "file": "amplifyingtome_771052.png",
+    "names": [
+      "Amplifying Tome",
+      "증폭의 고서",
+      "增幅典籍"
+    ]
+  },
+  {
+    "id": 771053,
+    "file": "vampiricscepter_771053.png",
+    "names": [
+      "Vampiric Scepter",
+      "흡혈의 낫",
+      "吸血鬼节杖"
+    ]
+  },
+  {
+    "id": 771054,
+    "file": "doransshield_771054.png",
+    "names": [
+      "Doran's Shield",
+      "도란의 방패",
+      "多兰之盾"
+    ]
+  },
+  {
+    "id": 771055,
+    "file": "doransblade_771055.png",
+    "names": [
+      "Doran's Blade",
+      "도란의 검",
+      "多兰之刃"
+    ]
+  },
+  {
+    "id": 771056,
+    "file": "doransring_771056.png",
+    "names": [
+      "Doran's Ring",
+      "도란의 반지",
+      "多兰之戒"
+    ]
+  },
+  {
+    "id": 771057,
+    "file": "negatroncloak_771057.png",
+    "names": [
+      "Negatron Cloak",
+      "음전자 망토",
+      "负极斗篷"
+    ]
+  },
+  {
+    "id": 771058,
+    "file": "needlesslylargerod_771058.png",
+    "names": [
+      "Needlessly Large Rod",
+      "쓸데없이 큰 지팡이",
+      "无用大棒"
+    ]
+  },
+  {
+    "id": 771080,
+    "file": "spiritstone.png",
+    "names": [
+      "Spirit Stone",
+      "정령석",
+      "精魄之石"
+    ]
+  },
+  {
+    "id": 771500,
+    "file": "penetratingbullets_771500.png",
+    "names": [
+      "Penetrating Bullets",
+      "관통 탄환",
+      "穿透型子弹"
+    ]
+  },
+  {
+    "id": 772001,
+    "file": "recall_772001.png",
+    "names": [
+      "Recall",
+      "귀환",
+      "回城"
+    ]
+  },
+  {
+    "id": 772003,
+    "file": "healthpotion_772003.png",
+    "names": [
+      "Health Potion",
+      "체력 물약",
+      "生命药水"
+    ]
+  },
+  {
+    "id": 772004,
+    "file": "manapotion.png",
+    "names": [
+      "Mana Potion",
+      "마나 물약",
+      "法力药水"
+    ]
+  },
+  {
+    "id": 772009,
+    "file": "totalbiscuitofrejuvenation.png",
+    "names": [
+      "Total Biscuit of Rejuvenation",
+      "원기회복의 완전한 비스킷",
+      "活力夹心饼干"
+    ]
+  },
+  {
+    "id": 772037,
+    "file": "elixiroffortitude.png",
+    "names": [
+      "Elixir of Fortitude",
+      "불굴의 영약",
+      "坚韧合剂"
+    ]
+  },
+  {
+    "id": 772038,
+    "file": "elixirofagility.png",
+    "names": [
+      "Elixir of Agility",
+      "민첩의 영약",
+      "灵巧合剂"
+    ]
+  },
+  {
+    "id": 772039,
+    "file": "elixirofbrilliance.png",
+    "names": [
+      "Elixir of Brilliance",
+      "지능의 영약",
+      "智慧合剂"
+    ]
+  },
+  {
+    "id": 772041,
+    "file": "crystallineflask.png",
+    "names": [
+      "Crystalline Flask",
+      "수정 플라스크",
+      "水晶瓶"
+    ]
+  },
+  {
+    "id": 772042,
+    "file": "oracleselixir.png",
+    "names": [
+      "Oracle's Elixir",
+      "예언자의 영약",
+      "先知药剂"
+    ]
+  },
+  {
+    "id": 772043,
+    "file": "visionward.png",
+    "names": [
+      "Vision Ward",
+      "투명 감지 와드",
+      "真视守卫"
+    ]
+  },
+  {
+    "id": 772044,
+    "file": "sightward.png",
+    "names": [
+      "Sight Ward",
+      "시야 와드",
+      "侦查守卫"
+    ]
+  },
+  {
+    "id": 772045,
+    "file": "rubysightstone.png",
+    "names": [
+      "Ruby Sightstone",
+      "루비 시야석",
+      "洞察红宝石"
+    ]
+  },
+  {
+    "id": 772049,
+    "file": "sightstone.png",
+    "names": [
+      "Sightstone",
+      "시야석",
+      "洞察之石"
+    ]
+  },
+  {
+    "id": 772050,
+    "file": "explorersward.png",
+    "names": [
+      "Explorer's Ward",
+      "탐험가의 와드",
+      "探索者守卫"
+    ]
+  },
+  {
+    "id": 772139,
+    "file": "item772139.png",
+    "names": []
+  },
+  {
+    "id": 772140,
+    "file": "item772140.png",
+    "names": []
+  },
+  {
+    "id": 773001,
+    "file": "abyssalscepter.png",
+    "names": [
+      "Abyssal Scepter",
+      "심연의 홀",
+      "深渊权杖"
+    ]
+  },
+  {
+    "id": 773003,
+    "file": "archangelsstaff_773003.png",
+    "names": [
+      "Archangel's Staff",
+      "대천사의 지팡이",
+      "大天使之杖"
+    ]
+  },
+  {
+    "id": 773004,
+    "file": "manamune_773004.png",
+    "names": [
+      "Manamune",
+      "마나무네",
+      "魔宗"
+    ]
+  },
+  {
+    "id": 773005,
+    "file": "atmasimpaler.png",
+    "names": [
+      "Atma's Impaler",
+      "아트마의 창",
+      "阿塔玛之戟"
+    ]
+  },
+  {
+    "id": 773006,
+    "file": "berserkersgreaves_773006.png",
+    "names": [
+      "Berserker's Greaves",
+      "광전사의 군화",
+      "狂战士胫甲"
+    ]
+  },
+  {
+    "id": 773009,
+    "file": "bootsofswiftness_773009.png",
+    "names": [
+      "Boots of Swiftness",
+      "신속의 장화",
+      "轻灵之靴"
+    ]
+  },
+  {
+    "id": 773010,
+    "file": "catalysttheprotector.png",
+    "names": [
+      "Catalyst the Protector",
+      "수호자 카탈리스트",
+      "催化神石"
+    ]
+  },
+  {
+    "id": 773020,
+    "file": "sorcerersshoes_773020.png",
+    "names": [
+      "Sorcerer's Shoes",
+      "마법사의 신발",
+      "法师之靴"
+    ]
+  },
+  {
+    "id": 773022,
+    "file": "frozenmallet_773022.png",
+    "names": [
+      "Frozen Mallet",
+      "얼어붙은 망치",
+      "冰霜之锤"
+    ]
+  },
+  {
+    "id": 773023,
+    "file": "twinshadows.png",
+    "names": [
+      "Twin Shadows",
+      "쌍둥이 그림자",
+      "双生暗影"
+    ]
+  },
+  {
+    "id": 773024,
+    "file": "glacialshroud.png",
+    "names": [
+      "Glacial Shroud",
+      "빙하의 장막",
+      "冰川护甲"
+    ]
+  },
+  {
+    "id": 773025,
+    "file": "iceborngauntlet_773025.png",
+    "names": [
+      "Iceborn Gauntlet",
+      "얼어붙은 건틀릿",
+      "冰脉护手"
+    ]
+  },
+  {
+    "id": 773026,
+    "file": "guardianangel_773026.png",
+    "names": [
+      "Guardian Angel",
+      "수호 천사",
+      "守护天使"
+    ]
+  },
+  {
+    "id": 773027,
+    "file": "rodofages_773027.png",
+    "names": [
+      "Rod of Ages",
+      "영겁의 지팡이",
+      "时光之杖"
+    ]
+  },
+  {
+    "id": 773028,
+    "file": "chaliceofharmony.png",
+    "names": [
+      "Chalice of Harmony",
+      "조화의 성배",
+      "和谐圣杯"
+    ]
+  },
+  {
+    "id": 773031,
+    "file": "infinityedge_773031.png",
+    "names": [
+      "Infinity Edge",
+      "무한의 대검",
+      "无尽之刃"
+    ]
+  },
+  {
+    "id": 773035,
+    "file": "lastwhisper_773035.png",
+    "names": [
+      "Last Whisper",
+      "최후의 속삭임",
+      "最后的轻语"
+    ]
+  },
+  {
+    "id": 773037,
+    "file": "manamanipulator.png",
+    "names": [
+      "Mana Manipulator",
+      "마나의 보주",
+      "御魔之器"
+    ]
+  },
+  {
+    "id": 773040,
+    "file": "seraphsembrace_773040.png",
+    "names": [
+      "Seraph's Embrace",
+      "대천사의 포옹",
+      "炽天使之拥"
+    ]
+  },
+  {
+    "id": 773041,
+    "file": "mejaissoulstealer_773041.png",
+    "names": [
+      "Mejai's Soulstealer",
+      "메자이의 영혼약탈자",
+      "梅贾的窃魂卷"
+    ]
+  },
+  {
+    "id": 773042,
+    "file": "muramana_773042.png",
+    "names": [
+      "Muramana",
+      "무라마나",
+      "魔切"
+    ]
+  },
+  {
+    "id": 773044,
+    "file": "phage_773044.png",
+    "names": [
+      "Phage",
+      "탐식의 망치",
+      "净蚀"
+    ]
+  },
+  {
+    "id": 773046,
+    "file": "phantomdancer_773046.png",
+    "names": [
+      "Phantom Dancer",
+      "유령 무희",
+      "幻影之舞"
+    ]
+  },
+  {
+    "id": 773047,
+    "file": "ninjatabi.png",
+    "names": [
+      "Ninja Tabi",
+      "닌자의 신발",
+      "忍者足具"
+    ]
+  },
+  {
+    "id": 773050,
+    "file": "starksfervor.png",
+    "names": [
+      "Stark's Fervor",
+      "스타크의 열정",
+      "斯塔克的狂热"
+    ]
+  },
+  {
+    "id": 773052,
+    "file": "emblemofvalor.png",
+    "names": [
+      "Emblem of Valor",
+      "용맹의 징표",
+      "英勇纹章"
+    ]
+  },
+  {
+    "id": 773056,
+    "file": "ohmwrecker.png",
+    "names": [
+      "Ohmwrecker",
+      "저항 공성기",
+      "干扰水晶"
+    ]
+  },
+  {
+    "id": 773057,
+    "file": "sheen_773057.png",
+    "names": [
+      "Sheen",
+      "광휘의 검",
+      "耀光"
+    ]
+  },
+  {
+    "id": 773060,
+    "file": "bannerofcommand.png",
+    "names": [
+      "Banner of Command",
+      "지휘관의 깃발",
+      "号令之旗"
+    ]
+  },
+  {
+    "id": 773063,
+    "file": "soulshroud.png",
+    "names": [
+      "Soul Shroud",
+      "영혼의 갑옷",
+      "灵魂法衣"
+    ]
+  },
+  {
+    "id": 773064,
+    "file": "forceofnature_773064.png",
+    "names": [
+      "Force of Nature",
+      "대자연의 힘",
+      "自然之力"
+    ]
+  },
+  {
+    "id": 773065,
+    "file": "spiritvisage_773065.png",
+    "names": [
+      "Spirit Visage",
+      "정령의 형상",
+      "振奋盔甲"
+    ]
+  },
+  {
+    "id": 773067,
+    "file": "kindlegem_773067.png",
+    "names": [
+      "Kindlegem",
+      "점화석",
+      "燃烧宝石"
+    ]
+  },
+  {
+    "id": 773068,
+    "file": "sunfirecape.png",
+    "names": [
+      "Sunfire Cape",
+      "태양불꽃 망토",
+      "日炎斗篷"
+    ]
+  },
+  {
+    "id": 773069,
+    "file": "shurelyasreverie.png",
+    "names": [
+      "Shurelya's Reverie",
+      "슈렐리아의 몽상",
+      "舒瑞娅的狂想曲"
+    ]
+  },
+  {
+    "id": 773070,
+    "file": "tearofthegoddess_773070.png",
+    "names": [
+      "Tear of the Goddess",
+      "여신의 눈물",
+      "女神之泪"
+    ]
+  },
+  {
+    "id": 773071,
+    "file": "theblackcleaver.png",
+    "names": [
+      "The Black Cleaver",
+      "칠흑의 양날 도끼",
+      "黑色切割者"
+    ]
+  },
+  {
+    "id": 773072,
+    "file": "thebloodthirster.png",
+    "names": [
+      "The Bloodthirster",
+      "피바라기",
+      "饮血剑"
+    ]
+  },
+  {
+    "id": 773073,
+    "file": "stackofsunfirecapes.png",
+    "names": [
+      "Stack of Sunfire Capes",
+      "태양불꽃 망토 무더기",
+      "日炎斗篷之堆叠"
+    ]
+  },
+  {
+    "id": 773074,
+    "file": "ravenoushydra_773074.png",
+    "names": [
+      "Ravenous Hydra",
+      "굶주린 히드라",
+      "贪欲九头蛇"
+    ]
+  },
+  {
+    "id": 773075,
+    "file": "thornmail_773075.png",
+    "names": [
+      "Thornmail",
+      "가시 갑옷",
+      "荆棘之甲"
+    ]
+  },
+  {
+    "id": 773077,
+    "file": "tiamat_773077.png",
+    "names": [
+      "Tiamat",
+      "티아맷",
+      "提亚马特"
+    ]
+  },
+  {
+    "id": 773078,
+    "file": "trinityforce_773078.png",
+    "names": [
+      "Trinity Force",
+      "삼위일체",
+      "三相之力"
+    ]
+  },
+  {
+    "id": 773082,
+    "file": "wardensmail_773082.png",
+    "names": [
+      "Warden's Mail",
+      "파수꾼의 갑옷",
+      "守望者铠甲"
+    ]
+  },
+  {
+    "id": 773083,
+    "file": "warmogsarmor_773083.png",
+    "names": [
+      "Warmog's Armor",
+      "워모그의 갑옷",
+      "狂徒铠甲"
+    ]
+  },
+  {
+    "id": 773084,
+    "file": "innervatinglocket_773084.png",
+    "names": [
+      "Innervating Locket",
+      "활력증진의 펜던트",
+      "激发之匣"
+    ]
+  },
+  {
+    "id": 773085,
+    "file": "runaanshurricane_773085.png",
+    "names": [
+      "Runaan's Hurricane",
+      "루난의 허리케인",
+      "卢安娜的飓风"
+    ]
+  },
+  {
+    "id": 773086,
+    "file": "zeal_773086.png",
+    "names": [
+      "Zeal",
+      "열정의 검",
+      "狂热"
+    ]
+  },
+  {
+    "id": 773087,
+    "file": "statikkshiv_773087.png",
+    "names": [
+      "Statikk Shiv",
+      "스태틱의 단검",
+      "斯塔缇克电刃"
+    ]
+  },
+  {
+    "id": 773089,
+    "file": "rabadonsdeathcap_773089.png",
+    "names": [
+      "Rabadon's Deathcap",
+      "라바돈의 죽음모자",
+      "灭世者的死亡之帽"
+    ]
+  },
+  {
+    "id": 773091,
+    "file": "witsend_773091.png",
+    "names": [
+      "Wit's End",
+      "마법사의 최후",
+      "智慧末刃"
+    ]
+  },
+  {
+    "id": 773092,
+    "file": "shardoftrueice_773092.png",
+    "names": [
+      "Shard of True Ice",
+      "얼음 정수의 파편",
+      "极冰碎片"
+    ]
+  },
+  {
+    "id": 773093,
+    "file": "avariceblade.png",
+    "names": [
+      "Avarice Blade",
+      "탐욕의 검",
+      "贪婪之刃"
+    ]
+  },
+  {
+    "id": 773096,
+    "file": "philosophersstone.png",
+    "names": [
+      "Philosopher's Stone",
+      "현자의 돌",
+      "贤者之石"
+    ]
+  },
+  {
+    "id": 773098,
+    "file": "luckypick.png",
+    "names": [
+      "Lucky Pick",
+      "행운 피크",
+      "幸运手"
+    ]
+  },
+  {
+    "id": 773100,
+    "file": "lichbane_773100.png",
+    "names": [
+      "Lich Bane",
+      "리치베인",
+      "巫妖之祸"
+    ]
+  },
+  {
+    "id": 773101,
+    "file": "stinger.png",
+    "names": [
+      "Stinger",
+      "쐐기검",
+      "蜂刺"
+    ]
+  },
+  {
+    "id": 773102,
+    "file": "bansheesveil_773102.png",
+    "names": [
+      "Banshee's Veil",
+      "밴시의 장막",
+      "女妖面纱"
+    ]
+  },
+  {
+    "id": 773105,
+    "file": "aegisofthelegion_773105.png",
+    "names": [
+      "Aegis of the Legion",
+      "군단의 방패",
+      "军团圣盾"
+    ]
+  },
+  {
+    "id": 773106,
+    "file": "madredsrazors.png",
+    "names": [
+      "Madred's Razors",
+      "마드레드의 갈퀴손",
+      "麦瑞德之爪"
+    ]
+  },
+  {
+    "id": 773107,
+    "file": "runicbulwark.png",
+    "names": [
+      "Runic Bulwark",
+      "룬 방벽",
+      "符文壁垒"
+    ]
+  },
+  {
+    "id": 773108,
+    "file": "fiendishcodex_773108.png",
+    "names": [
+      "Fiendish Codex",
+      "악마의 마법서",
+      "恶魔法典"
+    ]
+  },
+  {
+    "id": 773109,
+    "file": "madredsbloodrazor.png",
+    "names": [
+      "Madred's Bloodrazor",
+      "마드레드의 피갈퀴손",
+      "麦瑞德裂血手套"
+    ]
+  },
+  {
+    "id": 773110,
+    "file": "frozenheart_773110.png",
+    "names": [
+      "Frozen Heart",
+      "얼어붙은 심장",
+      "冰霜之心"
+    ]
+  },
+  {
+    "id": 773111,
+    "file": "mercurystreads_773111.png",
+    "names": [
+      "Mercury's Treads",
+      "헤르메스의 발걸음",
+      "水银之靴"
+    ]
+  },
+  {
+    "id": 773114,
+    "file": "malady.png",
+    "names": [
+      "Malady",
+      "역병의 비수",
+      "腐蚀之刃"
+    ]
+  },
+  {
+    "id": 773115,
+    "file": "nashorstooth_773115.png",
+    "names": [
+      "Nashor's Tooth",
+      "내셔의 이빨",
+      "纳什之牙"
+    ]
+  },
+  {
+    "id": 773116,
+    "file": "rylaiscrystalscepter_773116.png",
+    "names": [
+      "Rylai's Crystal Scepter",
+      "라일라이의 수정홀",
+      "瑞莱的冰晶节杖"
+    ]
+  },
+  {
+    "id": 773117,
+    "file": "bootsofmobility.png",
+    "names": [
+      "Boots of Mobility",
+      "기동력의 장화",
+      "疾行之靴"
+    ]
+  },
+  {
+    "id": 773123,
+    "file": "executionerscalling_773123.png",
+    "names": [
+      "Executioner's Calling",
+      "처형인의 대검",
+      "死刑宣告"
+    ]
+  },
+  {
+    "id": 773124,
+    "file": "guinsoosrageblade_773124.png",
+    "names": [
+      "Guinsoo's Rageblade",
+      "구인수의 격노검",
+      "鬼索的狂暴之刃"
+    ]
+  },
+  {
+    "id": 773128,
+    "file": "deathfiregrasp_773128.png",
+    "names": [
+      "Deathfire Grasp",
+      "죽음불꽃 손아귀",
+      "冥火之拥"
+    ]
+  },
+  {
+    "id": 773131,
+    "file": "swordofthedivine_773131.png",
+    "names": [
+      "Sword of the Divine",
+      "신성의 검",
+      "神圣之剑"
+    ]
+  },
+  {
+    "id": 773132,
+    "file": "heartofgold.png",
+    "names": [
+      "Heart of Gold",
+      "황금의 심장",
+      "黄金之心"
+    ]
+  },
+  {
+    "id": 773134,
+    "file": "thebrutalizer_773134.png",
+    "names": [
+      "The Brutalizer",
+      "야수화",
+      "残暴之力"
+    ]
+  },
+  {
+    "id": 773135,
+    "file": "voidstaff_773135.png",
+    "names": [
+      "Void Staff",
+      "공허의 지팡이",
+      "虚空之杖"
+    ]
+  },
+  {
+    "id": 773136,
+    "file": "hauntingguise_773136.png",
+    "names": [
+      "Haunting Guise",
+      "기괴한 가면",
+      "幽魂面具"
+    ]
+  },
+  {
+    "id": 773138,
+    "file": "leviathan.png",
+    "names": [
+      "Leviathan",
+      "레비아탄 갑옷",
+      "利维坦之甲"
+    ]
+  },
+  {
+    "id": 773139,
+    "file": "mercurialscimitar_773139.png",
+    "names": [
+      "Mercurial Scimitar",
+      "헤르메스의 시미터",
+      "水银弯刀"
+    ]
+  },
+  {
+    "id": 773140,
+    "file": "quicksilversash_773140.png",
+    "names": [
+      "Quicksilver Sash",
+      "수은 장식띠",
+      "水银饰带"
+    ]
+  },
+  {
+    "id": 773141,
+    "file": "swordoftheoccult.png",
+    "names": [
+      "Sword of the Occult",
+      "비술의 검",
+      "神秘之剑"
+    ]
+  },
+  {
+    "id": 773142,
+    "file": "youmuusghostblade_773142.png",
+    "names": [
+      "Youmuu's Ghostblade",
+      "요우무의 유령검",
+      "幽梦之灵"
+    ]
+  },
+  {
+    "id": 773143,
+    "file": "randuinsomen_773143.png",
+    "names": [
+      "Randuin's Omen",
+      "란두인의 예언",
+      "兰顿之兆"
+    ]
+  },
+  {
+    "id": 773144,
+    "file": "bilgewatercutlass.png",
+    "names": [
+      "Bilgewater Cutlass",
+      "빌지워터 해적검",
+      "比尔吉沃特弯刀"
+    ]
+  },
+  {
+    "id": 773145,
+    "file": "hextechrevolver.png",
+    "names": [
+      "Hextech Revolver",
+      "마법공학 리볼버",
+      "海克斯科技左轮枪"
+    ]
+  },
+  {
+    "id": 773146,
+    "file": "hextechgunblade_773146.png",
+    "names": [
+      "Hextech Gunblade",
+      "마법공학 총검",
+      "海克斯科技枪刃"
+    ]
+  },
+  {
+    "id": 773151,
+    "file": "liandrystorment_773151.png",
+    "names": [
+      "Liandry's Torment",
+      "리안드리의 고통",
+      "兰德里的折磨"
+    ]
+  },
+  {
+    "id": 773152,
+    "file": "willoftheancients.png",
+    "names": [
+      "Will of the Ancients",
+      "고대인의 의지",
+      "远古意志"
+    ]
+  },
+  {
+    "id": 773153,
+    "file": "bladeoftheruinedking_773153.png",
+    "names": [
+      "Blade of The Ruined King",
+      "몰락한 왕의 검",
+      "破败王者之刃"
+    ]
+  },
+  {
+    "id": 773154,
+    "file": "wriggleslantern.png",
+    "names": [
+      "Wriggle's Lantern",
+      "리글의 랜턴",
+      "瑞格之灯"
+    ]
+  },
+  {
+    "id": 773155,
+    "file": "hexdrinker_773155.png",
+    "names": [
+      "Hexdrinker",
+      "주문포식자",
+      "海克斯饮魔刀"
+    ]
+  },
+  {
+    "id": 773156,
+    "file": "mawofmalmortius_773156.png",
+    "names": [
+      "Maw of Malmortius",
+      "맬모셔스의 아귀",
+      "玛莫提乌斯之噬"
+    ]
+  },
+  {
+    "id": 773157,
+    "file": "zhonyashourglass_773157.png",
+    "names": [
+      "Zhonya's Hourglass",
+      "존야의 모래시계",
+      "中娅沙漏"
+    ]
+  },
+  {
+    "id": 773158,
+    "file": "ionianbootsoflucidity_773158.png",
+    "names": [
+      "Ionian Boots of Lucidity",
+      "명석함의 아이오니아 장화",
+      "明朗之靴"
+    ]
+  },
+  {
+    "id": 773160,
+    "file": "feralflare.png",
+    "names": [
+      "Feral Flare",
+      "야생의 섬광",
+      "烈焰之炬"
+    ]
+  },
+  {
+    "id": 773161,
+    "file": "moonflairspellblade_773161.png",
+    "names": [
+      "Moonflair Spellblade",
+      "달빛 마법검",
+      "月华咒刃"
+    ]
+  },
+  {
+    "id": 773162,
+    "file": "cloakanddagger.png",
+    "names": [
+      "Cloak and Dagger",
+      "망토와 단검",
+      "斗篷与短剑"
+    ]
+  },
+  {
+    "id": 773165,
+    "file": "morellonomicon_773165.png",
+    "names": [
+      "Morellonomicon",
+      "모렐로노미콘",
+      "莫雷洛秘典"
+    ]
+  },
+  {
+    "id": 773172,
+    "file": "zephyr_773172.png",
+    "names": [
+      "Zephyr",
+      "서풍",
+      "灵风"
+    ]
+  },
+  {
+    "id": 773173,
+    "file": "eleisasmiracle_773173.png",
+    "names": [
+      "Eleisa's Miracle",
+      "일라이자의 기적",
+      "艾莉莎的奇迹"
+    ]
+  },
+  {
+    "id": 773174,
+    "file": "shusheismanajug.png",
+    "names": [
+      "Shushei's Mana Jug",
+      "슈세이의 마나 통",
+      "Shushei的法力壶"
+    ]
+  },
+  {
+    "id": 773178,
+    "file": "ionicspark.png",
+    "names": [
+      "Ionic Spark",
+      "이온 충격기",
+      "离子火花"
+    ]
+  },
+  {
+    "id": 773190,
+    "file": "locketoftheironsolari_773190.png",
+    "names": [
+      "Locket of the Iron Solari",
+      "강철의 솔라리 펜던트",
+      "钢铁烈阳之匣"
+    ]
+  },
+  {
+    "id": 773191,
+    "file": "seekersarmguard_773191.png",
+    "names": [
+      "Seeker's Armguard",
+      "추적자의 팔목 보호대",
+      "探索者的护臂"
+    ]
+  },
+  {
+    "id": 773206,
+    "file": "spiritofthespectralwraith.png",
+    "names": [
+      "Spirit of the Spectral Wraith",
+      "망령의 영혼",
+      "破碎幽灵之精魄"
+    ]
+  },
+  {
+    "id": 773207,
+    "file": "spiritoftheancientgolem.png",
+    "names": [
+      "Spirit of the Ancient Golem",
+      "고대 골렘의 영혼",
+      "远古魔像之精魄"
+    ]
+  },
+  {
+    "id": 773209,
+    "file": "spiritoftheelderlizard.png",
+    "names": [
+      "Spirit of the Elder Lizard",
+      "도마뱀 장로의 영혼",
+      "蜥蜴长老之精魄"
+    ]
+  },
+  {
+    "id": 773211,
+    "file": "spectrescowl_773211.png",
+    "names": [
+      "Spectre's Cowl",
+      "망령의 두건",
+      "幽魂斗篷"
+    ]
+  },
+  {
+    "id": 773222,
+    "file": "mikaelscrucible.png",
+    "names": [
+      "Mikael's Crucible",
+      "미카엘의 도가니",
+      "米凯尔的坩埚"
+    ]
+  },
+  {
+    "id": 773340,
+    "file": "yellowtrinket.png",
+    "names": [
+      "Yellow Trinket",
+      "노란색 장신구",
+      "黄色饰品"
+    ]
+  },
+  {
+    "id": 773348,
+    "file": "redtrinket.png",
+    "names": [
+      "Red Trinket",
+      "빨간색 장신구",
+      "红色饰品"
+    ]
+  },
+  {
+    "id": 773504,
+    "file": "ardentcenser_773504.png",
+    "names": [
+      "Ardent Censer",
+      "불타는 향로",
+      "炽热香炉"
+    ]
+  },
+  {
+    "id": 773512,
+    "file": "zzrotportal.png",
+    "names": [
+      "Zz'Rot Portal",
+      "즈롯 차원문",
+      "兹若特传送门"
+    ]
+  },
+  {
+    "id": 773513,
+    "file": "prototypehexcore.png",
+    "names": [
+      "Prototype Hex Core",
+      "프로토타입 마공학 핵",
+      "海克斯核心原型"
+    ]
+  },
+  {
+    "id": 773514,
+    "file": "hexcoremk1.png",
+    "names": [
+      "Hex Core mk-1",
+      "마공학 핵 mk-1",
+      "海克斯核心mk-1型"
+    ]
+  },
+  {
+    "id": 773515,
+    "file": "hexcoremk2.png",
+    "names": [
+      "Hex Core mk-2",
+      "마공학 핵 mk-2",
+      "海克斯核心mk-2型"
+    ]
+  },
+  {
+    "id": 773516,
+    "file": "perfecthexcore.png",
+    "names": [
+      "Perfect Hex Core",
+      "완성형 마공학 핵",
+      "完美海克斯核心"
+    ]
+  },
+  {
+    "id": 773517,
+    "file": "eggnog.png",
+    "names": [
+      "Eggnog",
+      "에그노그",
+      "蛋酒"
+    ]
+  },
+  {
+    "id": 773518,
+    "file": "bagoftea.png",
+    "names": [
+      "Bag of Tea",
+      "티백",
+      "茶袋"
+    ]
+  },
+  {
+    "id": 773519,
+    "file": "candycorn.png",
+    "names": [
+      "Candy Corn",
+      "캔디 콘",
+      "玉米糖"
+    ]
+  },
+  {
+    "id": 773521,
+    "file": "healthpotion_773521.png",
+    "names": [
+      "Health Potion",
+      "체력 물약",
+      "生命药水"
+    ]
+  },
+  {
+    "id": 994403,
+    "file": "goldenspatula.png",
+    "names": [
+      "Golden Spatula",
+      "황금 뒤집개",
+      "金铲铲"
+    ]
+  }
+]
