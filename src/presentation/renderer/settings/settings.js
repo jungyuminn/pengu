@@ -51,9 +51,6 @@ window.addEventListener("DOMContentLoaded", async () => {
   paint(await window.pengu.getState());
   window.pengu.onState(paint);
 
-  document.querySelector("#sync")?.addEventListener("click", async () => {
-    paint(await window.pengu.sync());
-  });
   overlayEnabled.addEventListener("change", async () => {
     paint(await window.pengu.toggleOverlay(overlayEnabled.checked));
   });

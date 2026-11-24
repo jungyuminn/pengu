@@ -76,7 +76,7 @@ function matchDetailHtml(match, fits = {}) {
       </div>
     </header>
     <div data-match-body>
-      ${teams ? `<div data-scoreboard>${scoreboardHtml(teams, fits)}</div>` : `<p class="note">이 판은 목록만 있습니다. 롤을 켠 채로 새로고침하면 스코어보드를 채웁니다.</p>`}
+      ${teams ? `<div data-scoreboard>${scoreboardHtml(teams, fits)}</div>` : `<p class="note">이 판은 목록만 있습니다. 롤을 켜 두면 스코어보드를 채웁니다.</p>`}
     </div>
   </div>`;
 }

@@ -3,7 +3,6 @@ import { contextBridge, ipcRenderer } from "electron";
 contextBridge.exposeInMainWorld("pengu", {
   getState: () => ipcRenderer.invoke("pengu:get-state"),
   saveApiKey: (apiKey: string) => ipcRenderer.invoke("pengu:save-api-key", apiKey),
-  sync: () => ipcRenderer.invoke("pengu:sync"),
   toggleOverlay: (enabled: boolean) => ipcRenderer.invoke("pengu:toggle-overlay", enabled),
   setTheme: (theme: string) => ipcRenderer.invoke("pengu:set-theme", theme),
   preview: () => ipcRenderer.invoke("pengu:preview"),

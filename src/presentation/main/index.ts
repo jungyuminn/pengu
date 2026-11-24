@@ -152,9 +152,6 @@ void app.whenReady().then(async () => {
     await services.settings.write(next);
     return pushState("API 키를 저장했습니다.");
   });
-  ipcMain.handle("pengu:sync", async () => {
-    return runSync(true);
-  });
   ipcMain.handle("pengu:toggle-overlay", async (_event, overlayEnabled: boolean) => {
     const current = await services.settings.read();
     await services.settings.write({ ...current, overlayEnabled });
