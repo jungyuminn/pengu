@@ -19,6 +19,7 @@ export interface AugmentStat {
   rarity: Rarity;
   grade: Grade;
   pickRate: number | null;
+  winRate: number | null;
   sample: number | null;
 }
 

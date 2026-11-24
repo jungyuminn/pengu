@@ -19,6 +19,7 @@ interface AramggAugment {
   stats?: {
     tier?: number | string;
     pickRate?: number;
+    winRate?: number;
     games?: number;
     gamePatch?: string;
     statsAvailable?: boolean;
@@ -49,6 +50,7 @@ export function mapAramggAugments(
       rarity: toRarity(row.rarity ?? row.rarityName),
       grade,
       pickRate: toPercent(stats?.pickRate),
+      winRate: toPercent(stats?.winRate),
       sample: stats?.games ?? null,
     });
   }

@@ -12,7 +12,7 @@ describe("mapAramggAugments", () => {
             key: "ARAM_ImTheJuggernaut",
             name: "거인의 결의",
             rarity: "gold",
-            stats: { tier: 2, pickRate: 0.21, gamePatch: "16.23" },
+            stats: { tier: 2, pickRate: 0.21, winRate: 0.53, gamePatch: "16.23" },
           },
         ],
       },
@@ -23,5 +23,6 @@ describe("mapAramggAugments", () => {
     expect(snapshot.augments[0]?.names.ko).toBe("거인의 결의");
     expect(snapshot.augments[0]?.numericId).toBe(1001);
     expect(snapshot.augments[0]?.grade).toBe("A");
+    expect(snapshot.augments[0]?.winRate).toBe(53);
   });
 });

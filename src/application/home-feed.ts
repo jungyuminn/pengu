@@ -29,6 +29,7 @@ export interface HomeAugment {
   rarity: Rarity;
   grade: Grade;
   pickRate: number | null;
+  winRate: number | null;
 }
 
 export interface HomeMatch {
@@ -149,6 +150,7 @@ function toHomeAugment(row: AugmentStat, icons: Map<number, string>): HomeAugmen
     rarity: row.rarity,
     grade: row.grade,
     pickRate: row.pickRate,
+    winRate: row.winRate,
   };
 }
 
