@@ -251,60 +251,6 @@ function Get-LeagueBox {
   return $null
 }
 
-function Test-OfferMetal($c) {
-  $r = [int]$c.R
-  $g = [int]$c.G
-  $b = [int]$c.B
-  $max = [Math]::Max($r, [Math]::Max($g, $b))
-  $min = [Math]::Min($r, [Math]::Min($g, $b))
-  if ($r -ge 140 -and $g -ge 100 -and $b -le 120 -and $r -ge ($b + 35)) { return $true }
-  if ($max -ge 125 -and ($max - $min) -le 48) { return $true }
-  if ($max -ge 130 -and ($max - $min) -ge 55) {
-    if ($b -ge ($r + 50) -and $b -ge ($g + 30) -and $g -lt 160) { return $false }
-    return $true
-  }
-  return $false
-}
-
-function Test-OfferFill($c) {
-  return (($c.R + $c.G + $c.B) -lt 140)
-}
-
-function Test-OfferSlot($bmp, [int]$slot, [int]$n) {
-  $pad = [int]($bmp.Width * 0.1)
-  $inner = [Math]::Max(32, $bmp.Width - 2 * $pad)
-  $x0 = $pad + [int]($inner * $slot / $n)
-  $x1 = $pad + [int]($inner * ($slot + 1) / $n)
-  if ($x1 - $x0 -lt 16) { return $false }
-  $left = [Math]::Min($bmp.Width - 1, $x0 + [int](($x1 - $x0) * 0.06))
-  $right = [Math]::Max(0, $x1 - [int](($x1 - $x0) * 0.06))
-  $mid = [int](($x0 + $x1) / 2)
-  $yTop = [Math]::Max(0, [int]($bmp.Height * 0.1))
-  $yEnd = [Math]::Min($bmp.Height - 1, [int]($bmp.Height * 0.88))
-  $metal = 0
-  $edgeN = 0
-  $fill = 0
-  $fillN = 0
-  for ($y = $yTop; $y -le $yEnd; $y += 7) {
-    foreach ($x in @($left, $right)) {
-      if ($x -lt 0 -or $x -ge $bmp.Width) { continue }
-      $edgeN += 1
-      if (Test-OfferMetal $bmp.GetPixel($x, $y)) { $metal += 1 }
-    }
-    if ($mid -ge 0 -and $mid -lt $bmp.Width) {
-      $fillN += 1
-      if (Test-OfferFill $bmp.GetPixel($mid, $y)) { $fill += 1 }
-    }
-  }
-  for ($x = $left; $x -le $right; $x += 9) {
-    if ($x -lt 0 -or $x -ge $bmp.Width) { continue }
-    $edgeN += 1
-    if (Test-OfferMetal $bmp.GetPixel($x, $yTop)) { $metal += 1 }
-  }
-  if ($edgeN -lt 8 -or $fillN -lt 4) { return $false }
-  return (($metal / $edgeN) -ge 0.1) -and (($fill / $fillN) -ge 0.4)
-}
-
 function Count-OfferCards($bmp) {
   return [PenguCards]::Count($bmp)
 }
@@ -350,6 +296,77 @@ function Show-PenguOverlay($hidden) {
   foreach ($handle in @($hidden)) {
     [void][PenguWin]::ShowWindow([IntPtr]$handle, 8)
   }
+}
+
+function Ocr-CropText($crop, [string]$bmpPath) {
+  Save-OcrBitmap $crop $bmpPath
+  $file = Await-WinRT ([Windows.Storage.StorageFile]::GetFileFromPathAsync($bmpPath)) ([Windows.Storage.StorageFile])
+  $stream = Await-WinRT ($file.OpenAsync([Windows.Storage.FileAccessMode]::Read)) ([Windows.Storage.Streams.IRandomAccessStream])
+  try {
+    $decoder = Await-WinRT ([Windows.Graphics.Imaging.BitmapDecoder]::CreateAsync($stream)) ([Windows.Graphics.Imaging.BitmapDecoder])
+    $bitmap = Await-WinRT ($decoder.GetSoftwareBitmapAsync()) ([Windows.Graphics.Imaging.SoftwareBitmap])
+    if (
+      $bitmap.BitmapPixelFormat -ne [Windows.Graphics.Imaging.BitmapPixelFormat]::Bgra8 -or
+      $bitmap.BitmapAlphaMode -ne [Windows.Graphics.Imaging.BitmapAlphaMode]::Premultiplied
+    ) {
+      $bitmap = [Windows.Graphics.Imaging.SoftwareBitmap]::Convert(
+        $bitmap,
+        [Windows.Graphics.Imaging.BitmapPixelFormat]::Bgra8,
+        [Windows.Graphics.Imaging.BitmapAlphaMode]::Premultiplied
+      )
+    }
+    $result = Invoke-Ocr $bitmap $ocrKo
+    if (-not (Ocr-HasHangul $result) -and $ocrEn) {
+      $english = Invoke-Ocr $bitmap $ocrEn
+      if ($english -and @($english.Lines).Count -gt 0) { $result = $english }
+    }
+    if (-not $result) { return "" }
+    $parts = New-Object System.Collections.Generic.List[string]
+    foreach ($ocrLine in @($result.Lines)) {
+      if (-not $ocrLine) { continue }
+      $text = ([string]$ocrLine.Text).Trim()
+      if ($text) { [void]$parts.Add($text) }
+    }
+    return ($parts -join " ").Trim()
+  } finally {
+    $stream.Dispose()
+  }
+}
+
+function Read-CardSlotLines($src, [int]$cardCount) {
+  $slots = [Math]::Min(6, [Math]::Max(3, $cardCount))
+  $padX = [Math]::Max(4, [int][Math]::Round($src.Width * 0.02))
+  $slotW = [Math]::Max(8, [int][Math]::Floor($src.Width / $slots))
+  $titleY = [Math]::Max(0, [int][Math]::Round($src.Height * 0.22))
+  $titleH = [Math]::Max(16, [int][Math]::Round($src.Height * 0.72))
+  if ($titleY + $titleH -gt $src.Height) { $titleH = $src.Height - $titleY }
+  $lines = New-Object System.Collections.ArrayList
+  for ($i = 0; $i -lt $slots; $i++) {
+    $x = ($i * $slotW) + $padX
+    $w = [Math]::Max(8, $slotW - (2 * $padX))
+    if ($x + $w -gt $src.Width) { $w = $src.Width - $x }
+    if ($w -lt 8 -or $titleH -lt 8) { continue }
+    $rect = New-Object System.Drawing.Rectangle $x, $titleY, $w, $titleH
+    $crop = $src.Clone($rect, $src.PixelFormat)
+    $bmpPath = Join-Path $env:TEMP ("pengu-ocr-slot-" + [guid]::NewGuid().ToString("n") + ".bmp")
+    try {
+      $text = Ocr-CropText $crop $bmpPath
+      if (-not $text) { continue }
+      [void]$lines.Add(@{
+        t = $text
+        x = $x
+        y = $titleY
+        w = $w
+        h = $titleH
+      })
+    } catch {
+      continue
+    } finally {
+      $crop.Dispose()
+      Remove-Item -LiteralPath $bmpPath -Force -ErrorAction SilentlyContinue
+    }
+  }
+  return @($lines.ToArray())
 }
 
 function Save-OcrBitmap($src, [string]$bmpPath) {
@@ -411,14 +428,14 @@ function Read-TitleStrip([double]$rx, [double]$ry, [double]$rw, [double]$rh, [st
   $h = [Math]::Max(8, [Math]::Round($box.Height * $rh))
   if ($cropX + $w -gt $box.Width) { $w = $box.Width - $cropX }
   if ($cropY + $h -gt $box.Height) { $h = $box.Height - $cropY }
-  $bmpPath = [System.IO.Path]::ChangeExtension($outText, ".bmp")
   $hidden = @()
   if ($hideOverlay) {
     $hidden = Hide-PenguOverlay
-    Start-Sleep -Milliseconds 80
+    Start-Sleep -Milliseconds 40
   }
   $cardCount = 0
-  $saved = $false
+  $hint = ""
+  $ocrLines = @()
   $bmp = New-Object System.Drawing.Bitmap $w, $h
   $graphics = [System.Drawing.Graphics]::FromImage($bmp)
   try {
@@ -428,61 +445,15 @@ function Read-TitleStrip([double]$rx, [double]$ry, [double]$rw, [double]$rh, [st
     }
     $cardCount = Count-OfferCards $bmp
     if ($cardCount -ge 3) {
-      Save-OcrBitmap $bmp $bmpPath
-      $saved = $true
+      if (-not $ocrKo -and -not $ocrEn) { $hint = "no-ocr" }
+      else { $ocrLines = @(Read-CardSlotLines $bmp $cardCount) }
     }
   } finally {
     $graphics.Dispose()
     $bmp.Dispose()
     if ($hideOverlay) { Show-PenguOverlay $hidden }
   }
-  if (-not $saved) {
-    Write-OcrPayload $outText $w $h $cardCount "" @()
-    return "OK"
-  }
-  if (-not $ocrKo -and -not $ocrEn) {
-    Write-OcrPayload $outText $w $h $cardCount "no-ocr" @()
-    Remove-Item -LiteralPath $bmpPath -Force -ErrorAction SilentlyContinue
-    return "OK"
-  }
-  $file = Await-WinRT ([Windows.Storage.StorageFile]::GetFileFromPathAsync($bmpPath)) ([Windows.Storage.StorageFile])
-  $stream = Await-WinRT ($file.OpenAsync([Windows.Storage.FileAccessMode]::Read)) ([Windows.Storage.Streams.IRandomAccessStream])
-  try {
-    $decoder = Await-WinRT ([Windows.Graphics.Imaging.BitmapDecoder]::CreateAsync($stream)) ([Windows.Graphics.Imaging.BitmapDecoder])
-    $bitmap = Await-WinRT ($decoder.GetSoftwareBitmapAsync()) ([Windows.Graphics.Imaging.SoftwareBitmap])
-    if (
-      $bitmap.BitmapPixelFormat -ne [Windows.Graphics.Imaging.BitmapPixelFormat]::Bgra8 -or
-      $bitmap.BitmapAlphaMode -ne [Windows.Graphics.Imaging.BitmapAlphaMode]::Premultiplied
-    ) {
-      $bitmap = [Windows.Graphics.Imaging.SoftwareBitmap]::Convert(
-        $bitmap,
-        [Windows.Graphics.Imaging.BitmapPixelFormat]::Bgra8,
-        [Windows.Graphics.Imaging.BitmapAlphaMode]::Premultiplied
-      )
-    }
-    $result = Invoke-Ocr $bitmap $ocrKo
-    if (-not (Ocr-HasHangul $result) -and $ocrEn) {
-      $english = Invoke-Ocr $bitmap $ocrEn
-      if ($english -and @($english.Lines).Count -gt 0) { $result = $english }
-    }
-    $ocrLines = New-Object System.Collections.ArrayList
-    $lineList = @()
-    if ($result) { $lineList = @($result.Lines) }
-    foreach ($ocrLine in $lineList) {
-      if (-not $ocrLine) { continue }
-      [void]$ocrLines.Add(@{
-        t = [string]$ocrLine.Text
-        x = [int]$ocrLine.BoundingRect.X
-        y = [int]$ocrLine.BoundingRect.Y
-        w = [int]$ocrLine.BoundingRect.Width
-        h = [int]$ocrLine.BoundingRect.Height
-      })
-    }
-    Write-OcrPayload $outText ([int]$bitmap.PixelWidth) ([int]$bitmap.PixelHeight) $cardCount "" @($ocrLines.ToArray())
-  } finally {
-    $stream.Dispose()
-  }
-  Remove-Item -LiteralPath $bmpPath -Force -ErrorAction SilentlyContinue
+  Write-OcrPayload $outText $w $h $cardCount $hint $ocrLines
   return "OK"
 }
 
