@@ -18,6 +18,16 @@ describe("pickTitle", () => {
     expect(pickTitle([{ text: "유레카", score: 0.2 }])).toBeNull();
     expect(pickTitle([{ text: "[]", score: 0.99 }])).toBeNull();
     expect(pickTitle([{ text: "유레카", score: 0.55 }])).toBe("유레카");
+    expect(pickTitle([{ text: "유레카", score: 0.32 }])).toBe("유레카");
+  });
+
+  it("prefers a short title over a longer description in the same slot", () => {
+    expect(
+      pickTitle([
+        { text: "유레카를 고르면 스킬가속이 크게 증가합니다", score: 0.96 },
+        { text: "유레카", score: 0.61 },
+      ]),
+    ).toBe("유레카");
   });
 });
 
@@ -50,6 +60,16 @@ describe("pageFromTitles", () => {
     expect(page.text).toBe("");
     expect(page.cardCount).toBe(3);
   });
+
+  it("keeps a low-confidence short title when other cards already matched", async () => {
+    const ocr = new ScoredOcr([
+      { text: "앙파상", score: 0.95 },
+      { text: "유레카", score: 0.32 },
+      { text: "대마법사", score: 0.94 },
+    ]);
+    const page = await pageFromTitles([tiny(), tiny(), tiny()], ocr);
+    expect(page.text.split("\n")).toEqual(["앙파상", "유레카", "대마법사"]);
+  });
 });
 
 class FakeOcr {
@@ -62,6 +82,19 @@ class FakeOcr {
       if (!text) return [];
       const y = ((index + 0.4) * image.height) / n;
       return [{ text, score: 0.95, box: [[0, y], [8, y], [8, y + 2], [0, y + 2]] }];
+    });
+  }
+}
+
+class ScoredOcr {
+  calls = 0;
+  constructor(private readonly hits: Array<{ text: string; score: number }>) {}
+  async read(image: RgbaBitmap): Promise<OcrHit[]> {
+    this.calls += 1;
+    const n = Math.max(1, this.hits.length);
+    return this.hits.map((hit, index) => {
+      const y = ((index + 0.4) * image.height) / n;
+      return { text: hit.text, score: hit.score, box: [[0, y], [8, y], [8, y + 2], [0, y + 2]] };
     });
   }
 }
