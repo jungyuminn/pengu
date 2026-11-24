@@ -1,0 +1,342 @@
+[
+  {
+    "id": 21,
+    "file": "barrier.png",
+    "names": [
+      "Barrier",
+      "방어막",
+      "屏障",
+      "SummonerBarrier"
+    ]
+  },
+  {
+    "id": 721,
+    "file": "barrier.png",
+    "names": [
+      "Barrier",
+      "방어막",
+      "屏障",
+      "SummonerBarrier_Jade"
+    ]
+  },
+  {
+    "id": 716,
+    "file": "surge.png",
+    "names": [
+      "Surge",
+      "고양",
+      "战意激增",
+      "SummonerBattleCry_Jade"
+    ]
+  },
+  {
+    "id": 1,
+    "file": "cleanse.png",
+    "names": [
+      "Cleanse",
+      "정화",
+      "净化",
+      "SummonerBoost"
+    ]
+  },
+  {
+    "id": 71,
+    "file": "cleanse.png",
+    "names": [
+      "Cleanse",
+      "정화",
+      "净化",
+      "SummonerBoost_Jade"
+    ]
+  },
+  {
+    "id": 2202,
+    "file": "flash.png",
+    "names": [
+      "Flash",
+      "점멸",
+      "闪现",
+      "SummonerCherryFlash"
+    ]
+  },
+  {
+    "id": 2201,
+    "file": "flee.png",
+    "names": [
+      "Flee",
+      "도주",
+      "闪人",
+      "SummonerCherryHold"
+    ]
+  },
+  {
+    "id": 75,
+    "file": "clairvoyance.png",
+    "names": [
+      "Clairvoyance",
+      "천리안",
+      "洞察",
+      "SummonerClairvoyance_Jade"
+    ]
+  },
+  {
+    "id": 14,
+    "file": "ignite.png",
+    "names": [
+      "Ignite",
+      "점화",
+      "引燃",
+      "SummonerDot"
+    ]
+  },
+  {
+    "id": 714,
+    "file": "ignite.png",
+    "names": [
+      "Ignite",
+      "점화",
+      "引燃",
+      "SummonerDot_Jade"
+    ]
+  },
+  {
+    "id": 3,
+    "file": "exhaust.png",
+    "names": [
+      "Exhaust",
+      "탈진",
+      "虚弱",
+      "SummonerExhaust"
+    ]
+  },
+  {
+    "id": 73,
+    "file": "exhaust.png",
+    "names": [
+      "Exhaust",
+      "탈진",
+      "虚弱",
+      "SummonerExhaust_Jade"
+    ]
+  },
+  {
+    "id": 4,
+    "file": "flash.png",
+    "names": [
+      "Flash",
+      "점멸",
+      "闪现",
+      "SummonerFlash"
+    ]
+  },
+  {
+    "id": 74,
+    "file": "flash.png",
+    "names": [
+      "Flash",
+      "점멸",
+      "闪现",
+      "SummonerFlash_Jade"
+    ]
+  },
+  {
+    "id": 705,
+    "file": "fortify.png",
+    "names": [
+      "Fortify",
+      "구축",
+      "强化要塞",
+      "SummonerFortify_Jade"
+    ]
+  },
+  {
+    "id": 6,
+    "file": "ghost.png",
+    "names": [
+      "Ghost",
+      "유체화",
+      "幽灵疾步",
+      "SummonerHaste"
+    ]
+  },
+  {
+    "id": 76,
+    "file": "ghost.png",
+    "names": [
+      "Ghost",
+      "유체화",
+      "幽灵疾步",
+      "SummonerHaste_Jade"
+    ]
+  },
+  {
+    "id": 7,
+    "file": "heal.png",
+    "names": [
+      "Heal",
+      "회복",
+      "治疗术",
+      "SummonerHeal"
+    ]
+  },
+  {
+    "id": 77,
+    "file": "heal.png",
+    "names": [
+      "Heal",
+      "회복",
+      "治疗术",
+      "SummonerHeal_Jade"
+    ]
+  },
+  {
+    "id": 13,
+    "file": "clarity.png",
+    "names": [
+      "Clarity",
+      "총명",
+      "清晰术",
+      "SummonerMana"
+    ]
+  },
+  {
+    "id": 713,
+    "file": "clarity.png",
+    "names": [
+      "Clarity",
+      "총명",
+      "清晰术",
+      "SummonerMana_Jade"
+    ]
+  },
+  {
+    "id": 30,
+    "file": "totheking.png",
+    "names": [
+      "To the King!",
+      "왕을 향해!",
+      "护驾！",
+      "SummonerPoroRecall"
+    ]
+  },
+  {
+    "id": 31,
+    "file": "porotoss.png",
+    "names": [
+      "Poro Toss",
+      "포로 던지기",
+      "魄罗投掷",
+      "SummonerPoroThrow"
+    ]
+  },
+  {
+    "id": 709,
+    "file": "rally.png",
+    "names": [
+      "Rally",
+      "결집",
+      "战争图腾",
+      "SummonerRally_Jade"
+    ]
+  },
+  {
+    "id": 777,
+    "file": "revive.png",
+    "names": [
+      "Revive",
+      "부활",
+      "重生",
+      "SummonerRevive_Jade"
+    ]
+  },
+  {
+    "id": 11,
+    "file": "smite.png",
+    "names": [
+      "Smite",
+      "강타",
+      "惩戒",
+      "SummonerSmite"
+    ]
+  },
+  {
+    "id": 711,
+    "file": "smite.png",
+    "names": [
+      "Smite",
+      "강타",
+      "惩戒",
+      "SummonerSmite_Jade"
+    ]
+  },
+  {
+    "id": 39,
+    "file": "mark.png",
+    "names": [
+      "Mark",
+      "표식",
+      "标记",
+      "SummonerSnowURFSnowball_Mark"
+    ]
+  },
+  {
+    "id": 32,
+    "file": "mark.png",
+    "names": [
+      "Mark",
+      "표식",
+      "标记",
+      "SummonerSnowball"
+    ]
+  },
+  {
+    "id": 720,
+    "file": "promote.png",
+    "names": [
+      "Promote",
+      "진급",
+      "晋升",
+      "SummonerSpell_Promote_Jade"
+    ]
+  },
+  {
+    "id": 12,
+    "file": "teleport.png",
+    "names": [
+      "Teleport",
+      "순간이동",
+      "传送",
+      "SummonerTeleport"
+    ]
+  },
+  {
+    "id": 712,
+    "file": "teleport.png",
+    "names": [
+      "Teleport",
+      "순간이동",
+      "传送",
+      "SummonerTeleport_Jade"
+    ]
+  },
+  {
+    "id": 54,
+    "file": "placeholder.png",
+    "names": [
+      "Placeholder",
+      "게임 시작 후 결정",
+      "占位",
+      "Summoner_UltBookPlaceholder"
+    ]
+  },
+  {
+    "id": 55,
+    "file": "placeholderandattacksmite.png",
+    "names": [
+      "Placeholder and Attack-Smite",
+      "TBD 및 공격-강타",
+      "占位和攻击惩戒",
+      "Summoner_UltBookSmitePlaceholder"
+    ]
+  }
+]
