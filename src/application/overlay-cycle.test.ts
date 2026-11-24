@@ -68,12 +68,12 @@ class FixedLive implements LiveGameReader {
 
 class RecordingScreen implements ScreenReader {
   calls = 0;
-  titles = ["유레카 벌이다!!!"];
+  titles = ["유레카", "벌이다!!!"];
   cardCount = 0;
   hint = "";
   async read(): Promise<{ hasWindow: boolean; text: string; cardCount: number; hint: string }> {
     this.calls += 1;
-    return { hasWindow: true, text: this.titles.join(" "), cardCount: this.cardCount, hint: this.hint };
+    return { hasWindow: true, text: this.titles.join("\n"), cardCount: this.cardCount, hint: this.hint };
   }
 }
 
@@ -108,10 +108,10 @@ describe("OverlayCycle", () => {
     expect(view.visible).toBe(true);
     expect(view.champion).toBeNull();
     expect(view.build.map((item) => item.name)).toEqual(["삼위일체"]);
-    expect(screen.calls).toBe(1);
+    expect(screen.calls).toBe(0);
   });
 
-  it("looks at the screen during a fight so an augment offer can appear", async () => {
+  it("does not capture the fight screen between augment picks", async () => {
     const screen = new RecordingScreen();
     screen.titles = [];
     const cycle = new OverlayCycle(
@@ -125,10 +125,10 @@ describe("OverlayCycle", () => {
 
     const { view } = await cycle.tick();
     expect(view.build.map((item) => item.name)).toEqual(["삼위일체"]);
-    expect(screen.calls).toBe(1);
+    expect(screen.calls).toBe(0);
   });
 
-  it("keeps looking for a pick screen after the usual four augments", async () => {
+  it("does not keep capturing after the usual four augments", async () => {
     const screen = new RecordingScreen();
     const cycle = new OverlayCycle(
       new MemoryCache(withAugments),
@@ -142,7 +142,7 @@ describe("OverlayCycle", () => {
     const { view } = await cycle.tick();
     expect(view.visible).toBe(true);
     expect(view.build.map((item) => item.name)).toEqual(["삼위일체"]);
-    expect(screen.calls).toBe(1);
+    expect(screen.calls).toBe(0);
   });
 
   it("does not grade fight HUD text as augment cards", async () => {
@@ -190,6 +190,22 @@ describe("OverlayCycle", () => {
     expect(view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
   });
 
+  it("reads the level 11 pick on death", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 500, level: 11, isDead: true }),
+    );
+    cycle["completed"] = 2;
+
+    const { view } = await cycle.tick();
+    expect(screen.calls).toBe(1);
+    expect(view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
+  });
+
   it("reads later picks while dead", async () => {
     const screen = new RecordingScreen();
     screen.cardCount = 3;
@@ -219,10 +235,28 @@ describe("OverlayCycle", () => {
     const first = await cycle.tick();
     expect(first.view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
     cycle["lastOcrAt"] = 0;
-    screen.titles = ["벌이다!!! 유레카"];
+    screen.titles = ["벌이다!!!", "유레카"];
     const reroll = await cycle.tick();
     expect(screen.calls).toBe(2);
     expect(reroll.view.cards.map((card) => card.augment?.id)).toEqual(["bees", "eureka"]);
+  });
+
+  it("hides grades as soon as the offer cards leave the screen", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 12, level: 3, isDead: false }),
+    );
+
+    await cycle.tick();
+    screen.titles = [];
+    screen.cardCount = 0;
+    cycle["lastOcrAt"] = 0;
+    const next = await cycle.tick();
+    expect(next.view.cards).toEqual([]);
   });
 
   it("drops stale grades after a short miss so a reroll is not stuck", async () => {
@@ -239,12 +273,52 @@ describe("OverlayCycle", () => {
     expect(first.view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
     screen.titles = [];
     const held: string[][] = [];
-    for (let i = 0; i < 3; i += 1) {
+    for (let i = 0; i < 10; i += 1) {
       cycle["lastOcrAt"] = 0;
       held.push((await cycle.tick()).view.cards.map((card) => card.augment?.id));
     }
     expect(held[0]).toEqual(["eureka", "bees"]);
     expect(held[held.length - 1]).toEqual([]);
+  });
+
+  it("keeps grades when the game window cannot be captured", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 12, level: 3, isDead: false }),
+    );
+
+    await cycle.tick();
+    screen.titles = [];
+    screen.cardCount = 0;
+    screen.hint = "no-capture";
+    for (let i = 0; i < 10; i += 1) {
+      cycle["lastOcrAt"] = 0;
+      const missed = await cycle.tick();
+      expect(missed.view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
+      expect(missed.view.notice).toBeUndefined();
+    }
+  });
+
+  it("keeps last grades on a brief miss instead of the miss banner", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 12, level: 3, isDead: false }),
+    );
+
+    await cycle.tick();
+    screen.titles = [];
+    cycle["lastOcrAt"] = 0;
+    const missed = await cycle.tick();
+    expect(missed.view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
+    expect(missed.view.notice).toBeUndefined();
   });
 
   it("does not turn card descriptions into extra grade slots", async () => {
@@ -337,7 +411,7 @@ describe("OverlayCycle", () => {
   it("puts the playing champion's aramgg grade on the overlay", async () => {
     const screen = new RecordingScreen();
     screen.cardCount = 3;
-    screen.titles = ["벌이다!!!"];
+    screen.titles = ["벌이다!!!", "유레카"];
     const cycle = new OverlayCycle(
       new MemoryCache(withAugments),
       new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
@@ -360,10 +434,10 @@ describe("OverlayCycle", () => {
     );
 
     const { view } = await cycle.tick();
-    expect(view.cards.map((card) => `${card.augment?.id}:${card.augment?.grade}`)).toEqual(["bees:C"]);
+    expect(view.cards.find((card) => card.augment?.id === "bees")?.augment?.grade).toBe("C");
   });
 
-  it("explains why grades are missing when offer cards are on screen", async () => {
+  it("keeps the item build on screen when offer titles are not ready yet", async () => {
     const screen = new RecordingScreen();
     screen.titles = [];
     screen.cardCount = 3;
@@ -377,8 +451,8 @@ describe("OverlayCycle", () => {
 
     const { view } = await cycle.tick();
     expect(view.cards).toEqual([]);
-    expect(view.build).toEqual([]);
-    expect(view.notice).toMatch(/글자를 못 읽었습니다/);
+    expect(view.notice).toBeUndefined();
+    expect(view.build.map((item) => item.name)).toEqual(["삼위일체"]);
   });
 
   it("writes the miss to the hunt log once", async () => {

@@ -21,11 +21,49 @@ export function isOfferFill(r: number, g: number, b: number): boolean {
 }
 
 export function slotLooksLikeOffer(metalRatio: number, fillRatio: number): boolean {
-  return metalRatio >= 0.1 && fillRatio >= 0.4;
+  return metalRatio >= 0.08 && fillRatio >= 0.3;
+}
+
+export function offerSlotLooksLike(width: number, height: number, at: PixelAt): boolean {
+  const { metal, fill } = measureOfferSlot(width, height, at);
+  return slotLooksLikeOffer(metal, fill);
+}
+
+export function measureOfferSlot(
+  width: number,
+  height: number,
+  at: PixelAt,
+): { metal: number; fill: number } {
+  if (width < 16 || height < 16) return { metal: 0, fill: 0 };
+  const x0 = Math.round(width * 0.1);
+  const x1 = Math.round(width * 0.9);
+  let metal = 0;
+  let metalN = 0;
+  let fill = 0;
+  let fillN = 0;
+  const metalY0 = Math.round(height * 0.04);
+  const metalY1 = Math.max(metalY0 + 1, Math.round(height * 0.2));
+  const fillY0 = Math.round(height * 0.36);
+  const fillY1 = Math.max(fillY0 + 1, Math.round(height * 0.84));
+  for (let y = metalY0; y < metalY1; y += 2) {
+    for (let x = x0; x < x1; x += 2) {
+      const [r, g, b] = at(x, y);
+      metalN += 1;
+      if (isOfferMetal(r, g, b)) metal += 1;
+    }
+  }
+  for (let y = fillY0; y < fillY1; y += 3) {
+    for (let x = x0; x < x1; x += 3) {
+      const [r, g, b] = at(x, y);
+      fillN += 1;
+      if (isOfferFill(r, g, b)) fill += 1;
+    }
+  }
+  return { metal: metalN ? metal / metalN : 0, fill: fillN ? fill / fillN : 0 };
 }
 
 export function offerCardsVisible(count: number): boolean {
-  return count >= MIN_OFFER_CARDS;
+  return count === 3 || count === 4;
 }
 
 export function countOfferFrames(width: number, height: number, at: PixelAt): number {
@@ -42,7 +80,7 @@ export function countOfferFrames(width: number, height: number, at: PixelAt): nu
   let cards = 0;
   for (const cluster of clusters) {
     const span = cluster.x1 - cluster.x0;
-    if (cluster.hits < 1 || span < minRun || span > maxRun) continue;
+    if (cluster.hits < 2 || span < minRun || span > maxRun) continue;
     if (fillRatio(width, height, cluster.x0, cluster.x1, at) < 0.2) continue;
     cards += 1;
   }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { AugmentStat } from "./augment";
-import { augmentsInText, matchAugment } from "./match-name";
+import { augmentsInText, isLikelyTitleSlotText, matchAugment } from "./match-name";
 
 const bees: AugmentStat = {
   id: "bees",
@@ -42,6 +42,11 @@ describe("matchAugment", () => {
     expect(matchAugment("꽁!", [bang])?.id).toBe("bang");
   });
 
+  it("rejects a slot that is much longer than the matched name", () => {
+    expect(isLikelyTitleSlotText("유레카", "유레카")).toBe(true);
+    expect(isLikelyTitleSlotText("유레카를 고르면 스킬가속이 크게 증가합니다", "유레카")).toBe(false);
+  });
+
   it("does not treat a description sentence as the augment name", () => {
     const potion: AugmentStat = {
       ...eureka,
@@ -49,6 +54,15 @@ describe("matchAugment", () => {
       names: { ko: "부유약", en: "Potion of Madre" },
     };
     expect(matchAugment("부유약을 얻습니다", [potion])).toBeNull();
+  });
+
+  it("matches a three-letter Korean title with one OCR typo", () => {
+    const cooker: AugmentStat = {
+      ...eureka,
+      id: "cooker",
+      names: { ko: "압력솥", en: "Pressure Cooker" },
+    };
+    expect(matchAugment("압력속", [cooker, bees])?.id).toBe("cooker");
   });
 
   it("matches a longer Korean title with one OCR typo", () => {

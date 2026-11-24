@@ -127,7 +127,7 @@ export function createOverlayWindow(): BrowserWindow {
       backgroundThrottling: false,
     },
   });
-  window.setIgnoreMouseEvents(true, { forward: true });
+  window.setIgnoreMouseEvents(true);
   window.setAlwaysOnTop(true, "screen-saver");
   window.setContentProtection(true);
   void window.loadFile(path.join(__dirname, "../renderer/overlay/index.html"));

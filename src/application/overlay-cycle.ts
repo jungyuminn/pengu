@@ -11,7 +11,7 @@ import {
   skipMissedStartPick,
   shouldReadAugmentScreen,
 } from "../domain/mayhem-augment";
-import { augmentsInText, matchAugment } from "../domain/match-name";
+import { isLikelyTitleSlotText, matchAugment } from "../domain/match-name";
 import { offerCardsVisible } from "../domain/offer-frame";
 import { offerMissNotice } from "../domain/offer-miss";
 import { resolveOverlay } from "./resolve-overlay";
@@ -25,9 +25,9 @@ import type {
   StatsCache,
 } from "./ports";
 
-const OCR_HUNT_MS = 400;
-const WATCH_OCR_MS = 280;
-const MISS_HIDE = 3;
+const OCR_HUNT_MS = 60;
+const WATCH_OCR_MS = 80;
+const MISS_HIDE = 10;
 const PLAYING = new Set(["GameStart", "InProgress"]);
 
 export class OverlayCycle {
@@ -181,22 +181,13 @@ export class OverlayCycle {
     const names =
       snapshot && offerCardsVisible(slots) ? namesFromOcr(titles, snapshot.augments).slice(0, slots) : [];
     const resolved = resolveOverlay(snapshot, champion, names, championAugments);
-    const cardsOn = resolved.cards.length > 0;
-    const notice = cardsOn
-      ? undefined
-      : offerMissNotice({
-          hasWindow: page.hasWindow,
-          text,
-          cardCount: page.cardCount ?? 0,
-          hint: page.hint,
-        }) ?? undefined;
+    const cardsOn = resolved.cards.length >= 2;
     const view: OverlayView = {
-      visible: cardsOn || Boolean(notice),
+      visible: cardsOn,
       champion: cardsOn ? champion : null,
       source: snapshot?.source ?? null,
       cards: resolved.cards,
       build: [],
-      notice,
     };
 
     if (cardsOn) {
@@ -209,6 +200,13 @@ export class OverlayCycle {
     }
 
     if (this.watching && this.lastOcrView?.cards.length) {
+      if (pageUnreadable(page)) return this.lastOcrView;
+      if (!offerCardsVisible(slots)) {
+        this.finishWatching();
+        this.lastOcrView = view;
+        this.reportHunt(page, view);
+        return view;
+      }
       this.misses += 1;
       if (this.misses < MISS_HIDE) return this.lastOcrView;
       this.finishWatching();
@@ -227,10 +225,14 @@ export class OverlayCycle {
       this.say(`증강 등급 ${names}`);
       return;
     }
-    if (view.notice) {
-      const cards = page.cardCount ?? 0;
-      const read = (page.text ?? "").replace(/\s+/g, " ").trim().slice(0, 80);
-      this.say(`카드 ${cards}장 · ${view.notice}${read && !view.notice.includes(read) ? ` · 읽은 글자: ${read}` : ""}`);
+    const miss = offerMissNotice({
+      hasWindow: page.hasWindow,
+      text: page.text ?? "",
+      cardCount: page.cardCount ?? 0,
+      hint: page.hint,
+    });
+    if (miss) {
+      this.say(`카드 ${page.cardCount ?? 0}장 · ${miss}`);
       return;
     }
     if (!page.hasWindow) {
@@ -300,31 +302,19 @@ export class OverlayCycle {
 function namesFromOcr(titles: string[], augments: StatsSnapshot["augments"]): string[] {
   const names: string[] = [];
   const seen = new Set<string>();
-  const add = (hit: { id: string; names: { ko: string } } | null): void => {
-    if (!hit || seen.has(hit.id)) return;
+  for (const title of titles) {
+    const hit = matchAugment(title, augments);
+    if (!hit || seen.has(hit.id)) continue;
+    if (!isLikelyTitleSlotText(title, hit.names.ko) && !isLikelyTitleSlotText(title, hit.names.en)) continue;
     seen.add(hit.id);
     names.push(hit.names.ko);
-  };
-  const offerRow = titles.length >= 2;
-  for (const title of titles) {
-    if (offerRow) {
-      const compact = title.replace(/\s+/g, "");
-      if (compact.length > 0 && compact.length <= 24) add(matchAugment(title, augments));
-    } else {
-      const hits = augmentsInText(title, augments);
-      if (hits.length) {
-        for (const hit of hits) add(hit);
-      } else {
-        const compact = title.replace(/\s+/g, "");
-        if (compact.length > 0 && compact.length <= 24) add(matchAugment(title, augments));
-      }
-    }
     if (names.length >= MAX_OFFER_CARDS) return names;
   }
-  if (!names.length && titles.length > 1) {
-    for (const hit of augmentsInText(titles.join(""), augments)) add(hit);
-  }
   return names;
+}
+
+function pageUnreadable(page: ScreenPage): boolean {
+  return !page.hasWindow || page.hint === "no-capture";
 }
 
 function idleView(): OverlayView {

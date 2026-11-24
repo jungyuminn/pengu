@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { parseLeagueRect } from "./league-window";
+import { parseLeagueRect } from "./league-rect";
 
 describe("parseLeagueRect", () => {
   it("reads a client area", () => {

@@ -8,7 +8,7 @@ describe("offerMissNotice", () => {
 
   it("explains a missing Korean OCR pack", () => {
     expect(offerMissNotice({ hasWindow: true, text: "[no-ocr]", cardCount: 3, hint: "no-ocr" })).toMatch(
-      /한국어 OCR/,
+      /읽는 기능이 아직 준비/,
     );
   });
 

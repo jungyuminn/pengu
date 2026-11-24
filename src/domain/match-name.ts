@@ -12,9 +12,17 @@ function closeContained(left: string, right: string): boolean {
 
 function allowedDistance(left: number, right: number): number {
   const len = Math.min(left, right);
-  if (len < 4) return 0;
+  if (len < 3) return 0;
+  if (len === 3) return 1;
   if (len >= 5) return 3;
   return 2;
+}
+
+export function isLikelyTitleSlotText(rawText: string, name: string): boolean {
+  const text = normalizeName(rawText);
+  const title = normalizeName(name);
+  if (!text || !title) return false;
+  return text.length <= title.length + 8;
 }
 
 export function matchAugment(query: string, augments: AugmentStat[]): AugmentStat | null {

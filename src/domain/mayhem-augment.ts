@@ -12,7 +12,14 @@ export interface AugmentOfferState {
   secondsAtLevel?: number | null;
 }
 
-export function shouldReadAugmentScreen(_state: AugmentOfferState): boolean {
+export function shouldReadAugmentScreen(state: AugmentOfferState): boolean {
+  if (state.watching) return true;
+  if (state.completed <= 0 && state.gameTime < START_PICK_UNTIL) return true;
+  const next = MAYHEM_AUGMENT_LEVELS[state.completed];
+  if (next == null) return false;
+  if (state.isDead && state.level >= next - 1) return true;
+  if (state.level !== next) return false;
+  if (state.secondsAtLevel != null && state.secondsAtLevel > LATER_PICK_HUNT_S) return false;
   return true;
 }
 

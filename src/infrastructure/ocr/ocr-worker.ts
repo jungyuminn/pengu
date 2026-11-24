@@ -4,12 +4,16 @@ import os from "os";
 import path from "path";
 import readline from "readline";
 import type { PercentRect } from "../../domain/layout";
-import { pageFromOcrPayload } from "./ocr-payload";
 
 const START_MS = 20000;
-const SCAN_MS = 5000;
+const SCAN_MS = 2500;
 
-export class OcrWorker {
+export interface CapturedBand {
+  hasWindow: boolean;
+  png: Buffer | null;
+}
+
+export class CaptureWorker {
   private child: ChildProcess | null = null;
   private lines: readline.Interface | null = null;
   private waiting: ((line: string) => void) | null = null;
@@ -24,10 +28,7 @@ export class OcrWorker {
     await this.ensure();
   }
 
-  async scan(
-    strip: PercentRect,
-    hideOverlay = false,
-  ): Promise<{ hasWindow: boolean; text: string; cardCount: number; hint: string }> {
+  async scan(strip: PercentRect, hideOverlay = false): Promise<CapturedBand> {
     const run = this.chain.then(
       () => this.runScan(strip, hideOverlay),
       () => this.runScan(strip, hideOverlay),
@@ -43,31 +44,27 @@ export class OcrWorker {
     this.kill();
   }
 
-  private async runScan(
-    strip: PercentRect,
-    hideOverlay: boolean,
-  ): Promise<{ hasWindow: boolean; text: string; cardCount: number; hint: string }> {
+  private async runScan(strip: PercentRect, hideOverlay: boolean): Promise<CapturedBand> {
     await this.ensure();
     const dir = await mkdtemp(path.join(os.tmpdir(), "pengu-ocr-"));
     const stamp = path.basename(dir);
-    const textPath = path.join(dir, "card.txt");
+    const pngPath = path.join(dir, "band.png");
     try {
       const status = await this.request(
         `SCAN|${strip.x}|${strip.y}|${strip.width}|${strip.height}|${hideOverlay ? "1" : "0"}|${stamp}`,
         SCAN_MS,
       );
-      if (status === "NOWINDOW") return { hasWindow: false, text: "", cardCount: 0, hint: "" };
+      if (status === "NOWINDOW") return { hasWindow: false, png: null };
       if (status !== "OK") {
         this.warnFail(status.startsWith("ERR") ? status.slice(4) || "ERR" : status);
-        return { hasWindow: true, text: "", cardCount: 0, hint: "" };
+        return { hasWindow: true, png: null };
       }
-      const page = pageFromOcrPayload(await readFile(textPath, "utf8"));
-      return { hasWindow: true, text: page.text, cardCount: page.cardCount, hint: page.hint };
+      return { hasWindow: true, png: await readFile(pngPath) };
     } catch (error) {
       const reason = error instanceof Error ? error.message : "unknown";
       this.warnFail(reason);
       this.kill();
-      return { hasWindow: false, text: "", cardCount: 0, hint: "" };
+      return { hasWindow: false, png: null };
     } finally {
       await rm(dir, { recursive: true, force: true }).catch(() => undefined);
     }

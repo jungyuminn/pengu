@@ -43,7 +43,7 @@ export function createComposition(userData: string) {
   const league = new LcuLeagueReader();
   const bundledKey = readBundledKey(appRoot);
   const huntLog = createHuntLogger(userData);
-  const screen = new OcrScreenReader(path.join(__dirname, "../../scripts/ocr-worker.ps1"));
+  const screen = new OcrScreenReader(path.join(userData, "ocr-models"));
   const liveGame = new LiveClientReader();
   const championCatalog = new AramggChampionDetails();
   const gearNames = new DDragonGearNames();

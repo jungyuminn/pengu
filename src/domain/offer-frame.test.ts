@@ -4,6 +4,7 @@ import {
   isOfferFill,
   isOfferMetal,
   offerCardsVisible,
+  offerSlotLooksLike,
   slotLooksLikeOffer,
 } from "./offer-frame";
 
@@ -30,6 +31,7 @@ describe("offer-frame", () => {
     expect(offerCardsVisible(2)).toBe(false);
     expect(offerCardsVisible(3)).toBe(true);
     expect(offerCardsVisible(4)).toBe(true);
+    expect(offerCardsVisible(5)).toBe(false);
   });
 
   it("counts three silver card tops on a dark board", () => {
@@ -52,6 +54,21 @@ describe("offer-frame", () => {
   it("ignores a fight screen with no card frames", () => {
     const board = paintBoard(320, 120);
     expect(countOfferFrames(board.width, board.height, board.at)).toBe(0);
+  });
+
+  it("ignores a gray HUD slab that is not three cards", () => {
+    const board = paintBoard(320, 200);
+    board.bar(20, 300, 8, 40, [120, 122, 126]);
+    expect(countOfferFrames(board.width, board.height, board.at)).toBe(0);
+  });
+
+  it("accepts a dark card with a metal top and rejects a fight patch", () => {
+    const card = paintBoard(80, 160);
+    card.bar(4, 76, 8, 28, [210, 214, 220]);
+    expect(offerSlotLooksLike(card.width, card.height, card.at)).toBe(true);
+    const hud = paintBoard(80, 160);
+    hud.bar(0, 79, 0, 159, [30, 80, 40]);
+    expect(offerSlotLooksLike(hud.width, hud.height, hud.at)).toBe(false);
   });
 });
 
