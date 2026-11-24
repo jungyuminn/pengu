@@ -9,6 +9,8 @@ if (process.platform === "win32") {
   }
 }
 import { resolveApiKey } from "../../application/api-key";
+import { dataRefreshLabel } from "../../application/data-refresh-label";
+import { championBuildLabel, matchHistoryLabel, statsSyncLabel } from "../../application/sync-progress";
 import { resolveOverlay } from "../../application/resolve-overlay";
 import type { AppSettings } from "../../application/ports";
 import { asThemeMode, windowBackground } from "../../domain/theme";
@@ -21,7 +23,15 @@ import { createComposition } from "./composition";
 import { emptyOverlay, type UiState } from "./app-state";
 import { registerWindowChrome } from "./window-chrome";
 import { createSplashWindow, revealMainWindow, waitUntilReady } from "./splash";
+import { leagueClientBox, leagueClientFocused } from "../../infrastructure/ocr/league-window";
 import { createOverlayWindow, createSettingsWindow, fitOverlayToGame, type OverlayFitKind } from "./windows";
+import {
+  bindSettingsHideOnClose,
+  createAppTray,
+  destroyAppTray,
+  showSettingsWindow,
+  watchAppQuit,
+} from "./app-tray";
 
 app.setName("Pengu");
 app.setAppUserModelId("Pengu");
@@ -31,15 +41,27 @@ app.commandLine.appendSwitch("enable-logging");
 let overlayTimer: NodeJS.Timeout | undefined;
 let lastMessage = "";
 let stopScreen: (() => void) | undefined;
+let settingsWindowRef: ReturnType<typeof createSettingsWindow> | undefined;
 
-void app.whenReady().then(async () => {
+watchAppQuit();
+
+if (!app.requestSingleInstanceLock()) {
+  app.quit();
+} else {
+  app.on("second-instance", () => {
+    if (settingsWindowRef) showSettingsWindow(settingsWindowRef);
+  });
+  void app.whenReady().then(async () => {
   const startedAt = Date.now();
   const splash = createSplashWindow();
   registerWindowChrome();
   const services = createComposition(app.getPath("userData"));
   stopScreen = () => services.screen.stop();
+  void services.screen.warm();
   const bootSettings = await services.settings.read();
   const settingsWindow = createSettingsWindow(bootSettings.theme);
+  settingsWindowRef = settingsWindow;
+  bindSettingsHideOnClose(settingsWindow);
   const overlayWindow = createOverlayWindow();
   const settingsReady = waitUntilReady(settingsWindow);
   const overlayReady = waitUntilReady(overlayWindow);
@@ -90,17 +112,30 @@ void app.whenReady().then(async () => {
     await pushState();
   };
 
-  const showOverlay = async (view: OverlayView, enabled: boolean): Promise<void> => {
+  let overlayShown = false;
+  let lastOverlaySig = "";
+
+  const showOverlay = async (view: OverlayView, enabled: boolean, force = false): Promise<void> => {
     const next = enabled ? view : emptyOverlay();
-    overlayWindow.webContents.send("pengu:overlay", next);
-    if (enabled && next.visible) {
+    const onGame = force || !leagueClientBox() || leagueClientFocused();
+    if (enabled && next.visible && onGame) {
       await fitOverlayToGame(overlayWindow, overlayKind(next));
-      overlayWindow.showInactive();
-      overlayWindow.setIgnoreMouseEvents(true, { forward: true });
-      overlayWindow.setAlwaysOnTop(true, "screen-saver");
-      overlayWindow.moveTop();
+      const sig = overlaySig(next);
+      if (sig !== lastOverlaySig) {
+        overlayWindow.webContents.send("pengu:overlay", next);
+        lastOverlaySig = sig;
+      }
+      if (!overlayShown) {
+        overlayWindow.showInactive();
+        overlayWindow.setIgnoreMouseEvents(true);
+        overlayWindow.setAlwaysOnTop(true, "screen-saver");
+        overlayWindow.moveTop();
+        overlayShown = true;
+      }
       return;
     }
+    overlayShown = false;
+    if (!enabled || !next.visible) lastOverlaySig = "";
     if (overlayWindow.isVisible()) overlayWindow.hide();
   };
 
@@ -130,22 +165,35 @@ void app.whenReady().then(async () => {
     settingsWindow.webContents.send("pengu:playing", id);
   };
 
-  const runSync = async (force: boolean): Promise<UiState> => {
+  const say = (message: string): void => {
+    lastMessage = message;
+    if (!settingsWindow.isDestroyed()) {
+      settingsWindow.webContents.send("pengu:message", message);
+    }
+  };
+
+  const runSync = async (force: boolean, deepMayhem = false): Promise<UiState> => {
     const settings = await services.settings.read();
     const apiKey = resolveApiKey(settings.apiKey, services.bundledKey);
     if (!apiKey) {
       return pushState("내장 통계 키가 없습니다.");
     }
+    say(statsSyncLabel());
     const result = await services.createSync(apiKey).execute(force);
-    void services.hydrate.execute();
-    void refreshMayhem(force);
-    if (result.skipped) {
-      return pushState(`오늘 받은 캐시를 씁니다. 패치 ${result.snapshot.patch}`);
-    }
-    return pushState(`aramgg 데이터를 받았습니다. 패치 ${result.snapshot.patch}`);
+    await services.hydrate.execute((done, total) => say(championBuildLabel(done, total)), force);
+    say(matchHistoryLabel());
+    await refreshMayhem(force || deepMayhem);
+    return pushState(dataRefreshLabel(result.snapshot.syncedAt, result.snapshot.patch));
   };
 
   ipcMain.handle("pengu:get-state", () => pushState());
+  ipcMain.handle("pengu:sync", async () => {
+    try {
+      return await runSync(true, true);
+    } catch (error) {
+      return pushState(error instanceof Error ? error.message : "통계 동기화에 실패했습니다.");
+    }
+  });
   ipcMain.handle("pengu:save-api-key", async (_event, apiKey: string) => {
     const current = await services.settings.read();
     const next: AppSettings = { ...current, apiKey };
@@ -200,6 +248,7 @@ void app.whenReady().then(async () => {
           : samples.map((query, slot) => ({ slot, query, augment: null })),
       },
       true,
+      true,
     );
     setTimeout(() => {
       void tick();
@@ -218,19 +267,17 @@ void app.whenReady().then(async () => {
 
   await settingsReady;
   await overlayReady;
-  await pushState("통계를 불러오는 중...");
+  await pushState(statsSyncLabel());
   await revealMainWindow(splash, settingsWindow, startedAt);
-  void services.screen.warm();
+  createAppTray(settingsWindow);
   void services.championCatalog.warm();
   void services.gearNames.fetch();
   void services.augmentIcons.fetch();
   try {
-    await runSync(false);
+    await runSync(false, true);
   } catch (error) {
     await pushState(error instanceof Error ? error.message : "통계 동기화에 실패했습니다.");
   }
-
-  void refreshMayhem(true);
 
   let homeTicks = 0;
   let tickBusy = false;
@@ -243,7 +290,7 @@ void app.whenReady().then(async () => {
         await tick();
         homeTicks += 1;
         if (homeTicks % 3 === 1) await pushPlayingChampion();
-        if (homeTicks % 75 !== 0) return;
+        if (homeTicks % 250 !== 0) return;
         const session = await services.league.readSession();
         if (session?.phase === "InProgress" || session?.phase === "GameStart") return;
         await refreshMayhem(false);
@@ -251,12 +298,14 @@ void app.whenReady().then(async () => {
         tickBusy = false;
       }
     })();
-  }, 400);
-});
+  }, 120);
+  });
+}
 
 app.on("will-quit", () => {
   globalShortcut.unregisterAll();
   stopScreen?.();
+  destroyAppTray();
   if (overlayTimer) clearInterval(overlayTimer);
 });
 
@@ -265,4 +314,13 @@ function overlayKind(view: OverlayView): OverlayFitKind {
   if (view.notice) return "notice";
   if (view.build?.length) return "build";
   return "game";
+}
+
+function overlaySig(view: OverlayView): string {
+  return JSON.stringify({
+    visible: view.visible,
+    notice: view.notice ?? "",
+    cards: view.cards.map((card) => [card.slot, card.augment?.id, card.augment?.grade]),
+    build: view.build.map((item) => item.name),
+  });
 }
