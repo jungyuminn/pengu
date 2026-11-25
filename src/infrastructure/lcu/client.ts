@@ -1,6 +1,13 @@
-import https from "https";
 import type { LeagueReader, LeagueSession } from "../../application/ports";
+import {
+  championIdFromGameflow,
+  type CurrentSummoner,
+  type GameflowSession,
+} from "./game-champion";
 import { readLockfile, type Lockfile } from "./lockfile";
+import { lcuRequest } from "./request";
+
+const IN_GAME = new Set(["GameStart", "InProgress", "Reconnect"]);
 
 interface ChampSelectSession {
   localPlayerCellId?: number;
@@ -9,69 +16,59 @@ interface ChampSelectSession {
 
 export class LcuLeagueReader implements LeagueReader {
   private cached: { at: number; session: LeagueSession | null } | null = null;
+  private lastChampionId: number | null = null;
 
   async readSession(): Promise<LeagueSession | null> {
     if (this.cached && Date.now() - this.cached.at < 1500) return this.cached.session;
 
     const lockfile = await readLockfile();
-    const session = lockfile
-      ? await readLiveSession(lockfile)
-      : null;
+    const session = lockfile ? await this.readLiveSession(lockfile) : null;
     this.cached = { at: Date.now(), session };
     return session;
   }
-}
 
-async function readLiveSession(lockfile: Lockfile): Promise<LeagueSession> {
-  const [phase, championId] = await Promise.all([readPhase(lockfile), readChampionId(lockfile)]);
-  return { phase, championId, championName: null };
+  private async readLiveSession(lockfile: Lockfile): Promise<LeagueSession> {
+    const phase = await readPhase(lockfile);
+    if (phase === "ChampSelect") {
+      const championId = await readChampSelectId(lockfile);
+      if (championId) this.lastChampionId = championId;
+      return { phase, championId, championName: null };
+    }
+    if (IN_GAME.has(phase)) {
+      if (!this.lastChampionId) {
+        this.lastChampionId = await readGameChampionId(lockfile);
+      }
+      return {
+        phase: phase === "Reconnect" ? "InProgress" : phase,
+        championId: this.lastChampionId,
+        championName: null,
+      };
+    }
+    if (phase === "None" || phase === "Lobby" || phase === "Matchmaking" || phase === "ReadyCheck") {
+      this.lastChampionId = null;
+    }
+    return { phase, championId: this.lastChampionId, championName: null };
+  }
 }
 
 async function readPhase(lockfile: Lockfile): Promise<string> {
-  const phase = await getJson<string>(lockfile, "/lol-gameflow/v1/gameflow-phase").catch(() => "None");
+  const phase = await lcuRequest<string>(lockfile, "/lol-gameflow/v1/gameflow-phase").catch(() => "None");
   return typeof phase === "string" ? phase : "None";
 }
 
-async function readChampionId(lockfile: Lockfile): Promise<number | null> {
-  const current = await getJson<number>(lockfile, "/lol-champ-select/v1/current-champion").catch(
-    () => 0,
-  );
+async function readChampSelectId(lockfile: Lockfile): Promise<number | null> {
+  const current = await lcuRequest<number>(lockfile, "/lol-champ-select/v1/current-champion").catch(() => 0);
   if (typeof current === "number" && current > 0) return current;
 
-  const session = await getJson<ChampSelectSession>(
-    lockfile,
-    "/lol-champ-select/v1/session",
-  ).catch(() => null);
+  const session = await lcuRequest<ChampSelectSession>(lockfile, "/lol-champ-select/v1/session").catch(() => null);
   const me = session?.myTeam?.find((player) => player.cellId === session.localPlayerCellId);
   return me?.championId && me.championId > 0 ? me.championId : null;
 }
 
-function getJson<T>(lockfile: Lockfile, pathname: string): Promise<T> {
-  const token = Buffer.from(`riot:${lockfile.password}`).toString("base64");
-  return new Promise((resolve, reject) => {
-    const request = https.request(
-      {
-        hostname: "127.0.0.1",
-        port: lockfile.port,
-        path: pathname,
-        method: "GET",
-        rejectUnauthorized: false,
-        headers: { Authorization: `Basic ${token}` },
-      },
-      (response) => {
-        const chunks: Buffer[] = [];
-        response.on("data", (chunk) => chunks.push(chunk as Buffer));
-        response.on("end", () => {
-          const body = Buffer.concat(chunks).toString("utf8");
-          if (!response.statusCode || response.statusCode >= 400) {
-            reject(new Error(`LCU ${response.statusCode}`));
-            return;
-          }
-          resolve(JSON.parse(body) as T);
-        });
-      },
-    );
-    request.on("error", reject);
-    request.end();
-  });
+async function readGameChampionId(lockfile: Lockfile): Promise<number | null> {
+  const [flow, me] = await Promise.all([
+    lcuRequest<GameflowSession>(lockfile, "/lol-gameflow/v1/session").catch(() => null),
+    lcuRequest<CurrentSummoner>(lockfile, "/lol-summoner/v1/current-summoner").catch(() => null),
+  ]);
+  return championIdFromGameflow(flow, me);
 }
