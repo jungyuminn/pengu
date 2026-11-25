@@ -1,5 +1,5 @@
 import { execFile } from "child_process";
-import { mkdtemp, writeFile, rm } from "fs/promises";
+import { mkdtemp, readFile, rm, writeFile } from "fs/promises";
 import os from "os";
 import path from "path";
 import { promisify } from "util";
@@ -9,14 +9,25 @@ const execFileAsync = promisify(execFile);
 export async function recognizePng(png: Buffer, scriptPath: string): Promise<string> {
   const dir = await mkdtemp(path.join(os.tmpdir(), "pengu-ocr-"));
   const imagePath = path.join(dir, "card.png");
+  const textPath = path.join(dir, "card.txt");
   try {
     await writeFile(imagePath, png);
-    const { stdout } = await execFileAsync(
+    await execFileAsync(
       "powershell.exe",
-      ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", scriptPath, "-ImagePath", imagePath],
-      { windowsHide: true, timeout: 8000 },
+      [
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        scriptPath,
+        "-ImagePath",
+        imagePath,
+        "-OutText",
+        textPath,
+      ],
+      { windowsHide: true, timeout: 15000 },
     );
-    return stdout.trim();
+    return (await readFile(textPath, "utf8")).trim();
   } catch {
     return "";
   } finally {

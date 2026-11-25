@@ -1,20 +1,23 @@
-import type { ScreenReader } from "../../application/ports";
-import { cardRects, type CapturePort } from "./capture";
-import { recognizePng } from "./windows-ocr";
+import type { ScreenPage, ScreenReader } from "../../application/ports";
+import { TITLE_BAND } from "../../domain/layout";
+import { OcrWorker } from "./ocr-worker";
 
 export class OcrScreenReader implements ScreenReader {
-  constructor(
-    private readonly capture: CapturePort,
-    private readonly scriptPath: string,
-  ) {}
+  private readonly worker: OcrWorker;
 
-  async readCardTitles(): Promise<string[]> {
-    const shot = await this.capture.grabScreen();
-    const titles: string[] = [];
-    for (const rect of cardRects(shot.width, shot.height)) {
-      const png = this.capture.crop(shot.buffer, rect);
-      titles.push(await recognizePng(png, this.scriptPath));
-    }
-    return titles;
+  constructor(workerScript: string) {
+    this.worker = new OcrWorker(workerScript);
+  }
+
+  warm(): Promise<void> {
+    return this.worker.warm();
+  }
+
+  stop(): void {
+    this.worker.stop();
+  }
+
+  read(): Promise<ScreenPage> {
+    return this.worker.scan(TITLE_BAND);
   }
 }
