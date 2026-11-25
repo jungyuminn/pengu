@@ -42,3 +42,15 @@ html[data-theme="light"] {
   --icon-well: #1a2130;
   --shadow: 0 12px 32px rgba(20, 28, 45, 0.16);
 }
+
+.kda-ratio.low {
+  color: var(--muted);
+}
+
+.kda-ratio.ok {
+  color: var(--text);
+}
+
+.kda-ratio.high {
+  color: var(--accent);
+}
