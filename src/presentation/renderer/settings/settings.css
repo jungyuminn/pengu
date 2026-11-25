@@ -30,9 +30,15 @@ body {
   align-items: center;
   gap: 8px;
   padding: 0 14px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.02em;
+  cursor: pointer;
+  -webkit-app-region: no-drag;
 }
 
 .brand img {
@@ -69,11 +75,17 @@ body {
   stroke-linecap: round;
 }
 
-#prefsBtn svg {
-  width: 14px;
-  height: 14px;
-  fill: currentColor;
-  stroke: none;
+#prefsBtn .gear {
+  width: 15px;
+  height: 15px;
+  background: currentColor;
+  -webkit-mask: url("../../../assets/icons/setting.svg") center / contain no-repeat;
+  mask: url("../../../assets/icons/setting.svg") center / contain no-repeat;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#prefsBtn[aria-expanded="true"] .gear {
+  transform: rotate(45deg);
 }
 
 .chrome-btn:hover {
@@ -86,7 +98,7 @@ body {
 }
 
 .prefs {
-  display: none;
+  display: block;
   position: absolute;
   top: 40px;
   right: 8px;
@@ -98,10 +110,30 @@ body {
   background: var(--surface);
   box-shadow: var(--shadow);
   -webkit-app-region: no-drag;
+  transform-origin: 184px 0;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.96);
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s 220ms;
 }
 
 .prefs.open {
-  display: block;
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+  visibility: visible;
+  transition:
+    opacity 180ms ease,
+    transform 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0s;
+}
+
+.prefs[hidden] {
+  display: none !important;
 }
 
 .prefs-row {
@@ -111,6 +143,17 @@ body {
   gap: 12px;
   margin: 0;
   font-size: 13px;
+}
+
+.prefs-row + .prefs-row {
+  margin-top: 12px;
+}
+
+.prefs-hint {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .switch {
@@ -214,4 +257,16 @@ button#preview {
 
 *::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #prefsBtn .gear,
+  .prefs,
+  .prefs.open {
+    transition: none;
+  }
+
+  #prefsBtn[aria-expanded="true"] .gear {
+    transform: none;
+  }
 }
