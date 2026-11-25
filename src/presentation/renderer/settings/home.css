@@ -1,0 +1,366 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.me-pane {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+  border-left: 1px solid var(--line);
+  padding: 20px 16px;
+}
+
+.me {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+}
+
+.me-head {
+  flex-shrink: 0;
+}
+
+.me-id {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.me-icon {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--surface);
+  box-shadow: 0 0 0 1px var(--line-strong);
+}
+
+.me-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.me-head h2 {
+  margin: 0;
+  min-width: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+  color: var(--text);
+}
+
+.me-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.streak {
+  display: grid;
+  grid-template-columns: repeat(10, 20px);
+  gap: 3px;
+  margin-top: 10px;
+  width: max-content;
+  max-width: 100%;
+}
+
+.streak-mark {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  border: 0;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: #fff;
+  cursor: pointer;
+  transform: none;
+}
+
+.streak-mark > span:not(.press-ripple) {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  transform-origin: center;
+  transition: transform 180ms cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+.streak-mark.is-pressed > span:not(.press-ripple) {
+  transform: scale(0.86);
+  transition-duration: 80ms;
+  transition-timing-function: ease-out;
+}
+
+.streak-mark.win {
+  background: var(--accent);
+}
+
+.streak-mark.loss {
+  background: #5a2c34;
+}
+
+.me-head .note,
+.me .empty {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(92px, 1fr));
+  gap: 8px;
+}
+
+.home-champ {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 6px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--surface);
+  color: inherit;
+  cursor: pointer;
+}
+
+.home-champ img {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: var(--icon-well);
+}
+
+.home-champ .name {
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.home-aug {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.home-aug-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.home-aug-row img {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--icon-well);
+  flex-shrink: 0;
+}
+
+.home-aug-row .name {
+  flex: 1;
+  min-width: 0;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.home-aug-row .rates {
+  color: var(--muted);
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.match-list {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 5px;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  width: 100%;
+  overflow: auto;
+  padding: 2px 2px 4px 0;
+}
+
+button.match-row {
+  display: block;
+  box-sizing: border-box;
+  flex: 0 0 auto;
+  align-self: stretch;
+  width: 100%;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 8px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    box-shadow 200ms ease;
+}
+
+.match-row > .row-hit {
+  display: grid;
+  grid-template-columns: 3px 28px minmax(0, 1fr) auto;
+  grid-template-rows: auto auto;
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 4px;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 7px 8px 7px 0;
+}
+
+.match-bar {
+  grid-column: 1;
+  grid-row: 1 / -1;
+  align-self: stretch;
+  width: 3px;
+  border-radius: 0 2px 2px 0;
+}
+
+.match-row.win .match-bar {
+  background: var(--accent);
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent) 70%, transparent);
+}
+
+.match-row.loss .match-bar {
+  background: #5a2c34;
+}
+
+.match-row .row-hit > img,
+.match-row .champ-slot {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--icon-well);
+}
+
+.match-row .who {
+  grid-column: 3;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.match-row .who .name {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.match-row .name-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.match-row .kda {
+  color: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.match-row .kda-ratio {
+  margin-left: 6px;
+  font-weight: 600;
+}
+
+.match-row .result {
+  grid-column: 4;
+  grid-row: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: stretch;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.match-row.win .result {
+  color: var(--accent);
+}
+
+.match-row.loss .result {
+  color: #c45c68;
+}
+
+.match-augs {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.match-aug {
+  display: inline-flex;
+}
+
+.match-augs img {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+}
+
+.home-champ:hover,
+button.match-row:hover,
+button.match-row.active {
+  background: var(--surface-hover);
+}
+
+button.match-row.win:hover {
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--accent) 38%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .match-row,
+  .streak-mark > span:not(.press-ripple) {
+    transition: none;
+  }
+
+  .streak-mark.is-pressed > span:not(.press-ripple) {
+    transform: none;
+  }
+}
