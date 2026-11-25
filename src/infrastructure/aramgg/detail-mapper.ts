@@ -6,7 +6,6 @@ import type { ClientLookup } from "./client-lookup";
 import { toPercent } from "./percent";
 import { toRarity } from "./rarity";
 
-const AUGMENTS_PER_RARITY = 10;
 const RARITY_ORDER: Rarity[] = ["silver", "gold", "prismatic"];
 
 interface DetailPayload {
@@ -135,9 +134,7 @@ function mapAugments(rows: DetailAugment[]) {
       ];
     });
 
-  return RARITY_ORDER.flatMap((rarity) =>
-    mapped.filter((row) => row.rarity === rarity).slice(0, AUGMENTS_PER_RARITY),
-  );
+  return RARITY_ORDER.flatMap((rarity) => mapped.filter((row) => row.rarity === rarity));
 }
 
 const ITEM_SLOTS = 6;

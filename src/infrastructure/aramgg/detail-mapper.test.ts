@@ -99,7 +99,7 @@ describe("mapChampionDetail", () => {
     ]);
   });
 
-  it("keeps ten augments per rarity", () => {
+  it("keeps every ranked augment so the overlay can grade the whole pool", () => {
     const augments = ["silver", "gold", "prismatic"].flatMap((rarity) =>
       Array.from({ length: 12 }, (_, index) => ({
         name: `${rarity}-${index}`,
@@ -111,9 +111,9 @@ describe("mapChampionDetail", () => {
       champion: { id: 1, alias: "Annie", name: "애니", stats: { tier: 2 } },
       augments,
     });
-    expect(detail.augments.filter((row) => row.rarity === "silver")).toHaveLength(10);
-    expect(detail.augments.filter((row) => row.rarity === "gold")).toHaveLength(10);
-    expect(detail.augments.filter((row) => row.rarity === "prismatic")).toHaveLength(10);
+    expect(detail.augments.filter((row) => row.rarity === "silver")).toHaveLength(12);
+    expect(detail.augments.filter((row) => row.rarity === "gold")).toHaveLength(12);
+    expect(detail.augments.filter((row) => row.rarity === "prismatic")).toHaveLength(12);
     expect(detail.augments[0]?.rarity).toBe("silver");
   });
 });
