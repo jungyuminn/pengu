@@ -7,16 +7,32 @@ function paint(view) {
     return;
   }
 
-  const champion = view.champion
-    ? `<div class="champion"><span class="name">${escapeHtml(view.champion.name)}</span>${gradeMark(view.champion.grade, "lg")}</div>`
-    : "";
+  const build = (view.build ?? [])
+    .map(
+      (item) =>
+        `<div class="build-item" title="${escapeHtml(item.name)}">${
+          item.iconUrl
+            ? `<img src="${escapeHtml(item.iconUrl)}" alt="${escapeHtml(item.name)}" />`
+            : `<span>${escapeHtml((item.name || "?").slice(0, 1))}</span>`
+        }</div>`,
+    )
+    .join("");
+  const buildRow = build ? `<div class="build">${build}</div>` : "";
+
+  if (view.notice && !(view.cards ?? []).length) {
+    root.hidden = false;
+    root.dataset.mode = "notice";
+    root.innerHTML = `${buildRow}<p class="notice">${escapeHtml(view.notice)}</p>`;
+    return;
+  }
+
   const cards = (view.cards ?? [])
-    .slice(0, 3)
     .map((card) => `<div class="card">${gradeLetter(card.augment?.grade, "lg")}</div>`)
     .join("");
 
   root.hidden = false;
-  root.innerHTML = `${champion}<div class="cards">${cards}</div>`;
+  root.dataset.mode = (view.cards ?? []).length ? "cards" : "hud";
+  root.innerHTML = `<div class="cards">${cards}</div>${buildRow}`;
 }
 
 function escapeHtml(value) {
