@@ -9,18 +9,19 @@
     <link rel="stylesheet" href="./settings.css" />
     <link rel="stylesheet" href="../grade-mark.css" />
     <link rel="stylesheet" href="./board.css" />
+    <link rel="stylesheet" href="./home.css" />
+    <link rel="stylesheet" href="./match-detail.css" />
+    <link rel="stylesheet" href="../mvp.css" />
   </head>
   <body>
     <header class="titlebar">
-      <span class="brand">
+      <button type="button" id="homeBtn" class="brand" aria-label="홈">
         <img src="../../../assets/icons/pengu_icon.png" alt="" />
         Pengu
-      </span>
+      </button>
       <div class="chrome">
         <button type="button" id="prefsBtn" class="chrome-btn" aria-label="설정" title="설정" aria-haspopup="true" aria-expanded="false">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M19.14 12.94c.04-.31.06-.63.06-.94 0-.31-.02-.63-.06-.94l2.03-1.58a.5.5 0 0 0 .12-.64l-1.92-3.32a.5.5 0 0 0-.6-.22l-2.39.96c-.5-.38-1.04-.68-1.62-.92l-.36-2.54a.5.5 0 0 0-.5-.41h-3.84a.5.5 0 0 0-.5.41l-.36 2.54c-.58.24-1.12.54-1.62.92l-2.39-.96a.5.5 0 0 0-.6.22L2.71 8.84a.5.5 0 0 0 .12.64l2.03 1.58c-.04.31-.06.63-.06.94 0 .31.02.63.06.94L2.83 14.52a.5.5 0 0 0-.12.64l1.92 3.32a.5.5 0 0 0 .6.22l2.39-.96c.5.38 1.04.68 1.62.92l.36 2.54c.05.24.24.41.5.41h3.84c.24 0 .45-.17.5-.41l.36-2.54c.58-.24 1.12-.54 1.62-.92l2.39.96a.5.5 0 0 0 .6-.22l1.92-3.32a.5.5 0 0 0-.12-.64l-2.03-1.58ZM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2Z" />
-          </svg>
+          <span class="gear" aria-hidden="true"></span>
         </button>
         <button type="button" id="minimize" class="chrome-btn" aria-label="최소화" title="최소화">
           <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 6h8" /></svg>
@@ -33,6 +34,11 @@
 
     <div id="prefsMenu" class="prefs" hidden>
       <label class="prefs-row">
+        증강 오버레이
+        <input id="overlayEnabled" class="switch" type="checkbox" checked />
+      </label>
+      <p class="prefs-hint">게임 안에서 코어 아이템. 증강 카드가 뜨면 등급을 자동으로 띄웁니다. 전체화면은 테두리 없는 창으로 맞춥니다.</p>
+      <label class="prefs-row">
         다크 모드
         <input id="darkMode" class="switch" type="checkbox" checked />
       </label>
@@ -40,10 +46,6 @@
 
     <div class="toolbar">
       <button id="sync" type="button">새로고침</button>
-      <label class="check">
-        <input id="overlayEnabled" type="checkbox" checked />
-        오버레이
-      </label>
       <button id="preview" type="button">테스트</button>
       <span class="meta">
         <span id="patch">-</span>
@@ -68,6 +70,7 @@
         </div>
       </aside>
       <section class="detail-pane" id="championDetail"></section>
+      <aside class="me-pane" id="mePane"></aside>
     </div>
 
     <script src="../grade-mark.js"></script>
@@ -75,6 +78,8 @@
     <script src="./settings.js"></script>
     <script src="./icon-cache.js"></script>
     <script src="./augment-tooltip.js"></script>
+    <script src="./home.js"></script>
+    <script src="./match-detail.js"></script>
     <script src="./champion-board.js"></script>
   </body>
 </html>
