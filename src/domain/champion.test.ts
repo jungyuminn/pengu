@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { overlayChampionFor, type ChampionStat } from "./champion";
+import { overlayChampionByName, overlayChampionFor, type ChampionStat } from "./champion";
 
 const tahm: ChampionStat = {
   id: 223,
@@ -20,5 +20,12 @@ describe("overlayChampionFor", () => {
   it("returns null when the id is missing", () => {
     expect(overlayChampionFor([tahm], null)).toBeNull();
     expect(overlayChampionFor([tahm], 157)).toBeNull();
+  });
+
+  it("resolves a live client English name", () => {
+    expect(overlayChampionByName([tahm], "TahmKench")?.name).toBe("탐 켄치");
+    expect(overlayChampionByName([tahm], "Tahm Kench")?.name).toBe("탐 켄치");
+    expect(overlayChampionByName([tahm], "tahm kench")?.name).toBe("탐 켄치");
+    expect(overlayChampionByName([tahm], "game_character_displayname_TahmKench")?.name).toBe("탐 켄치");
   });
 });
