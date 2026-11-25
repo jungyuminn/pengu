@@ -1,7 +1,7 @@
-import type { ChampionStat, OverlayChampion } from "./champion";
+import type { ChampionStat, OverlayChampion, OverlayItem } from "./champion";
 import type { Grade } from "./grade";
 
-export type { ChampionStat, OverlayChampion } from "./champion";
+export type { ChampionStat, OverlayChampion, OverlayItem } from "./champion";
 
 export type Rarity = "silver" | "gold" | "prismatic" | "unknown";
 
@@ -42,4 +42,6 @@ export interface OverlayView {
   champion: OverlayChampion | null;
   source: StatsSource | null;
   cards: OverlayCard[];
+  build: OverlayItem[];
+  notice?: string;
 }
