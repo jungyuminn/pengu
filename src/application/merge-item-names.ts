@@ -7,6 +7,7 @@ export function emptyGearNames(): GearNameIndex {
   return {
     itemById: new Map(),
     itemByName: new Map(),
+    itemTextById: new Map(),
     spellById: new Map(),
     spellByName: new Map(),
   };
@@ -22,15 +23,25 @@ export function mergeItemNames(detail: ChampionDetail, names: GearNameIndex | nu
   }
   return {
     ...detail,
-    coreItems: withoutBoots(detail.coreItems.map((item) => translate(item, names.itemById, names.itemByName))),
-    startingItems: detail.startingItems.map((item) => translate(item, names.itemById, names.itemByName)),
+    coreItems: withoutBoots(detail.coreItems.map((item) => translate(item, names.itemById, names.itemByName, names.itemTextById))),
+    startingItems: detail.startingItems.map((item) => translate(item, names.itemById, names.itemByName, names.itemTextById)),
     summoners: orderSummonerSpells(
       detail.summoners.map((item) => translate(item, names.spellById, names.spellByName)),
     ),
   };
 }
 
-function translate(item: NamedIcon, byId: Map<number, string>, byName: Map<string, string>): NamedIcon {
+function translate(
+  item: NamedIcon,
+  byId: Map<number, string>,
+  byName: Map<string, string>,
+  texts?: Map<number, string>,
+): NamedIcon {
   const named = (item.id != null ? byId.get(item.id) : undefined) || byName.get(item.name);
-  return named ? { ...item, name: named } : item;
+  const description = (item.id != null ? texts?.get(item.id) : undefined) || item.description || null;
+  return {
+    ...item,
+    name: named || item.name,
+    description,
+  };
 }
