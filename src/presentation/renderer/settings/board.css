@@ -2,7 +2,7 @@
   flex: 1;
   min-height: 0;
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 280px 1fr 300px;
 }
 
 .tier-pane {
@@ -121,6 +121,7 @@
 }
 
 .detail-pane {
+  min-width: 0;
   overflow: auto;
   padding: 20px 24px;
 }
@@ -412,7 +413,10 @@
 }
 
 .aug-row[data-tip],
-.trio-aug[data-tip] {
+.trio-aug[data-tip],
+.match-aug[data-tip],
+.item-slot[data-tip],
+.icon-card[data-tip] {
   cursor: default;
 }
 
