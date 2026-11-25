@@ -11,16 +11,24 @@ const RARITY_COLUMNS = [
 let selectedId = null;
 let paintedDetailId = null;
 let latestTiers = [];
+let latestState = { home: {}, leagueConnected: false };
 let paintedAt = "";
+let paintedHomeKey = "";
 let requestSeq = 0;
+let followedChampionId = null;
 
 function paintBoard(state) {
+  latestState = state;
   latestTiers = state.tiers ?? [];
   preloadIcons(latestTiers.flatMap((group) => group.champions.map((item) => item.iconUrl)));
   const stamp = state.snapshot?.syncedAt ?? "";
-  if (stamp && stamp === paintedAt) return;
-  paintedAt = stamp;
-  renderList();
+  if (!(stamp && stamp === paintedAt)) {
+    paintedAt = stamp;
+    renderList();
+  }
+  paintMeIfChanged(state);
+  if (selectedMatchId != null) paintMatchIfChanged(state, selectedMatchId);
+  else if (selectedId == null) paintHomeIfChanged(state);
 }
 
 function renderList(fromSearch) {
@@ -72,14 +80,68 @@ function championRow(item, rank) {
       ${icon(item.iconUrl, item.names.ko)}
       <span class="name">${escapeHtml(item.names.ko)}</span>
     </span>
-    ${gradeMark(item.grade)}
+    ${gradeLetter(item.grade)}
   </button>`;
 }
 
-async function openChampion(id) {
+function showHome() {
+  selectedId = null;
+  selectedMatchId = null;
+  paintedDetailId = null;
+  paintedHomeKey = "";
+  resetMatchPaint();
+  highlight();
+  highlightMatch();
+  paintMeIfChanged(latestState);
+  paintHomeIfChanged(latestState);
+}
+
+function paintHomeIfChanged(state) {
+  const key = homeKey(state);
+  if (key && key === paintedHomeKey && detailPane.querySelector("[data-home-root]")) return;
+  paintedHomeKey = key;
+  paintHome(state);
+}
+
+function homeKey(state) {
+  const home = state?.home ?? {};
+  return [home.patch, home.metaChampions?.[0]?.id, home.metaAugments?.[0]?.id].join("|");
+}
+
+function openMatch(gameId) {
+  if (selectedMatchId === gameId && document.querySelector("[data-match-root]")) {
+    showHome();
+    return;
+  }
+  selectedId = null;
+  selectedMatchId = gameId;
+  paintedDetailId = null;
+  paintedHomeKey = "";
+  highlight();
+  highlightMatch(true);
+  paintMatchIfChanged(latestState, gameId);
+}
+
+function followPlayingChampion(id) {
+  const next = Number(id) > 0 ? Number(id) : null;
+  if (next === followedChampionId) return;
+  followedChampionId = next;
+  if (!next || selectedId === next) return;
+  void openChampion(next, false);
+}
+
+async function openChampion(id, toggleHome = true) {
+  if (toggleHome && selectedId === id) {
+    showHome();
+    return;
+  }
+  if (!toggleHome && selectedId === id) return;
   const seq = ++requestSeq;
   selectedId = id;
+  selectedMatchId = null;
+  resetMatchPaint();
   highlight();
+  highlightMatch();
   const preview = findChampion(id);
   if (preview) paintDetail(fromList(preview), true);
 
@@ -108,7 +170,7 @@ function paintDetail(detail, loading, error) {
   setHeroIcon(image, detail.iconUrl, detail.name);
   detailPane.querySelector("h1").textContent = detail.name;
   const tier = detailPane.querySelector("[data-hero-tier]");
-  if (tier) tier.innerHTML = gradeMark(detail.grade);
+  if (tier) tier.innerHTML = gradeLetter(detail.grade);
   const meta = detailPane.querySelector("[data-hero-meta]");
   const body = detailPane.querySelector("[data-detail-body]");
   if (loading) {
@@ -266,7 +328,7 @@ function augmentSections(detail) {
   return `<section class="section">
     <div class="rarity-grid">
       ${RARITY_COLUMNS.map(([rarity, title]) => {
-        const rows = detail.augments.filter((row) => row.rarity === rarity);
+        const rows = detail.augments.filter((row) => row.rarity === rarity).slice(0, 10);
         return `<div class="rarity-col ${rarity}">
           <h2>${title}</h2>
           <div class="aug-list">${rows.length ? rows.map(augmentRow).join("") : `<p class="empty">-</p>`}</div>
@@ -294,7 +356,8 @@ function augmentRow(row) {
 }
 
 function iconCard(item) {
-  return `<div class="icon-card">${icon(item.iconUrl, item.name)}<span>${escapeHtml(item.name)}</span></div>`;
+  const text = [item.name, item.description].filter(Boolean).join("\n");
+  return `<div class="icon-card"${tipAttr(text)}>${icon(item.iconUrl, item.name)}<span>${escapeHtml(item.name)}</span></div>`;
 }
 
 function stat(label, value) {
@@ -369,9 +432,32 @@ tierList.addEventListener("click", (event) => {
   void openChampion(Number(button.dataset.id));
 });
 
+detailPane.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-id]");
+  if (!button) return;
+  if (!detailPane.querySelector("[data-home-root], [data-match-root]")) return;
+  void openChampion(Number(button.dataset.id));
+});
+
+document.querySelector("#mePane")?.addEventListener("click", (event) => {
+  const match = event.target.closest("[data-game-id]");
+  if (match) {
+    openMatch(Number(match.dataset.gameId));
+    return;
+  }
+  const button = event.target.closest("[data-id]");
+  if (!button) return;
+  void openChampion(Number(button.dataset.id));
+});
+
+document.querySelector("#homeBtn")?.addEventListener("click", () => {
+  showHome();
+});
+
 search.addEventListener("input", () => renderList(true));
 
 window.addEventListener("DOMContentLoaded", async () => {
   paintBoard(await window.pengu.getState());
   window.pengu.onState(paintBoard);
+  window.pengu.onPlaying?.(followPlayingChampion);
 });
