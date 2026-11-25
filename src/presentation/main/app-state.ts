@@ -1,5 +1,6 @@
 import type { OverlayView, StatsSnapshot } from "../../domain/augment";
 import type { ChampionTierGroup } from "../../application/champion-tiers";
+import type { HomeFeed } from "../../application/home-feed";
 import type { AppSettings } from "../../application/ports";
 
 export interface UiState {
@@ -10,6 +11,7 @@ export interface UiState {
   usingBuiltinKey: boolean;
   message: string;
   tiers: ChampionTierGroup[];
+  home: HomeFeed;
 }
 
 export function emptyOverlay(): OverlayView {
@@ -18,5 +20,6 @@ export function emptyOverlay(): OverlayView {
     champion: null,
     source: null,
     cards: [],
+    build: [],
   };
 }
