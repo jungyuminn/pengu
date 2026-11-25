@@ -1,9 +1,19 @@
 import type { GearNameIndex, GearNames } from "../../application/ports";
 import { emptyGearNames } from "../../application/merge-item-names";
+import { formatItemText } from "../../domain/item-text";
 import { getJson } from "../http";
 
 interface DDragonFile {
-  data?: Record<string, { name?: string; key?: string }>;
+  data?: Record<
+    string,
+    {
+      name?: string;
+      key?: string;
+      plaintext?: string;
+      description?: string;
+      stats?: Record<string, number>;
+    }
+  >;
 }
 
 export class DDragonGearNames implements GearNames {
@@ -33,19 +43,22 @@ async function loadGearNames(): Promise<GearNameIndex> {
   };
 }
 
-function indexItems(ko: DDragonFile, zh: DDragonFile): Pick<GearNameIndex, "itemById" | "itemByName"> {
+function indexItems(ko: DDragonFile, zh: DDragonFile): Pick<GearNameIndex, "itemById" | "itemByName" | "itemTextById"> {
   const itemById = new Map<number, string>();
   const itemByName = new Map<string, string>();
+  const itemTextById = new Map<number, string>();
   for (const [id, row] of Object.entries(ko.data ?? {})) {
     const numericId = Number(id);
     const korean = row.name?.trim();
     if (!Number.isFinite(numericId) || numericId <= 0 || !korean) continue;
     itemById.set(numericId, korean);
     itemByName.set(korean, korean);
+    const blurb = formatItemText(row);
+    if (blurb) itemTextById.set(numericId, blurb);
     const chinese = zh.data?.[id]?.name?.trim();
     if (chinese) itemByName.set(chinese, korean);
   }
-  return { itemById, itemByName };
+  return { itemById, itemByName, itemTextById };
 }
 
 function indexSpells(ko: DDragonFile, zh: DDragonFile): Pick<GearNameIndex, "spellById" | "spellByName"> {
