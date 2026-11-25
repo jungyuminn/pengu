@@ -1,0 +1,71 @@
+button.score-row.mvp,
+button.match-row.mvp {
+  position: relative;
+  overflow: hidden;
+}
+
+button.score-row.mvp > .row-hit,
+button.match-row.mvp > .row-hit {
+  position: relative;
+  z-index: 1;
+}
+
+button.score-row.mvp::after,
+button.match-row.mvp::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, #ff4d8d 28%, transparent) 0%,
+    color-mix(in srgb, #ffd24a 28%, transparent) 10%,
+    color-mix(in srgb, #4ade80 28%, transparent) 20%,
+    color-mix(in srgb, #38bdf8 28%, transparent) 30%,
+    color-mix(in srgb, #a78bfa 28%, transparent) 40%,
+    color-mix(in srgb, #ff4d8d 28%, transparent) 50%,
+    color-mix(in srgb, #ffd24a 28%, transparent) 60%,
+    color-mix(in srgb, #4ade80 28%, transparent) 70%,
+    color-mix(in srgb, #38bdf8 28%, transparent) 80%,
+    color-mix(in srgb, #a78bfa 28%, transparent) 90%,
+    color-mix(in srgb, #ff4d8d 28%, transparent) 100%
+  );
+  background-size: 200% 100%;
+  animation: mvp-flow 4s linear infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes mvp-flow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.mvp-tag {
+  flex: none;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: color-mix(in srgb, #ffd24a 22%, transparent);
+  color: #ffe9a3;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+}
+
+html[data-theme="light"] .mvp-tag {
+  background: color-mix(in srgb, #c9a227 22%, transparent);
+  color: #8a6a00;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  button.score-row.mvp::after,
+  button.match-row.mvp::after {
+    animation: none;
+  }
+}
