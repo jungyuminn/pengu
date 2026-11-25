@@ -29,10 +29,22 @@ function setText(selector, value) {
   if (node) node.textContent = value;
 }
 
+let prefsCloseTimer = 0;
+
 function setPrefsOpen(open) {
-  prefsMenu.classList.toggle("open", open);
-  prefsMenu.hidden = !open;
+  window.clearTimeout(prefsCloseTimer);
   prefsBtn.setAttribute("aria-expanded", String(open));
+  if (open) {
+    prefsMenu.hidden = false;
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => prefsMenu.classList.add("open"));
+    });
+    return;
+  }
+  prefsMenu.classList.remove("open");
+  prefsCloseTimer = window.setTimeout(() => {
+    if (!prefsMenu.classList.contains("open")) prefsMenu.hidden = true;
+  }, 220);
 }
 
 window.addEventListener("DOMContentLoaded", async () => {
