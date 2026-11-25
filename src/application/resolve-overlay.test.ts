@@ -42,6 +42,13 @@ const snapshot: StatsSnapshot = {
 };
 
 describe("resolveOverlay", () => {
+  it("shows a grade when one augment card is read", () => {
+    const view = resolveOverlay(snapshot, null, ["벌이다!!!"]);
+    expect(view.visible).toBe(true);
+    expect(view.cards).toHaveLength(1);
+    expect(view.cards[0]?.augment?.id).toBe("bees");
+  });
+
   it("shows grades when two or more cards are read", () => {
     const view = resolveOverlay(snapshot, { name: "야스오", grade: "A" }, ["벌이다!!!", "유레카", ""]);
 
@@ -56,6 +63,21 @@ describe("resolveOverlay", () => {
     expect(view.visible).toBe(true);
     expect(view.champion?.name).toBe("야스오");
     expect(view.cards).toEqual([]);
+  });
+
+  it("uses the playing champion's aramgg grade instead of the global catalog", () => {
+    const view = resolveOverlay(snapshot, { name: "야스오", grade: "A" }, ["벌이다!!!"], [
+      {
+        id: null,
+        name: "벌이다!!!",
+        grade: "C",
+        rarity: "gold",
+        pickRate: 12,
+        winRate: 44,
+        iconUrl: null,
+      },
+    ]);
+    expect(view.cards[0]?.augment?.grade).toBe("C");
   });
 
   it("hides the overlay when almost nothing was read", () => {
