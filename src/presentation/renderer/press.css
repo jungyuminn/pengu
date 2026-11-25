@@ -3,6 +3,10 @@ button:not(.chrome-btn),
   position: relative;
   overflow: hidden;
   isolation: isolate;
+}
+
+button:not(.chrome-btn):not(.streak-mark):not(.match-row):not(.score-row),
+.toolbar .check {
   transform-origin: center;
   transition:
     transform 180ms cubic-bezier(0.34, 1.45, 0.64, 1),
@@ -15,7 +19,7 @@ button:not(.chrome-btn),
   cursor: pointer;
 }
 
-button:not(.chrome-btn)::before,
+button:not(.chrome-btn):not(.streak-mark)::before,
 .toolbar .check::before {
   content: "";
   position: absolute;
@@ -25,14 +29,27 @@ button:not(.chrome-btn)::before,
   transition: background-color 80ms ease;
 }
 
-button:not(.chrome-btn).is-pressed,
+button:not(.chrome-btn):not(.streak-mark):not(.match-row):not(.score-row).is-pressed,
 .toolbar .check.is-pressed {
   transform: scale(0.96);
   transition-duration: 80ms;
   transition-timing-function: ease-out;
 }
 
-button:not(.chrome-btn).is-pressed::before,
+button.match-row > .row-hit,
+button.score-row > .row-hit {
+  transform-origin: center;
+  transition: transform 180ms cubic-bezier(0.34, 1.45, 0.64, 1);
+}
+
+button.match-row.is-pressed > .row-hit,
+button.score-row.is-pressed > .row-hit {
+  transform: scale(0.96);
+  transition-duration: 80ms;
+  transition-timing-function: ease-out;
+}
+
+button:not(.chrome-btn):not(.streak-mark).is-pressed::before,
 .toolbar .check.is-pressed::before {
   background: var(--press);
 }
@@ -54,12 +71,16 @@ button:not(.chrome-btn).is-pressed::before,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  button:not(.chrome-btn),
+  button:not(.chrome-btn):not(.streak-mark):not(.match-row):not(.score-row),
+  button.match-row > .row-hit,
+  button.score-row > .row-hit,
   .toolbar .check {
     transition: none;
   }
 
-  button:not(.chrome-btn).is-pressed,
+  button:not(.chrome-btn):not(.streak-mark):not(.match-row):not(.score-row).is-pressed,
+  button.match-row.is-pressed > .row-hit,
+  button.score-row.is-pressed > .row-hit,
   .toolbar .check.is-pressed {
     transform: none;
   }
