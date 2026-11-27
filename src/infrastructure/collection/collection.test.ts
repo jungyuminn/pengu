@@ -48,7 +48,18 @@ async function chainFixture(allowed: string[], read: (route: string) => Promise<
 }
 
 describe("LCU chain", () => {
-  it.skipIf(!sqlite)("resumes a live-source frontier and follows only discovered, scoped neighbours", async () => {
+  it("accepts accounts-format scope files for the same allow-list", async () => {
+    const { dir, budget } = await chainFixture([], async () => null);
+    const file = path.join(dir, "named.json");
+    await writeFile(file, JSON.stringify({
+      accounts: [{ gameName: "N", tagLine: "KR1", puuid: "neighbour" }],
+    }));
+    const source = await LcuChainSource.connect(budget, file);
+    expect(source.owner).toBe(accountRef("seed"));
+    await expect(source.history(accountRef("neighbour"), 0)).rejects.toThrow("전적 목록");
+  });
+
+  it.skipIf(!sqlite)("resumes a live-source frontier and follows discovered match participants", async () => {
     const histories: Record<string, number[]> = { seed: [1], neighbour: [1, 2], last: [2, 3] };
     const participants = [["seed", "neighbour", "outside"], ["neighbour", "last"], ["last", "outside"]];
     const { dir, source, budget, request } = await chainFixture(["neighbour", "last", "unconnected"], async route => {
@@ -64,7 +75,7 @@ describe("LCU chain", () => {
     try {
       let steps = 0;
       await collectMatches(source, initial, run, () => steps++ >= 2);
-      expect(initial.progress()).toMatchObject({ run: { added: 1 }, pending: 1 });
+      expect(initial.progress()).toMatchObject({ run: { added: 1 }, pending: 2 });
     } finally { initial.close(); }
     const reopened = new SqliteCollectionStore(file);
     try {
@@ -97,7 +108,7 @@ describe("LCU chain", () => {
     expect((await source.history(source.owner, 0))?.gameIds).toHaveLength(96);
     expect((await source.history(source.owner, 0))?.nextPage).toBeNull();
     expect(await source.history(source.owner, 20)).toEqual({ gameIds: [], nextPage: null });
-    await expect(source.detail(1)).rejects.toThrow("authorized-participant-unverified");
+    expect((await source.detail(1))?.accounts).toEqual([accountRef("outside")]);
   });
 
   it("stops on access errors and records rate limits without alternate requests", async () => {
