@@ -1,6 +1,12 @@
 import https from "https";
 import { readLockfile, type Lockfile } from "./lockfile";
 
+export class LcuHttpError extends Error {
+  constructor(readonly status: number, readonly retryAfter?: string) {
+    super(`LCU ${status}`);
+  }
+}
+
 export async function lcuGetJson<T>(pathname: string): Promise<T | null> {
   const lockfile = await readLockfile();
   if (!lockfile) return null;
@@ -40,7 +46,7 @@ export function lcuRequest<T>(
         response.on("end", () => {
           const body = Buffer.concat(chunks).toString("utf8");
           if (!response.statusCode || response.statusCode >= 400) {
-            reject(new Error(`LCU ${response.statusCode}`));
+            reject(new LcuHttpError(response.statusCode ?? 0, response.headers["retry-after"]));
             return;
           }
           if (!body.trim()) {

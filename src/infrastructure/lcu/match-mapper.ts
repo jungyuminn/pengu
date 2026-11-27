@@ -12,8 +12,10 @@ export interface LcuMatchList {
   games?: LcuGame[] | { games?: LcuGame[] };
 }
 
-interface LcuGame {
+export interface LcuGame {
   gameId?: number;
+  gameVersion?: string;
+  platformId?: string;
   gameCreation?: number;
   gameDuration?: number;
   gameLength?: number;
@@ -168,7 +170,7 @@ function isWin(value: boolean | string | undefined): boolean {
   return String(value ?? "").toLowerCase() === "win";
 }
 
-function augmentIdsOf(stats: LcuStats): number[] {
+export function augmentSlotsOf(stats: LcuStats) {
   return [
     stats.playerAugment1,
     stats.playerAugment2,
@@ -176,7 +178,11 @@ function augmentIdsOf(stats: LcuStats): number[] {
     stats.playerAugment4,
     stats.playerAugment5,
     stats.playerAugment6,
-  ].flatMap((id) => {
+  ];
+}
+
+function augmentIdsOf(stats: LcuStats): number[] {
+  return augmentSlotsOf(stats).flatMap((id) => {
     const value = Number(id);
     return Number.isFinite(value) && value > 0 ? [value] : [];
   });
