@@ -37,6 +37,7 @@ export function liveGameFromPayload(payload: LivePayload): LiveGame | null {
     isDead: Boolean(mine?.isDead),
     championName: mine?.championName || payload.activePlayer?.championName || null,
     started: matchStarted(payload),
+    itemIds: (mine?.items ?? []).map((item) => item.id).filter((id) => id > 0),
   };
 }
 

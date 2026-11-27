@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import type { ChampionDetail } from "../domain/champion-detail";
-import { overlayItemsFrom } from "./overlay-build";
+import { overlayItemsFrom, withOwnedOverlayItems } from "./overlay-build";
 
 describe("overlayItemsFrom", () => {
   it("keeps the first six core items", () => {
@@ -25,6 +25,20 @@ describe("overlayItemsFrom", () => {
       "수호 천사",
     ]);
     expect(items[0]?.iconUrl).toBe("a.png");
+  });
+
+  it("marks items whose ids are in the live inventory", () => {
+    const items = overlayItemsFrom({
+      coreItems: [
+        { id: 3078, name: "삼위일체", iconUrl: null },
+        { id: 3004, name: "마나무네", iconUrl: null },
+      ],
+    } as ChampionDetail);
+
+    expect(withOwnedOverlayItems(items, [3078]).map((item) => [item.name, item.owned])).toEqual([
+      ["삼위일체", true],
+      ["마나무네", false],
+    ]);
   });
 
   it("returns nothing without a detail", () => {

@@ -12,9 +12,24 @@ describe("mergeItemNames", () => {
       spellByName: new Map([["闪现", "점멸"]]),
     });
     expect(merged.coreItems[0]?.name).toBe("강철심장");
+    expect(merged.coreItems[0]?.id).toBe(3084);
     expect(merged.coreItems[0]?.description).toBe("체력을 얻고 주변 적에게 피해를 줍니다.");
     expect(merged.startingItems[0]?.name).toBe("원기 회복의 구슬");
     expect(merged.summoners[0]?.name).toBe("점멸");
+  });
+
+  it("fills a missing item id from the Korean catalog name", () => {
+    const merged = mergeItemNames(
+      { ...detail(), coreItems: [{ name: "강철심장", iconUrl: null }] },
+      {
+        itemById: new Map([[3084, "강철심장"]]),
+        itemByName: new Map(),
+        itemTextById: new Map(),
+        spellById: new Map(),
+        spellByName: new Map(),
+      },
+    );
+    expect(merged.coreItems[0]?.id).toBe(3084);
   });
 
   it("drops boots from core items", () => {

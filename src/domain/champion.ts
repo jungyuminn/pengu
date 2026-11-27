@@ -18,8 +18,10 @@ export interface OverlayChampion {
 }
 
 export interface OverlayItem {
+  id?: number | null;
   name: string;
   iconUrl: string | null;
+  owned?: boolean;
 }
 
 export function findChampionById(

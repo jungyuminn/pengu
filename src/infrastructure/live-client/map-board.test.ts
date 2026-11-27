@@ -27,6 +27,7 @@ describe("liveBoardFromPayload", () => {
     expect(board?.players[0]?.kills).toBe(2);
     expect(board?.players[0]?.items).toEqual([{ id: 3078, slot: 0 }]);
     expect(liveGameFromPayload(payload)?.championName).toBe("Yasuo");
+    expect(liveGameFromPayload(payload)?.itemIds).toEqual([3078]);
     expect(liveGameFromPayload(payload)?.started).toBe(true);
   });
 

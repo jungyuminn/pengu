@@ -38,10 +38,21 @@ function translate(
   texts?: Map<number, string>,
 ): NamedIcon {
   const named = (item.id != null ? byId.get(item.id) : undefined) || byName.get(item.name);
-  const description = (item.id != null ? texts?.get(item.id) : undefined) || item.description || null;
+  const name = named || item.name;
+  const id = item.id ?? idForName(byId, name);
+  const description = (id != null ? texts?.get(id) : undefined) || item.description || null;
   return {
     ...item,
-    name: named || item.name,
+    id,
+    name,
     description,
   };
+}
+
+function idForName(byId: Map<number, string>, name: string): number | null {
+  if (!name) return null;
+  for (const [id, label] of byId) {
+    if (label === name) return id;
+  }
+  return null;
 }

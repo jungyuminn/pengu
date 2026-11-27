@@ -76,6 +76,7 @@ export interface LiveGame {
   isDead: boolean;
   championName?: string | null;
   started?: boolean;
+  itemIds?: number[];
 }
 
 export interface OverlayBuildSource {
