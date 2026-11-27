@@ -98,6 +98,8 @@ flowchart LR
 
 ## 시작하기
 
+로컬 SQLite 수집기는 별도 명령으로 실행합니다. [독립 수집기 사용법](docs/collector.md)
+
 Windows, Node.js 20 이상이 필요합니다.
 
 ```bash
