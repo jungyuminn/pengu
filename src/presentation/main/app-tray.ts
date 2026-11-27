@@ -6,14 +6,14 @@ let quitting = false;
 let tray: Tray | undefined;
 
 export function showSettingsWindow(window: BrowserWindow): void {
-  void fadeShowWindow(window);
+  void fadeShowWindow(window, trayBounds());
 }
 
 export function bindSettingsHideOnClose(window: BrowserWindow): void {
   window.on("close", (event) => {
     if (quitting) return;
     event.preventDefault();
-    void fadeHideWindow(window);
+    void fadeHideWindow(window, trayBounds());
   });
 }
 
@@ -40,6 +40,14 @@ export function quitApp(): void {
 export function destroyAppTray(): void {
   tray?.destroy();
   tray = undefined;
+}
+
+function trayBounds(): { x: number; y: number; width: number; height: number } | null {
+  try {
+    return tray?.getBounds() ?? null;
+  } catch {
+    return null;
+  }
 }
 
 export function watchAppQuit(): void {
