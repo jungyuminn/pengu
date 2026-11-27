@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { gradeFromAramggTier, gradeFromPickRateRank, tierNumber } from "./grade";
+import { gradeAdvice, gradeFromAramggTier, gradeFromPickRateRank, tierNumber } from "./grade";
 
 describe("gradeFromAramggTier", () => {
   it("maps numeric tiers to S-C", () => {
@@ -21,6 +21,15 @@ describe("tierNumber", () => {
     expect(tierNumber("A")).toBe(2);
     expect(tierNumber("B")).toBe(3);
     expect(tierNumber("C")).toBe(4);
+  });
+});
+
+describe("gradeAdvice", () => {
+  it("explains each grade in one line", () => {
+    expect(gradeAdvice("S")).toBe("성능과 인기가 모두 좋아요");
+    expect(gradeAdvice("A")).toBe("안정적으로 자주 골라요");
+    expect(gradeAdvice("B")).toBe("상황에 따라 선택해요");
+    expect(gradeAdvice("C")).toBe("이 챔피언에겐 잘 맞지 않아요");
   });
 });
 

@@ -36,6 +36,9 @@ export interface OverlayCard {
   slot: number;
   query: string;
   augment: AugmentStat | null;
+  catalogRank: number | null;
+  catalogTotal: number | null;
+  advice: string | null;
 }
 
 export interface OverlayView {
@@ -45,4 +48,5 @@ export interface OverlayView {
   cards: OverlayCard[];
   build: OverlayItem[];
   notice?: string;
+  armCards?: boolean;
 }

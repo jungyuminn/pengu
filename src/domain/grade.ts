@@ -31,6 +31,14 @@ export function gradeFromAramggTier(tier: number | string | null | undefined): G
   return null;
 }
 
+export function gradeAdvice(grade: Grade | null | undefined): string {
+  if (grade === "S") return "성능과 인기가 모두 좋아요";
+  if (grade === "A") return "안정적으로 자주 골라요";
+  if (grade === "B") return "상황에 따라 선택해요";
+  if (grade === "C") return "이 챔피언에겐 잘 맞지 않아요";
+  return "";
+}
+
 export function gradeFromPickRateRank(rank: number, total: number): Grade {
   if (total <= 0 || rank <= 0) return "C";
   const percentile = (rank - 1) / total;
