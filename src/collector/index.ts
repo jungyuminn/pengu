@@ -8,10 +8,16 @@ import { CurrentSource } from "../infrastructure/collection/current-source";
 import { LcuChainSource } from "../infrastructure/collection/lcu-chain";
 import { LcuHttpError } from "../infrastructure/lcu/request";
 import { SqliteCollectionStore } from "../infrastructure/collection/sqlite-store";
+import { runScopeCommand } from "./scope-cli";
 
 const usage = `Pengu 통계 수집기
   current                     현재 로그인 계정의 최근 전적 수집
-  chain <범위.json>           로그인 계정에서 시작해 허용된 참가자의 LCU 전적 탐색
+  chain [범위.json]           로그인 계정에서 시작해 참가자의 LCU 전적 연쇄 탐색
+  scope <범위.json> add <닉#태그...>
+                              닉네임#태그로 LCU PUUID를 확인해 허용 계정 등록
+  scope <범위.json> list      등록된 허용 계정 목록
+  scope <범위.json> remove <닉#태그...>
+                              허용 계정 삭제
   archive <폴더> <시드 해시>  로컬 자료에서 참가자 연결 탐색
   resume                      저장된 대기 작업 재개
   status                      진행 상황과 제외 사유
@@ -25,15 +31,28 @@ async function main() {
   });
   const [command, ...args] = positionals;
   if (values.help || !command) { console.log(usage); return; }
+  const print = (value: unknown) => console.log(JSON.stringify(value, null, 2));
+  if (command === "scope") {
+    const [file, action, ...ids] = args;
+    if (!file || !action) throw new Error(usage);
+    const result = await runScopeCommand(file, action, ids);
+    print(result);
+    if (result.results?.some(row => row.status === "missing")) process.exitCode = 1;
+    return;
+  }
   const counts: Record<string, number> = { current: 0, chain: 1, archive: 2, resume: 0, status: 0, stats: 1, abandon: 0 };
-  if (!Object.hasOwn(counts, command) || (command === "stats" ? args.length > 1 : args.length !== counts[command])) {
+  const validArgs = Object.hasOwn(counts, command) && (
+    command === "stats" ? args.length <= 1
+      : command === "chain" ? args.length <= 1
+        : args.length === counts[command]
+  );
+  if (!validArgs) {
     throw new Error(usage);
   }
   if (command === "archive" && !/^[a-f0-9]{64}$/.test(args[1])) throw new Error("64자리 시드 해시가 필요합니다.");
   const file = path.resolve(values.db ?? path.join(process.env.LOCALAPPDATA ?? homedir(), "PenguCollector", "matches.sqlite"));
   await mkdir(path.dirname(file), { recursive: true });
   const store = new SqliteCollectionStore(file);
-  const print = (value: unknown) => console.log(JSON.stringify(value, null, 2));
   const interrupt = new AbortController();
   const stop = () => interrupt.abort();
   process.on("SIGINT", stop);
@@ -56,8 +75,8 @@ async function main() {
       source = new ArchiveSource(location);
       await source.checkSeed(seed, resume);
     } else if (kind === "chain") {
-      source = resume ? await LcuChainSource.resume(store, previous!.location, interrupt.signal)
-        : await LcuChainSource.connect(store, args[0], interrupt.signal);
+      source = resume ? await LcuChainSource.resume(store, previous!.location, interrupt.signal, store)
+        : await LcuChainSource.connect(store, args[0], interrupt.signal, undefined, store);
       seed = source.owner;
       location = source.location;
     } else {
