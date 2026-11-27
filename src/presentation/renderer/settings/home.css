@@ -4,6 +4,28 @@
   gap: 22px;
 }
 
+.home-head {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.home-patch {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.home-head h1 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
 .me-pane {
   display: flex;
   flex-direction: column;
@@ -230,8 +252,8 @@ html.me-closed button.me-toggle svg {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
-  padding: 8px 6px;
+  gap: 4px;
+  padding: 10px 6px 8px;
   border: 0;
   border-radius: 10px;
   background: var(--surface);
@@ -252,10 +274,17 @@ html.me-closed button.me-toggle svg {
   line-height: 1.3;
 }
 
-.home-aug {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
+.home-champ .rates {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.home-aug-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 14px;
 }
 
 .home-aug-row {
@@ -263,6 +292,9 @@ html.me-closed button.me-toggle svg {
   align-items: center;
   gap: 8px;
   min-width: 0;
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: var(--surface);
 }
 
 .home-aug-row img {

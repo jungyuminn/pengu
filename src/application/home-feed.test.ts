@@ -3,10 +3,11 @@ import type { StatsSnapshot } from "../domain/augment";
 import { buildHomeFeed } from "./home-feed";
 
 describe("buildHomeFeed", () => {
-  it("picks high pick-rate champions and two augments per rarity", () => {
+  it("picks overall S champions and augments for the patch meta", () => {
     const feed = buildHomeFeed(snapshot(), null, new Map([[1001, "a.png"]]));
+    expect(feed.patchLabel).toBe("26.23");
     expect(feed.metaChampions.map((item) => item.id)).toEqual([2, 1]);
-    expect(feed.metaAugments.map((item) => item.name)).toEqual(["은1", "은2", "금1", "프1"]);
+    expect(feed.metaAugments.map((item) => item.name)).toEqual(["은1", "금1"]);
     expect(feed.metaAugments[0]?.iconUrl).toBe("a.png");
   });
 
@@ -100,39 +101,48 @@ function snapshot(): StatsSnapshot {
     syncedAt: "now",
     attribution: "",
     champions: [
-      champ(1, "애니", 3),
-      champ(2, "이즈", 12),
+      champ(1, "애니", "S", 3, 54),
+      champ(2, "이즈", "S", 12, 58),
+      champ(9, "애쉬", "C", 20, 45),
     ],
     augments: [
-      augment(1001, "은1", "silver", 9),
-      augment(1002, "은2", "silver", 1),
-      augment(2001, "금1", "gold", 8),
-      augment(3001, "프1", "prismatic", 7),
+      augment(1001, "은1", "silver", "S", 9, 63),
+      augment(1002, "은2", "silver", "C", 80, 41),
+      augment(2001, "금1", "gold", "S", 8, 60),
+      augment(3001, "프1", "prismatic", "A", 7, 58),
     ],
   };
 }
 
-function champ(id: number, name: string, pickRate: number) {
+function champ(id: number, name: string, grade: "S" | "A" | "B" | "C", pickRate: number, winRate: number) {
   return {
     id,
     key: name,
     names: { ko: name, en: name },
     title: "",
     iconUrl: `${id}.png`,
-    grade: "S" as const,
+    grade,
     pickRate,
-    winRate: 50,
+    winRate,
   };
 }
 
-function augment(id: number, name: string, rarity: "silver" | "gold" | "prismatic", pickRate: number) {
+function augment(
+  id: number,
+  name: string,
+  rarity: "silver" | "gold" | "prismatic",
+  grade: "S" | "A" | "B" | "C",
+  pickRate: number,
+  winRate: number,
+) {
   return {
     id: String(id),
     numericId: id,
     names: { ko: name, en: name },
     rarity,
-    grade: "S" as const,
+    grade,
     pickRate,
+    winRate,
     sample: 10,
   };
 }

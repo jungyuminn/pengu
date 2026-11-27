@@ -1,5 +1,3 @@
-const RARITY_LABEL = { silver: "실버", gold: "골드", prismatic: "프리즘" };
-
 let paintedMeKey = "";
 let selectedMatchId = null;
 
@@ -8,6 +6,7 @@ function paintHome(state) {
   const home = state?.home ?? {};
   preloadIcons(metaIcons(home));
   pane.innerHTML = `<div class="home" data-home-root>
+    ${metaHeadHtml(home)}
     ${metaChampionsHtml(home.metaChampions)}
     ${metaAugmentsHtml(home.metaAugments)}
   </div>`;
@@ -60,6 +59,15 @@ function highlightMatch(scrollTo = false) {
   }
 }
 
+function metaHeadHtml(home) {
+  const patch = String(home.patchLabel ?? "").trim();
+  if (!patch) return "";
+  return `<header class="home-head">
+    <p class="home-patch">${escapeHtml(patch)}</p>
+    <h1>이번 패치 메타</h1>
+  </header>`;
+}
+
 function metaChampionsHtml(rows) {
   if (!rows?.length) return `<p class="empty">메타 챔피언을 불러오는 중...</p>`;
   return `<section class="section">
@@ -72,28 +80,24 @@ function homeChampionCard(item) {
   return `<button type="button" class="home-champ" data-id="${item.id}">
     ${icon(item.iconUrl, item.name)}
     <span class="name">${escapeHtml(item.name)}</span>
+    <span class="rates">승률 ${pct(item.winRate)}</span>
     ${gradeLetter(item.grade)}
   </button>`;
 }
 
 function metaAugmentsHtml(rows) {
   if (!rows?.length) return "";
-  const groups = ["silver", "gold", "prismatic"].map((rarity) => {
-    const list = rows.filter((row) => row.rarity === rarity);
-    if (!list.length) return "";
-    return `<div class="home-aug">
-      <h2>${RARITY_LABEL[rarity] ?? rarity}</h2>
-      ${list.map(homeAugmentRow).join("")}
-    </div>`;
-  });
-  return `<section class="section"><div class="rarity-grid">${groups.join("")}</div></section>`;
+  return `<section class="section">
+    <h2>사기 증강</h2>
+    <div class="home-aug-list">${rows.map(homeAugmentRow).join("")}</div>
+  </section>`;
 }
 
 function homeAugmentRow(row) {
   return `<div class="home-aug-row">
     ${icon(row.iconUrl, row.name)}
     <span class="name">${escapeHtml(row.name)}</span>
-    <span class="rates"><span>승률 ${pct(row.winRate)}</span><span>픽률 ${pct(row.pickRate)}</span></span>
+    <span class="rates"><span>승률 ${pct(row.winRate)}</span><span>픽률 ${pct(row.pickRate, 2)}</span></span>
     ${gradeLetter(row.grade)}
   </div>`;
 }

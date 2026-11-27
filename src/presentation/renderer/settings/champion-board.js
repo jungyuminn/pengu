@@ -125,7 +125,7 @@ function paintHomeIfChanged(state) {
 
 function homeKey(state) {
   const home = state?.home ?? {};
-  return [home.patch, home.metaChampions?.[0]?.id, home.metaAugments?.[0]?.id].join("|");
+  return [home.patch, home.patchLabel, home.metaChampions?.[0]?.id, home.metaAugments?.[0]?.id].join("|");
 }
 
 function openMatch(gameId) {
@@ -333,7 +333,7 @@ function bodyHtml(detail) {
     <dl class="stats">
       ${stat("순위", rank == null ? "-" : `${rank}위`)}
       ${stat("승률", pct(detail.winRate))}
-      ${stat("픽률", pct(detail.pickRate))}
+      ${stat("픽률", pct(detail.pickRate, 2))}
     </dl>
     ${augmentSections(detail)}
     ${iconSection("코어 아이템", detail.coreItems, true)}
@@ -379,7 +379,7 @@ function augmentRow(row) {
   return `<div class="aug-row"${tipAttr(row.description)}>
     ${icon(row.iconUrl, row.name)}
     <span class="name">${escapeHtml(row.name)}</span>
-    <span class="rates"><span>승률 ${pct(row.winRate)}</span><span>픽률 ${pct(row.pickRate)}</span></span>
+    <span class="rates"><span>승률 ${pct(row.winRate)}</span><span>픽률 ${pct(row.pickRate, 2)}</span></span>
     ${gradeLetter(row.grade)}
   </div>`;
 }
@@ -400,8 +400,8 @@ function icon(url, name) {
   return `<img${wait} src="${escapeHtml(url)}" alt="${escapeHtml(name)}" decoding="async" />`;
 }
 
-function pct(value) {
-  return value == null ? "-" : `${Number(value).toFixed(1)}%`;
+function pct(value, digits = 1) {
+  return value == null ? "-" : `${Number(value).toFixed(digits)}%`;
 }
 
 

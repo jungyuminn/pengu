@@ -1,17 +1,16 @@
 import type { AugmentStat, Rarity, StatsSnapshot } from "../domain/augment";
 import type { ChampionStat } from "../domain/champion";
 import type { Grade } from "../domain/grade";
+import { homeMetaAugments, homeMetaChampions } from "../domain/home-meta";
 import { averageKda, formatKda } from "../domain/kda";
 import type { MayhemProfile } from "../domain/mayhem";
+import { patchNotesLabel } from "../domain/patch-notes";
 import { toHomePlayers, type HomeMatchAssets, type HomeMatchPlayer } from "./home-match-players";
 import { profileIconUrl } from "./profile-icon";
 
 export type { HomeMatchPlayer };
 
-const META_CHAMPIONS = 8;
-const META_AUGMENTS_PER_RARITY = 2;
 const HOME_MATCHES = 20;
-const RARITIES: Rarity[] = ["silver", "gold", "prismatic"];
 
 export interface HomeChampion {
   id: number;
@@ -51,6 +50,7 @@ export interface HomeMatch {
 
 export interface HomeFeed {
   patch: string;
+  patchLabel: string;
   metaChampions: HomeChampion[];
   metaAugments: HomeAugment[];
   account: { puuid: string; gameName: string; tagLine: string; iconUrl: string | null } | null;
@@ -79,18 +79,9 @@ export function buildHomeFeed(
 
   return {
     patch: snapshot?.patch ?? "",
-    metaChampions: [...champions]
-      .sort((left, right) => (right.pickRate ?? 0) - (left.pickRate ?? 0))
-      .slice(0, META_CHAMPIONS)
-      .map(toHomeChampion),
-    metaAugments: RARITIES.flatMap((rarity) =>
-      augments
-        .filter((row) => row.rarity === rarity)
-        .slice()
-        .sort((left, right) => (right.pickRate ?? 0) - (left.pickRate ?? 0))
-        .slice(0, META_AUGMENTS_PER_RARITY)
-        .map((row) => toHomeAugment(row, augmentIcons)),
-    ),
+    patchLabel: patchNotesLabel(snapshot?.patch ?? ""),
+    metaChampions: homeMetaChampions(champions).map(toHomeChampion),
+    metaAugments: homeMetaAugments(augments).map((row) => toHomeAugment(row, augmentIcons)),
     account: profile
       ? {
           puuid: profile.puuid,
