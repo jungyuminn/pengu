@@ -1,9 +1,11 @@
+import { patchNotesLabel } from "../domain/patch-notes";
+
 export function dataRefreshLabel(syncedAt: string, patch = ""): string {
   const at = new Date(syncedAt);
   const time = Number.isNaN(at.getTime())
     ? "데이터 갱신: -"
     : `데이터 갱신: ${at.getFullYear()}-${pad(at.getMonth() + 1)}-${pad(at.getDate())} ${pad(at.getHours())}:${pad(at.getMinutes())}`;
-  const ver = patch.trim();
+  const ver = patchNotesLabel(patch);
   return ver ? `${time} (${ver})` : time;
 }
 
