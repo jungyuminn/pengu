@@ -8,6 +8,7 @@
     "build": "node scripts/bundle-skill-icons.js && node scripts/bundle-spell-icons.js && node scripts/bundle-champion-icons.js && node scripts/bundle-item-icons.js && node scripts/bundle-augment-icons.js && node scripts/bundle-augment-descriptions.js && tsc && node scripts/copy-static.js",
     "start": "chcp 65001 >NUL & tsc && node scripts/copy-static.js && electron . --enable-logging",
     "test": "vitest run",
+    "collector": "tsc && node dist/collector/index.js",
     "typecheck": "tsc --noEmit"
   },
   "engines": {
