@@ -1,10 +1,12 @@
 import { BrowserWindow, screen, shell } from "electron";
 import path from "path";
+import type { OverlayFitKind } from "../../domain/overlay-fit";
 import {
   BUILD_OVERLAY,
   CARD_OVERLAY,
   GAME_OVERLAY,
   NOTICE_OVERLAY,
+  PICK_OVERLAY,
   scaleRect,
   type PercentRect,
 } from "../../domain/layout";
@@ -48,7 +50,7 @@ export function createSettingsWindow(theme: ThemeMode = "dark"): BrowserWindow {
   return window;
 }
 
-export type OverlayFitKind = "game" | "notice" | "cards" | "build";
+export type { OverlayFitKind };
 
 export async function fitOverlayToGame(
   window: BrowserWindow,
@@ -56,7 +58,15 @@ export async function fitOverlayToGame(
 ): Promise<void> {
   const league = await leagueGameRect();
   const region =
-    kind === "cards" ? CARD_OVERLAY : kind === "build" ? BUILD_OVERLAY : kind === "notice" ? NOTICE_OVERLAY : GAME_OVERLAY;
+    kind === "cards"
+      ? CARD_OVERLAY
+      : kind === "build"
+        ? BUILD_OVERLAY
+        : kind === "notice"
+          ? NOTICE_OVERLAY
+          : kind === "pick"
+            ? PICK_OVERLAY
+            : GAME_OVERLAY;
   if (!league) {
     const display = screen.getPrimaryDisplay();
     applyOverlayBounds(window, kind, overlayBounds(display.bounds, region, 1));

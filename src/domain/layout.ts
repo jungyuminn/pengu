@@ -24,7 +24,7 @@ export const TITLE_STRIP: PercentRect = { x: 0.08, y: 0.28, width: 0.84, height:
 export const TITLE_BAND: PercentRect = { x: 0.08, y: 0.12, width: 0.84, height: 0.28 };
 export const CARD_BODY: PercentRect = { x: 0.18, y: 0.2, width: 0.64, height: 0.48 };
 export const REROLL_BUTTON: PercentRect = { x: 0.42, y: 0.7, width: 0.16, height: 0.14 };
-export const CARD_OVERLAY: PercentRect = { x: 0.175, y: 0.455, width: 0.65, height: 0.07 };
+export const CARD_OVERLAY: PercentRect = { x: 0.225, y: 0.108, width: 0.55, height: 0.078 };
 export const OFFER_CAPTURE_BANDS: PercentRect[] = [
   { x: 0, y: 0.12, width: 1, height: 0.34 },
   { x: 0, y: 0.62, width: 1, height: 0.16 },
@@ -56,6 +56,7 @@ function toBandRect(rect: PercentRect): PercentRect {
 
 export const BUILD_OVERLAY: PercentRect = { x: 0, y: 0.38, width: 0.1, height: 0.5 };
 export const CHAMP_OVERLAY: PercentRect = { x: 0.03, y: 0.06, width: 0.32, height: 0.1 };
+export const PICK_OVERLAY: PercentRect = { x: 0.72, y: 0.1, width: 0.16, height: 0.12 };
 export const NOTICE_OVERLAY: PercentRect = { x: 0.18, y: 0.05, width: 0.64, height: 0.12 };
 export const GAME_OVERLAY: PercentRect = { x: 0, y: 0, width: 1, height: 1 };
 

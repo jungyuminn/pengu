@@ -23,8 +23,8 @@ import { createComposition } from "./composition";
 import { emptyOverlay, type UiState } from "./app-state";
 import { registerWindowChrome } from "./window-chrome";
 import { createSplashWindow, revealMainWindow, waitUntilReady } from "./splash";
-import { leagueClientBox, leagueClientFocused } from "../../infrastructure/ocr/league-window";
-import { createOverlayWindow, createSettingsWindow, fitOverlayToGame, type OverlayFitKind } from "./windows";
+import { OverlayHost } from "./overlay-host";
+import { createSettingsWindow } from "./windows";
 import {
   bindSettingsHideOnClose,
   createAppTray,
@@ -62,9 +62,9 @@ if (!app.requestSingleInstanceLock()) {
   const settingsWindow = createSettingsWindow(bootSettings.theme);
   settingsWindowRef = settingsWindow;
   bindSettingsHideOnClose(settingsWindow);
-  const overlayWindow = createOverlayWindow();
+  const overlay = new OverlayHost();
   const settingsReady = waitUntilReady(settingsWindow);
-  const overlayReady = waitUntilReady(overlayWindow);
+  const overlayReady = overlay.ready();
 
   const pushState = async (message?: string): Promise<UiState> => {
     if (message !== undefined) lastMessage = message;
@@ -112,32 +112,8 @@ if (!app.requestSingleInstanceLock()) {
     await pushState();
   };
 
-  let overlayShown = false;
-  let lastOverlaySig = "";
-
-  const showOverlay = async (view: OverlayView, enabled: boolean, force = false): Promise<void> => {
-    const next = enabled ? view : emptyOverlay();
-    const onGame = force || !leagueClientBox() || leagueClientFocused();
-    if (enabled && next.visible && onGame) {
-      await fitOverlayToGame(overlayWindow, overlayKind(next));
-      const sig = overlaySig(next);
-      if (sig !== lastOverlaySig) {
-        overlayWindow.webContents.send("pengu:overlay", next);
-        lastOverlaySig = sig;
-      }
-      if (!overlayShown) {
-        overlayWindow.showInactive();
-        overlayWindow.setIgnoreMouseEvents(true);
-        overlayWindow.setAlwaysOnTop(true, "screen-saver");
-        overlayWindow.moveTop();
-        overlayShown = true;
-      }
-      return;
-    }
-    overlayShown = false;
-    if (!enabled || !next.visible) lastOverlaySig = "";
-    if (overlayWindow.isVisible()) overlayWindow.hide();
-  };
+  const showOverlay = (view: OverlayView, enabled: boolean, force = false): Promise<void> =>
+    overlay.show(view, enabled, force);
 
   const tick = async (): Promise<void> => {
     const settings = await services.settings.read();
@@ -245,7 +221,14 @@ if (!app.requestSingleInstanceLock()) {
         champion: view.champion ?? sampleChampion,
         cards: view.cards.length
           ? view.cards
-          : samples.map((query, slot) => ({ slot, query, augment: null })),
+          : samples.map((query, slot) => ({
+              slot,
+              query,
+              augment: null,
+              catalogRank: null,
+              catalogTotal: null,
+              advice: null,
+            })),
       },
       true,
       true,
@@ -309,18 +292,3 @@ app.on("will-quit", () => {
   if (overlayTimer) clearInterval(overlayTimer);
 });
 
-function overlayKind(view: OverlayView): OverlayFitKind {
-  if (view.cards.length) return "cards";
-  if (view.notice) return "notice";
-  if (view.build?.length) return "build";
-  return "game";
-}
-
-function overlaySig(view: OverlayView): string {
-  return JSON.stringify({
-    visible: view.visible,
-    notice: view.notice ?? "",
-    cards: view.cards.map((card) => [card.slot, card.augment?.id, card.augment?.grade]),
-    build: view.build.map((item) => item.name),
-  });
-}

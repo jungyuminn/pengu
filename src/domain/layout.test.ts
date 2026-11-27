@@ -20,13 +20,12 @@ describe("augment card layout", () => {
     expect(paddleTitleRegions(1920, 1080, FOUR_CARD_LAYOUT)).toHaveLength(4);
   });
 
-  it("keeps the grade overlay below the card titles", () => {
+  it("keeps the grade overlay on top of the card frames", () => {
     for (const layout of [THREE_CARD_LAYOUT, FOUR_CARD_LAYOUT, LEGACY_THREE_CARD_LAYOUT]) {
-      const bottom = Math.max(
-        ...paddleTitleRegions(1920, 1080, layout).map((box) => (box.top + box.height) / 1080),
-      );
-      expect(CARD_OVERLAY.y).toBeGreaterThanOrEqual(bottom);
+      const titleTop = Math.min(...paddleTitleRegions(1920, 1080, layout).map((box) => box.top / 1080));
+      expect(CARD_OVERLAY.y + CARD_OVERLAY.height).toBeLessThan(titleTop);
     }
+    expect(CARD_OVERLAY.y).toBeLessThan(0.16);
   });
 
   it("captures the title row and the reroll row", () => {
