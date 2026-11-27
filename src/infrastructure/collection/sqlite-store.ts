@@ -18,6 +18,7 @@ const schema = `
   CREATE TABLE jobs(id INTEGER PRIMARY KEY, kind TEXT NOT NULL, ref TEXT NOT NULL, page INTEGER NOT NULL,
     done INTEGER NOT NULL DEFAULT 0, UNIQUE(kind,ref,page));
   CREATE INDEX pending_jobs ON jobs(id) WHERE done=0;
+  CREATE TABLE chain_peers(ref TEXT PRIMARY KEY, puuid TEXT NOT NULL) WITHOUT ROWID;
   CREATE TABLE rejections(reason TEXT PRIMARY KEY, total INTEGER NOT NULL);
   CREATE TABLE matches(platform TEXT NOT NULL, game_id INTEGER NOT NULL, version TEXT NOT NULL, patch TEXT NOT NULL,
     PRIMARY KEY(platform,game_id)) WITHOUT ROWID;
@@ -30,7 +31,7 @@ const schema = `
     FOREIGN KEY(platform,game_id,participant) REFERENCES players) WITHOUT ROWID;
   CREATE TABLE lcu_limit(id INTEGER PRIMARY KEY, next_call INTEGER NOT NULL, blocked_until INTEGER NOT NULL);
   INSERT INTO lcu_limit VALUES (1,0,0);
-  PRAGMA user_version=1;`;
+  PRAGMA user_version=2;`;
 
 export class SqliteCollectionStore implements CollectionStore {
   private readonly db: DatabaseSync;
@@ -43,9 +44,15 @@ export class SqliteCollectionStore implements CollectionStore {
       this.db.exec("PRAGMA busy_timeout=5000; PRAGMA foreign_keys=ON; PRAGMA secure_delete=ON");
       this.transaction(() => {
         const version = this.db.prepare("PRAGMA user_version").get()?.user_version;
+        const hasLimit = Boolean(this.db.prepare("SELECT 1 FROM sqlite_schema WHERE name='lcu_limit'").get());
         if (version === 0 && !this.db.prepare("SELECT 1 FROM sqlite_schema WHERE type='table'").get()) {
           this.db.exec(schema);
-        } else if (version !== 1 || !this.db.prepare("SELECT 1 FROM sqlite_schema WHERE name='lcu_limit'").get()) {
+        } else if (version === 1 && hasLimit) {
+          this.db.exec(`
+            CREATE TABLE IF NOT EXISTS chain_peers(ref TEXT PRIMARY KEY, puuid TEXT NOT NULL) WITHOUT ROWID;
+            PRAGMA user_version=2;
+          `);
+        } else if (version !== 2 || !hasLimit || !this.db.prepare("SELECT 1 FROM sqlite_schema WHERE name='chain_peers'").get()) {
           throw new Error("지원하지 않는 수집 DB입니다.");
         }
       });
@@ -69,6 +76,21 @@ export class SqliteCollectionStore implements CollectionStore {
     }
   }
 
+  rememberPeers(entries: ReadonlyArray<readonly [ref: string, puuid: string]>) {
+    if (!entries.length) return;
+    this.transaction(() => {
+      const insert = this.db.prepare("INSERT OR IGNORE INTO chain_peers(ref,puuid) VALUES(?,?)");
+      for (const [ref, puuid] of entries) {
+        if (ref && puuid) insert.run(ref, puuid);
+      }
+    });
+  }
+
+  lookupPuuid(ref: string): string | undefined {
+    const row = this.db.prepare("SELECT puuid FROM chain_peers WHERE ref=?").get(ref) as { puuid?: string } | undefined;
+    return row?.puuid;
+  }
+
   current(): CollectionRun | undefined {
     return this.db.prepare("SELECT * FROM run").get() as unknown as CollectionRun | undefined;
   }
@@ -76,7 +98,7 @@ export class SqliteCollectionStore implements CollectionStore {
   start(source: CollectionRun["source"], location: string, seed: string): string {
     return this.transaction(() => {
       if (this.current()?.active) throw new Error("미완료 수집이 있습니다. resume으로 이어서 실행하세요.");
-      this.db.exec("DELETE FROM run; DELETE FROM rejections");
+      this.db.exec("DELETE FROM run; DELETE FROM rejections; DELETE FROM chain_peers");
       const id = randomUUID();
       this.db.prepare("INSERT INTO run(id,source,location,seed,active) VALUES(?,?,?,?,1)").run(id,source,location,seed);
       this.enqueue("history", seed, 0);
@@ -145,7 +167,7 @@ export class SqliteCollectionStore implements CollectionStore {
   finish(run: string) {
     this.transaction(() => {
       if (this.current()?.id !== run || this.next(run)) return;
-      this.db.exec(`DELETE FROM jobs; UPDATE run SET active=0,seed='',state='completed',
+      this.db.exec(`DELETE FROM jobs; DELETE FROM chain_peers; UPDATE run SET active=0,seed='',state='completed',
         location=CASE WHEN source='chain' THEN '' ELSE location END WHERE active=1`);
     });
   }
@@ -162,7 +184,7 @@ export class SqliteCollectionStore implements CollectionStore {
 
   abandon() {
     this.transaction(() => {
-      this.db.exec(`DELETE FROM jobs; UPDATE run SET active=0,seed='',state='abandoned',
+      this.db.exec(`DELETE FROM jobs; DELETE FROM chain_peers; UPDATE run SET active=0,seed='',state='abandoned',
         location=CASE WHEN source='chain' THEN '' ELSE location END WHERE active=1`);
     });
   }
