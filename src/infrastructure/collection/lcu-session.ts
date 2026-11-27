@@ -20,7 +20,7 @@ export async function connectCollectionLcu(budget: RequestBudget, checkScope?: (
       await wait(delay, undefined, { signal });
     }
     try {
-      const result = await lcuRequest<unknown>(lock, path);
+      const result = await lcuRequest<unknown>(lock, path, { timeoutMs: 15_000 });
       await checkScope?.();
       return result;
     } catch (error) {

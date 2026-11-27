@@ -20,7 +20,7 @@ export async function lcuGetJson<T>(pathname: string): Promise<T | null> {
 export function lcuRequest<T>(
   lockfile: Lockfile,
   pathname: string,
-  options: { method?: string; body?: unknown } = {},
+  options: { method?: string; body?: unknown; timeoutMs?: number } = {},
 ): Promise<T> {
   const token = Buffer.from(`riot:${lockfile.password}`).toString("base64");
   const method = options.method ?? "GET";
@@ -61,7 +61,7 @@ export function lcuRequest<T>(
         });
       },
     );
-    request.setTimeout(1200, () => {
+    request.setTimeout(options.timeoutMs ?? 1200, () => {
       request.destroy();
       reject(new Error("LCU timeout"));
     });
