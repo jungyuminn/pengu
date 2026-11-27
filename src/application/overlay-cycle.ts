@@ -14,6 +14,7 @@ import {
 import { isLikelyTitleSlotText, matchAugment } from "../domain/match-name";
 import { offerCardsVisible } from "../domain/offer-frame";
 import { offerMissNotice } from "../domain/offer-miss";
+import { withOwnedOverlayItems } from "./overlay-build";
 import { resolveOverlay } from "./resolve-overlay";
 import type {
   LeagueReader,
@@ -28,6 +29,7 @@ import type {
 const OCR_HUNT_MS = 60;
 const WATCH_OCR_MS = 80;
 const MISS_HIDE = 10;
+const FRAME_MISS = 4;
 const PLAYING = new Set(["GameStart", "InProgress"]);
 
 export class OverlayCycle {
@@ -36,6 +38,7 @@ export class OverlayCycle {
   private lastOcrView: OverlayView | null = null;
   private watching = false;
   private misses = 0;
+  private frameMisses = 0;
   private countedOffer = false;
   private wasDead = false;
   private lastLevel = 0;
@@ -63,9 +66,23 @@ export class OverlayCycle {
     const champion =
       overlayChampionFor(champions, championId) ?? overlayChampionByName(champions, live?.championName);
     if (session?.phase === "ChampSelect") {
-      this.say("챔피언 선택");
       this.resetMatch();
-      return { snapshot, pinWindow: false, view: hidden(snapshot) };
+      if (!champion) {
+        this.say("챔피언 선택");
+        return { snapshot, pinWindow: false, view: hidden(snapshot) };
+      }
+      this.say(`챔피언 선택 · ${champion.name} ${champion.grade}`);
+      return {
+        snapshot,
+        pinWindow: true,
+        view: {
+          visible: true,
+          champion,
+          source: snapshot?.source ?? null,
+          cards: [],
+          build: [],
+        },
+      };
     }
 
     const playing = PLAYING.has(session?.phase ?? "") || Boolean(live);
@@ -88,7 +105,7 @@ export class OverlayCycle {
     }
 
     const data = await this.dataFor(championId);
-    const build = data.items;
+    const build = withOwnedOverlayItems(data.items, live.itemIds ?? []);
     this.trackLevelWindow(live);
     this.completed = skipMissedStartPick({
       ...live,
@@ -107,10 +124,16 @@ export class OverlayCycle {
     }
 
     const cards = await this.readCards(snapshot, champion, data.augments, scheduledHunt(offer));
+    const hunting = shouldReadAugmentScreen({
+      ...live,
+      completed: this.completed,
+      watching: this.watching,
+      secondsAtLevel: this.secondsAtLevel(live),
+    });
     return {
       snapshot,
       pinWindow: true,
-      view: this.hud(snapshot, build, cards),
+      view: this.seated(snapshot, build, cards, hunting),
     };
   }
 
@@ -128,6 +151,22 @@ export class OverlayCycle {
       cards: cardRows,
       build: notice ? [] : build,
       notice,
+      armCards: false,
+    };
+  }
+
+  private seated(
+    snapshot: StatsSnapshot | null,
+    build: OverlayItem[],
+    cards: OverlayView | null,
+    hunting: boolean,
+  ): OverlayView {
+    const view = this.hud(snapshot, build, cards);
+    if (!hunting) return view;
+    return {
+      ...view,
+      visible: true,
+      armCards: true,
     };
   }
 
@@ -193,6 +232,7 @@ export class OverlayCycle {
     if (cardsOn) {
       this.watching = true;
       this.misses = 0;
+      this.frameMisses = 0;
       if (scheduled) this.countedOffer = true;
       this.lastOcrView = view;
       this.reportHunt(page, view);
@@ -202,11 +242,14 @@ export class OverlayCycle {
     if (this.watching && this.lastOcrView?.cards.length) {
       if (pageUnreadable(page)) return this.lastOcrView;
       if (!offerCardsVisible(slots)) {
+        this.frameMisses += 1;
+        if (this.frameMisses < FRAME_MISS) return this.lastOcrView;
         this.finishWatching();
         this.lastOcrView = view;
         this.reportHunt(page, view);
         return view;
       }
+      this.frameMisses = 0;
       this.misses += 1;
       if (this.misses < MISS_HIDE) return this.lastOcrView;
       this.finishWatching();
@@ -222,7 +265,9 @@ export class OverlayCycle {
       const names = view.cards
         .map((card) => `${card.augment?.names.ko ?? card.query} ${card.augment?.grade ?? "?"}`)
         .join(", ");
-      this.say(`증강 등급 ${names}`);
+      const raw = previewText(page.text);
+      const missed = (page.cardCount ?? 0) > view.cards.length;
+      this.say(missed ? `증강 등급 ${names} · OCR ${raw}` : `증강 등급 ${names}`);
       return;
     }
     const miss = offerMissNotice({
@@ -252,6 +297,7 @@ export class OverlayCycle {
     if (this.countedOffer) this.completed += 1;
     this.watching = false;
     this.misses = 0;
+    this.frameMisses = 0;
     this.countedOffer = false;
     this.levelMarkTime = null;
     this.lastOcrView = null;
@@ -284,6 +330,7 @@ export class OverlayCycle {
     this.lastOcrView = null;
     this.watching = false;
     this.misses = 0;
+    this.frameMisses = 0;
     this.countedOffer = false;
     this.lastLog = "";
   }

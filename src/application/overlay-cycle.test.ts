@@ -89,9 +89,51 @@ describe("OverlayCycle", () => {
     );
 
     const { view } = await cycle.tick();
-    expect(view.visible).toBe(false);
+    expect(view.visible).toBe(true);
     expect(view.build).toEqual([]);
+    expect(view.cards).toEqual([]);
+    expect(view.champion).toEqual({ name: "야스오", grade: "A" });
     expect(screen.calls).toBe(0);
+  });
+
+  it("hides champ select until a champion is hovered", async () => {
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "ChampSelect", championId: null, championName: null }),
+      new RecordingScreen(),
+    );
+
+    const { view } = await cycle.tick();
+    expect(view.visible).toBe(false);
+    expect(view.champion).toBeNull();
+  });
+
+  it("checks core items the player already bought", async () => {
+    const screen = new RecordingScreen();
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({
+        gameTime: 180,
+        level: 8,
+        isDead: false,
+        championName: "Yasuo",
+        itemIds: [3078],
+      }),
+      {
+        itemsFor: async () => [
+          { id: 3078, name: "삼위일체", iconUrl: "trinity.png" },
+          { id: 3004, name: "마나무네", iconUrl: null },
+        ],
+      },
+    );
+
+    const { view } = await cycle.tick();
+    expect(view.build.map((item) => [item.name, item.owned])).toEqual([
+      ["삼위일체", true],
+      ["마나무네", false],
+    ]);
   });
 
   it("shows the core build when Pengu starts in an already running game", async () => {
@@ -125,6 +167,7 @@ describe("OverlayCycle", () => {
 
     const { view } = await cycle.tick();
     expect(view.build.map((item) => item.name)).toEqual(["삼위일체"]);
+    expect(view.armCards).toBe(false);
     expect(screen.calls).toBe(0);
   });
 
@@ -187,6 +230,7 @@ describe("OverlayCycle", () => {
 
     const { view } = await cycle.tick();
     expect(screen.calls).toBe(1);
+    expect(view.armCards).toBe(true);
     expect(view.cards.map((card) => card.augment?.id)).toEqual(["eureka", "bees"]);
   });
 
@@ -241,7 +285,33 @@ describe("OverlayCycle", () => {
     expect(reroll.view.cards.map((card) => card.augment?.id)).toEqual(["bees", "eureka"]);
   });
 
-  it("hides grades as soon as the offer cards leave the screen", async () => {
+  it("keeps grades through a brief reroll frame miss", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 12, level: 3, isDead: false }),
+    );
+
+    await cycle.tick();
+    screen.titles = ["벌이다!!!", "유레카"];
+    cycle["lastOcrAt"] = 0;
+    await cycle.tick();
+    screen.titles = [];
+    screen.cardCount = 0;
+    cycle["lastOcrAt"] = 0;
+    const flicker = await cycle.tick();
+    expect(flicker.view.cards.map((card) => card.augment?.id)).toEqual(["bees", "eureka"]);
+    screen.titles = ["벌이다!!!", "유레카"];
+    screen.cardCount = 3;
+    cycle["lastOcrAt"] = 0;
+    const back = await cycle.tick();
+    expect(back.view.cards.map((card) => card.augment?.id)).toEqual(["bees", "eureka"]);
+  });
+
+  it("hides grades after the offer cards stay gone", async () => {
     const screen = new RecordingScreen();
     screen.cardCount = 3;
     const cycle = new OverlayCycle(
@@ -254,9 +324,12 @@ describe("OverlayCycle", () => {
     await cycle.tick();
     screen.titles = [];
     screen.cardCount = 0;
-    cycle["lastOcrAt"] = 0;
-    const next = await cycle.tick();
-    expect(next.view.cards).toEqual([]);
+    let next = { cards: [] as { augment?: { id?: string } | null }[] };
+    for (let i = 0; i < 4; i += 1) {
+      cycle["lastOcrAt"] = 0;
+      next = (await cycle.tick()).view;
+    }
+    expect(next.cards).toEqual([]);
   });
 
   it("drops stale grades after a short miss so a reroll is not stuck", async () => {
@@ -437,7 +510,7 @@ describe("OverlayCycle", () => {
     expect(view.cards.find((card) => card.augment?.id === "bees")?.augment?.grade).toBe("C");
   });
 
-  it("keeps the item build on screen when offer titles are not ready yet", async () => {
+  it("seats the card overlay before titles match", async () => {
     const screen = new RecordingScreen();
     screen.titles = [];
     screen.cardCount = 3;
@@ -450,9 +523,35 @@ describe("OverlayCycle", () => {
     );
 
     const { view } = await cycle.tick();
+    expect(view.visible).toBe(true);
+    expect(view.armCards).toBe(true);
     expect(view.cards).toEqual([]);
     expect(view.notice).toBeUndefined();
     expect(view.build.map((item) => item.name)).toEqual(["삼위일체"]);
+  });
+
+  it("puts the item build back after the offer leaves", async () => {
+    const screen = new RecordingScreen();
+    screen.cardCount = 3;
+    const cycle = new OverlayCycle(
+      new MemoryCache(withAugments),
+      new FixedLeague({ phase: "InProgress", championId: 157, championName: null }),
+      screen,
+      new FixedLive({ gameTime: 12, level: 3, isDead: false }),
+      { itemsFor: async () => [{ name: "삼위일체", iconUrl: "trinity.png" }] },
+    );
+
+    await cycle.tick();
+    screen.titles = [];
+    screen.cardCount = 0;
+    let next = { cards: [] as unknown[], armCards: false, build: [] as Array<{ name: string }> };
+    for (let i = 0; i < 4; i += 1) {
+      cycle["lastOcrAt"] = 0;
+      next = (await cycle.tick()).view;
+    }
+    expect(next.cards).toEqual([]);
+    expect(next.armCards).toBe(false);
+    expect(next.build.map((item) => item.name)).toEqual(["삼위일체"]);
   });
 
   it("writes the miss to the hunt log once", async () => {
