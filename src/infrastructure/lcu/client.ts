@@ -4,22 +4,19 @@ import {
   type CurrentSummoner,
   type GameflowSession,
 } from "./game-champion";
+import { champSelectChampionId, type ChampSelectSession } from "./champ-select";
 import { readLockfile, type Lockfile } from "./lockfile";
 import { lcuRequest } from "./request";
 
 const IN_GAME = new Set(["GameStart", "InProgress", "Reconnect"]);
-
-interface ChampSelectSession {
-  localPlayerCellId?: number;
-  myTeam?: Array<{ cellId?: number; championId?: number }>;
-}
 
 export class LcuLeagueReader implements LeagueReader {
   private cached: { at: number; session: LeagueSession | null } | null = null;
   private lastChampionId: number | null = null;
 
   async readSession(): Promise<LeagueSession | null> {
-    if (this.cached && Date.now() - this.cached.at < 1500) return this.cached.session;
+    const ttl = this.cached?.session?.phase === "ChampSelect" ? 250 : 1500;
+    if (this.cached && Date.now() - this.cached.at < ttl) return this.cached.session;
 
     const lockfile = await readLockfile();
     const session = lockfile ? await this.readLiveSession(lockfile) : null;
@@ -57,12 +54,11 @@ async function readPhase(lockfile: Lockfile): Promise<string> {
 }
 
 async function readChampSelectId(lockfile: Lockfile): Promise<number | null> {
-  const current = await lcuRequest<number>(lockfile, "/lol-champ-select/v1/current-champion").catch(() => 0);
-  if (typeof current === "number" && current > 0) return current;
-
-  const session = await lcuRequest<ChampSelectSession>(lockfile, "/lol-champ-select/v1/session").catch(() => null);
-  const me = session?.myTeam?.find((player) => player.cellId === session.localPlayerCellId);
-  return me?.championId && me.championId > 0 ? me.championId : null;
+  const [current, session] = await Promise.all([
+    lcuRequest<number>(lockfile, "/lol-champ-select/v1/current-champion").catch(() => 0),
+    lcuRequest<ChampSelectSession>(lockfile, "/lol-champ-select/v1/session").catch(() => null),
+  ]);
+  return champSelectChampionId(typeof current === "number" ? current : 0, session);
 }
 
 async function readGameChampionId(lockfile: Lockfile): Promise<number | null> {
